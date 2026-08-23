@@ -16,43 +16,43 @@ const solutions = [
   {
     title: "Fleet Operations",
     description:
-      "Reliable fleet management with modern vehicles for safe and on-time transportation.",
-    image: "/solutions/home-solution1.png",
+      "Reliable fleet management with modern vehicles and on-time transportation.",
+    image: "/solutions/fleet.png",
     icon: Truck,
   },
   {
     title: "Parcel Delivery",
     description:
       "Fast and dependable parcel delivery services with accurate and on-time deliveries.",
-    image: "/solutions/home-solution1.png",
+    image: "/solutions/parcel.png",
     icon: PackageCheck,
   },
   {
     title: "Last Mile Delivery",
     description:
-      "Efficient last-mile delivery solutions that ensure every package reaches its final destination quickly and safely.",
-    image: "/solutions/home-solution1.png",
+      "Efficient last-mile delivery solutions that ensure every package reaches.",
+    image: "/solutions/delievery.png",
     icon: Truck,
   },
   {
     title: "Inventory Management",
     description:
       "Real-time inventory tracking and smart stock control to improve accuracy and efficiency.",
-    image: "/solutions/home-solution1.png",
+    image: "/solutions/management.png",
     icon: Boxes,
   },
   {
     title: "Warehousing Services",
     description:
-      "Reliable inventory tracking and smart stock control to improve accuracy and efficiency.",
-    image: "/solutions/home-solution1.png",
+      "Real-time inventory tracking,smart stock control that improve operational efficiency.",
+    image: "/solutions/housing.png",
     icon: Warehouse,
   },
   {
     title: "Order Fulfillment",
     description:
-      "Complete order processing from picking and packing to shipping, delivering a seamless experience.",
-    image: "/solutions/home-solution1.png",
+      "Complete order processing from picking and delivering a seamless experience.",
+    image: "/solutions/order.png",
     icon: ClipboardCheck,
   },
 ];
@@ -75,43 +75,7 @@ const QuickSolution = () => {
   };
 
   return (
-    <section className="relative my-10 overflow-hidden px-4 py-10 lg:my-20 lg:px-8 lg:py-16">
-      {/* ================= BACKGROUND GRID ================= */}
-      {/* Geometrical Trapezium Background */}
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.29]"
-          style={{
-            backgroundImage: `
-        linear-gradient(
-          90deg,
-          transparent 0,
-          transparent 99px,
-          rgba(255,187,0,0.25) 100px,
-          transparent 101px,
-          transparent 329px
-        ),
-        linear-gradient(
-          0deg,
-          transparent 0,
-          transparent 109px,
-          rgba(255,187,0,0.25) 110px,
-          transparent 111px,
-          transparent 219px
-        ),
-        linear-gradient(
-          45deg,
-          transparent 0,
-          transparent 139px,
-          rgba(255,187,0,0.22) 140px,
-          transparent 141px
-        )
-      `,
-            backgroundSize: "330px 220px",
-          }}
-        />
-      </div>
-
+    <section className="relative my-10 overflow-hidden px-4 py-10 lg:my-20 lg:px-8 lg:py-16 font-manrope">
       <div className="relative z-10 mx-auto max-w-375">
         {/* ================= SECTION LABEL ================= */}
         <SectionLabel text="service" />

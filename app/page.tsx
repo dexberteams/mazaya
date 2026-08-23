@@ -15,8 +15,45 @@ export default function Home() {
       <Hero></Hero>
       <Partner></Partner>
       <Story></Story>
-      <QuickSolution></QuickSolution>
-      <Services></Services>
+      <div className="relative">
+        {/* bg-pattern */}
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.29]"
+            style={{
+              backgroundImage: `
+        linear-gradient(
+          90deg,
+          transparent 0,
+          transparent 99px,
+          rgba(255,187,0,0.25) 100px,
+          transparent 101px,
+          transparent 329px
+        ),
+        linear-gradient(
+          0deg,
+          transparent 0,
+          transparent 109px,
+          rgba(255,187,0,0.25) 110px,
+          transparent 111px,
+          transparent 219px
+        ),
+        linear-gradient(
+          45deg,
+          transparent 0,
+          transparent 139px,
+          rgba(255,187,0,0.22) 140px,
+          transparent 141px
+        )
+      `,
+              backgroundSize: "330px 220px",
+            }}
+          />
+        </div>
+        <QuickSolution></QuickSolution>
+        <Services></Services>
+      </div>
+
       <WhyChoose></WhyChoose>
       <Teams></Teams>
       <MazayaLogistics></MazayaLogistics>

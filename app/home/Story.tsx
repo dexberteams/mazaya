@@ -4,7 +4,7 @@ import { BarChart3, ChartBarIncreasing, Goal, Handshake } from "lucide-react";
 
 const Story = () => {
   return (
-    <section className="p-4 lg:p-8 my-10 lg:my-20">
+    <section className="p-4 lg:p-8 my-10 lg:my-20 font-manrope">
       <SectionLabel text="about us" />
       <h1 className="mt-4 font-manrope text-2xl font-bold text-white lg:text-4xl">
         Our Story <span className="text-yellow-400">& Vision</span>
