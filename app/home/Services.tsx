@@ -88,6 +88,7 @@ const Services = () => {
               src={industry.image}
               alt={industry.name}
               fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
               className="
           object-cover
           transition-transform duration-700 ease-out

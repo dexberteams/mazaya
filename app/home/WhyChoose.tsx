@@ -72,6 +72,7 @@ const WhyChoose = () => {
             src="/home/why-choose.png"
             alt="why choose image"
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="
       object-cover
       transition-transform duration-700 ease-out
@@ -145,6 +146,7 @@ const WhyChoose = () => {
               src="/home/why-choose.png"
               alt="why choose image"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             />
 
@@ -171,6 +173,7 @@ const WhyChoose = () => {
               src="/home/why-choose.png"
               alt="why choose image"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             />
 

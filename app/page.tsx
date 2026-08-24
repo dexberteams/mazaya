@@ -19,41 +19,61 @@ export default function Home() {
         {/* bg-pattern */}
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <div
-            className="absolute inset-0 opacity-[0.29]"
+            className="absolute inset-0"
             style={{
               backgroundImage: `
+        /* Vertical lines */
         linear-gradient(
           90deg,
           transparent 0,
-          transparent 99px,
-          rgba(255,187,0,0.25) 100px,
-          transparent 101px,
-          transparent 329px
+          transparent 59px,
+          rgba(255, 187, 0, 0.07) 60px,
+          transparent 61px
         ),
+
+        /* Horizontal lines */
         linear-gradient(
           0deg,
           transparent 0,
-          transparent 109px,
-          rgba(255,187,0,0.25) 110px,
-          transparent 111px,
-          transparent 219px
+          transparent 59px,
+          rgba(255, 187, 0, 0.07) 60px,
+          transparent 61px
         ),
+
+        /* Diagonal right */
+        linear-gradient(
+          135deg,
+          transparent 49.5%,
+          rgba(255, 187, 0, 0.09) 50%,
+          transparent 50.5%
+        ),
+
+        /* Diagonal left */
         linear-gradient(
           45deg,
-          transparent 0,
-          transparent 139px,
-          rgba(255,187,0,0.22) 140px,
-          transparent 141px
+          transparent 49.5%,
+          rgba(255, 187, 0, 0.09) 50%,
+          transparent 50.5%
         )
       `,
-              backgroundSize: "330px 220px",
+              backgroundSize: `
+        118px 180px,
+        100% 60px,
+        236px 120px,
+        236px 120px
+      `,
+              backgroundPosition: `
+        0 0,
+        0 0,
+        0 60px,
+        118px 60px
+      `,
             }}
           />
         </div>
         <QuickSolution></QuickSolution>
         <Services></Services>
       </div>
-
       <WhyChoose></WhyChoose>
       <Teams></Teams>
       <MazayaLogistics></MazayaLogistics>

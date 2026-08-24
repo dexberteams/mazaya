@@ -13,7 +13,7 @@ const Story = () => {
       {/* about box */}
       <div className="mt-6 flex flex-col gap-4 md:gap-8 lg:mt-16 lg:flex-row lg:gap-12">
         {/* Image - Mobile: full width, Desktop: 1/3 */}
-        <div className="relative h-48 w-full lg:h-116 lg:w-1/3">
+        <div className="relative h-56 w-full lg:h-116 lg:w-1/3">
           <Image
             src="/about/box-image.png"
             alt="About Us"
