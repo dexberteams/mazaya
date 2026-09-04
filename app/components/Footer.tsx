@@ -16,19 +16,29 @@ export default function Footer() {
       {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(100,70,20,0.22)_0%,transparent_70%)]" />
 
-      {/* Globe Image Background */}
-      <div
-        className="
-        pointer-events-none absolute inset-0
-        bg-[url('/home/globe.png')]
-        bg-size-[120%_auto]
-        bg-position-[center_bottom]
-        bg-no-repeat
-        opacity-65
-        lg:bg-cover
-        lg:bg-center
-      "
-      />
+      {/* Globe Rotating Earth Background */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
+        <div className="relative h-[750px] w-[750px] sm:h-[950px] sm:w-[950px] lg:h-[1250px] lg:w-[1250px] shrink-0 animate-spin-slow opacity-60">
+          <div className="relative h-1/2 w-full overflow-hidden">
+            <Image
+              src="/home/globe.png"
+              alt="Rotating Earth Globe"
+              fill
+              priority
+              className="object-contain object-bottom select-none"
+            />
+          </div>
+          <div className="relative h-1/2 w-full overflow-hidden rotate-180">
+            <Image
+              src="/home/globe.png"
+              alt="Rotating Earth Globe"
+              fill
+              priority
+              className="object-contain object-bottom select-none"
+            />
+          </div>
+        </div>
+      </div>
 
       <div className="relative z-10 mx-auto  max-w-6xl gap-5 shadow-2xl shadow-amber-300 bg-[#393527]/40 p-3 lg:p-6 backdrop-blur-[1px] border-2 border-amber-400 rounded-lg lg:pt-16">
         <div className="flex flex-col-reverse lg:flex-row gap-4">
