@@ -75,11 +75,9 @@ const QuickSolution = () => {
           Our Quick <span className="text-[#EAB308]">Solutions</span>
         </h2>
 
-
         {/* ===================================================== */}
         {/* MOBILE + TABLET */}
         {/* ===================================================== */}
-
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:hidden">
           {solutions.map((solution, index) => (
@@ -108,10 +106,7 @@ const QuickSolution = () => {
             className="pointer-events-none absolute inset-0 z-0 h-full w-full"
           >
             {/* 0: Fleet Operations (Top Left) -> Center Circle Left (550, 380) */}
-            <g
-              transform="translate(358, 286)"
-              {...getLineProps(0)}
-            >
+            <g transform="translate(358, 286)" {...getLineProps(0)}>
               <path
                 d="M192 94H145.636C143.97 93.7974 140.182 92.5412 138.364 89.1373C136.091 84.8824 128.818 68.4706 123.364 68.4706C119 68.4706 64.5758 68.4706 37.9091 68.4706C34.2727 68.6732 27 65.7961 27 52.6667C27 40.7692 27 18.7895 27 4.99992C27 2.79078 25.2091 0.999998 23 0.999998H0"
                 strokeWidth="2"
@@ -119,10 +114,7 @@ const QuickSolution = () => {
             </g>
 
             {/* 3: Inventory Management (Bottom Left) -> Center Circle Left (550, 380) */}
-            <g
-              transform="translate(358, 379)"
-              {...getLineProps(3)}
-            >
+            <g transform="translate(358, 379)" {...getLineProps(3)}>
               <path
                 d="M192 1H145.636C143.97 1.20261 140.182 2.45882 138.364 5.86275C136.091 10.1176 128.818 26.5294 123.364 26.5294C119 26.5294 64.5758 26.5294 37.9091 26.5294C34.2727 26.3268 27 29.2039 27 42.3333C27 54.2308 27 76.2105 27 90.0001C27 92.2092 25.2091 94 23 94H0"
                 strokeWidth="2"
@@ -146,10 +138,7 @@ const QuickSolution = () => {
             </g>
 
             {/* 2: Last Mile Delivery (Top Right) -> Center Circle Right (650, 380) */}
-            <g
-              transform="translate(650, 286)"
-              {...getLineProps(2)}
-            >
+            <g transform="translate(650, 286)" {...getLineProps(2)}>
               <path
                 d="M0 94H46.3636C48.0303 93.7974 51.8182 92.5412 53.6364 89.1373C55.9091 84.8824 63.1818 68.4706 68.6364 68.4706C73 68.4706 127.424 68.4706 154.091 68.4706C157.727 68.6732 165 65.7961 165 52.6667C165 40.7692 165 18.7895 165 4.99992C165 2.79078 166.791 0.999998 169 0.999998H192"
                 strokeWidth="2"
@@ -157,10 +146,7 @@ const QuickSolution = () => {
             </g>
 
             {/* 5: Order Fulfillment (Bottom Right) -> Center Circle Right (650, 380) */}
-            <g
-              transform="translate(650, 379)"
-              {...getLineProps(5)}
-            >
+            <g transform="translate(650, 379)" {...getLineProps(5)}>
               <path
                 d="M0 1H46.3636C48.0303 1.20261 51.8182 2.45882 53.6364 5.86275C55.9091 10.1176 63.1818 26.5294 68.6364 26.5294C73 26.5294 127.424 26.5294 154.091 26.5294C157.727 26.3268 165 29.2039 165 42.3333C165 54.2308 165 76.2105 165 90.0001C165 92.2092 166.791 94 169 94H192"
                 strokeWidth="2"
@@ -293,25 +279,30 @@ const SolutionCard = ({
     <div
       onMouseEnter={() => setActiveCard(index)}
       onMouseLeave={() => setActiveCard(null)}
-      className={`group relative flex w-full flex-row items-center overflow-hidden rounded-[18px] border bg-[#111111]/90 p-2.5 backdrop-blur-md transition-all duration-300 lg:h-[155px] ${isActive
-        ? "-translate-y-1 border-yellow-400 shadow-[0_0_25px_rgba(234,179,8,0.25)]"
-        : "border-yellow-600/40 hover:border-yellow-500/70"
-        }`}
+      className={`group relative flex w-full items-center overflow-hidden rounded-lg border bg-[#111111]/90 p-2.5 backdrop-blur-md transition-all duration-300 lg:h-[155px] ${
+        index % 2 !== 0 ? "flex-row-reverse" : "flex-row"
+      } ${
+        isActive
+          ? "-translate-y-1 border-yellow-400 shadow-[0_0_25px_rgba(234,179,8,0.25)]"
+          : "border-yellow-600/40 hover:border-yellow-500/70"
+      }`}
     >
       {/* ================= IMAGE ================= */}
-      <div className="relative h-full w-[40%] shrink-0 overflow-hidden rounded-[12px]">
+      <div className="relative h-full w-[40%] shrink-0 overflow-hidden rounded-lg">
         <Image
           src={image}
           alt={title}
           fill
           sizes="(max-width: 1024px) 100vw, 180px"
-          className={`object-cover transition-transform duration-700 ${isActive ? "scale-108" : "scale-100 group-hover:scale-105"
-            }`}
+          className={`object-cover transition-transform duration-700 ${
+            isActive ? "scale-108" : "scale-100 group-hover:scale-105"
+          }`}
         />
         {/* Image Overlay */}
         <div
-          className={`absolute inset-0 bg-yellow-400/10 transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute inset-0 bg-yellow-400/10 transition-opacity duration-300 ${
+            isActive ? "opacity-100" : "opacity-0"
+          }`}
         />
       </div>
 
@@ -321,10 +312,11 @@ const SolutionCard = ({
           {title}
         </h3>
         <div
-          className={`my-1.5 h-[1.5px] transition-all duration-300 ${isActive
-            ? "w-full bg-yellow-400 shadow-[0_0_8px_rgba(234,179,8,0.5)]"
-            : "w-[80%] bg-yellow-500/40"
-            }`}
+          className={`my-1.5 h-[1.5px] transition-all duration-300 ${
+            isActive
+              ? "w-full bg-yellow-400 shadow-[0_0_8px_rgba(234,179,8,0.5)]"
+              : "w-[80%] bg-yellow-500/40"
+          }`}
         />
         <p className="line-clamp-3 text-[11.5px] leading-[1.5] text-gray-300">
           {description}
@@ -335,4 +327,3 @@ const SolutionCard = ({
 };
 
 export default QuickSolution;
-

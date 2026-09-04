@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -65,11 +66,14 @@ const Navbar = () => {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link
-          href="/"
-          className="shrink-0 text-2xl font-bold tracking-tight text-[#FFBB00]"
-        >
-          Mazaya
+        <Link href="/" className="w-32 sm:w-32 lg:w-40 h-10 flex items-center">
+          <Image
+            src="/logo/Logo.png"
+            alt="Mazaya Logistics"
+            width={200}
+            height={200}
+            className="w-full h-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Navigation Menu */}
@@ -150,13 +154,13 @@ const Navbar = () => {
             href="/login"
             className="hidden whitespace-nowrap rounded-lg bg-white px-3 py-2 text-sm font-medium text-black transition-all hover:bg-[#FFBB00] sm:block"
           >
-            Login
+            Contact Us
           </Link>
 
           {/* Hamburger */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="rounded-lg p-2 text-white transition-colors hover:bg-white/10 xl:hidden"
+            className="rounded-lg p-2 text-amber-400 transition-colors hover:bg-white/10 xl:hidden"
             aria-label="Toggle Menu"
           >
             {isMenuOpen ? (

@@ -29,15 +29,8 @@ const Hero = () => {
             </p>
 
             <div className="flex gap-4 p-4">
-              <button className="rounded-lg bg-[#FFBB00] px-3 py-1.5 text-sm text-black transition-colors hover:bg-yellow-500 lg:mt-4 lg:px-6 lg:py-3">
+              <button className="rounded-lg bg-[#FFBB00] px-3 py-1.5 text-sm text-black transition-colors hover:bg-yellow-500 lg:mt-4 lg:px-12 lg:py-3">
                 Get Quote
-              </button>
-
-              <button className="flex gap-1 rounded-lg border-2 border-yellow-400 bg-[#1E1813] px-3 py-1.5 text-sm text-white lg:mt-4 lg:px-6 lg:py-3">
-                <span>
-                  <MapPinSearch />
-                </span>
-                Track Shipment
               </button>
             </div>
           </div>
@@ -99,7 +92,7 @@ const Hero = () => {
 
               <div className="flex items-center gap-3">
                 <Image
-                  src="/home/icons/hand-support.png"
+                  src="/home/icons/outline.png"
                   alt="Client Satisfaction"
                   width={24}
                   height={24}
@@ -166,14 +159,14 @@ const Hero = () => {
         {/* bottom buttons for desktop*/}
         <div className="hidden lg:flex gap-4 w-1/3 justify-center items-center mx-auto p-4 border border-yellow-400/45 rounded-full mt-8 bg-linear-to-b from-yellow-800/40 via-yellow-500/10 to-transparent transition-opacity duration-300">
           <button className=" rounded-full bg-transparent hover:bg-[#FFBB00] px-4 py-2 text-sm text-white transition-colors  lg:px-6 lg:py-3">
-            Services
+            Warehouse
           </button>
           <button className=" rounded-full bg-white  px-4 py-2 text-sm text-black transition-colors hover:bg-yellow-800  lg:px-6 lg:py-3 flex items-center gap-2 hover:text-white">
             <CirclePlay className="text-[#FFBB00]" />
             Watch our Stories
           </button>
           <button className=" rounded-full bg-transparent hover:bg-[#FFBB00] text-white  px-4 py-2 text-sm transition-colors lg:px-6 lg:py-3">
-            Industries
+            Our Fleet
           </button>
         </div>
         {/* bottom button for mobile */}

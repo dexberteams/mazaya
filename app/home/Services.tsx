@@ -73,7 +73,7 @@ const Services = () => {
 
       {/* Industries Grid */}
 
-      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-10 lg:grid-rows-4">
+      <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-10 lg:grid-rows-4">
         {industries.map((industry) => (
           <div
             key={industry.id}
@@ -102,8 +102,8 @@ const Services = () => {
             <div
               className="
           absolute inset-0
-          bg-linear-to-t from-black via-black/40 to-transparent
-          opacity-80
+          bg-linear-to-t from-black via-black/80 to-transparent
+          opacity-90
           transition-all duration-500
           motion-safe:animate-[overlayPulse_6s_ease-in-out_infinite]
           lg:motion-safe:animate-none
@@ -127,13 +127,13 @@ const Services = () => {
             {/* Title */}
             <div className="absolute inset-x-0 bottom-0 p-5 lg:p-6">
               <h3
-                className="
-            text-base font-medium text-white
+                className=" text-xs
+            lg:text-base font-medium text-white
             "
               >
                 {industry.name}
               </h3>
-              <div className="relative z-10 mt-2 flex flex-col gap-1">
+              <div className="relative z-10 lg:mt-2 flex flex-col gap-1">
                 <span
                   className="
               h-1 w-4 bg-[#f5c400]
@@ -147,8 +147,8 @@ const Services = () => {
                 />
               </div>
               <p
-                className="
-                mt-1 text-xs text-white
+                className="mt-0.5
+                lg:mt-1 text-[10px] lg:text-xs text-white
                "
               >
                 {industry.des}

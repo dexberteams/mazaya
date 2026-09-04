@@ -61,11 +61,10 @@ const MazayaLogistics = () => {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
 
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/40" />
-
+              {/* Dark Bottom Gradient */}
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
               {/* Stats Card */}
-              <div className="absolute bottom-3 left-3 right-3 rounded-lg w-1/2 border border-white/20 bg-[#1E1813]/80 p-1 lg:p-3">
+              <div className="absolute bottom-3 left-3 right-3 rounded-lg w-1/2 p-1 lg:p-3">
                 <p className="text-sm font-bold text-yellow-400 lg:text-xl">
                   {image.stat}
                 </p>
