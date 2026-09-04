@@ -5,20 +5,6 @@ import TabButtons from "../ui/TabButtons";
 const Hero = () => {
   return (
     <section className="relative min-h-screen overflow-hidden py-16 lg:py-24">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/home/hero.png"
-          alt="Logistics Background"
-          fill
-          priority
-          className="object-cover"
-        />
-
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/70" />
-      </div>
-
       {/* Hero Content */}
       <div className="relative z-10">
         <div className="flex flex-col justify-between gap-8 px-4 sm:flex-row sm:px-8 lg:px-16">
