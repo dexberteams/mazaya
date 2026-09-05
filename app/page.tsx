@@ -1,4 +1,4 @@
-import Footer from "./components/Footer";
+import Image from "next/image";
 import ClientSection from "./home/ClientSection";
 import Hero from "./home/Hero";
 import MazayaLogistics from "./home/MazayaLogistics";
@@ -11,18 +11,30 @@ import WhyChoose from "./home/WhyChoose";
 
 export default function Home() {
   return (
-    <div>
+    <main>
+      {/* Full-page fixed background */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-[#0a0700]">
+        <Image
+          src="/home/hero.png"
+          alt="Hero Background"
+          fill
+          priority
+          className="object-cover"
+        />
+        {/* Lighter overlay */}
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
       <Hero></Hero>
       <Partner></Partner>
       <Story></Story>
       <div className="relative">
         {/* bg-pattern */}
-        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        {/* <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <div
             className="absolute inset-0"
             style={{
               backgroundImage: `
-        /* Vertical lines */
+       
         linear-gradient(
           90deg,
           transparent 0,
@@ -31,7 +43,7 @@ export default function Home() {
           transparent 61px
         ),
 
-        /* Horizontal lines */
+        
         linear-gradient(
           0deg,
           transparent 0,
@@ -40,7 +52,7 @@ export default function Home() {
           transparent 61px
         ),
 
-        /* Diagonal right */
+       
         linear-gradient(
           135deg,
           transparent 49.5%,
@@ -48,7 +60,7 @@ export default function Home() {
           transparent 50.5%
         ),
 
-        /* Diagonal left */
+        
         linear-gradient(
           45deg,
           transparent 49.5%,
@@ -70,7 +82,7 @@ export default function Home() {
       `,
             }}
           />
-        </div>
+        </div> */}
         <QuickSolution></QuickSolution>
         <Services></Services>
       </div>
@@ -78,7 +90,6 @@ export default function Home() {
       <Teams></Teams>
       <MazayaLogistics></MazayaLogistics>
       <ClientSection></ClientSection>
-      <Footer></Footer>
-    </div>
+    </main>
   );
 }
