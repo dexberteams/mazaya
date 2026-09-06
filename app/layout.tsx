@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+// import Image from "next/image";
 import {
   Geist,
   Geist_Mono,
@@ -9,6 +9,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,20 +48,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="relative min-h-full flex flex-col bg-transparent">
         {/* Full-page fixed background */}
-        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-[#0a0700]">
+        {/* <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-[#0a0700]">
           <Image
             src="/home/hero.png"
             alt="Hero Background"
             fill
             priority
             className="object-cover"
-          />
-          {/* Lighter overlay */}
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
+          /> */}
+        {/* Lighter overlay */}
+        {/* <div className="absolute inset-0 bg-black/60" /> */}
+        {/* </div> */}
 
         <Navbar></Navbar>
         <main className="relative z-0">{children}</main>
+        <Footer></Footer>
       </body>
     </html>
   );
