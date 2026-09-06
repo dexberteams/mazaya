@@ -16,27 +16,26 @@ export default function Footer() {
       {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(100,70,20,0.22)_0%,transparent_70%)]" />
 
-      {/* Globe Rotating Earth Background */}
+      {/* Globe Rotating Earth Background — 3-layer yellow-vibe planet */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
-        <div className="relative h-[750px] w-[750px] sm:h-[950px] sm:w-[950px] lg:h-[1250px] lg:w-[1250px] shrink-0 animate-spin-slow opacity-60">
-          <div className="relative h-1/2 w-full overflow-hidden">
-            <Image
-              src="/home/globe.png"
-              alt="Rotating Earth Globe"
-              fill
-              priority
-              className="object-contain object-bottom select-none"
-            />
-          </div>
-          <div className="relative h-1/2 w-full overflow-hidden rotate-180">
-            <Image
-              src="/home/globe.png"
-              alt="Rotating Earth Globe"
-              fill
-              priority
-              className="object-contain object-bottom select-none"
-            />
-          </div>
+        <div
+          className="earth-planet-container shrink-0 opacity-55"
+          style={{
+            width: 'clamp(600px, 80vw, 1250px)',
+            height: 'clamp(600px, 80vw, 1250px)',
+          }}
+        >
+          {/* Layer 1 — Day surface: earth.png scrolling */}
+          <div className="earth-layer-day" />
+
+          {/* Layer 2 — Atmosphere: amber radial glow pulsing */}
+          <div className="earth-layer-atmosphere" />
+
+          {/* Layer 3 — Cloud drift: soft golden ellipse wandering */}
+          <div className="earth-layer-clouds" />
+
+          {/* Layer 4 — Inner shadow: depth & edge darkness */}
+          <div className="earth-layer-inner-shadow" />
         </div>
       </div>
 
@@ -44,9 +43,16 @@ export default function Footer() {
         <div className="flex flex-col-reverse lg:flex-row gap-4">
           {/* Left Side */}
           <div className="space-y-5">
-            <h2 className="text-2xl font-bold tracking-wide text-yellow-400">
-              Logo
-            </h2>
+            {/* Logo */}
+            <Link href="/" className="w-32 sm:w-32 lg:w-40 h-10 flex items-center">
+              <Image
+                src="/logo/Logo.png"
+                alt="Mazaya Logistics"
+                width={200}
+                height={200}
+                className="w-full h-auto object-contain"
+              />
+            </Link>
 
             <p className="max-w-sm text-xs lg:text-sm text-white lg:w-3/4">
               Mazaya Logistics delivers reliable transportation, warehousing,

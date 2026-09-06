@@ -28,6 +28,7 @@ body {
 }
 
 @keyframes cardPulse {
+
   0%,
   100% {
     transform: translateY(0);
@@ -39,6 +40,7 @@ body {
 }
 
 @keyframes imageZoom {
+
   0%,
   100% {
     transform: scale(1);
@@ -50,6 +52,7 @@ body {
 }
 
 @keyframes overlayPulse {
+
   0%,
   100% {
     opacity: 0.8;
@@ -61,6 +64,7 @@ body {
 }
 
 @keyframes borderPulse {
+
   0%,
   100% {
     inset: 12px;
@@ -74,6 +78,7 @@ body {
 }
 
 @keyframes titleUp {
+
   0%,
   100% {
     transform: translateY(4px);
@@ -85,6 +90,7 @@ body {
 }
 
 @keyframes lineExpand {
+
   0%,
   100% {
     width: 16px;
@@ -96,6 +102,7 @@ body {
 }
 
 @keyframes descriptionFade {
+
   0%,
   100% {
     opacity: 0.8;
@@ -107,6 +114,7 @@ body {
 }
 
 @keyframes bottomLine {
+
   0%,
   100% {
     width: 0;
@@ -116,7 +124,9 @@ body {
     width: 64px;
   }
 }
+
 @keyframes floatTop {
+
   0%,
   100% {
     transform: translateY(0);
@@ -128,6 +138,7 @@ body {
 }
 
 @keyframes floatBottom {
+
   0%,
   100% {
     transform: translateY(0);
@@ -142,6 +153,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -149,4 +161,118 @@ body {
 
 .animate-spin-slow {
   animation: spinSlow 60s linear infinite;
+}
+
+/* @keyframes earthRollY {
+  from {
+    transform: perspective(900px) rotateY(0deg);
+  }
+
+  to {
+    transform: perspective(900px) rotateY(360deg);
+  }
+}
+
+.animate-roll-x {
+  animation: earthRollY 12s linear infinite;
+} */
+
+/* ── Footer Earth Planet Animation ── */
+
+@keyframes planet-rotate-day {
+  0% {
+    background-position: 120% 50%;
+  }
+
+  100% {
+    background-position: -80% 50%;
+  }
+}
+
+@keyframes planet-atmosphere-pulse {
+
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 0.80;
+  }
+}
+
+@keyframes planet-clouds-drift {
+  0% {
+    background-position: 120% 50%;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    background-position: 20% 50%;
+    transform: rotate(10deg);
+  }
+
+  100% {
+    background-position: -80% 50%;
+    transform: rotate(0deg);
+  }
+}
+
+.earth-planet-container {
+  border-radius: 50%;
+  box-shadow:
+    0 0 60px 20px rgba(245, 185, 40, 0.35),
+    0 0 120px 50px rgba(220, 140, 10, 0.18),
+    6px -4px 14px 4px rgba(245, 200, 60, 0.5);
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.earth-layer-day {
+  animation: planet-rotate-day 80s linear infinite;
+  background-image: url('/home/earth.png');
+  background-size: 200% auto;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.earth-layer-atmosphere {
+  animation: planet-atmosphere-pulse 6s ease-in-out infinite;
+  background: radial-gradient(circle at 65% 45%,
+      rgba(255, 210, 60, 0.30) 0%,
+      rgba(230, 160, 20, 0.18) 35%,
+      rgba(180, 100, 10, 0.10) 60%,
+      transparent 80%);
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.earth-layer-clouds {
+  animation: planet-clouds-drift 60s ease-in-out infinite;
+  background: radial-gradient(ellipse at 40% 50%,
+      rgba(255, 230, 120, 0.22) 0%,
+      rgba(255, 200, 60, 0.10) 50%,
+      transparent 80%);
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0.60;
+  z-index: 3;
+}
+
+.earth-layer-inner-shadow {
+  background: transparent;
+  border-radius: 50%;
+  box-shadow:
+    -8px 0 18px 4px rgba(30, 15, 0, 0.70) inset,
+    8px 0 18px 4px rgba(245, 185, 30, 0.18) inset,
+    0 -6px 12px 2px rgba(20, 10, 0, 0.40) inset;
+  position: absolute;
+  inset: 0;
+  z-index: 4;
 }
