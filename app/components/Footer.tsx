@@ -19,7 +19,7 @@ export default function Footer() {
       {/* Globe Rotating Earth Background — 3-layer yellow-vibe planet */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
         <div
-          className="earth-planet-container shrink-0 opacity-55"
+          className="earth-planet-container shrink-0 opacity-55 md:top-[65%]"
           style={{
             width: 'clamp(600px, 80vw, 1250px)',
             height: 'clamp(600px, 80vw, 1250px)',
@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto  max-w-6xl gap-5 shadow-2xl shadow-amber-300 bg-[#393527]/40 p-3 lg:p-6 backdrop-blur-[1px] border-2 border-amber-400 rounded-lg lg:pt-16">
+      <div className="relative z-10 mx-auto  max-w-6xl gap-5 shadow-2xl shadow-amber-300 bg-[#393527]/40 p-3 lg:p-6 backdrop-blur-[3px] border-2 border-amber-400 rounded-lg lg:pt-16">
         <div className="flex flex-col-reverse lg:flex-row gap-4">
           {/* Left Side */}
           <div className="space-y-5">
