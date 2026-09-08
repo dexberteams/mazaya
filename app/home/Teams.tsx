@@ -7,7 +7,7 @@ const teamMembers = [
     id: 1,
     name: "Eng. Shafi Aldawsari",
     role: "Founder & CEO",
-    image: "/home/team/team.png",
+    image: "/home/team/team5.jpeg",
     description:
       "Leads Mazaya Fast’s strategic vision and business development, with a focus on building strong partnerships and expanding the company’s logistics solutions. He is committed to strengthening Mazaya’s position as a trusted logistics partner through sustainable growth, operational efficiency, and services designed to meet evolving market needs.",
   },
@@ -15,7 +15,7 @@ const teamMembers = [
     id: 2,
     name: "Rashed Abdelbari",
     role: "General Supervisor",
-    image: "/home/team/team5.png",
+    image: "/home/team/team1.jpeg",
     description:
       "Oversees Mazaya Fast’s overall performance, promoting effective coordination across departments and ensuring the execution of operational plans and objectives. His focus is on enhancing efficiency, strengthening quality and operational discipline, and supporting the company’s stability and continued growth.",
   },
@@ -23,7 +23,7 @@ const teamMembers = [
     id: 3,
     name: "Othman Ali",
     role: "Operations & Supply Chain Manager",
-    image: "/home/team/team4.png",
+    image: "/home/team/team2.jpeg",
     description:
       "Leads operations and supply chain activities at Mazaya Fast, overseeing the execution of logistics projects and the management of operational resources and teams. His focus is on improving operational efficiency, optimizing performance, and ensuring the delivery of reliable logistics solutions aligned with client requirements.",
   },
@@ -31,7 +31,7 @@ const teamMembers = [
     id: 4,
     name: "Amjad Ahmed",
     role: "Assistant Operations Manager",
-    image: "/home/team/team3.png",
+    image: "/home/team/team3.jpeg",
     description:
       "Supports the management of daily operations, the execution of operational plans, and coordination across field teams. His focus is on execution efficiency, performance monitoring, and resolving operational challenges to ensure service continuity and consistently meet client requirements.",
   },
@@ -39,7 +39,7 @@ const teamMembers = [
     id: 5,
     name: "Alfas Ahmed",
     role: "Fleet & Maintenance Supervisor",
-    image: "/home/team/team2.png",
+    image: "/home/team/team4.jpeg",
     description:
       "Leads fleet movement and maintenance operations, overseeing vehicle readiness and fleet availability. His focus is on coordinating vehicle movement, preventive maintenance, and minimizing downtime to ensure fleet readiness and support logistics operations with efficiency and reliability.",
   },
