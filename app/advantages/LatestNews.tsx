@@ -4,7 +4,7 @@ import Image from "next/image";
 const LatestNews = () => {
   return (
     <div className="my-10 lg:my-20 px-4 lg:px-8">
-      <h1 className="w-11/12 text-3xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl text-white!">
+      <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-4xl text-white!">
         Latest <span className="text-yellow-200">News</span>
       </h1>
       {/* project box */}

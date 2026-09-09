@@ -1,7 +1,8 @@
-import { LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
 
 interface GlowIconCircleProps {
-  icon: LucideIcon;
+  icon: LucideIcon | IconType;
   size?: number;
   strokeWidth?: number;
   className?: string;
@@ -27,12 +28,12 @@ const GlowIconCircle = ({
           shadow-[inset_0_0_18px_rgba(255,255,255,0.08),0_0_20px_rgba(210,180,90,0.18)]
         "
       >
-        {/* Top-left + Bottom-right highlighted border */}
+        {/* Top-right + Bottom-left highlighted border */}
         <div
           className="absolute inset-0 rounded-full"
           style={{
             background:
-              "conic-gradient(from 215deg, rgba(235,220,170,0.9), rgba(235,220,170,0.55) 55deg, transparent 75deg, transparent 180deg, rgba(235,220,170,0.85) 180deg, rgba(235,220,170,0.5) 235deg, transparent 255deg)",
+              "conic-gradient(from 35deg, transparent 0deg, transparent 75deg, rgba(235,220,170,0.9) 75deg, rgba(235,220,170,0.55) 130deg, transparent 150deg, transparent 255deg, rgba(235,220,170,0.85) 255deg, rgba(235,220,170,0.5) 310deg, transparent 330deg)",
 
             mask: "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 1.5px))",
 
