@@ -58,11 +58,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
-        isScrolled
-          ? "border-b border-gray-700 bg-[#1a1a1a]/90 shadow-lg backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${isScrolled
+        ? "border-b border-gray-700 bg-[#1a1a1a]/90 shadow-lg backdrop-blur-md"
+        : "border-b border-transparent bg-transparent"
+        }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
@@ -85,11 +84,10 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`relative text-sm transition-colors duration-200 hover:text-[#FFBB00] ${
-                  isActive
-                    ? "font-bold text-[#FFBB00] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-[#FFBB00]"
-                    : "font-medium text-white"
-                }`}
+                className={`relative text-sm transition-colors duration-200 hover:text-[#FFBB00] ${isActive
+                  ? "font-bold text-[#FFBB00] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-[#FFBB00]"
+                  : "font-medium text-white"
+                  }`}
               >
                 {link.name}
               </Link>
@@ -127,11 +125,10 @@ const Navbar = () => {
 
             {/* Language Dropdown */}
             <div
-              className={`absolute right-0 top-full mt-2 min-w-32.5 overflow-hidden rounded-xl border border-white/10 bg-[#1E1813] shadow-xl transition-all duration-200 ${
-                isLangOpen
-                  ? "visible translate-y-0 opacity-100"
-                  : "invisible -translate-y-2 opacity-0"
-              }`}
+              className={`absolute right-0 top-full mt-2 min-w-32.5 overflow-hidden rounded-xl border border-white/10 bg-[#1E1813] shadow-xl transition-all duration-200 ${isLangOpen
+                ? "visible translate-y-0 opacity-100"
+                : "invisible -translate-y-2 opacity-0"
+                }`}
             >
               <button
                 onClick={() => setIsLangOpen(false)}
@@ -151,7 +148,7 @@ const Navbar = () => {
 
           {/* Desktop Login Button */}
           <Link
-            href="/login"
+            href="/contactu"
             className="hidden whitespace-nowrap rounded-lg bg-white px-3 py-2 text-sm font-medium text-black transition-all hover:bg-[#FFBB00] sm:block"
           >
             Contact Us
@@ -200,11 +197,10 @@ const Navbar = () => {
 
       {/* Mobile / Tablet Menu */}
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out xl:hidden ${
-          isMenuOpen
-            ? "max-h-125 border-t border-white/10 bg-[#1E1813]/95 opacity-100 backdrop-blur-md"
-            : "max-h-0 opacity-0"
-        }`}
+        className={`overflow-hidden transition-all duration-300 ease-in-out xl:hidden ${isMenuOpen
+          ? "max-h-125 border-t border-white/10 bg-[#1E1813]/95 opacity-100 backdrop-blur-md"
+          : "max-h-0 opacity-0"
+          }`}
       >
         <div className="mx-auto flex max-w-7xl flex-col px-4 py-3 sm:px-6">
           {navLinks.map((link) => {
@@ -215,11 +211,10 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={handleMenuClick}
-                className={`border-l-2 px-4 py-3 text-sm transition-all duration-200 hover:border-[#FFBB00] hover:text-[#FFBB00] ${
-                  isActive
-                    ? "border-[#FFBB00] font-bold text-[#FFBB00]"
-                    : "border-transparent font-medium text-white"
-                }`}
+                className={`border-l-2 px-4 py-3 text-sm transition-all duration-200 hover:border-[#FFBB00] hover:text-[#FFBB00] ${isActive
+                  ? "border-[#FFBB00] font-bold text-[#FFBB00]"
+                  : "border-transparent font-medium text-white"
+                  }`}
               >
                 {link.name}
               </Link>
