@@ -17,7 +17,7 @@ export default function LogisticsCoverage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
               Logistics Coverage
             </h2>
-            <div className="w-16 h-[2px] bg-[#f5b800] mt-3 mb-8" />
+            <div className="w-16 bg-[#f5b800] mt-3 mb-8" />
 
             {/* 3 Badges / Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -25,7 +25,7 @@ export default function LogisticsCoverage() {
               <div className="rounded-xl bg-[#090602]/90 border border-[#2e210b] p-4.5 hover:border-[#f5b800]/40 transition-colors flex flex-col">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-base" role="img" aria-label="Saudi Arabia Flag">
-                    🇸🇦
+                    <Image src="/getQuote/flag-saudi-arabia.png" alt="Saudi Arabia" width={24} height={24} />
                   </span>
                   <h3 className="text-sm font-bold text-[#f5b800]">Saudi Arabia</h3>
                 </div>
