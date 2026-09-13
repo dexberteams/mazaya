@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import SectionLabel from "../ui/SectionLabel";
+import { usePathname } from "next/navigation";
 
 const partners = [
   {
@@ -54,8 +57,10 @@ const partners = [
 ];
 
 const Partner = () => {
+  const pathname = usePathname();
+  const isLandingPage = pathname === "/";
   return (
-    <section className="relative my-10 overflow-hidden bg-linear-to-br from-[#0A0700] via-[#211A0A] to-[#0A0700] p-4 lg:my-20 lg:p-8 lg:py-16">
+    <section className="relative my-10 overflow-hidden bg-linear-to-br from-[#0A0700] via-[#211A0A] to-[#0A0700] py-10 lg:my-20 lg:py-16">
       {/* Top Blend */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-[#0A0700] to-transparent" />
 
@@ -66,11 +71,14 @@ const Partner = () => {
       <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
         <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-size-[70px_70px]" />
       </div>
-      <SectionLabel text="Partnership" />
 
-      <h1 className="mt-4 font-manrope text-2xl font-bold text-white lg:text-4xl">
-        Grow Together <span className="text-yellow-400">Successfully</span>
-      </h1>
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {isLandingPage && <SectionLabel text="Partnership" />}
+
+        <h1 className="mt-4 font-manrope text-2xl font-bold text-white lg:text-4xl">
+          Grow Together <span className="text-yellow-400">Successfully</span>
+        </h1>
+      </div>
 
       {/* Partner Marquee */}
       <div className="mt-10 lg:mt-14">

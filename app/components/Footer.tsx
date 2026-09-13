@@ -12,7 +12,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full overflow-hidden px-6 py-12 lg:py-20 sm:px-10 lg:px-16">
+    <footer className="relative w-full overflow-hidden px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
       {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(100,70,20,0.22)_0%,transparent_70%)]" />
 

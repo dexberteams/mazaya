@@ -2,6 +2,10 @@
 import Image from "next/image";
 import { useState } from "react";
 import SectionLabel from "../ui/SectionLabel";
+import { usePathname } from "next/navigation";
+
+
+
 const teamMembers = [
   {
     id: 1,
@@ -45,6 +49,9 @@ const teamMembers = [
   },
 ];
 const Teams = () => {
+  const pathname = usePathname();
+  const isLandingPage = pathname === "/";
+
   const [activeId, setActiveId] = useState<number | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const nextSlide = () => {
@@ -54,172 +61,173 @@ const Teams = () => {
     setCurrentSlide((prev) => (prev === 0 ? teamMembers.length - 1 : prev - 1));
   };
   return (
-    <div className="my-10 p-4 font-manrope lg:my-20 lg:p-8">
-      {" "}
-      <SectionLabel text="about us" />{" "}
-      <h1 className="mt-4 text-2xl font-bold text-white lg:text-4xl">
-        {" "}
-        Meet the <span className="text-yellow-400">Leadership Team</span>{" "}
-      </h1>{" "}
-      {/* ========================================================= MOBILE CAROUSEL ========================================================= */}{" "}
-      <div className="mt-8 lg:hidden">
-        {" "}
-        {/* Slider */}{" "}
-        <div className="overflow-hidden rounded-lg">
+    <div className="w-full my-10 lg:my-20 font-manrope">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {isLandingPage && <SectionLabel text="about us" />}
+        <h1 className="mt-4 text-2xl font-bold text-white lg:text-4xl">
           {" "}
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          >
-            {" "}
-            {teamMembers.map((member) => {
-              const isActive = activeId === member.id;
-              return (
-                <div
-                  key={member.id}
-                  className="w-full shrink-0 px-0.5"
-                  onTouchStart={() => setActiveId(member.id)}
-                  onTouchEnd={() => setActiveId(null)}
-                  onTouchCancel={() => setActiveId(null)}
-                >
-                  {" "}
-                  <div
-                    className={`group relative h-[500px] w-full overflow-hidden rounded-lg border bg-[#111] transition-all duration-500 ${isActive ? "scale-[0.98] border-yellow-400/80 shadow-[0_0_25px_rgba(250,204,21,0.25)]" : "border-yellow-500/40"}`}
-                  >
-                    {" "}
-                    {/* Image */}{" "}
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      sizes="100vw"
-                      className={`rounded-lg object-cover object-top transition-transform duration-700 ease-out ${isActive ? "scale-105" : ""}`}
-                    />{" "}
-                    {/* Dark Gradient */}{" "}
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-black transition-all duration-500 ${isActive ? "via-black/20" : ""}`}
-                    />{" "}
-                    {/* Content */}{" "}
-                    <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black via-black/80 to-transparent px-4 pb-5 pt-24 text-center">
-                      {" "}
-                      <h3 className="text-lg font-semibold text-white">
-                        {" "}
-                        {member.name}{" "}
-                      </h3>{" "}
-                      <p className="mt-1 text-xs font-medium text-yellow-400">
-                        {" "}
-                        {member.role}{" "}
-                      </p>{" "}
-                      {/* Line */}{" "}
-                      <div
-                        className={`mx-auto mt-4 h-0.5 bg-yellow-400 transition-all duration-500 ${isActive ? "w-20" : "w-12"}`}
-                      />{" "}
-                      <p className="mt-4 text-[10px] leading-relaxed text-white">
-                        {" "}
-                        {member.description}{" "}
-                      </p>{" "}
-                    </div>{" "}
-                    {/* Hover / Active Border */}{" "}
-                    <div
-                      className={`pointer-events-none absolute inset-0 rounded-lg border transition-all duration-500 ${isActive ? "border-yellow-400/70" : "border-transparent"}`}
-                    />{" "}
-                  </div>{" "}
-                </div>
-              );
-            })}{" "}
-          </div>{" "}
-        </div>{" "}
-        {/* ========================================================= MOBILE CONTROLS ========================================================= */}{" "}
-        <div className="mt-5 flex items-center justify-center gap-5">
+          Meet the <span className="text-yellow-400">Leadership Team</span>{" "}
+        </h1>{" "}
+        {/* ========================================================= MOBILE CAROUSEL ========================================================= */}{" "}
+        <div className="mt-8 lg:hidden">
           {" "}
-          {/* Previous */}{" "}
-          <button
-            type="button"
-            onClick={prevSlide}
-            aria-label="Previous team member"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-yellow-500/50 text-lg text-white transition-all duration-300 hover:border-yellow-400 hover:text-yellow-400"
-          >
+          {/* Slider */}{" "}
+          <div className="overflow-hidden rounded-lg">
             {" "}
-            ←{" "}
-          </button>{" "}
-          {/* Dots */}{" "}
-          <div className="flex items-center gap-2">
-            {" "}
-            {teamMembers.map((member, index) => (
-              <button
-                key={member.id}
-                type="button"
-                onClick={() => setCurrentSlide(index)}
-                aria-label={`Go to ${member.name}`}
-                className={`h-2 rounded-full transition-all duration-300 ${currentSlide === index ? "w-6 bg-yellow-400" : "w-2 bg-white/30"}`}
-              />
-            ))}{" "}
-          </div>{" "}
-          {/* Next */}{" "}
-          <button
-            type="button"
-            onClick={nextSlide}
-            aria-label="Next team member"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-yellow-500/50 text-lg text-white transition-all duration-300 hover:border-yellow-400 hover:text-yellow-400"
-          >
-            {" "}
-            →{" "}
-          </button>{" "}
-        </div>{" "}
-      </div>{" "}
-      {/* ========================================================= DESKTOP GRID ========================================================= */}{" "}
-      <div className="mt-8 hidden grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid lg:grid-cols-5 lg:gap-4">
-        {" "}
-        {teamMembers.map((member) => {
-          const isActive = activeId === member.id;
-          return (
             <div
-              key={member.id}
-              onMouseEnter={() => setActiveId(member.id)}
-              onMouseLeave={() => setActiveId(null)}
-              className={`group relative h-[500px] overflow-hidden rounded-lg border bg-[#111] transition-all duration-500 ${isActive ? "scale-[0.98] border-yellow-400/80 shadow-[0_0_25px_rgba(250,204,21,0.25)]" : "border-yellow-500/40"}`}
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {" "}
-              {/* Image */}{" "}
-              <Image
-                src={member.image}
-                alt={member.name}
-                fill
-                sizes="20vw"
-                className={`rounded-lg object-cover object-top transition-transform duration-700 ease-out ${isActive ? "scale-105" : "group-hover:scale-105"}`}
-              />{" "}
-              {/* Dark Gradient */}{" "}
+              {teamMembers.map((member) => {
+                const isActive = activeId === member.id;
+                return (
+                  <div
+                    key={member.id}
+                    className="w-full shrink-0 px-0.5"
+                    onTouchStart={() => setActiveId(member.id)}
+                    onTouchEnd={() => setActiveId(null)}
+                    onTouchCancel={() => setActiveId(null)}
+                  >
+                    {" "}
+                    <div
+                      className={`group relative h-[500px] w-full overflow-hidden rounded-lg border bg-[#111] transition-all duration-500 ${isActive ? "scale-[0.98] border-yellow-400/80 shadow-[0_0_25px_rgba(250,204,21,0.25)]" : "border-yellow-500/40"}`}
+                    >
+                      {" "}
+                      {/* Image */}{" "}
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        sizes="100vw"
+                        className={`rounded-lg object-cover object-top transition-transform duration-700 ease-out ${isActive ? "scale-105" : ""}`}
+                      />{" "}
+                      {/* Dark Gradient */}{" "}
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-black transition-all duration-500 ${isActive ? "via-black/20" : ""}`}
+                      />{" "}
+                      {/* Content */}{" "}
+                      <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black via-black/80 to-transparent px-4 pb-5 pt-24 text-center">
+                        {" "}
+                        <h3 className="text-lg font-semibold text-white">
+                          {" "}
+                          {member.name}{" "}
+                        </h3>{" "}
+                        <p className="mt-1 text-xs font-medium text-yellow-400">
+                          {" "}
+                          {member.role}{" "}
+                        </p>{" "}
+                        {/* Line */}{" "}
+                        <div
+                          className={`mx-auto mt-4 h-0.5 bg-yellow-400 transition-all duration-500 ${isActive ? "w-20" : "w-12"}`}
+                        />{" "}
+                        <p className="mt-4 text-[10px] leading-relaxed text-white">
+                          {" "}
+                          {member.description}{" "}
+                        </p>{" "}
+                      </div>{" "}
+                      {/* Hover / Active Border */}{" "}
+                      <div
+                        className={`pointer-events-none absolute inset-0 rounded-lg border transition-all duration-500 ${isActive ? "border-yellow-400/70" : "border-transparent"}`}
+                      />{" "}
+                    </div>{" "}
+                  </div>
+                );
+              })}{" "}
+            </div>{" "}
+          </div>{" "}
+          {/* ========================================================= MOBILE CONTROLS ========================================================= */}{" "}
+          <div className="mt-5 flex items-center justify-center gap-5">
+            {" "}
+            {/* Previous */}{" "}
+            <button
+              type="button"
+              onClick={prevSlide}
+              aria-label="Previous team member"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-yellow-500/50 text-lg text-white transition-all duration-300 hover:border-yellow-400 hover:text-yellow-400"
+            >
+              {" "}
+              ←{" "}
+            </button>{" "}
+            {/* Dots */}{" "}
+            <div className="flex items-center gap-2">
+              {" "}
+              {teamMembers.map((member, index) => (
+                <button
+                  key={member.id}
+                  type="button"
+                  onClick={() => setCurrentSlide(index)}
+                  aria-label={`Go to ${member.name}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${currentSlide === index ? "w-6 bg-yellow-400" : "w-2 bg-white/30"}`}
+                />
+              ))}{" "}
+            </div>{" "}
+            {/* Next */}{" "}
+            <button
+              type="button"
+              onClick={nextSlide}
+              aria-label="Next team member"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-yellow-500/50 text-lg text-white transition-all duration-300 hover:border-yellow-400 hover:text-yellow-400"
+            >
+              {" "}
+              →{" "}
+            </button>{" "}
+          </div>{" "}
+        </div>{" "}
+        {/* ========================================================= DESKTOP GRID ========================================================= */}{" "}
+        <div className="mt-8 hidden grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid lg:grid-cols-5 lg:gap-4">
+          {" "}
+          {teamMembers.map((member) => {
+            const isActive = activeId === member.id;
+            return (
               <div
-                className={`absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-black transition-all duration-500 ${isActive ? "via-black/20" : ""}`}
-              />{" "}
-              {/* Content */}{" "}
-              <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black via-black/70 to-transparent px-4 pb-4 pt-20 text-center">
+                key={member.id}
+                onMouseEnter={() => setActiveId(member.id)}
+                onMouseLeave={() => setActiveId(null)}
+                className={`group relative h-[500px] overflow-hidden rounded-lg border bg-[#111] transition-all duration-500 ${isActive ? "scale-[0.98] border-yellow-400/80 shadow-[0_0_25px_rgba(250,204,21,0.25)]" : "border-yellow-500/40"}`}
+              >
                 {" "}
-                <h3 className="text-lg font-semibold text-white transition-transform duration-500 lg:text-xl">
-                  {" "}
-                  {member.name}{" "}
-                </h3>{" "}
-                <p className="mt-1 text-xs font-medium text-yellow-400">
-                  {" "}
-                  {member.role}{" "}
-                </p>{" "}
-                {/* Line */}{" "}
-                <div
-                  className={`mx-auto mt-4 h-0.5 bg-white transition-all duration-500 ${isActive ? "w-20 bg-yellow-400" : "w-12 group-hover:w-20"}`}
+                {/* Image */}{" "}
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  sizes="20vw"
+                  className={`rounded-lg object-cover object-top transition-transform duration-700 ease-out ${isActive ? "scale-105" : "group-hover:scale-105"}`}
                 />{" "}
-                <p className="mt-4 text-[10px] leading-relaxed text-white lg:text-xs">
+                {/* Dark Gradient */}{" "}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-black transition-all duration-500 ${isActive ? "via-black/20" : ""}`}
+                />{" "}
+                {/* Content */}{" "}
+                <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black via-black/70 to-transparent px-4 pb-4 pt-20 text-center">
                   {" "}
-                  {member.description}{" "}
-                </p>{" "}
-              </div>{" "}
-              {/* Hover Border */}{" "}
-              <div
-                className={`pointer-events-none absolute inset-0 rounded-lg border transition-all duration-500 ${isActive ? "border-yellow-400/70" : "border-transparent group-hover:border-yellow-400/70"}`}
-              />{" "}
-            </div>
-          );
-        })}{" "}
-      </div>{" "}
+                  <h3 className="text-lg font-semibold text-white transition-transform duration-500 lg:text-xl">
+                    {" "}
+                    {member.name}{" "}
+                  </h3>{" "}
+                  <p className="mt-1 text-xs font-medium text-yellow-400">
+                    {" "}
+                    {member.role}{" "}
+                  </p>{" "}
+                  {/* Line */}{" "}
+                  <div
+                    className={`mx-auto mt-4 h-0.5 bg-white transition-all duration-500 ${isActive ? "w-20 bg-yellow-400" : "w-12 group-hover:w-20"}`}
+                  />{" "}
+                  <p className="mt-4 text-[10px] leading-relaxed text-white lg:text-xs">
+                    {" "}
+                    {member.description}{" "}
+                  </p>{" "}
+                </div>{" "}
+                {/* Hover Border */}{" "}
+                <div
+                  className={`pointer-events-none absolute inset-0 rounded-lg border transition-all duration-500 ${isActive ? "border-yellow-400/70" : "border-transparent group-hover:border-yellow-400/70"}`}
+                />{" "}
+              </div>
+            );
+          })}{" "}
+        </div>{" "}
+      </div>
     </div>
   );
 };
