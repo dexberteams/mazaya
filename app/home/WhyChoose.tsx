@@ -1,12 +1,17 @@
+"use client";
+
 import { MoveRight } from "lucide-react";
 import { FaCheckCircle } from "react-icons/fa";
 import SectionLabel from "../ui/SectionLabel";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const WhyChoose = () => {
+  const pathname = usePathname();
+  const isLandingPage = pathname === "/";
   return (
     <div className="p-4 lg:p-8 my-10 lg:my-20 font-manrope">
-      <SectionLabel text="advantages" />
+      {isLandingPage && <SectionLabel text="advantages" />}
       <h3 className="font-bold text-2xl my-2 lg:my-4 lg:text-4xl text-white">
         Why <span className="text-yellow-400">Choose Us?</span>
       </h3>
