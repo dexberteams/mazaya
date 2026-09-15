@@ -30,9 +30,11 @@ const Hero = () => {
             </p>
 
             <div className="flex gap-4 p-4">
-              <button className="rounded-lg bg-[#FFBB00] px-3 py-1.5 text-sm text-black transition-colors hover:bg-yellow-500 lg:mt-4 lg:px-12 lg:py-3">
-                Get Quote
-              </button>
+              <Link href="/getQuote">
+                <button className="rounded-lg bg-[#FFBB00] px-3 py-1.5 text-sm text-black transition-colors hover:bg-yellow-500 lg:mt-4 lg:px-12 lg:py-3">
+                  Get Quote
+                </button>
+              </Link>
             </div>
           </div>
 
