@@ -1,6 +1,7 @@
-import { CirclePlay, MapPinSearch } from "lucide-react";
+import { CirclePlay } from "lucide-react";
 import Image from "next/image";
 import TabButtons from "../ui/TabButtons";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -158,16 +159,20 @@ const Hero = () => {
         </div>
         {/* bottom buttons for desktop*/}
         <div className="hidden lg:flex gap-4 w-1/3 justify-center items-center mx-auto p-4 border border-yellow-400/45 rounded-full mt-8 bg-linear-to-b from-yellow-800/40 via-yellow-500/10 to-transparent transition-opacity duration-300">
-          <button className=" rounded-full bg-transparent hover:bg-[#FFBB00] px-4 py-2 text-sm text-white transition-colors  lg:px-6 lg:py-3">
-            Warehouse
-          </button>
+          <Link href="/warehouse">
+            <button className=" rounded-full bg-transparent hover:bg-[#FFBB00] px-4 py-2 text-sm text-white transition-colors  lg:px-6 lg:py-3">
+              Warehouse
+            </button>
+          </Link>
           <button className=" rounded-full bg-white  px-4 py-2 text-sm text-black transition-colors hover:bg-yellow-800  lg:px-6 lg:py-3 flex items-center gap-2 hover:text-white">
             <CirclePlay className="text-[#FFBB00]" />
             Watch our Stories
           </button>
-          <button className=" rounded-full bg-transparent hover:bg-[#FFBB00] text-white  px-4 py-2 text-sm transition-colors lg:px-6 lg:py-3">
-            Our Fleet
-          </button>
+          <Link href="/fleet">
+            <button className=" rounded-full bg-transparent hover:bg-[#FFBB00] text-white  px-4 py-2 text-sm transition-colors lg:px-6 lg:py-3">
+              Our Fleet
+            </button>
+          </Link>
         </div>
         {/* bottom button for mobile */}
         <div className="flex flex-col lg:hidden mt-4">

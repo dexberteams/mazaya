@@ -1,8 +1,18 @@
+import AdvantagesTop from "./AdvantagesTop";
+import Faq from "./Faq";
+import LatestNews from "./LatestNews";
+import ProcessTimeline from "./ProcessTimeline";
+import Quote from "./Quote";
+
 const Advantages = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2 border-2 border-red-600">
-      <h1>Advantages</h1>
-    </div>
+    <section className="bg-[#0A0700] font-manrope">
+      <AdvantagesTop></AdvantagesTop>
+      <LatestNews></LatestNews>
+      <ProcessTimeline></ProcessTimeline>
+      <Faq></Faq>
+      <Quote></Quote>
+    </section>
   );
 };
 

@@ -28,7 +28,6 @@ body {
 }
 
 @keyframes cardPulse {
-
   0%,
   100% {
     transform: translateY(0);
@@ -40,7 +39,6 @@ body {
 }
 
 @keyframes imageZoom {
-
   0%,
   100% {
     transform: scale(1);
@@ -52,7 +50,6 @@ body {
 }
 
 @keyframes overlayPulse {
-
   0%,
   100% {
     opacity: 0.8;
@@ -64,7 +61,6 @@ body {
 }
 
 @keyframes borderPulse {
-
   0%,
   100% {
     inset: 12px;
@@ -78,7 +74,6 @@ body {
 }
 
 @keyframes titleUp {
-
   0%,
   100% {
     transform: translateY(4px);
@@ -90,7 +85,6 @@ body {
 }
 
 @keyframes lineExpand {
-
   0%,
   100% {
     width: 16px;
@@ -102,7 +96,6 @@ body {
 }
 
 @keyframes descriptionFade {
-
   0%,
   100% {
     opacity: 0.8;
@@ -114,7 +107,6 @@ body {
 }
 
 @keyframes bottomLine {
-
   0%,
   100% {
     width: 0;
@@ -126,7 +118,6 @@ body {
 }
 
 @keyframes floatTop {
-
   0%,
   100% {
     transform: translateY(0);
@@ -138,7 +129,6 @@ body {
 }
 
 @keyframes floatBottom {
-
   0%,
   100% {
     transform: translateY(0);
@@ -190,14 +180,13 @@ body {
 }
 
 @keyframes planet-atmosphere-pulse {
-
   0%,
   100% {
     opacity: 0.55;
   }
 
   50% {
-    opacity: 0.80;
+    opacity: 0.8;
   }
 }
 
@@ -231,7 +220,7 @@ body {
 
 .earth-layer-day {
   animation: planet-rotate-day 80s linear infinite;
-  background-image: url('/home/earth.png');
+  background-image: url("/home/earth.png");
   background-size: 200% auto;
   position: absolute;
   inset: 0;
@@ -241,11 +230,13 @@ body {
 
 .earth-layer-atmosphere {
   animation: planet-atmosphere-pulse 6s ease-in-out infinite;
-  background: radial-gradient(circle at 65% 45%,
-      rgba(255, 210, 60, 0.30) 0%,
-      rgba(230, 160, 20, 0.18) 35%,
-      rgba(180, 100, 10, 0.10) 60%,
-      transparent 80%);
+  background: radial-gradient(
+    circle at 65% 45%,
+    rgba(255, 210, 60, 0.3) 0%,
+    rgba(230, 160, 20, 0.18) 35%,
+    rgba(180, 100, 10, 0.1) 60%,
+    transparent 80%
+  );
   position: absolute;
   inset: 0;
   border-radius: 50%;
@@ -254,14 +245,16 @@ body {
 
 .earth-layer-clouds {
   animation: planet-clouds-drift 60s ease-in-out infinite;
-  background: radial-gradient(ellipse at 40% 50%,
-      rgba(255, 230, 120, 0.22) 0%,
-      rgba(255, 200, 60, 0.10) 50%,
-      transparent 80%);
+  background: radial-gradient(
+    ellipse at 40% 50%,
+    rgba(255, 230, 120, 0.22) 0%,
+    rgba(255, 200, 60, 0.1) 50%,
+    transparent 80%
+  );
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  opacity: 0.60;
+  opacity: 0.6;
   z-index: 3;
 }
 
@@ -269,10 +262,78 @@ body {
   background: transparent;
   border-radius: 50%;
   box-shadow:
-    -8px 0 18px 4px rgba(30, 15, 0, 0.70) inset,
+    -8px 0 18px 4px rgba(30, 15, 0, 0.7) inset,
     8px 0 18px 4px rgba(245, 185, 30, 0.18) inset,
-    0 -6px 12px 2px rgba(20, 10, 0, 0.40) inset;
+    0 -6px 12px 2px rgba(20, 10, 0, 0.4) inset;
   position: absolute;
   inset: 0;
   z-index: 4;
+}
+
+@keyframes zoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* =====================================================
+   FLEET ACTUAL MAP
+===================================================== */
+
+.fleet-map .leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #171000;
+  font-family: inherit;
+}
+
+/* Actual map tiles -> dark golden appearance */
+.fleet-map .leaflet-tile-pane {
+  filter: sepia(0.75) saturate(1.35) brightness(0.55) contrast(1.15);
+}
+
+/* Hide normal Leaflet attribution */
+.fleet-map .leaflet-control-attribution {
+  display: none;
+}
+
+/* Hide zoom buttons */
+.fleet-map .leaflet-control-zoom {
+  display: none;
+}
+
+/* Plane */
+.fleet-map .custom-plane {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.fleet-map .plane-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 6px rgba(255, 187, 0, 0.85));
+}
+
+/* Map markers */
+.fleet-map .leaflet-marker-icon {
+  z-index: 600 !important;
+}
+
+/* Remove leaflet popup shadows if later used */
+.fleet-map .leaflet-popup-content-wrapper,
+.fleet-map .leaflet-popup-tip {
+  background: #171000;
+  color: white;
+}
+
+/* Mobile map */
+@media (max-width: 640px) {
+  .fleet-map .leaflet-container {
+    min-height: 260px;
+  }
 }

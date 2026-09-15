@@ -1,7 +1,7 @@
 type SectionIntroProps = {
   title: string;
   highlight?: string;
-  description: string;
+  description?: string;
   className?: string;
 };
 

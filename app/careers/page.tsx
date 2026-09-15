@@ -1,7 +1,13 @@
+import ApplyOnline from "./ApplyOnline";
+import CareerTop from "./CareerTop";
+import WhyWork from "./WhyWork";
+
 const Careers = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2 border-2 border-red-600">
-      <h1>Careers</h1>
+    <div className="bg-[#0A0700] font-manrope">
+      <CareerTop></CareerTop>
+      <WhyWork></WhyWork>
+      <ApplyOnline></ApplyOnline>
     </div>
   );
 };

@@ -1,4 +1,5 @@
-import { Factory, Globe, SquareCheckBig, Van } from "lucide-react";
+import { Factory, Globe, SquareCheckBig, TruckElectric } from "lucide-react";
+
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import GlowIconCircle from "../ui/GlowIconCircle";
@@ -111,7 +112,7 @@ const Client = () => {
       >
         {/* Card 1 */}
         <div className="flex items-center justify-center gap-4 border-r border-white/10 p-2 lg:p-4">
-          <GlowIconCircle icon={SquareCheckBig} />
+          <GlowIconCircle icon={SquareCheckBig} size={34} mobileSize={24} />
 
           <p className="flex flex-col items-start">
             <span className="text-yellow-400">50%+</span>
@@ -123,7 +124,7 @@ const Client = () => {
 
         {/* Card 2 */}
         <div className="flex items-center justify-center gap-4 p-2 lg:border-r lg:border-white/10 lg:p-4">
-          <GlowIconCircle icon={Factory} />
+          <GlowIconCircle icon={Factory} size={34} mobileSize={24} />
 
           <p className="flex flex-col items-start">
             <span className="text-yellow-400">12+</span>
@@ -135,19 +136,19 @@ const Client = () => {
 
         {/* Card 3 */}
         <div className="flex items-center justify-center gap-4 border-r border-white/10 p-2 lg:p-4">
-          <GlowIconCircle icon={Van} />
+          <GlowIconCircle icon={TruckElectric} size={34} mobileSize={24} />
 
           <p className="flex flex-col items-start">
             <span className="text-yellow-400">1 M+</span>
-            <span className="text-xs text-gray-400 lg:text-sm">
-              Delivered Completed
+            <span className="text-[11px] text-gray-400 lg:text-sm">
+              Delivered Done
             </span>
           </p>
         </div>
 
         {/* Card 4 */}
         <div className="flex items-center justify-center gap-4 p-2 lg:p-4">
-          <GlowIconCircle icon={Globe} />
+          <GlowIconCircle icon={Globe} size={34} mobileSize={24} />
 
           <p className="flex flex-col items-start">
             <span className="text-yellow-400">3</span>

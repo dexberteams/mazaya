@@ -15,7 +15,7 @@ const PreviousProjects = () => {
         <div className="relative  w-full rounded-lg overflow-hidden">
           <div className="relative w-full h-44">
             <Image
-              src="/projects/project.png"
+              src="/projects/logistic.jpeg"
               alt="Project 1"
               fill
               sizes="(max-width: 1024px) 100vw, 25vw"
@@ -38,7 +38,7 @@ const PreviousProjects = () => {
         <div className="relative  w-full rounded-lg overflow-hidden">
           <div className="relative w-full h-44">
             <Image
-              src="/projects/project2.png"
+              src="/projects/retail.jpeg"
               alt="Project 2"
               fill
               sizes="(max-width: 1024px) 100vw, 25vw"
@@ -61,7 +61,7 @@ const PreviousProjects = () => {
         <div className="relative  w-full rounded-lg overflow-hidden">
           <div className="relative w-full h-44">
             <Image
-              src="/projects/project3.png"
+              src="/projects/cold-chain.webp"
               alt="Project 3"
               fill
               sizes="(max-width: 1024px) 100vw, 25vw"
@@ -84,7 +84,7 @@ const PreviousProjects = () => {
         <div className="relative  w-full rounded-lg overflow-hidden">
           <div className="relative w-full h-44">
             <Image
-              src="/projects/project4.png"
+              src="/projects/healthcare.webp"
               alt="Project 4"
               fill
               sizes="(max-width: 1024px) 100vw, 25vw"
