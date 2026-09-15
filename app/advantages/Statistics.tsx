@@ -24,12 +24,12 @@ const Statistics = () => {
             scale: 1.02,
           }}
         >
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-400">
+          <div className="flex w-10 h-10 lg:w-12 lg:h-12 items-center justify-center rounded-full bg-amber-400">
             <Image
               src="/advantages/icons/calendar.svg"
               alt="Years of Experience"
-              width={30}
-              height={30}
+              width={28}
+              height={28}
             />
           </div>
 
@@ -55,12 +55,12 @@ const Statistics = () => {
             scale: 1.02,
           }}
         >
-          <div className="flex items-center justify-center w-12 h-12 bg-amber-400 rounded-full ">
+          <div className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-amber-400 rounded-full ">
             <Image
               src="/advantages/icons/streamline-plump.svg"
               alt="Years of Experience"
-              width={30}
-              height={30}
+              width={28}
+              height={28}
             />
           </div>
           <h2 className="text-white text-[14px] lg:text-xl font-bold">500+</h2>
@@ -84,12 +84,12 @@ const Statistics = () => {
             scale: 1.02,
           }}
         >
-          <div className="flex items-center justify-center w-12 h-12 bg-amber-400 rounded-full ">
+          <div className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-amber-400 rounded-full ">
             <Image
               src="/advantages/icons/shipment-delivery.svg"
               alt="Shipments Delivered"
-              width={30}
-              height={30}
+              width={28}
+              height={28}
             />
           </div>
           <h2 className="text-white text-[14px] lg:text-xl font-bold">1 M+</h2>
@@ -113,12 +113,12 @@ const Statistics = () => {
             scale: 1.02,
           }}
         >
-          <div className="flex items-center justify-center w-12 h-12 bg-amber-400 rounded-full ">
+          <div className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-amber-400 rounded-full ">
             <Image
               src="/advantages/icons/map.svg"
               alt="Years of Experience"
-              width={30}
-              height={30}
+              width={28}
+              height={28}
             />
           </div>
           <h2 className="text-white text-[14px] lg:text-xl font-bold">3</h2>
@@ -142,12 +142,12 @@ const Statistics = () => {
             scale: 1.02,
           }}
         >
-          <div className="flex items-center justify-center w-12 h-12 bg-amber-400 rounded-full ">
+          <div className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-amber-400 rounded-full ">
             <Image
               src="/advantages/icons/van.svg"
               alt="Years of Experience"
-              width={30}
-              height={30}
+              width={28}
+              height={28}
             />
           </div>
           <h2 className="text-white text-[14px] lg:text-xl font-bold">250+</h2>
@@ -171,12 +171,12 @@ const Statistics = () => {
             scale: 1.02,
           }}
         >
-          <div className="flex items-center justify-center w-12 h-12 mt-4 bg-amber-400 rounded-full ">
+          <div className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 mt-4 bg-amber-400 rounded-full ">
             <Image
-              src="/advantages/icons/calendar.svg"
+              src="/advantages/icons/warehouse.svg"
               alt="Years of Experience"
-              width={30}
-              height={30}
+              width={28}
+              height={28}
             />
           </div>
           <h2 className="text-white text-[14px] lg:text-xl font-bold">1M+</h2>

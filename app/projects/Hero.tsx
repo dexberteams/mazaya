@@ -32,7 +32,7 @@ const Hero = () => {
         >
           <SectionLabel
             text="our projects"
-            className="bg-transparent"
+            className="bg-transparent lg:ml-4"
           ></SectionLabel>
           <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
             Delivering Success Through{" "}

@@ -11,7 +11,7 @@ const Quote = () => {
       {/* Content */}
       <div className="relative z-10 flex items-center gap-3 lg:gap-4">
         {/* Icon Glass Circle */}
-        <div className=" flex h-12 w-12 shrink-0 items-center justify-center rounded-sm border border-white/10 bg-white/6 backdrop-blur-md shadow-inner ">
+        <div className=" flex h-12 w-12 shrink-0 items-center justify-center rounded-sm  ">
           <Image
             src="/advantages/icons/smile.svg"
             alt="smile"
@@ -30,8 +30,8 @@ const Quote = () => {
         </p>
       </div>
       {/* Button */}
-      <div className="relative z-10 flex items-center lg:ml-6">
-        <button className=" w-full lg:w-auto rounded-sm border border-amber-300/20 bg-amber-500 px-6 py-2.5 font-semibold text-black shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-300 hover:bg-amber-400 hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:-translate-y-0.5 ">
+      <div className="relative z-10 flex justify-end lg:ml-6">
+        <button className=" lg:w-auto rounded-sm border border-amber-300/20 bg-amber-500 px-3 py-1 lg:px-6 lg:py-1.5 font-semibold text-black shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-300 hover:bg-amber-400 hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:-translate-y-0.5 ">
           Get Quote
         </button>
       </div>

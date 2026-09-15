@@ -16,11 +16,11 @@ const SectionLabel = ({ text, className }: SectionLabelProps) => {
       {/* Lines */}
       <div className="relative z-10 flex flex-col gap-1">
         <span className="h-1 w-4 bg-[#f5c400] transition-all duration-300 group-hover:w-6" />
-        <span className="h-0.75 w-4 bg-[#f5c400] transition-all duration-300 group-hover:w-6" />
+        <span className="h-0.75 w-4 bg-white transition-all duration-300 group-hover:w-6" />
       </div>
 
       {/* Text */}
-      <span className="relative z-10 text-sm font-medium uppercase text-[#d9d9d9] lg:text-xl">
+      <span className="relative z-10 text-xs font-medium uppercase text-[#d9d9d9] lg:text-xl">
         {text}
       </span>
     </div>

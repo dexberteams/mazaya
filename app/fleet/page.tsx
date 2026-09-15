@@ -1,7 +1,21 @@
+import FleetCoverage from "./FleetCoverage";
+import FleetFeatures from "./FleetFeatures";
+import FleetTop from "./FleetTop";
+import FleetTypes from "./FleetTypes";
+import OurFleetCoverage from "./OurFlletCoverage";
+import Quote from "./Quote";
+import WhyChooseFleet from "./WhyChooseFleet";
+
 const Fleet = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2 border-2 border-red-600">
-      <h1>Fleet</h1>
+    <div className="bg-[#0A0700] font-manrope">
+      <FleetTop></FleetTop>
+      <FleetFeatures></FleetFeatures>
+      <FleetTypes></FleetTypes>
+      <FleetCoverage></FleetCoverage>
+      <OurFleetCoverage></OurFleetCoverage>
+      <WhyChooseFleet></WhyChooseFleet>
+      <Quote></Quote>
     </div>
   );
 };
