@@ -29,7 +29,7 @@ const FleetOverview = () => {
               src="/fleet/fleet-bus.png"
               alt="fleet"
               fill
-              sizes="100vw"
+              sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw"
               className="animate-[zoom_4s_ease-in-out_infinite] object-cover"
             />
           </div>
@@ -53,8 +53,7 @@ const FleetOverview = () => {
               src="/fleet/medium-truck.jpg"
               alt="fleet"
               fill
-              sizes="100vw"
-              quality={100}
+              sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw"
               className="animate-[zoom_4s_ease-in-out_infinite] object-cover"
             />
           </div>
@@ -78,7 +77,7 @@ const FleetOverview = () => {
               src="/fleet/lighter-truck.jpg"
               alt="fleet"
               fill
-              sizes="100vw"
+              sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw"
               className="animate-[zoom_4s_ease-in-out_infinite] object-cover"
             />
           </div>
@@ -102,7 +101,7 @@ const FleetOverview = () => {
               src="/fleet/pickup.avif"
               alt="fleet"
               fill
-              sizes="100vw"
+              sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw"
               className="animate-[zoom_4s_ease-in-out_infinite] object-cover"
             />
           </div>

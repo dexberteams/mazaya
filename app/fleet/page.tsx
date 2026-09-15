@@ -2,7 +2,6 @@ import FleetCoverage from "./FleetCoverage";
 import FleetFeatures from "./FleetFeatures";
 import FleetTop from "./FleetTop";
 import FleetTypes from "./FleetTypes";
-import OurFleetCoverage from "./OurFlletCoverage";
 import Quote from "./Quote";
 import WhyChooseFleet from "./WhyChooseFleet";
 
@@ -13,7 +12,6 @@ const Fleet = () => {
       <FleetFeatures></FleetFeatures>
       <FleetTypes></FleetTypes>
       <FleetCoverage></FleetCoverage>
-      <OurFleetCoverage></OurFleetCoverage>
       <WhyChooseFleet></WhyChooseFleet>
       <Quote></Quote>
     </div>
