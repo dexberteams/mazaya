@@ -61,9 +61,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {/* <div className="absolute inset-0 bg-black/60" /> */}
         {/* </div> */}
 
-        <Navbar></Navbar>
+        {/* <Navbar></Navbar> */}
         <main className="relative z-0">{children}</main>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </body>
     </html>
   );
