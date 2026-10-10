@@ -7,6 +7,7 @@ import { PiWarehouseLight } from "react-icons/pi";
 import { CiGlobe } from "react-icons/ci";
 import { ChartNoAxesCombined } from "lucide-react";
 import { RxPeople } from "react-icons/rx";
+import Link from "next/link";
 
 const careerImages = [
   {
@@ -175,13 +176,13 @@ const MazayaLogistics = () => {
           </div>
 
           {/* CTA */}
-          <div className="flex gap-4 lg:gap-10 mt-4 lg:mt-10">
-            <button className="mt-6 w-fit rounded-lg bg-[#FFBB00] px-3 py-1.5 lg:px-6 lg:py-3 text-sm font-semibold text-black ">
+          <div className="mt-4 flex gap-4 lg:mt-10 lg:gap-10">
+            <Link
+              href="/careers#open-positions"
+              className="mt-6 inline-flex w-fit rounded-lg bg-[#FFBB00] px-3 py-1.5 text-sm font-semibold text-black transition-colors hover:bg-yellow-400 lg:px-6 lg:py-3"
+            >
               View All Jobs
-            </button>
-            <button className="mt-6 w-fit rounded-lg bg-gray-900 border border-yellow-400 px-3 py-1.5 lg:px-6 lg:py-3 text-sm font-semibold text-white ">
-              Apply Now
-            </button>
+            </Link>
           </div>
         </div>
       </div>

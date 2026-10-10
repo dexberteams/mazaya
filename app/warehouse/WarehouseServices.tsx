@@ -1,4 +1,5 @@
 import { MoveRight } from "lucide-react";
+import Link from "next/link";
 
 const WarehouseServices = () => {
   return (
@@ -13,9 +14,12 @@ const WarehouseServices = () => {
           From short-term storage to complex distribution operations, we provide
           scalable warehousing solutions tailored to your business needs.
         </p>
-        <button className="mt-3 lg:mt-6 lg:w-auto rounded-sm border border-amber-300/20 bg-yellow-400 px-3 py-1 lg:px-6 lg:py-2 font-semibold text-black shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-300 hover:bg-amber-400 hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:-translate-y-0.5 flex justify-center items-center gap-1">
+        <Link
+          href="/getQuote"
+          className="mt-3 lg:mt-6 lg:w-1/2 rounded-sm border border-amber-300/20 bg-yellow-400 px-3 py-1 lg:px-6 lg:py-2 font-semibold text-black shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-300 hover:bg-amber-400 hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:-translate-y-0.5 flex justify-center items-center gap-1"
+        >
           Get Quote <MoveRight></MoveRight>
-        </button>
+        </Link>
       </div>
       {/* card-box */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 ">

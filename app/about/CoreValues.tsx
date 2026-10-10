@@ -9,7 +9,8 @@ const coreValues: ValueItem[] = [
   {
     id: 1,
     title: "Integrity",
-    description: "We operate with honesty, transparency and strong ethical standards.",
+    description:
+      "We operate with honesty, transparency and strong ethical standards.",
     icon: (
       <svg
         width="24"
@@ -57,7 +58,8 @@ const coreValues: ValueItem[] = [
   {
     id: 3,
     title: "Excellence",
-    description: "We are committed to delivering the highest quality in every action.",
+    description:
+      "We are committed to delivering the highest quality in every action.",
     icon: (
       <svg
         width="24"
@@ -81,7 +83,8 @@ const coreValues: ValueItem[] = [
   {
     id: 4,
     title: "Innovation",
-    description: "We embrace new ideas and technology to create smarter solutions.",
+    description:
+      "We embrace new ideas and technology to create smarter solutions.",
     icon: (
       <svg
         width="24"
@@ -115,7 +118,8 @@ const coreValues: ValueItem[] = [
   {
     id: 5,
     title: "Teamwork",
-    description: "We believe in collaboration and respect to achieve shared goals.",
+    description:
+      "We believe in collaboration and respect to achieve shared goals.",
     icon: (
       <svg
         width="24"
@@ -135,7 +139,8 @@ const coreValues: ValueItem[] = [
   {
     id: 6,
     title: "Safety",
-    description: "We prioritize health, safety and security in all our operations.",
+    description:
+      "We prioritize health, safety and security in all our operations.",
     icon: (
       <svg
         width="24"
@@ -165,7 +170,7 @@ export default function CoreValues() {
             <h2 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
               Core Values
             </h2>
-            <div className="w-14 h-[3px] bg-[#FFBB00] mt-3 rounded-full mb-8 sm:mb-12" />
+            <div className="w-14 h-0.75 bg-[#FFBB00] mt-3 rounded-full mb-8 sm:mb-12" />
           </div>
 
           {/* 6 Value Cards in Row */}
@@ -186,7 +191,7 @@ export default function CoreValues() {
                 </h3>
 
                 {/* Description */}
-                <p className="mt-2 font-inter text-xs leading-relaxed text-[#948b7d] max-w-[190px]">
+                <p className="mt-2 font-inter text-xs leading-relaxed text-[#948b7d] max-w-47.5">
                   {value.description}
                 </p>
               </div>

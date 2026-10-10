@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { CircleCheck } from "lucide-react";
+import Link from "next/link";
 
 const capabilities = [
   "Modern and diverse fleet for every need",
@@ -44,10 +45,13 @@ const WhyChooseFleet = () => {
           </div>
 
           {/* Button */}
-          <button className=" w-full lg:w-2/3 mt-5 lg:mt-14 flex justify-center items-center gap-2 rounded-md bg-white px-4 py-2 text-[14px] font-medium text-black transition-all duration-300 hover:bg-[#FFBB00]">
+          <Link
+            href="/about"
+            className=" w-full lg:w-2/3 mt-5 lg:mt-14 flex justify-center items-center gap-2 rounded-md bg-white px-4 py-2 text-[14px] font-medium text-black transition-all duration-300 hover:bg-[#FFBB00]"
+          >
             Learn More About Us
             <span className="text-sm">→</span>
-          </button>
+          </Link>
         </div>
 
         {/* Right Content */}

@@ -100,7 +100,7 @@ export default function CompanyOverview() {
                   <h2 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
                     Company Overview
                   </h2>
-                  <div className="w-14 h-[3px] bg-[#FFBB00] mt-3 rounded-full" />
+                  <div className="w-14 h-0.75 bg-[#FFBB00] mt-3 rounded-full" />
                 </div>
 
                 {/* Paragraphs */}
@@ -114,8 +114,8 @@ export default function CompanyOverview() {
                   </p>
                   <p>
                     With a strong network, modern infrastructure, and a team of
-                    dedicated professionals, we deliver end-to-end logistics solutions
-                    tailored to meet the unique needs of our clients.
+                    dedicated professionals, we deliver end-to-end logistics
+                    solutions tailored to meet the unique needs of our clients.
                   </p>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function CompanyOverview() {
 
             {/* Right Image Column */}
             <div className="lg:col-span-6">
-              <div className="relative w-full h-full min-h-[300px] sm:min-h-[380px] lg:min-h-full rounded-xl overflow-hidden border border-white/5 shadow-lg">
+              <div className="relative w-full h-full min-h-75 sm:min-h-95 lg:min-h-full rounded-xl overflow-hidden border border-white/5 shadow-lg">
                 <Image
                   src="/about/CompanyOverview.jpg"
                   alt="Mazaya Logistics Overview"

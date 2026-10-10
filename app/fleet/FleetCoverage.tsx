@@ -151,7 +151,7 @@ export default function FleetCoverage() {
             GCC, ensuring fast and reliable delivery to every major city and
             beyond.
           </p>
-          <button className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#e09520] text-black font-semibold px-5 py-2.5 rounded-sm text-sm transition lg:mt-8">
+          {/* <button className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#e09520] text-black font-semibold px-5 py-2.5 rounded-sm text-sm transition lg:mt-8">
             View Coverage Map
             <svg
               width="14"
@@ -163,12 +163,12 @@ export default function FleetCoverage() {
             >
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </button>
+          </button> */}
         </div>
 
         {/* Map */}
         <div>
-          <div className="rounded-lg overflow-hidden border border-[#F5A623]/25 shadow-[0_0_40px_rgba(245,166,35,0.12)] lg:w-[357px] h-[307px]">
+          <div className="rounded-lg overflow-hidden border border-[#F5A623]/25 shadow-[0_0_40px_rgba(245,166,35,0.12)] lg:w-89.25 h-76.75">
             <Image
               src="/fleet/map.png"
               alt="map"

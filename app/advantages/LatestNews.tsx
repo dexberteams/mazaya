@@ -1,4 +1,4 @@
-import { MoveRight } from "lucide-react";
+// import { MoveRight } from "lucide-react";
 import Image from "next/image";
 
 const LatestNews = () => {
@@ -31,9 +31,9 @@ const LatestNews = () => {
               Explore the latest trends in warehousing and how technology is
               transforming logistics operations.
             </p>
-            <p className="text-blue-400 text-sm flex gap-1 items-center">
+            {/* <p className="text-blue-400 text-sm flex gap-1 items-center">
               Read More <MoveRight />
-            </p>
+            </p> */}
           </div>
         </div>
         {/* card 2 */}
@@ -58,9 +58,9 @@ const LatestNews = () => {
               Last-mile delivery is the final step to happy customers. Learn how
               we optimize it for better results.
             </p>
-            <p className="text-blue-400 text-sm flex gap-1 items-center">
+            {/* <p className="text-blue-400 text-sm flex gap-1 items-center">
               Read More <MoveRight />
-            </p>
+            </p> */}
           </div>
         </div>
         {/* card 3 */}
@@ -85,9 +85,9 @@ const LatestNews = () => {
               Digital tools and real-time visibility are key to building
               resilient and efficient supply chains.
             </p>
-            <p className="text-blue-400 text-sm flex gap-1 items-center">
+            {/* <p className="text-blue-400 text-sm flex gap-1 items-center">
               Read More <MoveRight />
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

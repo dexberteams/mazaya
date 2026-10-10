@@ -131,13 +131,13 @@ const FleetTypes = () => {
                 </div>
 
                 {/* Learn More */}
-                <p
+                {/* <p
                   className="my-1 flex items-center gap-2 text-blue-500 transition-all duration-300
                   group-hover:gap-3 lg:my-2"
                 >
                   Learn More
                   <ArrowRight size={18} />
-                </p>
+                </p> */}
               </div>
             </div>
           );

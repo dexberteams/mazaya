@@ -5,6 +5,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import SectionLabel from "../ui/SectionLabel";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const WhyChoose = () => {
   const pathname = usePathname();
@@ -67,11 +68,12 @@ const WhyChoose = () => {
               Regular Performance Reports
             </p>
           </div>
-
-          <button className="bg-yellow-500 text-black p-2 text-sm lg:text-lg lg:p-4 rounded-lg font-medium flex gap-1 mt-3 lg:mt-9">
-            Learn More About Us
-            <MoveRight />
-          </button>
+          <Link href="/about">
+            <button className="bg-yellow-500 text-black p-2 text-sm lg:text-[16px] lg:p-4 rounded-lg font-medium flex gap-1 mt-3 lg:mt-9">
+              Learn More About Us
+              <MoveRight />
+            </button>
+          </Link>
         </div>
         <div className=" h-75 lg:h-142.5 grid grid-cols-2 gap-2 lg:gap-4 w-full lg:w-2/3">
           {/* div-2 */}
@@ -82,11 +84,7 @@ const WhyChoose = () => {
               fill
               loading="eager"
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="
-      object-cover
-      transition-transform duration-700 ease-out
-      lg:group-hover:scale-110
-    "
+              className="object-cover transition-transform duration-700 ease-out lg:group-hover:scale-110"
             />
 
             {/* Top Stats Card */}

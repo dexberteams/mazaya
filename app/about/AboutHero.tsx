@@ -167,8 +167,14 @@ const navItems: NavItem[] = [
             fill="currentColor"
           />
           <path d="M4.66699 8H16.0003V9.06667H4.66699V8Z" fill="currentColor" />
-          <path d="M4.66699 10.6667H12.0003V11.7334H4.66699V10.6667Z" fill="currentColor" />
-          <path d="M4.66699 15.3333H11.3337V16.4H4.66699V15.3333Z" fill="currentColor" />
+          <path
+            d="M4.66699 10.6667H12.0003V11.7334H4.66699V10.6667Z"
+            fill="currentColor"
+          />
+          <path
+            d="M4.66699 15.3333H11.3337V16.4H4.66699V15.3333Z"
+            fill="currentColor"
+          />
           <path
             d="M18.3069 11.4866C17.4538 11.4799 16.6184 11.7306 15.9101 12.2061C15.2017 12.6816 14.6533 13.3597 14.3365 14.1518C14.0196 14.9439 13.9491 15.8132 14.1341 16.646C14.3191 17.4789 14.7511 18.2365 15.3735 18.82L14.0802 20.4L14.6802 22.8066L17.1202 19.8333C17.8926 20.0617 18.7145 20.0617 19.4869 19.8333L21.9269 22.8066L22.5269 20.4L21.2335 18.82C21.856 18.2365 22.2879 17.4789 22.473 16.646C22.658 15.8132 22.5875 14.9439 22.2706 14.1518C21.9538 13.3597 21.4053 12.6816 20.697 12.2061C19.9886 11.7306 19.1533 11.4799 18.3002 11.4866H18.3069ZM18.3069 18.6066C17.7404 18.5988 17.1888 18.4236 16.7216 18.1031C16.2544 17.7826 15.8923 17.3311 15.6809 16.8055C15.4696 16.2798 15.4184 15.7033 15.5337 15.1486C15.6491 14.5939 15.9258 14.0857 16.3292 13.6878C16.7326 13.29 17.2446 13.0203 17.8009 12.9126C18.3571 12.8049 18.9328 12.8641 19.4555 13.0827C19.9782 13.3013 20.4246 13.6696 20.7386 14.1412C21.0526 14.6128 21.2202 15.1667 21.2202 15.7333C21.2132 16.5001 20.9027 17.2329 20.3567 17.7714C19.8107 18.3099 19.0737 18.6102 18.3069 18.6066Z"
             fill="currentColor"
@@ -198,7 +204,10 @@ export default function AboutHero() {
   };
 
   return (
-    <section id="hero" className="relative w-full min-h-[580px] sm:min-h-[640px] lg:min-h-[760px] flex flex-col justify-between overflow-hidden">
+    <section
+      id="hero"
+      className="relative w-full min-h-[580px] sm:min-h-[640px] lg:min-h-[760px] flex flex-col justify-between overflow-hidden"
+    >
       {/* ── Background Image ── */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -211,22 +220,22 @@ export default function AboutHero() {
         />
 
         {/* Left Dark Vignette / Gradient Overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 via-45% md:via-black/70 md:via-55% to-transparent z-10" />
+        <div className="absolute inset-0 bg-linear-to-r from-black via-black/85 via-45% md:via-black/70 md:via-55% to-transparent z-10" />
 
         {/* Top Vignette */}
-        <div className="absolute top-0 inset-x-0 h-36 bg-gradient-to-b from-[#070502]/90 via-[#070502]/40 to-transparent z-10" />
+        <div className="absolute top-0 inset-x-0 h-36 bg-linear-to-b from-[#070502]/90 via-[#070502]/40 to-transparent z-10" />
 
         {/* Bottom Fade */}
-        <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#070502] via-[#070502]/70 to-transparent z-10" />
+        <div className="absolute bottom-0 inset-x-0 h-40 bg-linear-to-t from-[#070502] via-[#070502]/70 to-transparent z-10" />
       </div>
 
       {/* ── Main Hero Content ── */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 lg:pt-36 flex-1 flex flex-col justify-center">
         {/* Badge: = ABOUT US */}
         <div className="flex items-center gap-2.5 mb-5 sm:mb-6">
-          <span className="flex flex-col gap-[3px]">
-            <span className="w-3.5 h-[2px] bg-[#FFBB00] rounded-full" />
-            <span className="w-3.5 h-[2px] bg-[#FFBB00] rounded-full" />
+          <span className="flex flex-col gap-0.75">
+            <span className="w-3.5 h-0.5 bg-[#FFBB00] rounded-full" />
+            <span className="w-3.5 h-0.5 bg-[#FFBB00] rounded-full" />
           </span>
           <span className="text-[#FFBB00] text-xs sm:text-sm font-bold uppercase tracking-wider font-inter">
             ABOUT US
@@ -242,7 +251,7 @@ export default function AboutHero() {
         </h1>
 
         {/* Divider bar */}
-        <div className="w-20 sm:w-28 h-[2px] bg-[#FFBB00] my-5 sm:my-7" />
+        <div className="w-20 sm:w-28 h-0.5 bg-[#FFBB00] my-5 sm:my-7" />
 
         {/* Description */}
         <p className="font-inter text-gray-300 text-sm sm:text-base lg:text-lg max-w-xl leading-relaxed font-normal">
@@ -268,7 +277,13 @@ export default function AboutHero() {
                       : "text-[#FFEAB1]/85 hover:text-[#FFBB00] font-normal"
                   }`}
                 >
-                  <span className={isActive ? "text-[#FFBB00]" : "text-[#FFEAB1]/85 group-hover:text-[#FFBB00]"}>
+                  <span
+                    className={
+                      isActive
+                        ? "text-[#FFBB00]"
+                        : "text-[#FFEAB1]/85 group-hover:text-[#FFBB00]"
+                    }
+                  >
                     {item.icon(isActive)}
                   </span>
                   <span>{item.label}</span>

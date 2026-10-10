@@ -166,10 +166,17 @@ const Hero = () => {
               Warehouse
             </button>
           </Link>
-          <button className=" rounded-full bg-white  px-4 py-2 text-sm text-black transition-colors hover:bg-yellow-800  lg:px-6 lg:py-3 flex items-center gap-2 hover:text-white">
+
+          <Link
+            href="https://www.youtube.com/watch?v=v1pWJHSQQ2w"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-black transition-colors hover:bg-yellow-800 hover:text-white lg:px-6 lg:py-3"
+          >
             <CirclePlay className="text-[#FFBB00]" />
             Watch our Stories
-          </button>
+          </Link>
+
           <Link href="/fleet">
             <button className=" rounded-full bg-transparent hover:bg-[#FFBB00] text-white  px-4 py-2 text-sm transition-colors lg:px-6 lg:py-3">
               Our Fleet

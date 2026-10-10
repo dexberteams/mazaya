@@ -5,6 +5,7 @@ import CoreValues from "./CoreValues";
 import Teams from "../home/Teams";
 import Partner from "../home/Partner";
 import AboutCTA from "./AboutCTA";
+import BusinessEcosystem from "./BusinessEcosystem";
 
 const About = () => {
   return (
@@ -17,27 +18,32 @@ const About = () => {
         <CompanyOverview />
       </div>
 
-      {/* ── SECTION 3: OUR STORY & VISION ── */}
+      {/* SECTION 3: BUSINESS ECOSYSTEM */}
+      <div id="business-ecosystem">
+        <BusinessEcosystem />
+      </div>
+
+      {/* ── SECTION 4: OUR STORY & VISION ── */}
       <div id="story">
         <Story />
       </div>
 
-      {/* ── SECTION 4: CORE VALUES ── */}
+      {/* ── SECTION 5: CORE VALUES ── */}
       <div id="values">
         <CoreValues />
       </div>
 
-      {/* ── SECTION 5: LEADERSHIP TEAM ── */}
+      {/* ── SECTION 6: LEADERSHIP TEAM ── */}
       <div id="teams">
         <Teams />
       </div>
 
-      {/* ── SECTION 6: PARTNERS ── */}
+      {/* ── SECTION 7: PARTNERS ── */}
       <div id="partner">
         <Partner />
       </div>
 
-      {/* ── SECTION 7: CALL TO ACTION / CERTIFICATIONS ── */}
+      {/* ── SECTION 8: CALL TO ACTION / CERTIFICATIONS ── */}
       <div id="certifications">
         <AboutCTA />
       </div>

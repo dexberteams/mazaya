@@ -134,13 +134,6 @@ const FeaturedProjects = () => {
                   </p>
                 </div>
               </div>
-
-              <button
-                type="button"
-                className="w-fit rounded-md bg-[#FFBB00] px-5 py-2.5 text-xs font-semibold text-black transition-all duration-300 hover:bg-yellow-400 hover:shadow-lg hover:shadow-yellow-500/20"
-              >
-                View Case Study →
-              </button>
             </div>
           </div>
         </div>

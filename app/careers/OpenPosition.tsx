@@ -1,10 +1,19 @@
+"use client";
 import Image from "next/image";
 import SectionHeader2 from "../ui/SectionHeader2";
-import { BriefcaseBusiness, CalendarDays, MapPin } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  CalendarDays,
+  Clock,
+  X,
+  MapPin,
+} from "lucide-react";
+import { useState } from "react";
 
 const OpenPosition = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   return (
-    <section className="mt-2 px-4 lg:my-20 lg:px-8">
+    <section id="open-positions" className="mt-2 px-4 lg:my-20 lg:px-8">
       <SectionHeader2
         title="Open"
         highlight="Positions"
@@ -53,7 +62,10 @@ const OpenPosition = () => {
           </div>
 
           <div className="flex justify-end">
-            <button className="text-white bg-black/25 backdrop-blur-md text-xs border border-white/10 p-2 lg:p-3 rounded-sm mt-3 lg:mt-0">
+            <button
+              onClick={() => setIsPopupOpen(true)}
+              className="mt-3 rounded-sm border border-white/10 bg-black/25 p-2 text-xs text-white backdrop-blur-md transition-colors hover:border-yellow-400/50 hover:text-yellow-400 lg:mt-0 lg:p-3"
+            >
               View Details
             </button>
           </div>
@@ -99,7 +111,10 @@ const OpenPosition = () => {
           </div>
 
           <div className="flex justify-end">
-            <button className="text-white bg-black/25 backdrop-blur-md text-xs border border-white/10 p-2 lg:p-3 rounded-sm mt-3 lg:mt-0">
+            <button
+              onClick={() => setIsPopupOpen(true)}
+              className="mt-3 rounded-sm border border-white/10 bg-black/25 p-2 text-xs text-white backdrop-blur-md transition-colors hover:border-yellow-400/50 hover:text-yellow-400 lg:mt-0 lg:p-3"
+            >
               View Details
             </button>
           </div>
@@ -143,7 +158,10 @@ const OpenPosition = () => {
           </div>
 
           <div className="flex justify-end">
-            <button className="text-white bg-black/25 backdrop-blur-md text-xs border border-white/10 p-2 lg:p-3 rounded-sm mt-3 lg:mt-0">
+            <button
+              onClick={() => setIsPopupOpen(true)}
+              className="mt-3 rounded-sm border border-white/10 bg-black/25 p-2 text-xs text-white backdrop-blur-md transition-colors hover:border-yellow-400/50 hover:text-yellow-400 lg:mt-0 lg:p-3"
+            >
               View Details
             </button>
           </div>
@@ -187,12 +205,75 @@ const OpenPosition = () => {
           </div>
 
           <div className="flex justify-end">
-            <button className="text-white bg-black/25 backdrop-blur-md text-xs border border-white/10 p-2 lg:p-3 rounded-sm mt-3 lg:mt-0">
+            <button
+              onClick={() => setIsPopupOpen(true)}
+              className="mt-3 rounded-sm border border-white/10 bg-black/25 p-2 text-xs text-white backdrop-blur-md transition-colors hover:border-yellow-400/50 hover:text-yellow-400 lg:mt-0 lg:p-3"
+            >
               View Details
             </button>
           </div>
         </div>
       </div>
+
+      {/* Job Details Coming Soon Popup */}
+      {isPopupOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4 backdrop-blur-sm"
+          onClick={() => setIsPopupOpen(false)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="coming-soon-title"
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-sm overflow-hidden rounded-2xl border border-[#6f5a22]/70 bg-[#161000] p-6 text-center shadow-[0_0_40px_rgba(255,187,0,0.12)] sm:p-8"
+          >
+            {/* Close Button */}
+            <button
+              type="button"
+              onClick={() => setIsPopupOpen(false)}
+              aria-label="Close popup"
+              className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:bg-white/10 hover:text-white"
+            >
+              <X size={17} />
+            </button>
+
+            {/* Icon */}
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-[#FFBB00]/30 bg-[#FFBB00]/10 text-[#FFBB00]">
+              <Clock size={27} />
+            </div>
+
+            {/* Content */}
+            <h3
+              id="coming-soon-title"
+              className="mt-5 text-xl font-bold text-white sm:text-2xl"
+            >
+              Coming Soon!
+            </h3>
+
+            <p className="mt-3 text-sm leading-6 text-white/65">
+              We are preparing more details about this job opportunity. Please
+              check back soon for updates. Thank you for your interest in
+              joining Mazaya Logistics.
+            </p>
+
+            {/* Status */}
+            <div className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full border border-[#FFBB00]/20 bg-[#FFBB00]/[0.07] px-3 py-1.5 text-xs font-medium text-[#FFBB00]">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#FFBB00]" />
+              Job details coming soon
+            </div>
+
+            {/* Close Action */}
+            <button
+              type="button"
+              onClick={() => setIsPopupOpen(false)}
+              className="mt-6 w-full rounded-lg bg-[#FFBB00] px-5 py-3 text-sm font-semibold text-black transition hover:bg-yellow-400"
+            >
+              Got It
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
