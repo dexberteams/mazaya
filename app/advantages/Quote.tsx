@@ -22,7 +22,7 @@ const Quote = () => {
         </div>
         <p className="flex flex-col gap-2">
           <span className="text-lg font-semibold sm:text-xl lg:text-2xl">
-            Ready to Experience the Mazaya Advantage?
+            Ready to Experience the Mazaya Masanda Advantage?
           </span>
           <span className="max-w-3xl text-xs leading-5 text-gray-400 sm:text-sm">
             Let&apos;s work together to create efficient, reliable, and scalable

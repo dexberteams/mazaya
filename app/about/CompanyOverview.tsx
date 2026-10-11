@@ -106,11 +106,11 @@ export default function CompanyOverview() {
                 {/* Paragraphs */}
                 <div className="mt-6 sm:mt-8 space-y-4 font-inter text-sm sm:text-[15px] leading-relaxed text-[#b5ad9e]">
                   <p>
-                    Mazaya Logistics is a leading logistics and supply chain
-                    solutions provider in Saudi Arabia and across the region. We
-                    specialize in transportation, warehousing, distribution, and
-                    supply chain management, helping businesses operate more
-                    efficiently and reach their goals.
+                    Mazaya Masanda Logistics is a leading logistics and supply
+                    chain solutions provider in Saudi Arabia and across the
+                    region. We specialize in transportation, warehousing,
+                    distribution, and supply chain management, helping
+                    businesses operate more efficiently and reach their goals.
                   </p>
                   <p>
                     With a strong network, modern infrastructure, and a team of

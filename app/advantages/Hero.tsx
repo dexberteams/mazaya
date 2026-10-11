@@ -44,7 +44,7 @@ const Hero = () => {
               lg:mt-0 lg:p-4 lg:text-5xl
             "
           >
-            The Mazaya Advantage.{" "}
+            The Mazaya Masanda Advantage.{" "}
             <span className="text-yellow-200">Built Around Your Success.</span>
           </h1>
 
@@ -59,8 +59,8 @@ const Hero = () => {
               lg:mt-2 lg:w-4/5 lg:p-4 lg:leading-6
             "
           >
-            Discover what sets Mazaya Logistics apart and how our expertise,
-            technology, and commitment drive value for your business.
+            Discover what sets Mazaya Masanda Logistics apart and how our
+            expertise, technology, and commitment drive value for your business.
           </p>
         </div>
       </div>

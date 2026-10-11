@@ -45,7 +45,7 @@ const Hero = () => {
             "
           >
             Build Your Future With{" "}
-            <span className="text-yellow-200">Mazaya Logistics</span>
+            <span className="text-yellow-200">Mazaya Masanda Logistics</span>
           </h1>
 
           <span className="mt-3 block h-0.5 w-24 bg-yellow-400 lg:hidden" />

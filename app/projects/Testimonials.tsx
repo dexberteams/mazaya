@@ -63,7 +63,7 @@ const Testimonials = () => {
     <section className="relative overflow-hidden my-10 lg:my-20 px-4 lg:px-8 text-white">
       <SectionHeader
         title="Testimonials"
-        description="What our clients say about working with Mazaya Logistics."
+        description="What our clients say about working with Mazaya Masanda Logistics."
       ></SectionHeader>
 
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-4 mt-5 lg:mt-10">

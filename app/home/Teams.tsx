@@ -20,7 +20,7 @@ const teamMembers = [
     role: "General Supervisor",
     image: "/home/team/team1.jpeg",
     description:
-      "Oversees mazaya masanda Masanda Fast’s overall performance, promoting effective coordination across departments and ensuring the execution of operational plans & objectives. His focus is on enhancing efficiency, strengthening quality and continued growth.",
+      "Oversees Mazaya Masanda Fast’s overall performance, promoting effective coordination across departments and ensuring the execution of operational plans & objectives. His focus is on enhancing efficiency, strengthening quality and continued growth.",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const teamMembers = [
     role: "Operations & Supply Chain Manager",
     image: "/home/team/team2.jpeg",
     description:
-      "Leads operations and supply chain activities at mazaya masanda Fast, overseeing the execution of logistics projects and the management of operational resources & teams. His focus is on improving operational efficiency, optimizing performance. & ensuring the delivery.",
+      "Leads operations and supply chain activities at Mazaya Masanda Fast, overseeing the execution of logistics projects and the management of operational resources & teams. His focus is on improving operational efficiency, optimizing performance. & ensuring the delivery.",
   },
   {
     id: 4,

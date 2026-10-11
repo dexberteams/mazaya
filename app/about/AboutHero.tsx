@@ -255,8 +255,8 @@ export default function AboutHero() {
 
         {/* Description */}
         <p className="font-inter text-gray-300 text-sm sm:text-base lg:text-lg max-w-xl leading-relaxed font-normal">
-          At Mazaya Logistics, we are committed to delivering innovative and
-          reliable logistics solutions that empower businesses to grow and
+          At Mazaya Masanda Logistics, we are committed to delivering innovative
+          and reliable logistics solutions that empower businesses to grow and
           succeed.
         </p>
       </div>

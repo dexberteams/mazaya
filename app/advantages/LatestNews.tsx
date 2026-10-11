@@ -27,7 +27,7 @@ const LatestNews = () => {
             <h3 className="text-base font-semibold text-white">
               The Future of Warehousing: Trends Shaping Industry
             </h3>
-            <p className="text-sm text-white">
+            <p className="text-xs text-white">
               Explore the latest trends in warehousing and how technology is
               transforming logistics operations.
             </p>
@@ -54,7 +54,7 @@ const LatestNews = () => {
             <h3 className="text-base font-semibold text-white">
               How Last-Mile Delivery Drives Customer Satisfaction
             </h3>
-            <p className="text-sm text-white">
+            <p className="text-xs text-white">
               Last-mile delivery is the final step to happy customers. Learn how
               we optimize it for better results.
             </p>
@@ -81,7 +81,7 @@ const LatestNews = () => {
             <h3 className="text-base font-semibold text-white">
               Leveraging Technology for Smarter Supply Chains
             </h3>
-            <p className="text-sm text-white">
+            <p className="text-xs text-white">
               Digital tools and real-time visibility are key to building
               resilient and efficient supply chains.
             </p>

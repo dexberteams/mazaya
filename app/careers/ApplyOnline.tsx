@@ -82,7 +82,7 @@ const ApplyOnline = () => {
             </h2>
 
             <p className="mt-3 font-manrope text-sm leading-6 text-white/60">
-              Thank you for your interest in joining Mazaya Logistics.
+              Thank you for your interest in joining Mazaya Masanda Logistics.
               We&apos;ll review your application and get back to you soon.
             </p>
 
