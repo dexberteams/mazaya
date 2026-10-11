@@ -124,7 +124,7 @@ const Teams = () => {
 
                             {/* Email */}
                             <a
-                              href="mailto:"
+                              href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=saldawsari@mazayamasanda.com"
                               aria-label="Send email"
                               className="flex h-9 w-9 items-center justify-center rounded-full border border-yellow-400/30 bg-white/10 text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-[0_0_15px_rgba(250,204,21,0.3)]"
                             >
@@ -133,7 +133,7 @@ const Teams = () => {
 
                             {/* WhatsApp */}
                             <a
-                              href="https://wa.me/"
+                              href="https://wa.me/9960551010596"
                               target="_blank"
                               rel="noopener noreferrer"
                               aria-label="WhatsApp contact"
@@ -233,7 +233,7 @@ const Teams = () => {
                     <div className="mt-2 flex items-center justify-center gap-3">
                       {/* LinkedIn */}
                       <a
-                        href="https://www.linkedin.com/company/mazaya-logistics/home/"
+                        href="https://www.linkedin.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn profile"
@@ -255,7 +255,7 @@ const Teams = () => {
 
                       {/* WhatsApp */}
                       <a
-                        href="+996055 1010 596"
+                        href="https://wa.me/9960551010596"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="WhatsApp contact"

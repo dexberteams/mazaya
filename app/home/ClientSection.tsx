@@ -19,7 +19,7 @@ const reviews = [
   {
     name: "Omar Hassan",
     role: "Operations & Supply Chain Manager",
-    company: "mazaya Masanda",
+    company: "Mazaya Masanda",
     image: "/home/client-2.jpeg",
     review:
       "mazaya masanda Logistics delivers on time. Their team is professional, reliable and always responsive.",

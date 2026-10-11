@@ -45,9 +45,9 @@ export default function Footer() {
             style={
               !isHomePage
                 ? {
-                  animation: "none",
-                  backgroundPosition: "52% 50%",
-                }
+                    animation: "none",
+                    backgroundPosition: "52% 50%",
+                  }
                 : undefined
             }
           />
@@ -262,9 +262,9 @@ export default function Footer() {
                   font-inter
                 "
               >
-                Mazaya Logistics delivers reliable transportation,
-                warehousing, fulfillment and supply chain solutions across
-                Saudi Arabia and GCC with efficiency, innovation and customer
+                Mazaya Masanda Logistics delivers reliable transportation,
+                warehousing, fulfillment and supply chain solutions across Saudi
+                Arabia and GCC with efficiency, innovation and customer
                 satisfaction.
               </p>
 
@@ -283,9 +283,14 @@ export default function Footer() {
                 />
 
                 <SocialIcon
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/"
                   src="/home/icons/linkedin.png"
                   alt="LinkedIn"
+                />
+                <SocialIcon
+                  href="https://wa.me/9960551010596"
+                  src="/home/icons/whats-app.webp"
+                  alt="Whatsapp"
                 />
 
                 <Link
@@ -316,37 +321,23 @@ export default function Footer() {
               <div
                 className="
                   hidden
-                  lg:block
-                  mt-auto
-                  pt-8
-                  text-left
-                "
+                  lg:block mt-2"
               >
-                <p className="flex items-center justify-start gap-1 text-[10px] font-medium text-white">
+                <p className="flex items-center justify-start gap-1 text-[14px] font-medium text-white">
                   Developed by:
-
                   <Link
                     href="https://dexber.vercel.app/en"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 font-semibold text-white transition-colors hover:text-[#D49A24]"
+                    className="inline-flex items-center"
                   >
-                    <svg
-                      className="h-[11px] w-[11px]"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="12" y1="2" x2="12" y2="22" />
-                      <line x1="2" y1="12" x2="22" y2="12" />
-                      <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
-                      <line x1="4.93" y1="19.07" x2="19.07" y2="4.93" />
-                    </svg>
-
-                    Dexber
+                    <Image
+                      src="/logo/Dexber_White.png"
+                      alt="Dexber"
+                      width={250}
+                      height={80}
+                      className="h-auto w-[100px] sm:w-[115px] object-contain"
+                    />
                   </Link>
                 </p>
 
@@ -486,9 +477,9 @@ export default function Footer() {
                   lg:hidden
                 "
               >
-                Mazaya Logistics delivers reliable transportation,
-                warehousing, fulfillment and supply chain solutions across
-                Saudi Arabia and GCC with efficiency, innovation and customer
+                Mazaya masanda Logistics delivers reliable transportation,
+                warehousing, fulfillment and supply chain solutions across Saudi
+                Arabia and GCC with efficiency, innovation and customer
                 satisfaction.
               </p>
 
@@ -507,9 +498,14 @@ export default function Footer() {
                 />
 
                 <SocialIcon
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/"
                   src="/home/icons/linkedin.png"
                   alt="LinkedIn"
+                />
+                <SocialIcon
+                  href="https://wa.me/9960551010596"
+                  src="/home/icons/whats-app.webp"
+                  alt="Whatsapp"
                 />
 
                 <Link
@@ -538,31 +534,21 @@ export default function Footer() {
 
               {/* MOBILE DEVELOPED BY (only on mobile) */}
               <div className="mt-5 text-center lg:hidden">
-                <p className="flex items-center justify-center gap-1 text-[10px] font-medium text-white">
+                <p className="flex items-center justify-center gap-1 text-[12px] font-medium text-white">
                   Developed by:
-
                   <Link
                     href="https://dexber.vercel.app/en"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 font-semibold text-white transition-colors hover:text-[#D49A24]"
+                    className="inline-flex items-center"
                   >
-                    <svg
-                      className="h-[11px] w-[11px]"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="12" y1="2" x2="12" y2="22" />
-                      <line x1="2" y1="12" x2="22" y2="12" />
-                      <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
-                      <line x1="4.93" y1="19.07" x2="19.07" y2="4.93" />
-                    </svg>
-
-                    Dexber
+                    <Image
+                      src="/logo/Dexber_White.png"
+                      alt="Dexber"
+                      width={250}
+                      height={80}
+                      className="h-auto w-[90px] sm:w-[115px] object-contain"
+                    />
                   </Link>
                 </p>
 
@@ -588,7 +574,7 @@ export default function Footer() {
               "
             >
               <p className="text-[10px] font-medium text-white">
-                © 2026 Mazaya Logistics. All Rights Reserved.
+                © 2026 Mazaya Masanda Logistics. All Rights Reserved.
               </p>
 
               <div className="mt-2 flex flex-wrap items-center justify-end gap-x-1.5 gap-y-1 text-[9px] text-[#A3A3A3]">
@@ -625,7 +611,7 @@ export default function Footer() {
           ===================================================== */}
           <div className="relative mt-6 border-t border-[#A9791C]/25 pt-4 text-center lg:hidden">
             <p className="text-[10px] font-medium text-white">
-              © 2026 Mazaya Logistics. All Rights Reserved.
+              © 2026 Mazaya Masanda Logistics. All Rights Reserved.
             </p>
 
             <div className="mt-2 flex flex-wrap items-center justify-center gap-x-2 text-[10px] text-[#A3A3A3]">
