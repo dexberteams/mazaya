@@ -10,20 +10,20 @@ import CustomVideo from "../ui/CustomVideo";
 
 const reviews = [
   {
-    name: "Ahmed Al-Qahtani",
-    role: "General Manager",
-    company: "Kestaa",
-    image: "/home/client1.png",
+    name: "Eng. Md Abdullah",
+    role: "CEO",
+    company: "DEXBAR",
+    image: "/home/client-1.jpeg",
     review:
-      "Working with Mazaya Logistics has made our delivery operations faster, smoother, and more reliable.",
+      "Working with mazaya masanda Logistics has made our delivery operations faster, smoother, and more reliable.",
   },
   {
     name: "Omar Hassan",
-    role: "Warehouse Manager",
-    company: "Jahez",
-    image: "/home/client2.png",
+    role: "Operations & Supply Chain Manager",
+    company: "Mazaya Masanda",
+    image: "/home/client-2.jpeg",
     review:
-      "Mazaya Logistics delivers on time. Their team is professional, reliable and always responsive.",
+      "mazaya masanda Logistics delivers on time. Their team is professional, reliable and always responsive.",
   },
   {
     name: "Mohammed Ali",
@@ -100,12 +100,12 @@ const Testimonials = () => {
                       <div className="absolute -bottom-2 right-4 h-4 w-1/2 bg-linear-to-l from-amber-500" />
 
                       {/* Image */}
-                      <div className="relative h-full w-full overflow-hidden rounded-sm border border-amber-400">
+                      <div className="relative h-full min-h-[80px] w-full overflow-hidden rounded-sm border border-amber-400">
                         <Image
                           src={item.image}
                           alt={item.name}
                           fill
-                          sizes="120px"
+                          sizes="(max-width: 640px) 90px, 100px"
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
