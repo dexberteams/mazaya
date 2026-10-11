@@ -75,7 +75,7 @@ export default function ContactUsPage() {
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <Image
             src="/contact/hero-bg.jpg"
-            alt="Mazaya Logistics Port Terminal"
+            alt="Mazaya Masanda Logistics Port Terminal"
             fill
             priority
             unoptimized
@@ -128,10 +128,10 @@ export default function ContactUsPage() {
                     Call Us
                   </p>
                   <a
-                    href="tel:+966XXXXXXXXX"
+                    href="tel:+996055 1010 596"
                     className="block text-white font-semibold text-sm sm:text-base hover:text-amber-400 underline underline-offset-4 decoration-zinc-600 hover:decoration-amber-400 transition-colors"
                   >
-                    +966 XX XXX XXXX
+                    +996055 1010 596
                   </a>
                   <p className="text-zinc-400 text-xs pt-1">
                     Sunday – Thursday
@@ -153,7 +153,7 @@ export default function ContactUsPage() {
                     href="mailto:info@mazayalogistics.com"
                     className="block text-white font-semibold text-sm sm:text-base hover:text-amber-400 underline underline-offset-4 decoration-zinc-600 hover:decoration-amber-400 transition-colors break-all"
                   >
-                    info@mazayalogistics.com
+                    saldawsari@mazayamasanda.com
                   </a>
                   <p className="text-zinc-400 text-xs pt-1">We Reply within</p>
                   <p className="text-zinc-500 text-xs">24 hours</p>
@@ -170,13 +170,13 @@ export default function ContactUsPage() {
                     WhatsApp
                   </p>
                   <p className="text-white font-semibold text-sm sm:text-base">
-                    +966 XX XXX XXXX
+                    +996055 1010 596
                   </p>
                   <p className="text-zinc-400 text-xs pt-1">
                     Chat with our team
                   </p>
                   <a
-                    href="https://wa.me/966000000000"
+                    href="https://wa.me/9960551010596"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-[#22c55e] hover:text-[#16a34a] text-xs font-medium transition-colors pt-0.5 group"
@@ -403,7 +403,7 @@ export default function ContactUsPage() {
                       Address
                     </h3>
                     <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed">
-                      Mazaya Logistics, Building No. 1234,
+                      Mazaya Masanda Logistics, Building No. 1234,
                       <br />
                       King Fahd Road, Riyadh 12345,
                       <br />
@@ -480,7 +480,7 @@ export default function ContactUsPage() {
             <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 w-full md:w-auto">
               {/* WhatsApp */}
               <a
-                href="https://wa.me/966000000000"
+                href="https://wa.me/+9960551010596"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 sm:flex-initial flex items-center justify-between gap-6 bg-[#17130c] hover:bg-[#1f1a10] border border-amber-900/40 hover:border-green-500/50 rounded-xl px-4 py-3.5 transition-all group min-w-[200px]"
@@ -545,14 +545,15 @@ export default function ContactUsPage() {
                   Ready to Move Forward?
                 </h3>
                 <p className="text-zinc-400 text-xs sm:text-sm mt-1">
-                  Let’s discuss how Mazaya Logistics can support your business.
+                  Let’s discuss how Mazaya Masanda Logistics can support your
+                  business.
                 </p>
               </div>
             </div>
 
             {/* Get Quote Action */}
             <Link
-              href="/get-quote"
+              href="/getQuote"
               className="shrink-0 px-6 py-3 rounded-lg bg-[#f5b800] hover:bg-[#e0a800] text-black font-semibold text-sm transition-all duration-300 shadow-[0_4px_20px_rgba(245,184,0,0.2)] cursor-pointer"
             >
               Get Quote
