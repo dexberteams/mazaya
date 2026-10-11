@@ -227,13 +227,13 @@ const Navbar = () => {
           })}
 
           {/* Mobile Login */}
-          <Link
+          {/* <Link
             href="/login"
             onClick={handleMenuClick}
             className="mt-2 rounded-lg border border-[#FFBB00] px-4 py-3 text-center text-sm font-medium text-[#FFBB00] transition-all hover:bg-[#FFBB00] hover:text-black"
           >
             Login
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>

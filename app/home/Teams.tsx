@@ -12,7 +12,7 @@ const teamMembers = [
     role: "Founder & CEO",
     image: "/home/team/team5.jpeg",
     description:
-      "Leads Mazaya Fast’s strategic vision and business development, with a focus on building strong partnerships and expanding the company’s logistics solutions. He is committed to strengthening Mazaya’s position as a trusted logistics partner through sustainable growth, operational efficiency, and services.",
+      "Leads Mazaya Masanda Fast’s strategic vision and business development, with a focus on building strong partnerships. He is committed to strengthening Mazaya’s position as a trusted logistics partner through sustainable growth, operational efficiency, and services.",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const teamMembers = [
     role: "General Supervisor",
     image: "/home/team/team1.jpeg",
     description:
-      "Oversees Mazaya Fast’s overall performance, promoting effective coordination across departments and ensuring the execution of operational plans and objectives. His focus is on enhancing efficiency, strengthening quality and operational discipline, and supporting the company’s stability and continued growth.",
+      "Oversees mazaya masanda Masanda Fast’s overall performance, promoting effective coordination across departments and ensuring the execution of operational plans & objectives. His focus is on enhancing efficiency, strengthening quality and continued growth.",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const teamMembers = [
     role: "Operations & Supply Chain Manager",
     image: "/home/team/team2.jpeg",
     description:
-      "Leads operations and supply chain activities at Mazaya Fast, overseeing the execution of logistics projects and the management of operational resources & teams. His focus is on improving operational efficiency, optimizing performance. & ensuring the delivery.",
+      "Leads operations and supply chain activities at mazaya masanda Fast, overseeing the execution of logistics projects and the management of operational resources & teams. His focus is on improving operational efficiency, optimizing performance. & ensuring the delivery.",
   },
   {
     id: 4,
@@ -233,7 +233,7 @@ const Teams = () => {
                     <div className="mt-2 flex items-center justify-center gap-3">
                       {/* LinkedIn */}
                       <a
-                        href="https://www.linkedin.com/"
+                        href="https://www.linkedin.com/company/mazaya-logistics/home/"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn profile"
@@ -244,8 +244,10 @@ const Teams = () => {
 
                       {/* Email */}
                       <a
-                        href="mailto:"
+                        href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=saldawsari@mazayamasanda.com"
                         aria-label="Send email"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex h-9 w-9 items-center justify-center rounded-full border border-yellow-400/30 bg-white/10 text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-[0_0_15px_rgba(250,204,21,0.3)]"
                       >
                         <FaEnvelope size={15} />
@@ -253,7 +255,7 @@ const Teams = () => {
 
                       {/* WhatsApp */}
                       <a
-                        href="https://wa.me/"
+                        href="+996055 1010 596"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="WhatsApp contact"

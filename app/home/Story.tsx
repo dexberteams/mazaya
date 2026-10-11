@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import SectionLabel from "../ui/SectionLabel";
 import Image from "next/image";
@@ -6,7 +6,6 @@ import { BarChart3, ChartBarIncreasing, Goal, Handshake } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const Story = () => {
-
   const pathname = usePathname();
   const isLandingPage = pathname === "/";
 
@@ -43,10 +42,10 @@ const Story = () => {
             </h2>
 
             <p className="mt-2 text-[12px] lg:text-[16px] font-inter text-gray-300 lg:mt-4 mb-4">
-              Mazaya Logistics is a leading logistics and supply chain solutions
-              provider in Saudi Arabia and beyond. We are committed to delivering
-              reliable, efficient, and innovative logistics services that empower
-              businesses to grow and succeed.
+              Mazaya Masanda Logistics is a leading logistics and supply chain
+              solutions provider in Saudi Arabia and beyond. We are committed to
+              delivering reliable, efficient, and innovative logistics services
+              that empower businesses to grow and succeed.
             </p>
 
             <div className="mt-2 lg:mt-4 grid grid-cols-2 gap-3 lg:gap-5 lg:grid-cols-2">
@@ -69,8 +68,8 @@ const Story = () => {
 
                     <p className="mt-4 font-manrope text-[10px] lg:text-xs  lg:leading-6 text-gray-300 lg:pr-8">
                       Founded with a vision to transform logistics, Mazaya
-                      Logistics has grown into a trusted partner for businesses
-                      across multiple industries.
+                      Masanda Logistics has grown into a trusted partner for
+                      businesses.
                     </p>
                   </div>
                 </div>
@@ -94,7 +93,8 @@ const Story = () => {
 
                     <p className="mt-4  font-manrope text-[10px] lg:text-xs lg:leading-6 text-gray-300 lg:pr-12">
                       To deliver smart, reliable, and cost-effective logistics
-                      solutions that create value for our clients and communities.
+                      solutions that create value for our clients and
+                      communities.
                     </p>
                   </div>
                 </div>

@@ -12,7 +12,7 @@ import Link from "next/link";
 const careerImages = [
   {
     src: "/home/career1.jpg",
-    alt: "Mazaya Logistics team",
+    alt: "Mazaya masanda Logistics team",
     stat: "20+",
     label: "Open Positions",
   },
@@ -24,7 +24,7 @@ const careerImages = [
   },
   {
     src: "/home/career3.jpg",
-    alt: "Mazaya Logistics workplace",
+    alt: "Mazaya masanda Logistics workplace",
     stat: "15+",
     label: "Cities Covered",
   },
@@ -43,7 +43,7 @@ const MazayaLogistics = () => {
 
       <h1 className="mt-4 text-2xl font-bold text-white lg:text-4xl">
         Build Your Career with{" "}
-        <span className="text-yellow-400">Mazaya Logistics</span>
+        <span className="text-yellow-400">Mazaya Masanda Logistics</span>
       </h1>
 
       <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">

@@ -20,8 +20,8 @@ const Hero = () => {
 
           {/* left */}
           <div className="flex w-full flex-col items-start justify-center font-manrope text-white lg:w-1/2 lg:gap-2">
-            <h1 className="w-3/4 text-4xl font-extrabold lg:w-2/3 lg:p-4 lg:text-5xl lg:leading-tight">
-              Your Trusted Logistics Partner
+            <h1 className="w-11/12 text-4xl font-extrabold lg:w-2/3 lg:p-4 lg:text-5xl lg:leading-tight">
+              Your Trusted Logistics Partner Mazaya Masanda
             </h1>
 
             <p className="p-2 text-sm lg:w-4/5 lg:p-4 lg:text-base">
@@ -185,10 +185,16 @@ const Hero = () => {
         </div>
         {/* bottom button for mobile */}
         <div className="flex flex-col lg:hidden mt-4">
-          <button className=" rounded-full bg-white  px-4 py-2 text-sm text-black hover:bg-yellow-800  lg:px-6 lg:py-3 flex justify-center items-center gap-2 hover:text-white w-11/12 mx-auto">
-            <CirclePlay className="text-[#FFBB00]" />
-            Watch our Stories
-          </button>
+          <Link
+            href="https://www.youtube.com/watch?v=v1pWJHSQQ2w"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className=" rounded-full bg-white  px-4 py-2 text-sm text-black hover:bg-yellow-800  lg:px-6 lg:py-3 flex justify-center items-center gap-2 hover:text-white w-11/12 mx-auto">
+              <CirclePlay className="text-[#FFBB00]" />
+              Watch our Stories
+            </button>
+          </Link>
           <TabButtons></TabButtons>
         </div>
       </div>
