@@ -9,18 +9,18 @@ const subsidiaries = [
     description:
       "Driving smarter operations through reliable logistics, efficient delivery networks, and customer-focused solutions.",
     services: ["Smart Operations", "Reliable Delivery", "Business Growth"],
-    icon: "/about/boxify.png",
+    icon: "/about/boxfiy-07.png",
     website: "https://boxfuy.barmjin.com/",
   },
   {
     number: "02",
-    name: "Dexbar",
-    category: "TECHNOLOGY & INNOVATION",
+    name: "LOADTRUCK",
+    category: "Logistics & Transportation",
     description:
-      "Building modern business solutions with innovative technology, digital transformation, and a forward-thinking mindset.",
-    services: ["Digital Solutions", "Innovation", "Scalable Growth"],
-    icon: "/about/dexbar-logo.png",
-    website: "https://dexber.vercel.app/en",
+      "LoadTruckX is a logistics and transportation platform offering convenient ride-sharing, parcel delivery, and reliable transport solutions through its digital services.",
+    services: ["Ride Sharing", "Parcel Delivery", "Delivery Partner"],
+    icon: "/about/loadtruck.png",
+    website: "https://loadtruckx.com/",
   },
 ];
 
@@ -154,7 +154,7 @@ const BusinessEcosystem = () => {
                 <div className="absolute left-0 top-0 h-0.5 w-0 bg-[#F5B800] transition-all duration-500 group-hover:w-full" />
 
                 <div className="mb-7 flex items-start justify-between">
-                  <div className="group/image relative h-14 w-14 overflow-hidden rounded-xl border border-[#F5B800]/20 bg-white transition-all duration-500 group-hover:rotate-[-4deg] group-hover:border-[#F5B800]/50 sm:h-16 sm:w-16">
+                  <div className="relative h-14 w-14 sm:h-16 sm:w-16">
                     <Image
                       src={Icon}
                       alt="Company logo"
