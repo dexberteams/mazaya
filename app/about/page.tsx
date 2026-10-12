@@ -9,7 +9,7 @@ import BusinessEcosystem from "./BusinessEcosystem";
 
 const About = () => {
   return (
-    <div className="relative min-h-screen bg-[#070502] text-white selection:bg-[#f5b800] selection:text-black font-sans pb-16 overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#0A0700] text-white selection:bg-[#f5b800] selection:text-black font-manrope pb-16 overflow-x-hidden">
       {/* ── SECTION 1: HERO SECTION ── */}
       <AboutHero />
 

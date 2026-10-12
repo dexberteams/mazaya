@@ -26,8 +26,8 @@ const subsidiaries = [
 
 const BusinessEcosystem = () => {
   return (
-    <section className="relative overflow-hidden bg-[#070502] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-      <div className="relative mx-auto max-w-7xl">
+    <section className="relative overflow-hidden bg-[#0A0700] px-4 my-8 lg:my-16 text-white sm:px-6 lg:px-8">
+      <div className="relative">
         {/* Section heading */}
         <div className="mb-8">
           <div className="mb-5 inline-flex items-center gap-2 rounded-lg border border-[#F5B800]/20 bg-[#F5B800]/[0.07] px-4 py-2">

@@ -201,12 +201,12 @@ export default function IndustryCategories() {
   };
 
   return (
-    <section className="relative w-full bg-[#070502] py-16 sm:py-20 lg:py-24 font-manrope overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full bg-[#0A0700] my-8 lg:my-16 px-4 lg:px-8 font-manrope overflow-hidden">
+      <div>
         {/* ── Section Header ── */}
         <div className="flex items-center justify-between gap-4 mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-white tracking-tight leading-tight">
-            Industry <span className="text-[#FFEAB1]">Categories</span>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+            Industry <span className="text-yellow-200">Categories</span>
           </h2>
 
           {/* Slider Arrow Controls */}

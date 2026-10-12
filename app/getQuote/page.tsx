@@ -5,6 +5,7 @@ import { isValidElement, type ComponentType, type ReactNode } from "react";
 import LogisticsCoverage from "./components/LogisticsCoverage";
 import ProcessTimeline from "./components/ProcessTimeline";
 import QuoteForm from "./components/QuoteForm";
+import SectionLabel from "../ui/SectionLabel";
 
 export const metadata: Metadata = {
   title: "Get a Quote | Mazaya Masanda Logistics",
@@ -300,63 +301,64 @@ const PROCESS_BENEFITS = [
 
 export default function GetQuotePage() {
   return (
-    <div className="relative min-h-screen bg-[#070502] text-white selection:bg-[#f5b800] selection:text-black font-sans pb-24 overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#0A0700] text-white selection:bg-[#f5b800] selection:text-black font-manrope pb-20 overflow-x-hidden">
       {/* ── SECTION 1: HERO SECTION ── */}
-      <section className="relative w-full pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
-        {/* Background Image with Cinematic Gradients */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <Image
-            src="/getQuote/get-hero.jpg"
-            alt="Mazaya Masanda Logistics Port and Freight Fleet"
-            fill
-            priority
-            unoptimized
-            className="object-cover object-right lg:object-center opacity-85 select-none"
-          />
-          {/* Gradients: dark on left for high contrast readability, subtle vignette on right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070502] via-[#070502]/85 to-[#070502]/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#070502] via-transparent to-[#070502]/60" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(245,184,0,0.12)_0%,transparent_60%)]" />
-        </div>
+      <section className="relative w-full overflow-hidden font-manrope">
+        <div className="relative h-auto min-h-[560px] sm:min-h-[620px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-center">
+          {/* Background Image with Cinematic Gradients */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/getQuote/get-hero.jpg"
+              alt="Mazaya Masanda Logistics Port and Freight Fleet"
+              fill
+              priority
+              unoptimized
+              className="object-cover object-right lg:object-center select-none"
+            />
+            {/* Mobile overlays */}
+            <div className="lg:hidden absolute inset-0 bg-gradient-to-r from-[#0A0700] via-[#0A0700]/85 to-[#0A0700]/30" />
+            <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-[#0A0700] via-transparent to-[#0A0700]/60" />
+            <div className="lg:hidden absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(245,184,0,0.12)_0%,transparent_60%)]" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 mb-4">
-              <span className="text-[#f5b800] font-bold text-sm tracking-wider">
-                =
-              </span>
-              <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#f5f5f5] uppercase">
-                GET QUOTE
-              </span>
-            </div>
+            {/* Benchmark Desktop Gradient Overlay */}
+            <div
+              className="
+               hidden
+               lg:absolute lg:inset-0 lg:block
+               lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
+               z-10
+               "
+            />
+          </div>
+
+          <div
+            className="
+              relative z-20 flex h-full w-full flex-col items-start justify-center font-manrope text-white
+              px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 pt-16 sm:pt-20 lg:pt-6"
+          >
+            {/* Standard Badge */}
+            <SectionLabel text="get quote" className="bg-transparent lg:ml-4" />
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
+            <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
               Let’s Build the Right{" "}
-              <span className="text-[#fae4a8] block sm:inline">
-                Logistics Solution for You
+              <span className="text-yellow-200 block sm:inline">
+                Logistics Solution
               </span>
             </h1>
 
-            {/* Yellow accent divider */}
-            <div className="w-20 h-[2px] bg-[#f5b800] mt-4 mb-6" />
+            <span className="mt-2 block lg:hidden h-0.5 w-24 bg-yellow-400"></span>
 
             {/* Sub-paragraphs */}
-            <div className="space-y-4 max-w-2xl text-sm sm:text-base text-[#cfc7bc] leading-relaxed">
+            <div className="mt-2 max-w-xl p-1 text-xs leading-4 lg:leading-6 sm:text-base lg:w-4/5 lg:p-4 font-manrope text-gray-300">
               <p>
                 Tell us about your logistics requirements and our team will
-                prepare a solution tailored to your business needs.
-              </p>
-              <p className="text-[#a89f92]">
-                From transportation and warehousing to delivery and fulfillment,
-                share your requirements with us and take the next step toward
-                smarter logistics.
+                prepare a tailored solution for your business across Saudi Arabia, GCC, and worldwide.
               </p>
             </div>
 
             {/* Geographic Coverage Badges */}
-            <div className="mt-8 flex flex-wrap items-center gap-6 text-sm font-medium">
+            <div className="mt-4 flex flex-wrap items-center gap-6 text-sm font-medium lg:ml-4">
               <div className="inline-flex items-center gap-2">
                 <span className="text-base">
                   <Image
@@ -381,20 +383,20 @@ export default function GetQuotePage() {
         </div>
       </section>
 
-      {/* ── MAIN CONTENT CONTAINER ── */}
-      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 space-y-24">
+      {/* ── MAIN CONTENT CONTAINER (Desktop full width gutters) ── */}
+      <div className="relative z-10 px-4 sm:px-8 lg:px-16 space-y-16 lg:space-y-24 my-10 lg:my-16 font-manrope">
         {/* ── SECTION 2: FORM & WHY CHOOSE MAZAYA ── */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <section id="quote-form" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left Column: Interactive Quote Form (Client Component) */}
           <div className="lg:col-span-7">
             <QuoteForm />
           </div>
 
           {/* Right Column: Why Choose Mazaya Logistics? */}
-          <div className="lg:col-span-5 rounded-2xl bg-[#0e0a03]/80 border border-[#2b200e] p-6 sm:p-8 lg:p-10 backdrop-blur-md">
+          <div className="lg:col-span-5 rounded-2xl bg-[#161000]/60 border border-[#352801] p-6 sm:p-8 lg:p-10 backdrop-blur-xl shadow-2xl">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
               Why Choose{" "}
-              <span className="text-[#f5b800]">Mazaya Masanda Logistics?</span>
+              <span className="text-yellow-200">Mazaya Masanda Logistics?</span>
             </h2>
             <div className="w-14 h-[2px] bg-[#f5b800] mt-3 mb-8" />
 
@@ -406,7 +408,7 @@ export default function GetQuotePage() {
                       {renderWhyChooseIcon(item.icon)}
                     </div>
                     <div>
-                      <h3 className="text-sm sm:text-base font-semibold text-white group-hover:text-[#f5b800] transition-colors">
+                      <h3 className="text-sm sm:text-base font-semibold text-white group-hover:text-yellow-200 transition-colors">
                         {item.title}
                       </h3>
                       <p className="mt-1 text-xs sm:text-sm text-[#9e9587] leading-relaxed">
@@ -427,9 +429,9 @@ export default function GetQuotePage() {
         <div className="space-y-12">
           <ProcessTimeline />
 
-          {/* Benefits Bar (Screenshot 4) */}
-          <div className="rounded-xl bg-[#0c0903] border border-[#2b200e] p-6 lg:p-8 shadow-xl">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-[#2b200e]/70">
+          {/* Benefits Bar */}
+          <div className="rounded-xl bg-[#161000]/60 border border-[#352801] p-6 lg:p-8 backdrop-blur-xl shadow-xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-[#352801]/70">
               {PROCESS_BENEFITS.map((benefit, index) => {
                 return (
                   <div
@@ -442,7 +444,7 @@ export default function GetQuotePage() {
                       {renderProcessIcon(benefit.icon)}
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-[#f5b800] tracking-wide">
+                      <h4 className="text-sm font-bold text-yellow-200 tracking-wide">
                         {benefit.title}
                       </h4>
                       <p className="mt-1 text-xs text-[#9e9587] leading-relaxed">
@@ -456,15 +458,21 @@ export default function GetQuotePage() {
           </div>
 
           {/* ── SECTION 5: READY TO GET STARTED? CTA BANNER ── */}
-          <div className="rounded-xl bg-gradient-to-r from-[#120d04] via-[#0c0903] to-[#120d04] border border-[#38280f] p-6 sm:p-8 lg:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-2xl">
-            <div className="flex items-start sm:items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#211607] border border-[#f5b800]/30 flex items-center justify-center text-[#f5b800] shrink-0">
+          <section className="relative overflow-hidden my-10 lg:my-20 flex flex-col lg:flex-row justify-between items-center gap-6 rounded-sm border border-white/10 bg-white/4 backdrop-blur-xl p-5 sm:p-6 lg:p-10 text-white shadow-[0_8px_40px_rgba(0,0,0,0.35)]">
+            {/* Ambient Glow */}
+            <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-yellow-400/10 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-amber-500/10 blur-3xl" />
+            <div className="pointer-events-none absolute left-0 right-0 top-0 h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
+
+            <div className="relative z-10 flex items-center gap-4 sm:gap-6 text-left w-full lg:w-auto">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-sm border border-yellow-400/20 bg-yellow-400/6 backdrop-blur-md shadow-[inset_0_0_20px_rgba(255,193,7,0.04)]">
                 <svg
-                  width="74"
-                  height="74"
+                  width="40"
+                  height="40"
                   viewBox="0 0 74 74"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="w-8 h-8 lg:w-10 lg:h-10 text-yellow-400"
                 >
                   <path
                     d="M64.1312 13.6553C64.0696 12.6706 63.6505 11.7424 62.9527 11.0451C62.2548 10.3477 61.3262 9.92935 60.3416 9.86856C56.7832 9.65754 47.6893 9.98129 40.1419 17.5287L38.5954 19.0781H21.4916C20.9603 19.0768 20.4342 19.181 19.9435 19.3844C19.4527 19.5878 19.0072 19.8865 18.6327 20.2632L8.70343 30.1897C8.17179 30.7215 7.79883 31.3909 7.62639 32.1228C7.45396 32.8547 7.48886 33.6202 7.7272 34.3334C7.96553 35.0466 8.39787 35.6793 8.9757 36.1605C9.55354 36.6418 10.254 36.9524 10.9986 37.0578L22.3096 38.6361L35.3637 51.6901L36.9419 63.0156C37.0482 63.7597 37.3595 64.4595 37.8411 65.0366C38.3226 65.6136 38.9554 66.0452 39.6685 66.2829C40.3815 66.5206 41.1467 66.555 41.8782 66.3823C42.6097 66.2095 43.2786 65.8365 43.8101 65.305L53.7394 55.3757C54.1161 55.0012 54.4148 54.5557 54.6182 54.0649C54.8217 53.5742 54.9258 53.048 54.9245 52.5168V35.4043L56.471 33.8579C64.0155 26.3047 64.3422 17.2165 64.1312 13.6553ZM11.0159 33.2422C10.9849 33.142 10.9817 33.0353 11.0066 32.9335C11.0316 32.8316 11.0838 32.7385 11.1576 32.664L21.084 22.7145C21.1924 22.607 21.3389 22.5467 21.4916 22.5468H35.1266L22.5091 35.1615L11.4842 33.6237C11.3778 33.6118 11.277 33.5695 11.194 33.5018C11.1109 33.4341 11.0491 33.344 11.0159 33.2422ZM51.4529 52.5082C51.4522 52.6613 51.3909 52.8078 51.2823 52.9157L41.3588 62.8422C41.2834 62.9184 41.1882 62.9722 41.0839 62.9975C40.9796 63.0228 40.8703 63.0185 40.7683 62.9852C40.6663 62.9519 40.5756 62.8909 40.5063 62.809C40.437 62.727 40.3919 62.6274 40.376 62.5213L38.8382 51.4907L51.4529 38.8731V52.5082ZM54.0169 31.4066L36.9998 48.4208L25.5789 37L42.596 19.98C44.8768 17.6846 47.6222 15.9037 50.648 14.757C53.6739 13.6103 56.91 13.1243 60.1392 13.3315C60.2781 13.3431 60.4081 13.4045 60.5053 13.5044C60.6025 13.6042 60.6603 13.7358 60.6682 13.875C60.8734 17.1018 60.3863 20.3352 59.2396 23.3583C58.093 26.3815 56.3132 29.1246 54.0198 31.4037L54.0169 31.4066ZM28.906 55.0115C27.6573 57.7662 23.4514 64.1718 11.5623 64.1718C11.1023 64.1718 10.6611 63.9891 10.3359 63.6639C10.0106 63.3386 9.82788 62.8975 9.82788 62.4375C9.82788 50.5483 16.2335 46.3425 18.9883 45.0937C19.1955 44.9988 19.4195 44.9457 19.6473 44.9373C19.8751 44.9289 20.1023 44.9655 20.3159 45.045C20.5296 45.1244 20.7255 45.2452 20.8925 45.4004C21.0595 45.5555 21.1943 45.7421 21.2892 45.9493C21.3841 46.1566 21.4373 46.3805 21.4456 46.6083C21.454 46.8361 21.4174 47.0634 21.3379 47.277C21.2585 47.4907 21.1377 47.6866 20.9826 47.8536C20.8274 48.0206 20.6409 48.1554 20.4336 48.2503C18.4101 49.1666 13.921 52.1584 13.3602 60.654C21.8558 60.0932 24.8476 55.5896 25.7639 53.5806C25.8588 53.3733 25.9936 53.1868 26.1606 53.0316C26.3276 52.8764 26.5235 52.7557 26.7372 52.6762C26.9508 52.5968 27.178 52.5602 27.4058 52.5686C27.6336 52.5769 27.8576 52.6301 28.0648 52.725C28.2721 52.8199 28.4586 52.9547 28.6138 53.1217C28.769 53.2886 28.8897 53.4846 28.9692 53.6982C29.0486 53.9119 29.0852 54.1391 29.0769 54.3669C29.0685 54.5947 29.0154 54.8186 28.9205 55.0259L28.906 55.0115Z"
@@ -473,23 +481,24 @@ export default function GetQuotePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white">
+                <h3 className="text-lg font-semibold sm:text-xl lg:text-2xl text-white">
                   Ready to Get Started?
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm text-[#a39b8e] max-w-xl">
-                  Share your logistics requirements with our team and let’s
-                  create the right solution for your business.
+                  Share your logistics requirements with our team and let’s create the right solution for your business.
                 </p>
               </div>
             </div>
 
-            <Link
-              href="#quote-form"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#f5b800] hover:bg-[#e0a700] text-black font-semibold text-sm transition-all duration-200 shrink-0 shadow-lg shadow-[#f5b800]/20 hover:shadow-[#f5b800]/30"
-            >
-              Request a Quote
-            </Link>
-          </div>
+            <div className="relative z-10 flex w-full lg:w-auto justify-start lg:justify-end">
+              <Link
+                href="#quote-form"
+                className="w-full sm:w-auto text-center shrink-0 inline-flex items-center justify-center rounded-sm border border-yellow-300/20 bg-amber-500 px-6 py-2.5 text-sm font-semibold text-black shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-amber-400 hover:shadow-[0_0_30px_rgba(245,158,11,0.3)]"
+              >
+                Request a Quote
+              </Link>
+            </div>
+          </section>
         </div>
       </div>
     </div>

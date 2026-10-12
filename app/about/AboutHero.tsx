@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import SectionLabel from "../ui/SectionLabel";
 
 interface NavItem {
   id: string;
@@ -206,90 +207,95 @@ export default function AboutHero() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-[580px] sm:min-h-[640px] lg:min-h-[760px] flex flex-col justify-between overflow-hidden"
+      className="relative w-full overflow-hidden"
     >
-      {/* ── Background Image ── */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/about/hero.jpg"
-          alt="Mazaya Logistics Fleet"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[70%_center] lg:object-center"
-        />
+      <div className="relative h-auto min-h-[580px] sm:min-h-[640px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-between">
+        {/* ── Background Image ── */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/about/hero.jpg"
+            alt="Mazaya Logistics Fleet"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[70%_center] lg:object-center"
+          />
 
-        {/* Left Dark Vignette / Gradient Overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-linear-to-r from-black via-black/85 via-45% md:via-black/70 md:via-55% to-transparent z-10" />
+          {/* Left Dark Vignette / Gradient Overlay to ensure text readability on mobile */}
+          <div className="lg:hidden absolute inset-0 bg-linear-to-r from-black via-black/85 via-45% md:via-black/70 md:via-55% to-transparent z-10" />
 
-        {/* Top Vignette */}
-        <div className="absolute top-0 inset-x-0 h-36 bg-linear-to-b from-[#070502]/90 via-[#070502]/40 to-transparent z-10" />
+          {/* Top Vignette (mobile) */}
+          <div className="lg:hidden absolute top-0 inset-x-0 h-36 bg-linear-to-b from-[#0A0700]/90 via-[#0A0700]/40 to-transparent z-10" />
 
-        {/* Bottom Fade */}
-        <div className="absolute bottom-0 inset-x-0 h-40 bg-linear-to-t from-[#070502] via-[#070502]/70 to-transparent z-10" />
-      </div>
+          {/* Bottom Fade (mobile) */}
+          <div className="lg:hidden absolute bottom-0 inset-x-0 h-40 bg-linear-to-t from-[#0A0700] via-[#0A0700]/70 to-transparent z-10" />
 
-      {/* ── Main Hero Content ── */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 lg:pt-36 flex-1 flex flex-col justify-center">
-        {/* Badge: = ABOUT US */}
-        <div className="flex items-center gap-2.5 mb-5 sm:mb-6">
-          <span className="flex flex-col gap-0.75">
-            <span className="w-3.5 h-0.5 bg-[#FFBB00] rounded-full" />
-            <span className="w-3.5 h-0.5 bg-[#FFBB00] rounded-full" />
-          </span>
-          <span className="text-[#FFBB00] text-xs sm:text-sm font-bold uppercase tracking-wider font-inter">
-            ABOUT US
-          </span>
+          {/* Standard Benchmark Desktop Gradient Overlay */}
+          <div
+            className="
+             hidden
+             lg:absolute lg:inset-0 lg:block
+             lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
+             z-10
+             "
+          />
         </div>
 
-        {/* Headline */}
-        <h1 className="font-manrope text-3xl sm:text-5xl lg:text-[62px] font-extrabold text-white tracking-tight leading-[1.12]">
-          Building Connections.
-          <span className="block text-[#f3b749] mt-1 sm:mt-2">
-            Delivering Excellence.
-          </span>
-        </h1>
+        {/* ── Main Hero Content (Desktop 50% split) ── */}
+        <div
+          className="
+            relative z-20 flex-1 flex flex-col justify-center font-manrope text-white
+            px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 pt-16 sm:pt-20 lg:pt-8"
+        >
+          <SectionLabel
+            text="about us"
+            className="bg-transparent lg:ml-4"
+          />
 
-        {/* Divider bar */}
-        <div className="w-20 sm:w-28 h-0.5 bg-[#FFBB00] my-5 sm:my-7" />
+          <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
+            Building Connections.{" "}
+            <span className="text-yellow-200">Delivering Excellence.</span>
+          </h1>
 
-        {/* Description */}
-        <p className="font-inter text-gray-300 text-sm sm:text-base lg:text-lg max-w-xl leading-relaxed font-normal">
-          At Mazaya Masanda Logistics, we are committed to delivering innovative
-          and reliable logistics solutions that empower businesses to grow and
-          succeed.
-        </p>
-      </div>
+          <span className="mt-2 block lg:hidden h-0.5 w-24 bg-yellow-400"></span>
 
-      {/* ── Bottom Sub-Navigation Floating Bar ── */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8 lg:pb-10 pt-10 sm:pt-14">
-        <div className="w-full rounded-xl sm:rounded-2xl border border-[#FFBB00]/40 bg-[#120d06]/85 backdrop-blur-md shadow-[0_0_25px_rgba(255,187,0,0.12)] px-4 sm:px-8 py-3.5 sm:py-4.5">
-          <div className="flex items-center justify-between gap-6 sm:gap-8 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            {navItems.map((item) => {
-              const isActive = activeTab === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => handleTabClick(item)}
-                  className={`flex items-center gap-2.5 whitespace-nowrap text-sm sm:text-base transition-all duration-200 cursor-pointer ${
-                    isActive
-                      ? "text-[#FFBB00] font-semibold underline underline-offset-8 decoration-[#FFBB00] decoration-2"
-                      : "text-[#FFEAB1]/85 hover:text-[#FFBB00] font-normal"
-                  }`}
-                >
-                  <span
-                    className={
+          <p className="max-w-xl mt-2 p-1 text-xs leading-4 lg:leading-6 sm:text-base lg:w-4/5 lg:p-4 font-manrope text-gray-300">
+            At Mazaya Masanda Logistics, we are committed to delivering innovative
+            and reliable logistics solutions that empower businesses to grow and
+            succeed.
+          </p>
+        </div>
+
+        {/* ── Bottom Sub-Navigation Floating Bar ── */}
+        <div className="relative z-20 w-full px-4 sm:px-8 lg:px-16 pb-6 sm:pb-8 lg:pb-8 pt-4">
+          <div className="w-full rounded-xl sm:rounded-2xl border border-[#FFBB00]/40 bg-[#120d06]/85 backdrop-blur-md shadow-[0_0_25px_rgba(255,187,0,0.12)] px-4 sm:px-8 py-3.5 sm:py-4">
+            <div className="flex items-center justify-between gap-6 sm:gap-8 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+              {navItems.map((item) => {
+                const isActive = activeTab === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => handleTabClick(item)}
+                    className={`flex items-center gap-2.5 whitespace-nowrap text-sm sm:text-base transition-all duration-200 cursor-pointer ${
                       isActive
-                        ? "text-[#FFBB00]"
-                        : "text-[#FFEAB1]/85 group-hover:text-[#FFBB00]"
-                    }
+                        ? "text-[#FFBB00] font-semibold underline underline-offset-8 decoration-[#FFBB00] decoration-2"
+                        : "text-[#FFEAB1]/85 hover:text-[#FFBB00] font-normal"
+                    }`}
                   >
-                    {item.icon(isActive)}
-                  </span>
-                  <span>{item.label}</span>
-                </button>
-              );
-            })}
+                    <span
+                      className={
+                        isActive
+                          ? "text-[#FFBB00]"
+                          : "text-[#FFEAB1]/85 group-hover:text-[#FFBB00]"
+                      }
+                    >
+                      {item.icon(isActive)}
+                    </span>
+                    <span>{item.label}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

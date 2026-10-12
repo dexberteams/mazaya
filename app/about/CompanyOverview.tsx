@@ -87,10 +87,10 @@ const stats = [
 
 export default function CompanyOverview() {
   return (
-    <section className="w-full py-8 sm:py-12 lg:py-16 font-manrope">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="w-full my-8 lg:my-16 px-4 lg:px-8 font-manrope">
+      <div>
         {/* Main Card Container */}
-        <div className="relative rounded-2xl border border-[#2e2617] bg-[#120e06] p-6 sm:p-8 lg:p-10 shadow-2xl">
+        <div className="relative rounded-2xl border border-[#352801] bg-[#161000]/60 backdrop-blur-xl p-6 sm:p-8 lg:p-10 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             {/* Left Content Column */}
             <div className="lg:col-span-6 flex flex-col justify-between">

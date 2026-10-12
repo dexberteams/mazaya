@@ -6,7 +6,7 @@ import ServiceHero from "./ServiceHero";
 
 const services = () => {
     return (
-        <div className="">
+        <div className="bg-[#0A0700] font-manrope">
             {/* ── SECTION 1: HERO SECTION ── */}
             <ServiceHero />
 

@@ -18,6 +18,7 @@ import {
   X,
 } from "lucide-react";
 import { FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
+import SectionLabel from "../ui/SectionLabel";
 
 export default function ContactUsPage() {
   // Form State
@@ -68,141 +69,151 @@ export default function ContactUsPage() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#070502] text-white selection:bg-amber-400 selection:text-black font-sans pb-16">
+    <div className="relative min-h-screen bg-[#0A0700] text-white selection:bg-amber-400 selection:text-black font-manrope pb-16">
       {/* ── SECTION 1: HERO & QUICK CONTACT INFO ── */}
-      <section className="relative w-full pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
-        {/* Background Image with Dark Vignette Gradient */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <Image
-            src="/contact/hero-bg.jpg"
-            alt="Mazaya Masanda Logistics Port Terminal"
-            fill
-            priority
-            unoptimized
-            className="object-right lg:object-cover object-contain opacity-75 select-none"
-          />
-          {/* Gradients: dark on left for text legibility, transparent on right to showcase trucks and cranes */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070502] via-[#070502]/75 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#070502] via-transparent to-[#070502]/70" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(212,175,55,0.18)_0%,transparent_65%)]" />
-        </div>
+      <section className="relative w-full overflow-hidden font-manrope">
+        <div className="relative h-auto min-h-[560px] sm:min-h-[620px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-between">
+          {/* Background Image with Dark Vignette Gradient */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/contact/hero-bg.jpg"
+              alt="Mazaya Masanda Logistics Port Terminal"
+              fill
+              priority
+              unoptimized
+              className="object-right lg:object-cover object-contain opacity-75 select-none"
+            />
+            {/* Gradients: dark on left for text legibility on mobile */}
+            <div className="lg:hidden absolute inset-0 bg-gradient-to-r from-[#0A0700] via-[#0A0700]/75 to-transparent" />
+            <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-[#0A0700] via-transparent to-[#0A0700]/70" />
+            <div className="lg:hidden absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(212,175,55,0.18)_0%,transparent_65%)]" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+            {/* Benchmark Desktop Gradient Overlay */}
+            <div
+              className="
+               hidden
+               lg:absolute lg:inset-0 lg:block
+               lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
+               z-10
+               "
+            />
+          </div>
+
           {/* Header Texts */}
-          <div className="max-w-2xl">
-            {/* Small Contact Us Badge */}
-            <div className="inline-flex items-center gap-2 mb-4">
-              <span className="w-2.5 h-2.5 bg-[#f5b800] rounded-xs inline-block" />
-              <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#f5f5f5] uppercase">
-                CONTACT US
-              </span>
-            </div>
+          <div
+            className="
+              relative z-20 flex flex-col justify-center font-manrope text-white
+              px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 pt-16 sm:pt-20 lg:pt-8"
+          >
+            {/* Standard Badge */}
+            <SectionLabel text="contact us" className="bg-transparent lg:ml-4" />
 
             {/* Main Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
-              Let’s Move Your <br />
-              <span className="text-[#f5d76e]">Business Forward</span>
+            <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
+              Let’s Move Your <br className="hidden sm:inline" />
+              <span className="text-yellow-200">Business Forward</span>
             </h1>
 
-            {/* Amber Accent Bar */}
-            <div className="w-20 h-1 bg-[#d4af37] mt-5 mb-6 rounded-full" />
+            <span className="mt-2 block lg:hidden h-0.5 w-24 bg-yellow-400"></span>
 
             {/* Description */}
-            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+            <p className="max-w-xl mt-2 p-1 text-xs leading-4 lg:leading-6 sm:text-base lg:w-4/5 lg:p-4 font-manrope text-gray-300">
               Have a logistics requirement or need more information? Get in
               touch with our team and let’s find the right solution for your
               business.
             </p>
           </div>
 
-          {/* Quick Contact Info Cards Floating Bar */}
-          <div className="mt-14 sm:mt-18 rounded-2xl border border-amber-500/35  backdrop-blur-[1px] p-6 sm:p-8 shadow-[0_0_40px_rgba(245,184,0,0.12)]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 sm:gap-8 divide-y sm:divide-y-0 lg:divide-x divide-amber-900/30">
-              {/* 1. Call Us */}
-              <div className="flex items-start gap-4 pt-4 sm:pt-0">
-                <div className="w-12 h-12 shrink-0 rounded-full border border-amber-400/50 bg-amber-500/10 flex items-center justify-center text-amber-400 shadow-[0_0_15px_rgba(245,184,0,0.15)]">
-                  <Phone className="w-5 h-5" />
+          {/* Quick Contact Info Cards Floating Bar (Desktop full width gutters) */}
+          <div className="relative z-20 w-full px-4 sm:px-8 lg:px-16 pb-6 sm:pb-8 lg:pb-8 pt-4">
+            <div className="rounded-xl sm:rounded-2xl border border-[#FFBB00]/40 bg-[#120d06]/85 backdrop-blur-md p-6 sm:p-8 shadow-[0_0_25px_rgba(255,187,0,0.12)]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 sm:gap-8 divide-y sm:divide-y-0 lg:divide-x divide-amber-900/30">
+                {/* 1. Call Us */}
+                <div className="flex items-start gap-4 pt-4 sm:pt-0">
+                  <div className="w-12 h-12 shrink-0 rounded-full border border-amber-400/50 bg-amber-500/10 flex items-center justify-center text-amber-400 shadow-[0_0_15px_rgba(245,184,0,0.15)]">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-zinc-400 text-xs font-medium uppercase tracking-wider">
+                      Call Us
+                    </p>
+                    <a
+                      href="tel:+996055 1010 596"
+                      className="block text-white font-semibold text-sm sm:text-base hover:text-amber-400 underline underline-offset-4 decoration-zinc-600 hover:decoration-amber-400 transition-colors"
+                    >
+                      +996055 1010 596
+                    </a>
+                    <p className="text-zinc-400 text-xs pt-1">
+                      Sunday – Thursday
+                    </p>
+                    <p className="text-zinc-500 text-xs">09:00 AM – 06:00 PM</p>
+                  </div>
                 </div>
-                <div className="space-y-1">
-                  <p className="text-zinc-400 text-xs font-medium uppercase tracking-wider">
-                    Call Us
-                  </p>
-                  <a
-                    href="tel:+996055 1010 596"
-                    className="block text-white font-semibold text-sm sm:text-base hover:text-amber-400 underline underline-offset-4 decoration-zinc-600 hover:decoration-amber-400 transition-colors"
-                  >
-                    +996055 1010 596
-                  </a>
-                  <p className="text-zinc-400 text-xs pt-1">
-                    Sunday – Thursday
-                  </p>
-                  <p className="text-zinc-500 text-xs">09:00 AM – 06:00 PM</p>
-                </div>
-              </div>
 
-              {/* 2. Email Us */}
-              <div className="flex items-start gap-4 pt-6 sm:pt-0 lg:pl-6">
-                <div className="w-12 h-12 shrink-0 rounded-full border border-amber-400/50 bg-amber-500/10 flex items-center justify-center text-amber-400 shadow-[0_0_15px_rgba(245,184,0,0.15)]">
-                  <Mail className="w-5 h-5" />
+                {/* 2. Email Us */}
+                <div className="flex items-start gap-4 pt-6 sm:pt-0 lg:pl-6">
+                  <div className="w-12 h-12 shrink-0 rounded-full border border-amber-400/50 bg-amber-500/10 flex items-center justify-center text-amber-400 shadow-[0_0_15px_rgba(245,184,0,0.15)]">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-zinc-400 text-xs font-medium uppercase tracking-wider">
+                      Email Us
+                    </p>
+                    <a
+                      href="mailto:info@mazayalogistics.com"
+                      className="block text-white font-semibold text-sm sm:text-base hover:text-amber-400 underline underline-offset-4 decoration-zinc-600 hover:decoration-amber-400 transition-colors break-all"
+                    >
+                      saldawsari@mazayamasanda.com
+                    </a>
+                    <p className="text-zinc-400 text-xs pt-1">We Reply within</p>
+                    <p className="text-zinc-500 text-xs">24 hours</p>
+                  </div>
                 </div>
-                <div className="space-y-1">
-                  <p className="text-zinc-400 text-xs font-medium uppercase tracking-wider">
-                    Email Us
-                  </p>
-                  <a
-                    href="mailto:info@mazayalogistics.com"
-                    className="block text-white font-semibold text-sm sm:text-base hover:text-amber-400 underline underline-offset-4 decoration-zinc-600 hover:decoration-amber-400 transition-colors break-all"
-                  >
-                    saldawsari@mazayamasanda.com
-                  </a>
-                  <p className="text-zinc-400 text-xs pt-1">We Reply within</p>
-                  <p className="text-zinc-500 text-xs">24 hours</p>
-                </div>
-              </div>
 
-              {/* 3. WhatsApp */}
-              <div className="flex items-start gap-4 pt-6 sm:pt-0 lg:pl-6">
-                <div className="w-12 h-12 shrink-0 rounded-full border border-amber-400/50 bg-amber-500/10 flex items-center justify-center text-amber-400 shadow-[0_0_15px_rgba(245,184,0,0.15)]">
-                  <FaWhatsapp className="w-5 h-5" />
+                {/* 3. WhatsApp */}
+                <div className="flex items-start gap-4 pt-6 sm:pt-0 lg:pl-6">
+                  <div className="w-12 h-12 shrink-0 rounded-full border border-amber-400/50 bg-amber-500/10 flex items-center justify-center text-amber-400 shadow-[0_0_15px_rgba(245,184,0,0.15)]">
+                    <FaWhatsapp className="w-5 h-5" />
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-zinc-400 text-xs font-medium uppercase tracking-wider">
+                      WhatsApp
+                    </p>
+                    <p className="text-white font-semibold text-sm sm:text-base">
+                      +996055 1010 596
+                    </p>
+                    <p className="text-zinc-400 text-xs pt-1">
+                      Chat with our team
+                    </p>
+                    <a
+                      href="https://wa.me/9960551010596"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[#22c55e] hover:text-[#16a34a] text-xs font-medium transition-colors pt-0.5 group"
+                    >
+                      Start Conversation{" "}
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                    </a>
+                  </div>
                 </div>
-                <div className="space-y-1">
-                  <p className="text-zinc-400 text-xs font-medium uppercase tracking-wider">
-                    WhatsApp
-                  </p>
-                  <p className="text-white font-semibold text-sm sm:text-base">
-                    +996055 1010 596
-                  </p>
-                  <p className="text-zinc-400 text-xs pt-1">
-                    Chat with our team
-                  </p>
-                  <a
-                    href="https://wa.me/9960551010596"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[#22c55e] hover:text-[#16a34a] text-xs font-medium transition-colors pt-0.5 group"
-                  >
-                    Start Conversation{" "}
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </div>
-              </div>
 
-              {/* 4. Office Hours */}
-              <div className="flex items-start gap-4 pt-6 sm:pt-0 lg:pl-6">
-                <div className="w-12 h-12 shrink-0 rounded-full border border-amber-400/50 bg-amber-500/10 flex items-center justify-center text-amber-400 shadow-[0_0_15px_rgba(245,184,0,0.15)]">
-                  <Clock className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <p className="text-zinc-400 text-xs font-medium uppercase tracking-wider">
-                    Office Hours
-                  </p>
-                  <p className="text-white font-semibold text-sm sm:text-base">
-                    Sunday – Thursday
-                  </p>
-                  <p className="text-zinc-400 text-xs pt-1">
-                    Friday – Saturday
-                  </p>
-                  <p className="text-[#ef4444] text-xs font-semibold">Closed</p>
+                {/* 4. Office Hours */}
+                <div className="flex items-start gap-4 pt-6 sm:pt-0 lg:pl-6">
+                  <div className="w-12 h-12 shrink-0 rounded-full border border-amber-400/50 bg-amber-500/10 flex items-center justify-center text-amber-400 shadow-[0_0_15px_rgba(245,184,0,0.15)]">
+                    <Clock className="w-5 h-5" />
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-zinc-400 text-xs font-medium uppercase tracking-wider">
+                      Office Hours
+                    </p>
+                    <p className="text-white font-semibold text-sm sm:text-base">
+                      Sunday – Thursday
+                    </p>
+                    <p className="text-zinc-400 text-xs pt-1">
+                      Friday – Saturday
+                    </p>
+                    <p className="text-[#ef4444] text-xs font-semibold">Closed</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -211,11 +222,11 @@ export default function ContactUsPage() {
       </section>
 
       {/* ── SECTION 2: FORM & VISIT OUR OFFICE ── */}
-      <section className="relative w-full py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+      <section className="relative w-full my-8 lg:my-16 font-manrope">
+        <div className="px-4 sm:px-8 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             {/* Left Column: Form "How Can We Help?" */}
-            <div className="lg:col-span-7 rounded-2xl border border-amber-500/20 bg-[#0e0c08]/90 backdrop-blur-md p-6 sm:p-10 shadow-2xl">
+            <div className="lg:col-span-7 rounded-2xl border border-[#352801] bg-[#161000]/60 backdrop-blur-xl p-6 sm:p-10 shadow-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                 How Can We Help?
               </h2>
@@ -386,7 +397,7 @@ export default function ContactUsPage() {
             </div>
 
             {/* Right Column: "Visit Our Office" */}
-            <div className="lg:col-span-5 rounded-2xl border border-amber-500/20 bg-[#0e0c08]/90 backdrop-blur-md p-6 sm:p-10 shadow-2xl flex flex-col justify-between">
+            <div className="lg:col-span-5 rounded-2xl border border-[#352801] bg-[#161000]/60 backdrop-blur-xl p-6 sm:p-10 shadow-2xl flex flex-col justify-between">
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                   Visit Our Office
@@ -435,7 +446,7 @@ export default function ContactUsPage() {
               </div>
 
               {/* Map Preview Card matching the visual in screenshot */}
-              <div className="relative w-full h-52 sm:h-56 rounded-xl overflow-hidden border border-amber-900/50 bg-[#12100a] mt-4 shadow-lg group">
+              <div className="relative w-full h-52 sm:h-56 rounded-xl overflow-hidden border border-[#352801] bg-[#12100a] mt-4 shadow-lg group">
                 <iframe
                   title="Mazaya Logistics Riyadh Office Map"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463879.26521990495!2d46.5414846497138!3d24.72539809930777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d48939b%3A0x7ff97233564f4b15!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
@@ -463,9 +474,9 @@ export default function ContactUsPage() {
 
       {/* ── SECTION 3: CONNECT WITH US & READY TO MOVE FORWARD ── */}
       <section className="relative w-full py-6">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 space-y-6">
+        <div className="px-4 sm:px-8 lg:px-16 my-8 lg:my-16 space-y-8 font-manrope">
           {/* Card 1: Connect With Us Banner */}
-          <div className="rounded-2xl border border-amber-500/30 bg-[#120f09]/80 backdrop-blur-md p-6 sm:p-8 shadow-[0_0_30px_rgba(245,184,0,0.1)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="rounded-2xl border border-[#352801] bg-[#161000]/60 backdrop-blur-xl p-6 sm:p-8 shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                 Connect With Us
@@ -483,7 +494,7 @@ export default function ContactUsPage() {
                 href="https://wa.me/+9960551010596"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 sm:flex-initial flex items-center justify-between gap-6 bg-[#17130c] hover:bg-[#1f1a10] border border-amber-900/40 hover:border-green-500/50 rounded-xl px-4 py-3.5 transition-all group min-w-[200px]"
+                className="flex-1 sm:flex-initial flex items-center justify-between gap-6 bg-[#1c1402] hover:bg-[#251b03] border border-[#352801] hover:border-green-500/50 rounded-xl px-4 py-3.5 transition-all group min-w-[200px]"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-lg bg-[#22c55e] flex items-center justify-center text-white shadow-md">
@@ -504,7 +515,7 @@ export default function ContactUsPage() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 sm:flex-initial flex items-center justify-between gap-6 bg-[#17130c] hover:bg-[#1f1a10] border border-amber-900/40 hover:border-blue-500/50 rounded-xl px-4 py-3.5 transition-all group min-w-[200px]"
+                className="flex-1 sm:flex-initial flex items-center justify-between gap-6 bg-[#1c1402] hover:bg-[#251b03] border border-[#352801] hover:border-blue-500/50 rounded-xl px-4 py-3.5 transition-all group min-w-[200px]"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-lg bg-[#0077b5] flex items-center justify-center text-white shadow-md">
@@ -523,16 +534,17 @@ export default function ContactUsPage() {
           </div>
 
           {/* Card 2: Ready to Move Forward? Banner */}
-          <div className="rounded-2xl border border-amber-900/40 bg-[#0d0b07] p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
+          <div className="relative overflow-hidden rounded-sm border border-white/10 bg-white/4 backdrop-blur-xl p-6 sm:p-8 lg:p-10 text-white shadow-[0_8px_40px_rgba(0,0,0,0.35)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div className="flex items-center gap-5">
               {/* Golden Yellow Forward/Logistics Icon */}
               <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-[#f5b800] shrink-0 shadow-[0_0_20px_rgba(245,184,0,0.2)]">
                 <svg
-                  width="74"
-                  height="74"
+                  width="48"
+                  height="48"
                   viewBox="0 0 74 74"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="w-8 h-8"
                 >
                   <path
                     d="M27.7498 9.25006V15.4167H12.3332V58.5834H61.6665V30.8334H67.8332V61.6667C67.8332 62.4845 67.5083 63.2687 66.9301 63.847C66.3519 64.4252 65.5676 64.75 64.7498 64.75H9.24984C8.43209 64.75 7.64783 64.4252 7.06959 63.847C6.49135 63.2687 6.1665 62.4845 6.1665 61.6667V12.3334C6.1665 11.5156 6.49135 10.7314 7.06959 10.1531C7.64783 9.57491 8.43209 9.25006 9.24984 9.25006H27.7498ZM58.429 15.4167L49.3332 6.32089L53.693 1.96106L70.158 18.4261C70.4164 18.6848 70.5923 19.0143 70.6636 19.3729C70.7348 19.7316 70.6982 20.1033 70.5583 20.4411C70.4184 20.779 70.1816 21.0678 69.8776 21.2711C69.5737 21.4744 69.2163 21.5831 68.8507 21.5834H43.1665C41.531 21.5834 39.9625 22.2331 38.806 23.3896C37.6495 24.546 36.9998 26.1146 36.9998 27.7501V46.25H30.8332V27.7501C30.8332 24.4791 32.1326 21.342 34.4455 19.0291C36.7585 16.7161 39.8955 15.4167 43.1665 15.4167H58.429Z"
@@ -554,9 +566,10 @@ export default function ContactUsPage() {
             {/* Get Quote Action */}
             <Link
               href="/getQuote"
-              className="shrink-0 px-6 py-3 rounded-lg bg-[#f5b800] hover:bg-[#e0a800] text-black font-semibold text-sm transition-all duration-300 shadow-[0_4px_20px_rgba(245,184,0,0.2)] cursor-pointer"
+              className="shrink-0 px-6 py-3 rounded-lg bg-[#f5b800] hover:bg-[#e0a800] text-black font-semibold text-sm transition-all duration-300 shadow-[0_4px_20px_rgba(245,184,0,0.2)] cursor-pointer inline-flex items-center gap-2"
             >
               Get Quote
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

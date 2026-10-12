@@ -161,10 +161,10 @@ const coreValues: ValueItem[] = [
 
 export default function CoreValues() {
   return (
-    <section className="w-full py-8 sm:py-12 lg:py-16 font-manrope">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="w-full my-8 lg:my-16 px-4 lg:px-8 font-manrope">
+      <div>
         {/* Main Card Container */}
-        <div className="relative rounded-2xl border border-[#3e3116] bg-[#0c0904] p-6 sm:p-8 lg:p-12 shadow-[0_0_50px_rgba(255,187,0,0.06)]">
+        <div className="relative rounded-2xl border border-[#352801] bg-[#161000]/60 backdrop-blur-xl p-6 sm:p-8 lg:p-12 shadow-[0_0_50px_rgba(255,187,0,0.06)]">
           {/* Header */}
           <div className="flex flex-col items-start">
             <h2 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">

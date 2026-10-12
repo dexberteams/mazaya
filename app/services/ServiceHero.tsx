@@ -1,60 +1,63 @@
 import Image from "next/image";
+import SectionLabel from "../ui/SectionLabel";
 
 export default function ServiceHero() {
   return (
-    <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[720px] flex items-center overflow-hidden font-manrope">
-      {/* ── Background Image ── */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/services/service-hero.jpg"
-          alt="Complete Logistics Solutions Under One Roof"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[65%_center] lg:object-center"
-        />
+    <section className="relative w-full overflow-hidden font-manrope">
+      {/* ── Hero Container ── */}
+      <div className="relative h-auto min-h-[560px] sm:min-h-[620px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-center">
+        {/* ── Background Image ── */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/services/service-hero.jpg"
+            alt="Complete Logistics Solutions Under One Roof"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[65%_center] lg:object-center"
+          />
 
-        {/* Left Dark Vignette / Gradient Overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 via-45% md:via-black/70 md:via-55% to-transparent z-10" />
+          {/* Left Dark Vignette / Gradient Overlay to ensure text readability on mobile */}
+          <div className="lg:hidden absolute inset-0 bg-gradient-to-r from-black via-black/85 via-45% md:via-black/70 md:via-55% to-transparent z-10" />
 
-        {/* Top Vignette */}
-        <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#070502]/90 via-[#070502]/40 to-transparent z-10" />
+          {/* Top Vignette (mobile) */}
+          <div className="lg:hidden absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0A0700]/90 via-[#0A0700]/40 to-transparent z-10" />
 
-        {/* Bottom Fade */}
-        <div className="absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-[#070502] via-[#070502]/70 to-transparent z-10" />
-      </div>
+          {/* Bottom Fade (mobile) */}
+          <div className="lg:hidden absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-[#0A0700] via-[#0A0700]/70 to-transparent z-10" />
 
-      {/* ── Main Hero Content ── */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
-        {/* Badge: = SERVICES */}
-        <div className="flex items-center gap-2.5 mb-5 sm:mb-6">
-          <div className="flex flex-col gap-1">
-            <span className="h-1 w-4 bg-[#FFBB00] rounded-full" />
-            <span className="h-0.75 w-4 bg-[#FFBB00] rounded-full" />
-          </div>
-          <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-white font-inter">
-            SERVICES
-          </span>
+          {/* Benchmark Desktop Gradient Overlay */}
+          <div
+            className="
+             hidden
+             lg:absolute lg:inset-0 lg:block
+             lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
+             z-10
+             "
+          />
         </div>
 
-        {/* Headline */}
-        <h1 className="font-manrope text-3xl sm:text-5xl lg:text-[62px] font-bold text-white tracking-tight leading-[1.14]">
-          Complete Logistics
-          <br />
-          Solutions <span className="text-[#FFEAB1]">Under</span>
-          <br />
-          <span className="text-[#FFEAB1]">One Roof</span>
-        </h1>
+        {/* ── Main Hero Content (Desktop 50% split) ── */}
+        <div
+          className="
+            relative z-20 flex h-full w-full flex-col items-start justify-center font-manrope text-white
+            px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 pt-16 sm:pt-20 lg:pt-6"
+        >
+          <SectionLabel text="services" className="bg-transparent lg:ml-4" />
 
-        {/* Divider bar */}
-        <div className="w-20 sm:w-28 h-[3px] bg-[#FFBB00] my-5 sm:my-7 rounded-full" />
+          <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
+            Complete Logistics Solutions{" "}
+            <span className="text-yellow-200">Under One Roof</span>
+          </h1>
 
-        {/* Description */}
-        <p className="font-inter text-gray-300 text-sm sm:text-base lg:text-lg max-w-xl leading-relaxed font-normal">
-          From transportation and warehousing to last-mile delivery and supply
-          chain management, we provide end-to-end logistics solutions tailored
-          to your business needs.
-        </p>
+          <span className="mt-2 block lg:hidden h-0.5 w-24 bg-yellow-400"></span>
+
+          <p className="max-w-xl mt-2 p-1 text-xs leading-4 lg:leading-6 sm:text-base lg:w-4/5 lg:p-4 font-manrope text-gray-300">
+            From transportation and warehousing to last-mile delivery and supply
+            chain management, we provide end-to-end logistics solutions tailored
+            to your business needs.
+          </p>
+        </div>
       </div>
     </section>
   );
