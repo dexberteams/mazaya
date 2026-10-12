@@ -43,7 +43,7 @@ const partners = [
   },
   {
     name: "Partner 10",
-    image: "/partners/noon.webp",
+    image: "/partners/noonlogo.jpeg",
   },
   {
     name: "Partner 11",
