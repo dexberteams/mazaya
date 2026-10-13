@@ -205,11 +205,8 @@ export default function AboutHero() {
   };
 
   return (
-    <section
-      id="hero"
-      className="relative w-full overflow-hidden"
-    >
-      <div className="relative h-auto min-h-[580px] sm:min-h-[640px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-between">
+    <section id="hero" className="relative w-full overflow-hidden">
+      <div className="relative h-auto min-h-[400px] sm:min-h-[640px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-between">
         {/* ── Background Image ── */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -245,11 +242,11 @@ export default function AboutHero() {
         <div
           className="
             relative z-20 flex-1 flex flex-col justify-center font-manrope text-white
-            px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 pt-16 sm:pt-20 lg:pt-8"
+            px-4 sm:px-8 lg:w-1/2 lg:gap-2 pt-16 sm:pt-20 lg:pt-8"
         >
           <SectionLabel
             text="about us"
-            className="bg-transparent lg:ml-4"
+            className="bg-transparent lg:ml-4 lg:w-1/3"
           />
 
           <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
@@ -260,9 +257,9 @@ export default function AboutHero() {
           <span className="mt-2 block lg:hidden h-0.5 w-24 bg-yellow-400"></span>
 
           <p className="max-w-xl mt-2 p-1 text-xs leading-4 lg:leading-6 sm:text-base lg:w-4/5 lg:p-4 font-manrope text-gray-300">
-            At Mazaya Masanda Logistics, we are committed to delivering innovative
-            and reliable logistics solutions that empower businesses to grow and
-            succeed.
+            At Mazaya Masanda Logistics, we are committed to delivering
+            innovative and reliable logistics solutions that empower businesses
+            to grow and succeed.
           </p>
         </div>
 

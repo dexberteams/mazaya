@@ -27,7 +27,7 @@ const Quote = () => {
       {/* Button */}
       <div className="relative z-10 flex items-end justify-end lg:ml-6">
         <Link href="/getQuote">
-          <button className="w-1/3 rounded-sm border border-yellow-300/20 bg-amber-500 px-3 py-1.5 text-center text-sm text-black shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-amber-400 hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] lg:w-auto lg:px-6 lg:py-2.5">
+          <button className=" rounded-sm border border-yellow-300/20 bg-amber-500 px-3 py-1.5 text-center text-sm text-black shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-amber-400 hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] lg:w-auto lg:px-6 lg:py-2.5">
             Get Quote
           </button>
         </Link>

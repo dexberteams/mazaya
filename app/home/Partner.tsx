@@ -4,6 +4,7 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import SectionLabel from "../ui/SectionLabel";
 import { usePathname } from "next/navigation";
+import BusinessGroup from "./BusinessGroup";
 
 const partners = [
   {
@@ -59,29 +60,30 @@ const partners = [
 const Partner = () => {
   const pathname = usePathname();
   const isLandingPage = pathname === "/";
+  const isAboutPage = pathname === "/about";
   return (
-    <section className="relative my-10 overflow-hidden bg-linear-to-br from-[#0A0700] via-[#211A0A] to-[#0A0700] py-10 lg:my-20 lg:py-16">
+    <section className="relative my-10 overflow-hidden bg-linear-to-br from-[#0A0700] via-[#211A0A] to-[#0A0700] py-5 lg:my-20 text-white">
       {/* Top Blend */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-[#0A0700] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-[#0A0700] to-transparent text-white" />
 
       {/* Bottom Blend */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-[#0A0700] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-[#0A0700] to-transparent text-white" />
 
       {/* Grid Background */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
-        <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-size-[70px_70px]" />
+        <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-size-[70px_70px] text-white" />
       </div>
-
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {!isAboutPage && <BusinessGroup />}
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8">
         {isLandingPage && <SectionLabel text="Partnership" />}
 
         <h1 className="mt-4 font-manrope text-2xl font-bold text-white lg:text-4xl">
-          Grow Together <span className="text-yellow-400">Successfully</span>
+          Grow Together <span className="text-yellow-200">Successfully</span>
         </h1>
       </div>
 
       {/* Partner Marquee */}
-      <div className="mt-10 lg:mt-14">
+      <div className="mt-10 lg:mt-14 px-4 lg:px-8">
         <Marquee
           speed={80}
           gradient

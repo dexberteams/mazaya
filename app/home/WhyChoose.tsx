@@ -14,7 +14,7 @@ const WhyChoose = () => {
     <div className="p-4 lg:p-8 my-10 lg:my-20 font-manrope">
       {isLandingPage && <SectionLabel text="advantages" />}
       <h3 className="font-bold text-2xl my-2 lg:my-4 lg:text-4xl text-white">
-        Why <span className="text-yellow-400">Choose Us?</span>
+        Why <span className="text-yellow-200">Choose Us?</span>
       </h3>
       {/* grid box */}
       <div className="flex lg:flex-row flex-col-reverse justify-between gap-4 lg:gap-6 text-white mt-4 lg:mt-8">

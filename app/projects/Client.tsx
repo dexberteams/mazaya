@@ -31,7 +31,7 @@ const partners = [
   },
   {
     name: "Partner 7",
-    image: "/partners/fedex.png",
+    image: "/partners/fedx.png",
   },
   {
     name: "Partner 8",

@@ -23,7 +23,7 @@ const features = [
 const Capabilities = () => {
   return (
     <section className="w-full px-4 py-10 lg:px-8 lg:py-16">
-      <div className="mx-auto flex max-w-7xl flex-col overflow-hidden rounded-lg bg-[#0A0700] lg:flex-row">
+      <div className=" flex flex-col overflow-hidden rounded-lg bg-[#0A0700] lg:flex-row">
         {/* Left Side */}
         <div className="w-full px-0 py-2 sm:px-2 lg:w-[26%] lg:px-0 lg:py-0">
           <h2 className="text-2xl font-bold leading-tight text-white sm:text-3xl">

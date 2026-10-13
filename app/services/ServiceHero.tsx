@@ -5,7 +5,7 @@ export default function ServiceHero() {
   return (
     <section className="relative w-full overflow-hidden font-manrope">
       {/* ── Hero Container ── */}
-      <div className="relative h-auto min-h-[560px] sm:min-h-[620px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-center">
+      <div className="relative h-auto min-h-[350px] sm:min-h-[500px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-center">
         {/* ── Background Image ── */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -41,11 +41,11 @@ export default function ServiceHero() {
         <div
           className="
             relative z-20 flex h-full w-full flex-col items-start justify-center font-manrope text-white
-            px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 pt-16 sm:pt-20 lg:pt-6"
+            px-4 lg:w-1/2 lg:gap-2 lg:px-16 lg:pt-6"
         >
           <SectionLabel text="services" className="bg-transparent lg:ml-4" />
 
-          <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
+          <h1 className="w-11/12 text-3xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
             Complete Logistics Solutions{" "}
             <span className="text-yellow-200">Under One Roof</span>
           </h1>

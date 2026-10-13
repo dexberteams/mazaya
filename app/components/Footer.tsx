@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation";
 export default function Footer() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const isAboutPage = pathname === "/about";
+  const showDexbar = isHomePage || isAboutPage;
 
   return (
     <footer className="relative w-full px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-20 font-manrope">
@@ -318,35 +320,34 @@ export default function Footer() {
               </div>
 
               {/* Desktop developed by (hidden on mobile, shown on lg+) */}
-              <div
-                className="
-                  hidden
-                  lg:block mt-2"
-              >
-                <p className="flex items-center justify-start gap-1 text-[14px] font-medium text-white">
-                  Developed by:
-                  <Link
-                    href="https://dexber.vercel.app/en"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center"
-                  >
-                    <Image
-                      src="/logo/Dexber_White.png"
-                      alt="Dexber"
-                      width={250}
-                      height={80}
-                      className="h-auto w-[100px] sm:w-[115px] object-contain"
-                    />
-                  </Link>
-                </p>
 
-                <p className="mt-2 max-w-[270px] text-[9px] leading-[1.45] text-[#777777] font-inter">
-                  Design concepts are created by Dexber for presentation
-                  purposes. Third-party content and trademarks belong to their
-                  respective owners.
-                </p>
-              </div>
+              {showDexbar && (
+                <div className="mt-2 hidden lg:block">
+                  <p className="flex items-center justify-start gap-1 text-[14px] font-medium text-white">
+                    Developed by:
+                    <Link
+                      href="https://dexber.vercel.app/en"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center"
+                    >
+                      <Image
+                        src="/logo/Dexber_White.png"
+                        alt="Dexbar"
+                        width={250}
+                        height={80}
+                        className="h-auto w-[80px] object-contain"
+                      />
+                    </Link>
+                  </p>
+
+                  <p className="mt-2 max-w-[270px] font-inter text-[9px] leading-[1.45] text-[#777777]">
+                    Design concepts are created by Dexbar for presentation
+                    purposes. Third-party content and trademarks belong to their
+                    respective owners.
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* ===================================================
@@ -533,31 +534,34 @@ export default function Footer() {
               </div>
 
               {/* MOBILE DEVELOPED BY (only on mobile) */}
-              <div className="mt-5 text-center lg:hidden">
-                <p className="flex items-center justify-center gap-1 text-[12px] font-medium text-white">
-                  Developed by:
-                  <Link
-                    href="https://dexber.vercel.app/en"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center"
-                  >
-                    <Image
-                      src="/logo/Dexber_White.png"
-                      alt="Dexber"
-                      width={250}
-                      height={80}
-                      className="h-auto w-[90px] sm:w-[115px] object-contain"
-                    />
-                  </Link>
-                </p>
 
-                <p className="mx-auto mt-2 max-w-[280px] text-[9px] leading-[1.45] text-[#777] font-inter">
-                  Design concepts are created by Dexber for presentation
-                  purposes. Third-party content and trademarks belong to their
-                  respective owners.
-                </p>
-              </div>
+              {showDexbar && (
+                <div className="mt-5 text-center lg:hidden">
+                  <p className="flex items-center justify-center gap-1 text-[12px] font-medium text-white">
+                    Developed by:
+                    <Link
+                      href="https://dexber.vercel.app/en"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center"
+                    >
+                      <Image
+                        src="/logo/Dexber_White.png"
+                        alt="Dexbar"
+                        width={250}
+                        height={80}
+                        className="h-auto w-[60px] object-contain sm:w-[115px]"
+                      />
+                    </Link>
+                  </p>
+
+                  <p className="mx-auto mt-2 max-w-[280px] font-inter text-[9px] leading-[1.45] text-[#777777]">
+                    Design concepts are created by Dexbar for presentation
+                    purposes. Third-party content and trademarks belong to their
+                    respective owners.
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* ===================================================

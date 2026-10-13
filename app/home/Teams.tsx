@@ -61,10 +61,10 @@ const Teams = () => {
   };
   return (
     <div className="w-full my-10 lg:my-20 font-manrope">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="px-4 sm:px-6 lg:px-8">
         {isLandingPage && <SectionLabel text="about us" />}
         <h1 className="mt-4 text-2xl font-bold text-white lg:text-4xl">
-          Meet the <span className="text-yellow-400">Leadership Team</span>
+          Meet the <span className="text-yellow-200">Leadership Team</span>
         </h1>
         {/* ========================================================= MOBILE CAROUSEL ========================================================= */}
         <div className="mt-8 lg:hidden">

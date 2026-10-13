@@ -59,7 +59,7 @@ const ModernSupplyChains = () => {
       {/* Heading */}
       <h2 className="mb-6 text-xl font-semibold text-white sm:text-2xl lg:mb-7 lg:text-[36px]">
         Smart Warehousing Solutions for{" "}
-        <span className="text-[#FBBF24]">Modern Supply Chains</span>
+        <span className="text-yellow-200">Modern Supply Chains</span>
       </h2>
 
       <div className="grid grid-cols-1 gap-3 lg:grid-cols-[1fr_1fr] lg:gap-6">

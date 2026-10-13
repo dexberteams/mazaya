@@ -5,7 +5,7 @@ export default function IndustriesHero() {
   return (
     <section className="relative w-full overflow-hidden font-manrope">
       {/* ── Hero Container ── */}
-      <div className="relative h-auto min-h-[560px] sm:min-h-[620px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-center">
+      <div className="relative h-auto min-h-[350px] sm:min-h-[620px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-center">
         {/* ── Background Image ── */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -41,7 +41,7 @@ export default function IndustriesHero() {
         <div
           className="
             relative z-20 flex h-full w-full flex-col items-start justify-center font-manrope text-white
-            px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 pt-16 sm:pt-20 lg:pt-6"
+            px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 sm:pt-20 lg:pt-6"
         >
           <SectionLabel text="industries" className="bg-transparent lg:ml-4" />
 
@@ -53,10 +53,10 @@ export default function IndustriesHero() {
           <span className="mt-2 block lg:hidden h-0.5 w-24 bg-yellow-400"></span>
 
           <p className="max-w-xl mt-2 p-1 text-xs leading-4 lg:leading-6 sm:text-base lg:w-4/5 lg:p-4 font-manrope text-gray-300">
-            We deliver tailored logistics solutions that meet the unique challenges
-            of your industry. From transportation to warehousing and last-mile
-            delivery, we help your business grow faster and operate more
-            efficiently.
+            We deliver tailored logistics solutions that meet the unique
+            challenges of your industry. From transportation to warehousing and
+            last-mile delivery, we help your business grow faster and operate
+            more efficiently.
           </p>
         </div>
       </div>

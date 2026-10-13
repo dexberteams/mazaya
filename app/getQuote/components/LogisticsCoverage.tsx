@@ -1,6 +1,4 @@
-import React from "react";
 import Image from "next/image";
-import { Plane, Globe2 } from "lucide-react";
 
 export default function LogisticsCoverage() {
   return (
@@ -14,7 +12,7 @@ export default function LogisticsCoverage() {
           {/* Left Column: Heading, Line, and 3 Coverage Cards */}
           <div className="lg:col-span-6 flex flex-col justify-center">
             {/* Title */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
               Logistics Coverage
             </h2>
             <div className="w-16 bg-[#f5b800] mt-3 mb-8" />
@@ -24,10 +22,21 @@ export default function LogisticsCoverage() {
               {/* Saudi Arabia Card */}
               <div className="rounded-xl bg-[#090602]/90 border border-[#2e210b] p-4.5 hover:border-[#f5b800]/40 transition-colors flex flex-col">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-base" role="img" aria-label="Saudi Arabia Flag">
-                    <Image src="/getQuote/flag-saudi-arabia.png" alt="Saudi Arabia" width={24} height={24} />
+                  <span
+                    className="text-base"
+                    role="img"
+                    aria-label="Saudi Arabia Flag"
+                  >
+                    <Image
+                      src="/getQuote/flag-saudi-arabia.png"
+                      alt="Saudi Arabia"
+                      width={24}
+                      height={24}
+                    />
                   </span>
-                  <h3 className="text-sm font-bold text-[#f5b800]">Saudi Arabia</h3>
+                  <h3 className="text-sm font-bold text-[#f5b800]">
+                    Saudi Arabia
+                  </h3>
                 </div>
                 <ul className="space-y-2 text-xs text-[#c4bcaf]">
                   <li className="flex items-center gap-2">
@@ -47,7 +56,9 @@ export default function LogisticsCoverage() {
                   <span className="text-base" role="img" aria-label="GCC Globe">
                     🌍
                   </span>
-                  <h3 className="text-sm font-bold text-[#f5b800]">GCC Countries</h3>
+                  <h3 className="text-sm font-bold text-[#f5b800]">
+                    GCC Countries
+                  </h3>
                 </div>
                 <ul className="space-y-2 text-xs text-[#c4bcaf]">
                   <li className="flex items-center gap-2">
@@ -67,7 +78,9 @@ export default function LogisticsCoverage() {
                   <span className="text-base" role="img" aria-label="Airplane">
                     ✈️
                   </span>
-                  <h3 className="text-sm font-bold text-[#f5b800]">Worldwide</h3>
+                  <h3 className="text-sm font-bold text-[#f5b800]">
+                    Worldwide
+                  </h3>
                 </div>
                 <ul className="space-y-2 text-xs text-[#c4bcaf]">
                   <li className="flex items-center gap-2">

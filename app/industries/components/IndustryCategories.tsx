@@ -165,7 +165,7 @@ export default function IndustryCategories() {
       const clamped = Math.max(0, Math.min(index, maxSlide));
       setCurrentSlide(clamped);
     },
-    [maxSlide]
+    [maxSlide],
   );
 
   const nextSlide = useCallback(() => {
@@ -201,7 +201,7 @@ export default function IndustryCategories() {
   };
 
   return (
-    <section className="relative w-full bg-[#0A0700] my-8 lg:my-16 px-4 lg:px-8 font-manrope overflow-hidden">
+    <section className="relative w-full bg-[#0A0700] lg:my-16 px-4 lg:px-8 font-manrope overflow-hidden">
       <div>
         {/* ── Section Header ── */}
         <div className="flex items-center justify-between gap-4 mb-8 sm:mb-12">
@@ -217,7 +217,16 @@ export default function IndustryCategories() {
               aria-label="Previous industry"
               className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#3D301E] bg-[#120E08] text-gray-300 hover:text-white hover:border-[#FFBB00] hover:bg-[#1C160C] flex items-center justify-center transition-all duration-200"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <polyline points="15 18 9 12 15 6" />
               </svg>
             </button>
@@ -227,7 +236,16 @@ export default function IndustryCategories() {
               aria-label="Next industry"
               className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#3D301E] bg-[#120E08] text-gray-300 hover:text-white hover:border-[#FFBB00] hover:bg-[#1C160C] flex items-center justify-center transition-all duration-200"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <polyline points="9 18 15 12 9 6" />
               </svg>
             </button>

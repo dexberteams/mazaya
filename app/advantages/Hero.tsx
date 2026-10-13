@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className="relative w-full overflow-hidden">
       {/* Background Image */}
-      <div className="relative min-h-100 w-full sm:min-h-110 lg:h-150 lg:min-h-0">
+      <div className="relative min-h-80 w-full sm:min-h-110 lg:h-150 lg:min-h-0">
         <Image
           src="/advantages/advantages-hero.jpg"
           alt="Advantages"
