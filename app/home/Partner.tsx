@@ -6,6 +6,17 @@ import SectionLabel from "../ui/SectionLabel";
 import { usePathname } from "next/navigation";
 import BusinessGroup from "./BusinessGroup";
 
+export type PartnerT = {
+  sectionLabel: string;
+  heading: string;
+  headingHighlight: string;
+  businessGroup?: {
+    heading: string;
+    headingHighlight: string;
+    subtitle: string;
+  };
+};
+
 const partners = [
   {
     name: "Partner 1",
@@ -57,10 +68,12 @@ const partners = [
   },
 ];
 
-const Partner = () => {
-  const pathname = usePathname();
-  const isLandingPage = pathname === "/";
-  const isAboutPage = pathname === "/about";
+const Partner = ({ t }: { t?: PartnerT }) => {
+  const pathname = usePathname() || "/";
+  const stripped = pathname.replace(/^\/(en|ar)/, "") || "/";
+  const isLandingPage = stripped === "/" || stripped === "";
+  const isAboutPage = stripped === "/about";
+
   return (
     <section className="relative my-10 overflow-hidden bg-linear-to-br from-[#0A0700] via-[#211A0A] to-[#0A0700] py-5 lg:my-20 text-white">
       {/* Top Blend */}
@@ -73,12 +86,17 @@ const Partner = () => {
       <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
         <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-size-[70px_70px] text-white" />
       </div>
-      {!isAboutPage && <BusinessGroup />}
+      {!isAboutPage && <BusinessGroup t={t?.businessGroup} />}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8">
-        {isLandingPage && <SectionLabel text="Partnership" />}
+        {isLandingPage && (
+          <SectionLabel text={t?.sectionLabel || "Partnership"} />
+        )}
 
         <h1 className="mt-4 font-manrope text-2xl font-bold text-white lg:text-4xl">
-          Grow Together <span className="text-yellow-200">Successfully</span>
+          {t?.heading || "Grow Together"}{" "}
+          <span className="text-yellow-200">
+            {t?.headingHighlight || "Successfully"}
+          </span>
         </h1>
       </div>
 

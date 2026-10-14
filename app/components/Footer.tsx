@@ -4,11 +4,36 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Footer() {
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
-  const isAboutPage = pathname === "/about";
+export type FooterT = {
+  tagline: string;
+  description: string;
+  ctaHeading: string;
+  ctaSubtitle: string;
+  getQuote: string;
+  contactUs: string;
+  developedBy: string;
+  disclaimer: string;
+  rights: string;
+  privacyPolicy: string;
+  terms: string;
+  sitemap: string;
+};
+
+export default function Footer({
+  lang = "en",
+  t,
+}: {
+  lang?: string;
+  t?: FooterT;
+}) {
+  const isAr = lang === "ar";
+  const pathname = usePathname() || "/";
+  const stripped = pathname.replace(/^\/(en|ar)/, "") || "/";
+  const isHomePage = stripped === "/" || stripped === "";
+  const isAboutPage = stripped === "/about";
   const showDexbar = isHomePage || isAboutPage;
+  const lh = (href: string) => (href === "/" ? `/${lang}` : `/${lang}${href}`);
+  const arrow = isAr ? "←" : "→";
 
   return (
     <footer className="relative w-full px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-20 font-manrope">
@@ -231,8 +256,7 @@ export default function Footer() {
             >
               {/* Logo */}
               <Link
-                href="/"
-                className="inline-flex transition-opacity duration-300 hover:opacity-90"
+                href={`/${lang}`}                className="inline-flex transition-opacity duration-300 hover:opacity-90"
               >
                 <Image
                   src="/logo/Logo.png"
@@ -264,10 +288,8 @@ export default function Footer() {
                   font-inter
                 "
               >
-                Mazaya Masanda Logistics delivers reliable transportation,
-                warehousing, fulfillment and supply chain solutions across Saudi
-                Arabia and GCC with efficiency, innovation and customer
-                satisfaction.
+                {t?.description ||
+                  "Mazaya Masanda Logistics delivers reliable transportation, warehousing, fulfillment and supply chain solutions across Saudi Arabia and GCC with efficiency, innovation and customer satisfaction."}
               </p>
 
               {/* Desktop social icons (hidden on mobile, shown on lg+) */}
@@ -324,7 +346,7 @@ export default function Footer() {
               {showDexbar && (
                 <div className="mt-2 hidden lg:block">
                   <p className="flex items-center justify-start gap-1 text-[14px] font-medium text-white">
-                    Developed by:
+                    {t?.developedBy || "Developed by:"}
                     <Link
                       href="https://dexber.vercel.app/en"
                       target="_blank"
@@ -342,9 +364,8 @@ export default function Footer() {
                   </p>
 
                   <p className="mt-2 max-w-[270px] font-inter text-[9px] leading-[1.45] text-[#777777]">
-                    Design concepts are created by Dexbar for presentation
-                    purposes. Third-party content and trademarks belong to their
-                    respective owners.
+                    {t?.disclaimer ||
+                      "Design concepts are created by Dexbar for presentation purposes. Third-party content and trademarks belong to their respective owners."}
                   </p>
                 </div>
               )}
@@ -381,7 +402,7 @@ export default function Footer() {
                   xl:text-[24px]
                 "
               >
-                Ready to Move Your Business Forward?
+                {t?.ctaHeading || "Ready to Move Your Business Forward?"}
               </h3>
 
               <p
@@ -399,13 +420,13 @@ export default function Footer() {
                   lg:text-[11px]
                 "
               >
-                Reliable Logistics Solutions Across Saudi Arabia &amp; Beyond
+                {t?.ctaSubtitle || "Reliable Logistics Solutions Across Saudi Arabia & Beyond"}
               </p>
 
               {/* Action Buttons */}
               <div className="mt-5 flex items-center justify-center gap-3">
                 <Link
-                  href="/getQuote"
+                  href={lh("/getQuote")}
                   className="
                     inline-flex
                     h-[36px]
@@ -428,12 +449,12 @@ export default function Footer() {
                     active:scale-95
                   "
                 >
-                  Get Quote
-                  <span className="text-[14px] leading-none">→</span>
+                  {t?.getQuote || "Get Quote"}
+                  <span className="text-[14px] leading-none">{arrow}</span>
                 </Link>
 
                 <Link
-                  href="/contactus"
+                  href={lh("/contactus")}
                   className="
                     inline-flex
                     h-[36px]
@@ -458,8 +479,8 @@ export default function Footer() {
                     active:scale-95
                   "
                 >
-                  Contact Us
-                  <span className="text-[14px] leading-none">→</span>
+                  {t?.contactUs || "Contact Us"}
+                  <span className="text-[14px] leading-none">{arrow}</span>
                 </Link>
               </div>
 
@@ -478,10 +499,8 @@ export default function Footer() {
                   lg:hidden
                 "
               >
-                Mazaya masanda Logistics delivers reliable transportation,
-                warehousing, fulfillment and supply chain solutions across Saudi
-                Arabia and GCC with efficiency, innovation and customer
-                satisfaction.
+                {t?.description ||
+                  "Mazaya masanda Logistics delivers reliable transportation, warehousing, fulfillment and supply chain solutions across Saudi Arabia and GCC with efficiency, innovation and customer satisfaction."}
               </p>
 
               {/* MOBILE SOCIALS (only on mobile) */}
@@ -538,7 +557,7 @@ export default function Footer() {
               {showDexbar && (
                 <div className="mt-5 text-center lg:hidden">
                   <p className="flex items-center justify-center gap-1 text-[12px] font-medium text-white">
-                    Developed by:
+                    {t?.developedBy || "Developed by:"}
                     <Link
                       href="https://dexber.vercel.app/en"
                       target="_blank"
@@ -556,9 +575,8 @@ export default function Footer() {
                   </p>
 
                   <p className="mx-auto mt-2 max-w-[280px] font-inter text-[9px] leading-[1.45] text-[#777777]">
-                    Design concepts are created by Dexbar for presentation
-                    purposes. Third-party content and trademarks belong to their
-                    respective owners.
+                    {t?.disclaimer ||
+                      "Design concepts are created by Dexbar for presentation purposes. Third-party content and trademarks belong to their respective owners."}
                   </p>
                 </div>
               )}
@@ -574,37 +592,37 @@ export default function Footer() {
                 flex-col
                 items-end
                 justify-end
-                text-right
+                text-end
               "
             >
               <p className="text-[10px] font-medium text-white">
-                © 2026 Mazaya Masanda Logistics. All Rights Reserved.
+                {t?.rights || "© 2026 Mazaya Masanda Logistics. All Rights Reserved."}
               </p>
 
               <div className="mt-2 flex flex-wrap items-center justify-end gap-x-1.5 gap-y-1 text-[9px] text-[#A3A3A3]">
                 <Link
-                  href="/privacy"
+                  href={lh("/privacy")}
                   className="transition-colors hover:text-[#D49A24]"
                 >
-                  Privacy Policy
+                  {t?.privacyPolicy || "Privacy Policy"}
                 </Link>
 
                 <span>|</span>
 
                 <Link
-                  href="/terms"
+                  href={lh("/terms")}
                   className="transition-colors hover:text-[#D49A24]"
                 >
-                  Terms &amp; Conditions
+                  {t?.terms || "Terms & Conditions"}
                 </Link>
 
                 <span>|</span>
 
                 <Link
-                  href="/sitemap"
+                  href={lh("/sitemap")}
                   className="transition-colors hover:text-[#D49A24]"
                 >
-                  Sitemap
+                  {t?.sitemap || "Sitemap"}
                 </Link>
               </div>
             </div>
@@ -615,33 +633,33 @@ export default function Footer() {
           ===================================================== */}
           <div className="relative mt-6 border-t border-[#A9791C]/25 pt-4 text-center lg:hidden">
             <p className="text-[10px] font-medium text-white">
-              © 2026 Mazaya Masanda Logistics. All Rights Reserved.
+              {t?.rights || "© 2026 Mazaya Masanda Logistics. All Rights Reserved."}
             </p>
 
             <div className="mt-2 flex flex-wrap items-center justify-center gap-x-2 text-[10px] text-[#A3A3A3]">
               <Link
-                href="/privacy"
+                href={lh("/privacy")}
                 className="transition-colors hover:text-[#D49A24]"
               >
-                Privacy Policy
+                {t?.privacyPolicy || "Privacy Policy"}
               </Link>
 
               <span>|</span>
 
               <Link
-                href="/terms"
+                href={lh("/terms")}
                 className="transition-colors hover:text-[#D49A24]"
               >
-                Terms &amp; Conditions
+                {t?.terms || "Terms & Conditions"}
               </Link>
 
               <span>|</span>
 
               <Link
-                href="/sitemap"
+                href={lh("/sitemap")}
                 className="transition-colors hover:text-[#D49A24]"
               >
-                Sitemap
+                {t?.sitemap || "Sitemap"}
               </Link>
             </div>
           </div>

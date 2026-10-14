@@ -3,7 +3,19 @@
 import Image from "next/image";
 import SectionLabel from "../ui/SectionLabel";
 
-const industries = [
+export type IndustryItem = {
+  name: string;
+  des: string;
+};
+
+export type ServicesT = {
+  sectionLabel: string;
+  heading: string;
+  headingHighlight: string;
+  industries?: IndustryItem[];
+};
+
+const defaultIndustries = [
   {
     id: 0,
     name: "E-Commerce",
@@ -48,33 +60,44 @@ const industries = [
   },
   {
     id: 6,
-    name: "Large Corporationse",
+    name: "Large Corporations",
     des: "Enterprise supply chain optimization.",
     image: "/home/industries/large.png",
     className: "lg:col-start-6 lg:col-span-2 lg:row-start-3 lg:row-span-2",
   },
   {
     id: 7,
-    name: "Wearhousing",
+    name: "Warehousing",
     des: "Efficient storage and inventory control.",
     image: "/home/industries/housing.png",
     className: "lg:col-start-8 lg:col-span-3 lg:row-start-3 lg:row-span-2",
   },
 ];
 
-const Services = () => {
+const Services = ({ t }: { t?: ServicesT }) => {
+  const items = defaultIndustries.map((item, index) => {
+    const translated = t?.industries?.[index];
+    return {
+      ...item,
+      name: translated?.name || item.name,
+      des: translated?.des || item.des,
+    };
+  });
+
   return (
     <section className="my-10 px-4 lg:my-20 lg:px-8 font-manrope relative">
-      <SectionLabel text="Industries" />
+      <SectionLabel text={t?.sectionLabel || "Industries"} />
 
       <h1 className="mt-4 font-manrope text-2xl font-bold text-white lg:text-4xl">
-        Industries <span className="text-yellow-200">We Serve</span>
+        {t?.heading || "Industries"}{" "}
+        <span className="text-yellow-200">
+          {t?.headingHighlight || "We Serve"}
+        </span>
       </h1>
 
       {/* Industries Grid */}
-
       <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-10 lg:grid-rows-4">
-        {industries.map((industry) => (
+        {items.map((industry) => (
           <div
             key={industry.id}
             className={`group relative min-h-40 overflow-hidden rounded-2xl border border-yellow-400
@@ -126,31 +149,14 @@ const Services = () => {
 
             {/* Title */}
             <div className="absolute inset-x-0 bottom-0 p-5 lg:p-6">
-              <h3
-                className=" text-xs
-            lg:text-base font-medium text-white
-            "
-              >
+              <h3 className="text-xs lg:text-base font-medium text-white">
                 {industry.name}
               </h3>
               <div className="relative z-10 lg:mt-2 flex flex-col gap-1">
-                <span
-                  className="
-              h-1 w-4 bg-[#f5c400]
-              "
-                />
-
-                <span
-                  className="
-              h-0.75 w-4 bg-white
-              "
-                />
+                <span className="h-1 w-4 bg-[#f5c400]" />
+                <span className="h-0.75 w-4 bg-white" />
               </div>
-              <p
-                className="mt-0.5
-                lg:mt-1 text-[10px] lg:text-xs text-white
-               "
-              >
+              <p className="mt-0.5 lg:mt-1 text-[10px] lg:text-xs text-white">
                 {industry.des}
               </p>
 

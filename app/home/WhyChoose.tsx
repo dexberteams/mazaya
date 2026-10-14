@@ -1,77 +1,78 @@
 "use client";
 
-import { MoveRight } from "lucide-react";
+import { MoveRight, MoveLeft } from "lucide-react";
 import { FaCheckCircle } from "react-icons/fa";
 import SectionLabel from "../ui/SectionLabel";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const WhyChoose = () => {
-  const pathname = usePathname();
-  const isLandingPage = pathname === "/";
+export type WhyChooseT = {
+  sectionLabel: string;
+  heading: string;
+  headingHighlight: string;
+  subtitle: string;
+  bullets: string[];
+  button: string;
+  stats: {
+    experience: string;
+    deliveries: string;
+    satisfaction: string;
+    drivers: string;
+  };
+};
+
+const defaultBullets = [
+  "Professional Operation Team",
+  "Extensive Coverage",
+  "Fast Execution",
+  "High Quality Operation",
+  "Experience in Seasonal Project",
+  "Organized Management System",
+  "Regular Performance Reports",
+];
+
+const WhyChoose = ({ t }: { t?: WhyChooseT }) => {
+  const pathname = usePathname() || "/";
+  const stripped = pathname.replace(/^\/(en|ar)/, "") || "/";
+  const isLandingPage = stripped === "/" || stripped === "";
+  const lang = pathname.split("/")[1] || "en";
+  const isAr = lang === "ar";
+  const bullets = t?.bullets || defaultBullets;
+
   return (
     <div className="p-4 lg:p-8 my-10 lg:my-20 font-manrope">
-      {isLandingPage && <SectionLabel text="advantages" />}
+      {isLandingPage && (
+        <SectionLabel text={t?.sectionLabel || "advantages"} />
+      )}
       <h3 className="font-bold text-2xl my-2 lg:my-4 lg:text-4xl text-white">
-        Why <span className="text-yellow-200">Choose Us?</span>
+        {t?.heading || "Why"}{" "}
+        <span className="text-yellow-200">
+          {t?.headingHighlight || "Choose Us?"}
+        </span>
       </h3>
       {/* grid box */}
       <div className="flex lg:flex-row flex-col-reverse justify-between gap-4 lg:gap-6 text-white mt-4 lg:mt-8">
         {/* div-1 */}
         <div className="rounded-lg bg-[#201700] p-4 lg:p-8">
           <p className="font-inter text-xs lg:text-lg mt-3 lg:mt-6">
-            We provide Full Range Logistice Solution
+            {t?.subtitle || "We provide Full Range Logistice Solution"}
           </p>
           {/* option div */}
           <div className="space-y-3 lg:space-y-4 mt-3 lg:mt-6 text-sm">
-            <p className="flex gap-2 justify-start">
-              <span className="text-yellow-400">
-                <FaCheckCircle />
-              </span>
-              Professional Operation Team
-            </p>
-            <p className="flex gap-2 justify-start">
-              <span className="text-yellow-400">
-                <FaCheckCircle />
-              </span>
-              Extensive Coverage
-            </p>
-            <p className="flex gap-2 justify-start">
-              <span className="text-yellow-400">
-                <FaCheckCircle />
-              </span>
-              Fast Execution
-            </p>
-            <p className="flex gap-2 justify-start">
-              <span className="text-yellow-400">
-                <FaCheckCircle />
-              </span>
-              High Quality Operation
-            </p>
-            <p className="flex gap-2 justify-start">
-              <span className="text-yellow-400">
-                <FaCheckCircle />
-              </span>
-              Experience in Seasonal Project
-            </p>
-            <p className="flex gap-2 justify-start">
-              <span className="text-yellow-400">
-                <FaCheckCircle />
-              </span>
-              Organized Management System
-            </p>
-            <p className="flex gap-2 justify-start">
-              <span className="text-yellow-400">
-                <FaCheckCircle />
-              </span>
-              Regular Performance Reports
-            </p>
+            {bullets.map((bullet, idx) => (
+              <p key={idx} className="flex gap-2 justify-start items-center">
+                <span className="text-yellow-400 shrink-0">
+                  <FaCheckCircle />
+                </span>
+                {bullet}
+              </p>
+            ))}
           </div>
-          <Link href="/about">
-            <button className="bg-yellow-500 text-black p-2 text-sm lg:text-[16px] lg:p-4 rounded-lg font-medium flex gap-1 mt-3 lg:mt-9">
-              Learn More About Us
-              <MoveRight />
+          <Link href={`/${lang}/about`}>
+            <button className="bg-yellow-500 text-black p-2 text-sm lg:text-[16px] lg:p-4 rounded-lg font-medium flex items-center gap-1 mt-3 lg:mt-9 cursor-pointer hover:bg-yellow-400 transition-colors">
+              {t?.button || "Learn More About Us"}
+              {isAr ? <MoveLeft size={18} /> : <MoveRight size={18} />}
             </button>
           </Link>
         </div>
@@ -105,13 +106,12 @@ const WhyChoose = () => {
       lg:group-hover:shadow-xl
     "
             >
-              <p className="text-[12px]  font-semibold text-white lg:text-xl">
+              <p className="text-[12px] font-semibold text-white lg:text-xl">
                 20+
               </p>
 
-              <p className="text-[10px] lg:text-xs text-white/80">
-                Years of
-                <br /> Experience
+              <p className="text-[10px] lg:text-xs text-white/80 whitespace-pre-line">
+                {t?.stats.experience || "Years of\nExperience"}
               </p>
             </div>
 
@@ -137,9 +137,8 @@ const WhyChoose = () => {
                 10,000+
               </p>
 
-              <p className="text-[10px] lg:text-xs text-white/80">
-                Deliveries
-                <br /> Completed
+              <p className="text-[10px] lg:text-xs text-white/80 whitespace-pre-line">
+                {t?.stats.deliveries || "Deliveries\nCompleted"}
               </p>
             </div>
 
@@ -166,10 +165,8 @@ const WhyChoose = () => {
                   99%
                 </p>
 
-                <p className="text-[10px] lg:text-xs text-white/80">
-                  Client
-                  <br />
-                  Satisfaction
+                <p className="text-[10px] lg:text-xs text-white/80 whitespace-pre-line">
+                  {t?.stats.satisfaction || "Client\nSatisfaction"}
                 </p>
               </div>
 
@@ -194,10 +191,8 @@ const WhyChoose = () => {
                   500+
                 </p>
 
-                <p className="text-[10px] lg:text-xs text-white/80">
-                  Professional
-                  <br />
-                  Drivers
+                <p className="text-[10px] lg:text-xs text-white/80 whitespace-pre-line">
+                  {t?.stats.drivers || "Professional\nDrivers"}
                 </p>
               </div>
 

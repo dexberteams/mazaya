@@ -1,0 +1,639 @@
+{
+  "home": {
+    "hero": {
+      "title": "Your Trusted Logistics Partner",
+      "titleHighlight": "Mazaya Masanda",
+      "subtitle": "Reliable transportation, warehousing and supply chain solutions with speed, safety and efficiency.",
+      "getQuote": "Get Quote",
+      "stats": {
+        "drivers": "Professional Drivers",
+        "deliveries": "Successful Deliveries",
+        "cities": "Cities Covered",
+        "satisfaction": "Client Satisfaction"
+      },
+      "features": {
+        "onTime": "On-Time Delivery",
+        "onTimeDesc": "Everyday",
+        "safe": "Safe & Secure",
+        "safeDesc": "Cargo Protection",
+        "support": "24/7 Support",
+        "supportDesc": "Always Here"
+      },
+      "buttons": {
+        "warehouse": "Warehouse",
+        "watchStories": "Watch our Stories",
+        "fleet": "Our Fleet",
+        "services": "Services",
+        "industries": "Industries"
+      }
+    },
+    "partner": {
+      "sectionLabel": "Partnership",
+      "heading": "Grow Together",
+      "headingHighlight": "Successfully",
+      "businessGroup": {
+        "heading": "Part of a Connected",
+        "headingHighlight": "Business Group",
+        "subtitle": "Three companies. One commitment to moving businesses forward."
+      }
+    },
+    "story": {
+      "sectionLabel": "about us",
+      "heading": "Our Story",
+      "headingHighlight": "& Vision",
+      "badge": "Driven by Commitment,\nDelivered with Excellence",
+      "subheading": "Building Connections. Delivering Excellence.",
+      "description": "Mazaya Masanda Logistics is a leading logistics and supply chain solutions provider in Saudi Arabia and beyond. We are committed to delivering reliable, efficient, and innovative logistics services that empower businesses to grow and succeed.",
+      "storyCardTitle": "Our Story",
+      "storyCardDesc": "Founded with a vision to transform logistics, Mazaya Masanda Logistics has grown into a trusted partner for businesses.",
+      "missionCardTitle": "Our Mission",
+      "missionCardDesc": "To deliver smart, reliable, and cost-effective logistics solutions that create value for our clients and communities.",
+      "visionCardTitle": "Our Vision",
+      "visionCardDesc": "To be the most trusted logistics partner in the region, recognized for our innovation, integrity, and customer success.",
+      "valuesCardTitle": "Our Values",
+      "values": {
+        "integrity": "Integrity",
+        "customerFocus": "Customer Focus",
+        "excellence": "Excellence",
+        "teamwork": "Teamwork",
+        "innovation": "Innovation"
+      }
+    },
+    "quickSolution": {
+      "sectionLabel": "SERVICE",
+      "heading": "Our Quick",
+      "headingHighlight": "Solutions",
+      "solutions": [
+        {
+          "title": "Fleet Operations",
+          "description": "Reliable fleet management with modern vehicles for safe and on-time transportation."
+        },
+        {
+          "title": "Parcel Delivery",
+          "description": "Fast and dependable parcel delivery services with secure handling and live updates."
+        },
+        {
+          "title": "Last Mile Delivery",
+          "description": "Efficient last-mile solutions ensuring every shipment reaches destinations quickly and safely."
+        },
+        {
+          "title": "Inventory Management",
+          "description": "Smart stock control and real-time tracking to maximize accuracy and operational efficiency."
+        },
+        {
+          "title": "Warehousing Services",
+          "description": "Secure storage facilities with 24/7 monitoring, modern racking, and optimized space."
+        },
+        {
+          "title": "Order Fulfillment",
+          "description": "Seamless picking, packing, and shipping to deliver an exceptional customer experience."
+        }
+      ]
+    },
+    "services": {
+      "sectionLabel": "Industries",
+      "heading": "Industries",
+      "headingHighlight": "We Serve",
+      "industries": [
+        {
+          "name": "E-Commerce",
+          "des": "End-to-end solutions for online e-commerce."
+        },
+        {
+          "name": "Logistics",
+          "des": "Global cargo and transport solutions."
+        },
+        {
+          "name": "Food & Beverage",
+          "des": "Specialized cold chain management."
+        },
+        {
+          "name": "Retail",
+          "des": "Scalable product distribution networks."
+        },
+        {
+          "name": "Restaurants",
+          "des": "Fresh-to-table food delivery logistics."
+        },
+        {
+          "name": "Healthcare",
+          "des": "End-to-end solutions for online healthcare."
+        },
+        {
+          "name": "Large Corporations",
+          "des": "Enterprise supply chain optimization."
+        },
+        {
+          "name": "Warehousing",
+          "des": "Efficient storage and inventory control."
+        }
+      ]
+    },
+    "whyChoose": {
+      "sectionLabel": "advantages",
+      "heading": "Why",
+      "headingHighlight": "Choose Us?",
+      "subtitle": "We provide Full Range Logistice Solution",
+      "bullets": [
+        "Professional Operation Team",
+        "Extensive Coverage",
+        "Fast Execution",
+        "High Quality Operation",
+        "Experience in Seasonal Project",
+        "Organized Management System",
+        "Regular Performance Reports"
+      ],
+      "button": "Learn More About Us",
+      "stats": {
+        "experience": "Years of Experience",
+        "deliveries": "Deliveries Completed",
+        "satisfaction": "Client Satisfaction",
+        "drivers": "Professional Drivers"
+      }
+    },
+    "teams": {
+      "sectionLabel": "about us",
+      "heading": "Meet the",
+      "headingHighlight": "Leadership Team",
+      "members": [
+        {
+          "name": "Eng. Shafi Aldawsari",
+          "role": "Founder & CEO",
+          "description": "Leads Mazaya Masanda Fast’s strategic vision and business development, with a focus on building strong partnerships. He is committed to strengthening Mazaya’s position as a trusted logistics partner through sustainable growth, operational efficiency, and services."
+        },
+        {
+          "name": "Rashed Abdelbari",
+          "role": "General Supervisor",
+          "description": "Oversees Mazaya Masanda Fast’s overall performance, promoting effective coordination across departments and ensuring the execution of operational plans & objectives. His focus is on enhancing efficiency, strengthening quality and continued growth."
+        },
+        {
+          "name": "Othman Ali",
+          "role": "Operations & Supply Chain Manager",
+          "description": "Leads operations and supply chain activities at Mazaya Masanda Fast, overseeing the execution of logistics projects and the management of operational resources & teams. His focus is on improving operational efficiency, optimizing performance. & ensuring the delivery."
+        },
+        {
+          "name": "Amjad Ahmed",
+          "role": "Assistant Operations Manager",
+          "description": "Supports the management of daily operations, the execution of operational plans, and coordination across field teams. His focus is on execution efficiency, performance monitoring, and resolving operational challenges to ensure service continuity and consistently meet client requirements."
+        },
+        {
+          "name": "Alfas Ahmed",
+          "role": "Fleet & Maintenance Supervisor",
+          "description": "Leads fleet movement and maintenance operations, overseeing vehicle readiness and fleet availability. His focus is on coordinating vehicle movement, and minimizing downtime to ensure fleet readiness and support logistics operations with efficiency and reliability."
+        }
+      ]
+    },
+    "mazayaLogistics": {
+      "sectionLabel": "Careers",
+      "heading": "Build Your Career with",
+      "headingHighlight": "Mazaya Masanda Logistics",
+      "opportunitiesTitle": "CURRENT OPPORTUNITIES",
+      "jobs": {
+        "opCoord": {
+          "title": "Operations Coordinator",
+          "desc": "Manage daily logistics operations and ensure smooth shipment processes."
+        },
+        "fleetSup": {
+          "title": "Fleet Supervisor",
+          "desc": "Oversee vehicle operations, maintenance schedules, and driver coordination."
+        },
+        "whAssist": {
+          "title": "Warehouse Assistant",
+          "desc": "Support inventory handling, storage, and warehouse operations."
+        }
+      },
+      "whyTitle": "WHY WORK WITH US",
+      "reasons": [
+        "Professional Work Environment",
+        "Career Growth Opportunities",
+        "Collaborative Team Culture",
+        "Learning & Development"
+      ],
+      "viewAll": "View All Jobs",
+      "stats": {
+        "openPositions": "Open Positions",
+        "teamMembers": "Team Members",
+        "citiesCovered": "Cities Covered",
+        "happyClient": "Happy Client"
+      }
+    },
+    "clientSection": {
+      "sectionLabel": "Partnership",
+      "heading": "Grow Together",
+      "headingHighlight": "Successfully",
+      "videoTitle": "Customer Success Story",
+      "videoSubtitle": "ARAMEX Logistics Partner",
+      "reviews": [
+        {
+          "name": "Eng. Md Abdullah",
+          "role": "CEO",
+          "company": "DEXBAR",
+          "review": "Working with mazaya masanda Logistics has made our delivery operations faster, smoother, and more reliable."
+        },
+        {
+          "name": "Omar Hassan",
+          "role": "Operations & Supply Chain Manager",
+          "company": "Mazaya Masanda",
+          "review": "mazaya masanda Logistics delivers on time. Their team is professional, reliable and always responsive."
+        },
+        {
+          "name": "Mohammed Ali",
+          "role": "Operations Manager",
+          "company": "Aramex",
+          "review": "Working with mazaya masanda Logistics has made our supply chain operations faster and more efficient."
+        },
+        {
+          "name": "Al-Quareshi Hakim",
+          "role": "Operations Manager",
+          "company": "Ajex",
+          "review": "Thanks to mazaya masanda Logistics, our supply chain is now more efficient, organized, and consistently dependable."
+        }
+      ]
+    }
+  },
+  "about": {
+    "hero": {
+      "sectionLabel": "ABOUT US",
+      "heading": "Who We",
+      "headingHighlight": "Are",
+      "subtitle": "Learn about our journey, mission and the values that drive us"
+    },
+    "companyOverview": {
+      "sectionLabel": "COMPANY",
+      "heading": "Company",
+      "headingHighlight": "Overview",
+      "description": "Mazaya Masanda Logistics is a premier logistics and supply chain solutions provider, serving Saudi Arabia and the wider region. Founded on the principles of reliability, efficiency, and innovation, we have established ourselves as a trusted partner for businesses of all sizes.",
+      "learnMore": "Learn More",
+      "stats": {
+        "experience": "Years Experience",
+        "deliveries": "Deliveries",
+        "clients": "Clients",
+        "countries": "Countries"
+      }
+    },
+    "coreValues": {
+      "sectionLabel": "VALUES",
+      "heading": "Our Core",
+      "headingHighlight": "Values",
+      "subtitle": "The principles that guide everything we do",
+      "items": [
+        {
+          "title": "Integrity",
+          "description": "We operate with honesty, transparency and strong ethical standards."
+        },
+        {
+          "title": "Customer Focus",
+          "description": "Our customers' success is at the heart of everything we do."
+        },
+        {
+          "title": "Excellence",
+          "description": "We are committed to delivering the highest quality in every action."
+        },
+        {
+          "title": "Innovation",
+          "description": "We embrace new ideas and technology to create smarter solutions."
+        },
+        {
+          "title": "Teamwork",
+          "description": "We believe in collaboration and respect to achieve shared goals."
+        },
+        {
+          "title": "Safety",
+          "description": "We prioritize health, safety and security in all our operations."
+        }
+      ]
+    },
+    "businessEcosystem": {
+      "sectionLabel": "OUR BUSINESS ECOSYSTEM",
+      "heading": "One Vision.",
+      "headingHighlight": "Multiple Businesses.",
+      "subtitle": "A connected network of services built for your success",
+      "leadership": "Leadership & Vision",
+      "ceoName": "Eng. Shafi Aldawsari",
+      "ceoRole": "Founder & Chief Executive Officer",
+      "ceoDesc": "Leading with purpose, strategic thinking, commitment to excellence. Through a unified vision, our leadership drives innovation.",
+      "expertise": [
+        "Strategic Leadership",
+        "Innovation",
+        "Sustainable Growth"
+      ],
+      "subsidiaries": [
+        {
+          "name": "LOADTRUCK",
+          "category": "Logistics & Transportation",
+          "description": "LoadTruckX is a logistics and transportation platform offering convenient ride-sharing, parcel delivery, and reliable transport solutions through its digital services.",
+          "services": ["Ride Sharing", "Parcel Delivery", "Delivery Partner"]
+        }
+      ],
+      "exploreCompany": "Explore Company",
+      "bottomStatement": "Building stronger businesses through shared vision and collective expertise."
+    },
+    "cta": {
+      "heading": "Ready to Move Forward?",
+      "subtitle": "Get in touch with our team today",
+      "button": "Contact Us",
+      "secondaryButton": "Get a Quote"
+    }
+  },
+  "services": {
+    "hero": {
+      "sectionLabel": "SERVICES",
+      "heading": "Our",
+      "headingHighlight": "Services",
+      "subtitle": "Comprehensive logistics solutions tailored to your needs"
+    },
+    "cta": {
+      "heading": "Need a Custom Solution?",
+      "subtitle": "Talk to our experts and get a tailored plan",
+      "button": "Get in Touch"
+    }
+  },
+  "industries": {
+    "hero": {
+      "sectionLabel": "industries",
+      "heading": "Logistics Solutions For",
+      "headingHighlight": "Every Industry",
+      "subtitle": "We deliver tailored logistics solutions that meet the unique challenges of your industry. From transportation to warehousing and last-mile delivery, we help your business grow faster and operate more efficiently."
+    },
+    "categories": {
+      "heading": "Industry",
+      "headingHighlight": "Categories",
+      "learnMore": "Learn More",
+      "items": [
+        {
+          "title": "E-commerce",
+          "description": "End-to-end logistics solutions for online businesses, including warehousing, order fulfillment, and last-mile delivery."
+        },
+        {
+          "title": "Restaurants",
+          "description": "Reliable delivery and supply chain solutions to keep your restaurant operations running smoothly."
+        },
+        {
+          "title": "Retail",
+          "description": "Scalable logistics solutions for retail businesses, ensuring timely delivery and inventory availability."
+        },
+        {
+          "title": "Food & Beverage",
+          "description": "Safe and temperature-controlled logistics for food, fresh groceries, and beverage products."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Ready to Work Together?",
+      "subtitle": "Let's build a stronger logistics future together with tailored industry solutions.",
+      "button": "Get Quote"
+    }
+  },
+  "projects": {
+    "hero": {
+      "sectionLabel": "our projects",
+      "heading": "Delivering Success Through",
+      "headingHighlight": "Every Project",
+      "subtitle": "Explore our successfully completed and ongoing projects that reflect our commitment to excellence, reliability, and client satisfaction."
+    },
+    "cta": {
+      "heading": "Have a Project in Mind?",
+      "subtitle": "Let's work together to create a logistics solution that drives your business forward.",
+      "button": "Get Quote"
+    }
+  },
+  "advantages": {
+    "hero": {
+      "sectionLabel": "advantages",
+      "heading": "The Mazaya Masanda Advantage.",
+      "headingHighlight": "Built Around Your Success.",
+      "subtitle": "Discover what sets Mazaya Masanda Logistics apart and how our expertise, technology, and commitment drive value for your business."
+    },
+    "cta": {
+      "heading": "Ready to Experience the Mazaya Masanda Advantage?",
+      "subtitle": "Let's work together to create efficient, reliable, and scalable logistics solutions that drive your business forward.",
+      "button": "Get Quote"
+    }
+  },
+  "careers": {
+    "hero": {
+      "sectionLabel": "CAREERS",
+      "heading": "Join Our",
+      "headingHighlight": "Team",
+      "subtitle": "Build your career with Saudi Arabia's leading logistics company"
+    },
+    "openPositions": {
+      "heading": "Open",
+      "headingHighlight": "Positions",
+      "subtitle": "Explore our current job openings and find the right opportunity to grow your career with Mazaya Logistics.",
+      "applyNow": "Apply Now",
+      "viewDetails": "View Details",
+      "learnMore": "Learn More",
+      "noPositions": "No open positions at the moment. Check back soon.",
+      "comingSoonTitle": "Coming Soon!",
+      "comingSoonDesc": "We are preparing more details about this job opportunity. Please check back soon for updates. Thank you for your interest in joining Mazaya Logistics.",
+      "gotIt": "Got It",
+      "jobs": [
+        {
+          "title": "Operations Coordinator",
+          "dept": "Operations Department",
+          "location": "Riyadh, Saudi Arabia",
+          "type": "Full Time",
+          "posted": "Posted 2 days ago"
+        },
+        {
+          "title": "Warehouse Supervisor",
+          "dept": "Warehousing Department",
+          "location": "Jeddah, Saudi Arabia",
+          "type": "Full Time",
+          "posted": "Posted 3 days ago"
+        },
+        {
+          "title": "Fleet Manager",
+          "dept": "Fleet Department",
+          "location": "Riyadh, Saudi Arabia",
+          "type": "Full Time",
+          "posted": "Posted 5 days ago"
+        },
+        {
+          "title": "HR Specialist",
+          "dept": "Human Resources",
+          "location": "Riyadh, Saudi Arabia",
+          "type": "Full Time",
+          "posted": "Posted 2 days ago"
+        }
+      ]
+    },
+    "whyWork": {
+      "sectionLabel": "WHY US",
+      "heading": "Why Work With",
+      "headingHighlight": "Mazaya",
+      "subtitle": "We offer more than just a job — we offer a career",
+      "cards": [
+        {
+          "title": "Growth Opportunities",
+          "desc": "We invest in your growth and help you build a successful career."
+        },
+        {
+          "title": "Great Team",
+          "desc": "Work with talented, excellent, passionate and supportive professionals."
+        },
+        {
+          "title": "Safe & Inclusive",
+          "desc": "We value safety, diversity and create an inclusive work environment."
+        },
+        {
+          "title": "Recognition",
+          "desc": "We recognize your contributions and celebrate your continued success."
+        },
+        {
+          "title": "Benefits",
+          "desc": "Competitive benefits and wellness programs for you and your family."
+        }
+      ]
+    },
+    "apply": {
+      "heading": "Apply",
+      "headingHighlight": "Online",
+      "subtitle": "Take the first step toward your new career",
+      "form": {
+        "name": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "position": "Position Applied For",
+        "message": "Cover Letter / Message",
+        "resume": "Upload Resume",
+        "submit": "Submit Application",
+        "submitting": "Submitting...",
+        "success": "Application submitted successfully!",
+        "error": "Something went wrong. Please try again."
+      }
+    }
+  },
+  "contactus": {
+    "hero": {
+      "sectionLabel": "contact us",
+      "heading": "Let's Move Your",
+      "headingHighlight": "Business Forward",
+      "subtitle": "Have a logistics requirement or need more information? Get in touch with our team and let's find the right solution for your business."
+    },
+    "cards": {
+      "callUs": "Call Us",
+      "callDays": "Sunday – Thursday",
+      "callHours": "09:00 AM – 06:00 PM",
+      "emailUs": "Email Us",
+      "replyText": "We Reply within",
+      "replyTime": "24 hours",
+      "whatsapp": "WhatsApp",
+      "chatText": "Chat with our team",
+      "startChat": "Start Conversation",
+      "officeHours": "Office Hours",
+      "workDays": "Sunday – Thursday",
+      "weekendDays": "Friday – Saturday",
+      "closed": "Closed"
+    },
+    "form": {
+      "heading": "How Can We Help?",
+      "subtitle": "Tell us about your logistics needs and our team will get back to you with the right solution.",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "companyName": "Company Name",
+      "companyPlaceholder": "Enter your company name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter your phone number",
+      "service": "Service Required",
+      "servicePlaceholder": "Select a service",
+      "requirement": "Message / Requirement",
+      "requirementPlaceholder": "Tell us about your logistics needs...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "successTitle": "Message Sent Successfully!",
+      "successMessage": "Thank you for reaching out. A Mazaya representative will contact you shortly.",
+      "submitAnother": "Send Another Message"
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Working Hours"
+    }
+  },
+  "fleet": {
+    "hero": {
+      "sectionLabel": "OUR FLEET",
+      "heading": "A Fleet Built for",
+      "headingHighlight": "Performance & Reliability",
+      "subtitle": "Our modern and well-maintained fleet ensures your goods are delivered safely, on time, every time.",
+      "stats": {
+        "vehicles": "Fleet Vehicles",
+        "deliveries": "Daily Deliveries",
+        "onTime": "On-Time Delivery",
+        "availability": "Fleet Availability"
+      }
+    },
+    "cta": {
+      "heading": "Let Our Fleet Drive Your Business Forward",
+      "subtitle": "Reliable. Efficient. Always on time.",
+      "button": "Get Quote"
+    }
+  },
+  "warehouse": {
+    "hero": {
+      "sectionLabel": "warehouse",
+      "heading": "Smart Warehousing.",
+      "headingHighlight": "Stronger Supply Chains.",
+      "subtitle": "Secure, modern, and technology-driven warehousing solutions designed to store, protect, and manage your inventory with maximum efficiency.",
+      "badges": {
+        "team": "Team Members",
+        "protection": "24/7 Protection",
+        "protectionSub": "Complete Transparency",
+        "operations": "Efficient Operations",
+        "operationsSub": "Optimized Performance"
+      }
+    },
+    "cta": {
+      "heading": "Looking for Reliable Warehousing Solutions?",
+      "subtitle": "Let's discuss how our warehousing services can help optimize your supply chain.",
+      "button": "Get Quote"
+    }
+  },
+  "getQuote": {
+    "hero": {
+      "heading": "Get a",
+      "headingHighlight": "Quote",
+      "subtitle": "Tell us about your shipment and we'll get back to you"
+    },
+    "form": {
+      "heading": "Request Your Quote",
+      "subtitle": "Complete the form below and our team will review your requirements and get back to you.",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "companyName": "Company Name",
+      "companyPlaceholder": "Enter your company name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter your phone number",
+      "service": "Service Required",
+      "servicePlaceholder": "Select a service",
+      "additionalRequirements": "Additional Requirements / Notes",
+      "additionalPlaceholder": "Describe your shipment, timeline, origin, destination, or special requirements...",
+      "submit": "Request Quote",
+      "submitting": "Submitting...",
+      "successTitle": "Quote Request Received!",
+      "successMessage": "Thank you, {name}. Our logistics specialists are reviewing your requirements and will contact you within 24 hours.",
+      "submitAnother": "Submit Another Request"
+    }
+  },
+  "footer": {
+    "tagline": "Your trusted logistics partner",
+    "description": "Mazaya Masanda Logistics delivers reliable transportation, warehousing, fulfillment and supply chain solutions across Saudi Arabia and GCC with efficiency, innovation and customer satisfaction.",
+    "ctaHeading": "Ready to Move Your Business Forward?",
+    "ctaSubtitle": "Reliable Logistics Solutions Across Saudi Arabia & Beyond",
+    "getQuote": "Get Quote",
+    "contactUs": "Contact Us",
+    "developedBy": "Developed by:",
+    "disclaimer": "Design concepts are created by Dexbar for presentation purposes. Third-party content and trademarks belong to their respective owners.",
+    "rights": "© 2026 Mazaya Masanda Logistics. All Rights Reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "sitemap": "Sitemap"
+  }
+}

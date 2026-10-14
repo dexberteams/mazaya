@@ -5,7 +5,28 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import SectionLabel from "../ui/SectionLabel";
 
-const solutions = [
+export type QuickSolutionItem = {
+  title: string;
+  description: string;
+};
+
+export type QuickSolutionT = {
+  sectionLabel: string;
+  heading: string;
+  headingHighlight: string;
+  solutions: QuickSolutionItem[];
+};
+
+const solutionImages = [
+  "/solutions/fleet.png",
+  "/solutions/parcel.png",
+  "/solutions/delievery.png",
+  "/solutions/management.png",
+  "/solutions/housing.png",
+  "/solutions/order.png",
+];
+
+const defaultSolutions = [
   {
     title: "Fleet Operations",
     description:
@@ -44,9 +65,17 @@ const solutions = [
   },
 ];
 
-const QuickSolution = () => {
-  const pathname = usePathname();
-  const isLandingPage = pathname === "/";
+const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
+  const pathname = usePathname() || "/";
+  const stripped = pathname.replace(/^\/(en|ar)/, "") || "/";
+  const isLandingPage = stripped === "/" || stripped === "";
+
+  const items = t?.solutions?.length
+    ? t.solutions.map((item, idx) => ({
+        ...item,
+        image: solutionImages[idx] || defaultSolutions[idx]?.image,
+      }))
+    : defaultSolutions;
 
   const [activeCard, setActiveCard] = useState<number | null>(null);
 
@@ -71,11 +100,16 @@ const QuickSolution = () => {
     <section className="relative overflow-hidden px-4 font-manrope lg:my-20 lg:px-8 lg:py-16">
       <div className="relative z-10">
         {/* ================= SECTION LABEL ================= */}
-        {isLandingPage && <SectionLabel text="SERVICE" />}
+        {isLandingPage && (
+          <SectionLabel text={t?.sectionLabel || "SERVICE"} />
+        )}
 
         {/* ================= HEADING ================= */}
         <h2 className="lg:mt-4 font-manrope text-2xl font-semibold text-white sm:text-4xl lg:text-4xl">
-          Our Quick <span className="text-yellow-200">Solutions</span>
+          {t?.heading || "Our Quick"}{" "}
+          <span className="text-yellow-200">
+            {t?.headingHighlight || "Solutions"}
+          </span>
         </h2>
 
         {/* ===================================================== */}
@@ -83,7 +117,7 @@ const QuickSolution = () => {
         {/* ===================================================== */}
 
         <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:hidden">
-          {solutions.map((solution, index) => (
+          {items.map((solution, index) => (
             <SolutionCard
               key={solution.title}
               {...solution}
@@ -180,7 +214,7 @@ const QuickSolution = () => {
           {/* 0: Fleet Operations (Left Top) */}
           <div className="absolute left-[13px] top-[180px] z-10 w-[345px]">
             <SolutionCard
-              {...solutions[0]}
+              {...items[0]}
               index={0}
               activeCard={activeCard}
               setActiveCard={setActiveCard}
@@ -190,7 +224,7 @@ const QuickSolution = () => {
           {/* 1: Parcel Delivery (Top Center) */}
           <div className="absolute left-1/2 top-[102px] z-10 w-[350px] -translate-x-1/2">
             <SolutionCard
-              {...solutions[1]}
+              {...items[1]}
               index={1}
               activeCard={activeCard}
               setActiveCard={setActiveCard}
@@ -200,7 +234,7 @@ const QuickSolution = () => {
           {/* 2: Last Mile Delivery (Right Top) */}
           <div className="absolute right-[13px] top-[180px] z-10 w-[345px]">
             <SolutionCard
-              {...solutions[2]}
+              {...items[2]}
               index={2}
               activeCard={activeCard}
               setActiveCard={setActiveCard}
@@ -210,7 +244,7 @@ const QuickSolution = () => {
           {/* 3: Inventory Management (Left Bottom) */}
           <div className="absolute left-[13px] top-[425px] z-10 w-[345px]">
             <SolutionCard
-              {...solutions[3]}
+              {...items[3]}
               index={3}
               activeCard={activeCard}
               setActiveCard={setActiveCard}
@@ -220,7 +254,7 @@ const QuickSolution = () => {
           {/* 4: Warehousing Services (Bottom Center) */}
           <div className="absolute left-1/2 top-[503px] z-10 w-[350px] -translate-x-1/2">
             <SolutionCard
-              {...solutions[4]}
+              {...items[4]}
               index={4}
               activeCard={activeCard}
               setActiveCard={setActiveCard}
@@ -230,7 +264,7 @@ const QuickSolution = () => {
           {/* 5: Order Fulfillment (Right Bottom) */}
           <div className="absolute right-[13px] top-[425px] z-10 w-[345px]">
             <SolutionCard
-              {...solutions[5]}
+              {...items[5]}
               index={5}
               activeCard={activeCard}
               setActiveCard={setActiveCard}
@@ -310,7 +344,7 @@ const SolutionCard = ({
       </div>
 
       {/* ================= CONTENT ================= */}
-      <div className="flex flex-1 flex-col justify-center pl-3.5 pr-2">
+      <div className="flex flex-1 flex-col justify-center px-3">
         <h3 className="font-manrope text-[15px] font-semibold text-white tracking-tight">
           {title}
         </h3>

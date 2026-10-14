@@ -1,0 +1,207 @@
+"use client";
+import Image from "next/image";
+import SectionHeader2 from "../../ui/SectionHeader2";
+import {
+  BriefcaseBusiness,
+  CalendarDays,
+  Clock,
+  X,
+  MapPin,
+} from "lucide-react";
+import { useState } from "react";
+
+type OpenPositionProps = {
+  t?: {
+    heading?: string;
+    headingHighlight?: string;
+    subtitle?: string;
+    applyNow?: string;
+    viewDetails?: string;
+    learnMore?: string;
+    noPositions?: string;
+    comingSoonTitle?: string;
+    comingSoonDesc?: string;
+    gotIt?: string;
+    jobs?: Array<{
+      title: string;
+      dept: string;
+      location: string;
+      type: string;
+      posted: string;
+    }>;
+  };
+};
+
+const jobIcons = [
+  "/career/icons/ci_user-01.svg",
+  "/career/icons/reicon_profile.svg",
+  "/career/icons/basil_user-outline.svg",
+  "/career/icons/gg_user.svg",
+];
+
+const defaultJobs = [
+  {
+    title: "Operations Coordinator",
+    dept: "Operations Department",
+    location: "Riyadh, Saudi Arabia",
+    type: "Full Time",
+    posted: "Posted 2 days ago",
+  },
+  {
+    title: "Warehouse Supervisor",
+    dept: "Warehousing Department",
+    location: "Jeddah, Saudi Arabia",
+    type: "Full Time",
+    posted: "Posted 3 days ago",
+  },
+  {
+    title: "Fleet Manager",
+    dept: "Fleet Department",
+    location: "Riyadh, Saudi Arabia",
+    type: "Full Time",
+    posted: "Posted 5 days ago",
+  },
+  {
+    title: "HR Specialist",
+    dept: "Human Resources",
+    location: "Riyadh, Saudi Arabia",
+    type: "Full Time",
+    posted: "Posted 2 days ago",
+  },
+];
+
+const OpenPosition = ({ t }: OpenPositionProps) => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const jobsToRender = t?.jobs && t.jobs.length > 0 ? t.jobs : defaultJobs;
+
+  return (
+    <section id="open-positions" className="mt-2 px-4 lg:my-20 lg:px-8">
+      <SectionHeader2
+        title={t?.heading || "Open"}
+        highlight={t?.headingHighlight || "Positions"}
+        description={
+          t?.subtitle ||
+          "Explore our current job openings and find the right opportunity to grow your career with Mazaya Logistics."
+        }
+      />
+      {/* card box */}
+      <div className="mt-3 grid gap-3 lg:mt-8 lg:gap-8">
+        {jobsToRender.map((job, idx) => {
+          const icon = jobIcons[idx % jobIcons.length];
+          return (
+            <div
+              key={idx}
+              className="rounded-[7px] border border-[#6f5a22]/70 bg-[#161000]/35 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.35)] ring-1 ring-white/5 p-3 flex flex-col lg:flex-row lg:justify-between lg:items-center"
+            >
+              <div className="flex gap-2 lg:gap-6">
+                <Image
+                  src={icon}
+                  alt={job.title}
+                  width={100}
+                  height={100}
+                  className="p-2 lg:p-4 border border-[#352801] bg-black/30 rounded-lg w-12 h-12 lg:w-20 lg:h-20"
+                />
+
+                <div className="text-white">
+                  <p className="flex flex-col">
+                    <span className="text-[14px] lg:text-xl">{job.title}</span>
+                    <span className="text-yellow-400 mt-2 text-[12px] lg:text-base">
+                      {job.dept}
+                    </span>
+                  </p>
+
+                  <p className="flex justify-between lg:items-center gap-4 text-white/70 mt-2 text-[9px] lg:text-xs">
+                    <span className="flex gap-1 justify-center items-center">
+                      <MapPin />
+                      {job.location}
+                    </span>
+
+                    <span className="flex gap-1 justify-center items-center">
+                      <BriefcaseBusiness />
+                      {job.type}
+                    </span>
+
+                    <span className="flex gap-1 justify-center items-center">
+                      <CalendarDays />
+                      {job.posted}
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex justify-end">
+                <button
+                  onClick={() => setIsPopupOpen(true)}
+                  className="mt-3 rounded-sm border border-white/10 bg-black/25 p-2 text-xs text-white backdrop-blur-md transition-colors hover:border-yellow-400/50 hover:text-yellow-400 lg:mt-0 lg:p-3"
+                >
+                  {t?.viewDetails || "View Details"}
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Job Details Coming Soon Popup */}
+      {isPopupOpen && (
+        <div
+          className="fixed inset-0 z-100 flex items-center justify-center bg-black/70 px-4 backdrop-blur-sm"
+          onClick={() => setIsPopupOpen(false)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="coming-soon-title"
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-sm overflow-hidden rounded-2xl border border-[#6f5a22]/70 bg-[#161000] p-6 text-center shadow-[0_0_40px_rgba(255,187,0,0.12)] sm:p-8"
+          >
+            {/* Close Button */}
+            <button
+              type="button"
+              onClick={() => setIsPopupOpen(false)}
+              aria-label="Close popup"
+              className="absolute end-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:bg-white/10 hover:text-white"
+            >
+              <X size={17} />
+            </button>
+
+            {/* Icon */}
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-[#FFBB00]/30 bg-[#FFBB00]/10 text-[#FFBB00]">
+              <Clock size={27} />
+            </div>
+
+            {/* Content */}
+            <h3
+              id="coming-soon-title"
+              className="mt-5 text-xl font-bold text-white sm:text-2xl"
+            >
+              {t?.comingSoonTitle || "Coming Soon!"}
+            </h3>
+
+            <p className="mt-3 text-sm leading-6 text-white/65">
+              {t?.comingSoonDesc ||
+                "We are preparing more details about this job opportunity. Please check back soon for updates. Thank you for your interest in joining Mazaya Logistics."}
+            </p>
+
+            {/* Status */}
+            <div className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full border border-[#FFBB00]/20 bg-[#FFBB00]/[0.07] px-3 py-1.5 text-xs font-medium text-[#FFBB00]">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#FFBB00]" />
+              {t?.comingSoonTitle || "Job details coming soon"}
+            </div>
+
+            {/* Close Action */}
+            <button
+              type="button"
+              onClick={() => setIsPopupOpen(false)}
+              className="mt-6 w-full rounded-lg bg-[#FFBB00] px-5 py-3 text-sm font-semibold text-black transition hover:bg-yellow-400"
+            >
+              {t?.gotIt || "Got It"}
+            </button>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};
+
+export default OpenPosition;

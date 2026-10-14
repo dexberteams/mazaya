@@ -4,7 +4,12 @@ import Image from "next/image";
 import { Play, Pause } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const CustomVideo = () => {
+type CustomVideoProps = {
+  title?: string;
+  subtitle?: string;
+};
+
+const CustomVideo = ({ title, subtitle }: CustomVideoProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [seconds, setSeconds] = useState(0);
 
@@ -65,7 +70,7 @@ const CustomVideo = () => {
       <button
         onClick={() => setIsPlaying((prev) => !prev)}
         aria-label={isPlaying ? "Pause video" : "Play video"}
-        className={`absolute top-1/2 left-1/2 z-30 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full text-black shadow-xl transition-all duration-500 ${
+        className={`absolute top-1/2 left-1/2 z-30 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full text-black shadow-xl transition-all duration-500 cursor-pointer ${
           isPlaying
             ? "scale-90 bg-yellow-400 opacity-90"
             : "scale-100 bg-white hover:scale-110 hover:bg-yellow-400"
@@ -80,7 +85,7 @@ const CustomVideo = () => {
 
       {/* Playing indicator */}
       <div
-        className={`absolute top-5 left-5 z-20 flex items-center gap-2 rounded-full bg-black/60 px-3 py-1.5 backdrop-blur-sm transition-all duration-500 ${
+        className={`absolute top-5 start-5 z-20 flex items-center gap-2 rounded-full bg-black/60 px-3 py-1.5 backdrop-blur-sm transition-all duration-500 ${
           isPlaying ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
         }`}
       >
@@ -92,7 +97,7 @@ const CustomVideo = () => {
       </div>
 
       {/* Duration */}
-      <span className="absolute bottom-24 left-5 z-20 bg-white/80 px-3 py-1 text-xs text-black backdrop-blur-sm">
+      <span className="absolute bottom-24 start-5 z-20 bg-white/80 px-3 py-1 text-xs text-black backdrop-blur-sm">
         {formatTime(seconds)} / 01:32
       </span>
 
@@ -110,10 +115,12 @@ const CustomVideo = () => {
       <div className="absolute right-0 bottom-0 left-0 z-20 flex items-end justify-between p-5">
         <div>
           <h3 className="text-sm font-medium text-white lg:text-base">
-            Customer Success Story
+            {title || "Customer Success Story"}
           </h3>
 
-          <p className="mt-2 text-xs text-white/60">ARAMEX Logistics Partner</p>
+          <p className="mt-2 text-xs text-white/60">
+            {subtitle || "ARAMEX Logistics Partner"}
+          </p>
         </div>
       </div>
 
