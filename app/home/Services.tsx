@@ -64,11 +64,11 @@ const industries = [
 
 const Services = () => {
   return (
-    <section className="my-10 p-4 lg:my-20 lg:p-8 font-manrope relative">
+    <section className="my-10 px-4 lg:my-20 lg:px-8 font-manrope relative">
       <SectionLabel text="Industries" />
 
       <h1 className="mt-4 font-manrope text-2xl font-bold text-white lg:text-4xl">
-        Industries <span className="text-yellow-400">We Serve</span>
+        Industries <span className="text-yellow-200">We Serve</span>
       </h1>
 
       {/* Industries Grid */}

@@ -106,7 +106,10 @@ export default function ContactUsPage() {
               px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 pt-16 sm:pt-20 lg:pt-8"
           >
             {/* Standard Badge */}
-            <SectionLabel text="contact us" className="bg-transparent lg:ml-4" />
+            <SectionLabel
+              text="contact us"
+              className="bg-transparent w-1/2 lg:ml-4 lg:w-1/3 mt-4 lg:mt-12"
+            />
 
             {/* Main Title */}
             <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
@@ -165,7 +168,9 @@ export default function ContactUsPage() {
                     >
                       saldawsari@mazayamasanda.com
                     </a>
-                    <p className="text-zinc-400 text-xs pt-1">We Reply within</p>
+                    <p className="text-zinc-400 text-xs pt-1">
+                      We Reply within
+                    </p>
                     <p className="text-zinc-500 text-xs">24 hours</p>
                   </div>
                 </div>
@@ -212,7 +217,9 @@ export default function ContactUsPage() {
                     <p className="text-zinc-400 text-xs pt-1">
                       Friday – Saturday
                     </p>
-                    <p className="text-[#ef4444] text-xs font-semibold">Closed</p>
+                    <p className="text-[#ef4444] text-xs font-semibold">
+                      Closed
+                    </p>
                   </div>
                 </div>
               </div>

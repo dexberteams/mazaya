@@ -43,7 +43,7 @@ const MazayaLogistics = () => {
 
       <h1 className="mt-4 text-2xl font-bold text-white lg:text-4xl">
         Build Your Career with{" "}
-        <span className="text-yellow-400">Mazaya Masanda Logistics</span>
+        <span className="text-yellow-200">Mazaya Masanda Logistics</span>
       </h1>
 
       <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">

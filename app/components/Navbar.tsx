@@ -226,14 +226,14 @@ const Navbar = () => {
             );
           })}
 
-          {/* Mobile Login */}
-          {/* <Link
-            href="/login"
+          {/* Mobile Contact us */}
+          <Link
+            href="/contactus"
             onClick={handleMenuClick}
             className="mt-2 rounded-lg border border-[#FFBB00] px-4 py-3 text-center text-sm font-medium text-[#FFBB00] transition-all hover:bg-[#FFBB00] hover:text-black"
           >
-            Login
-          </Link> */}
+            Contact Us
+          </Link>
         </div>
       </div>
     </nav>

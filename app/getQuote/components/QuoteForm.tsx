@@ -1,7 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
-import { ChevronDown, ArrowRight, CheckCircle2, Loader2, Sparkles } from "lucide-react";
+import { useState } from "react";
+import {
+  ChevronDown,
+  ArrowRight,
+  CheckCircle2,
+  Loader2,
+  Sparkles,
+} from "lucide-react";
 
 const SERVICES = [
   "Transportation & Fleet Management",
@@ -30,7 +36,7 @@ export default function QuoteForm() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -71,7 +77,8 @@ export default function QuoteForm() {
           Request Your Quote
         </h2>
         <p className="mt-2 text-sm text-[#a39b8e] leading-relaxed">
-          Complete the form below and our team will review your requirements and get back to you.
+          Complete the form below and our team will review your requirements and
+          get back to you.
         </p>
       </div>
 
@@ -80,9 +87,16 @@ export default function QuoteForm() {
           <div className="w-16 h-16 rounded-full bg-[#f5b800]/15 border border-[#f5b800]/40 flex items-center justify-center text-[#f5b800] mb-4">
             <CheckCircle2 className="w-8 h-8" />
           </div>
-          <h3 className="text-xl font-bold text-white mb-2">Quote Request Received!</h3>
+          <h3 className="text-xl font-bold text-white mb-2">
+            Quote Request Received!
+          </h3>
           <p className="text-sm text-[#a39b8e] max-w-md mx-auto mb-6">
-            Thank you, <span className="text-[#f5b800] font-medium">{formData.fullName || "Partner"}</span>. Our logistics specialists are reviewing your requirements and will contact you within 24 hours.
+            Thank you,{" "}
+            <span className="text-[#f5b800] font-medium">
+              {formData.fullName || "Partner"}
+            </span>
+            . Our logistics specialists are reviewing your requirements and will
+            contact you within 24 hours.
           </p>
           <button
             type="button"
@@ -193,11 +207,19 @@ export default function QuoteForm() {
                 onChange={handleChange}
                 className="w-full appearance-none px-4 py-3 rounded-lg bg-[#070502]/80 border border-[#2b200e] text-white text-sm placeholder-[#6b6255] focus:outline-none focus:border-[#f5b800] focus:ring-1 focus:ring-[#f5b800] transition-colors pr-10 cursor-pointer"
               >
-                <option value="" disabled className="bg-[#110d05] text-[#6b6255]">
+                <option
+                  value=""
+                  disabled
+                  className="bg-[#110d05] text-[#6b6255]"
+                >
                   Select a service
                 </option>
                 {SERVICES.map((srv) => (
-                  <option key={srv} value={srv} className="bg-[#110d05] text-white">
+                  <option
+                    key={srv}
+                    value={srv}
+                    className="bg-[#110d05] text-white"
+                  >
                     {srv}
                   </option>
                 ))}
@@ -212,7 +234,8 @@ export default function QuoteForm() {
               htmlFor="requirement"
               className="block text-xs font-medium text-[#dcd6cc] mb-1.5"
             >
-              Your Logistics Requirement<span className="text-[#f5b800] ml-0.5">*</span>
+              Your Logistics Requirement
+              <span className="text-[#f5b800] ml-0.5">*</span>
             </label>
             <textarea
               id="requirement"
@@ -232,7 +255,8 @@ export default function QuoteForm() {
               htmlFor="additionalRequirements"
               className="block text-xs font-medium text-[#a39b8e] mb-1.5"
             >
-              Additional Requirements <span className="text-[#786f63]">(Optional)</span>
+              Additional Requirements{" "}
+              <span className="text-[#786f63]">(Optional)</span>
             </label>
             <textarea
               id="additionalRequirements"

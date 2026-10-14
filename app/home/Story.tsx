@@ -11,10 +11,10 @@ const Story = () => {
 
   return (
     <section className="w-full my-10 lg:my-20 font-manrope">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="px-4 sm:px-6 lg:px-8">
         {isLandingPage && <SectionLabel text="about us" />}
         <h1 className="mt-4 font-manrope text-2xl font-bold text-white lg:text-4xl">
-          Our Story <span className="text-yellow-400">& Vision</span>
+          Our Story <span className="text-yellow-200">& Vision</span>
         </h1>
 
         {/* about box */}

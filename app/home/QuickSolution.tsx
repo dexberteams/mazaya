@@ -68,21 +68,21 @@ const QuickSolution = () => {
   };
 
   return (
-    <section className="relative my-10 overflow-hidden px-4 py-10 font-manrope lg:my-20 lg:px-8 lg:py-16">
-      <div className="relative z-10 mx-auto max-w-[1200px]">
+    <section className="relative overflow-hidden px-4 font-manrope lg:my-20 lg:px-8 lg:py-16">
+      <div className="relative z-10">
         {/* ================= SECTION LABEL ================= */}
         {isLandingPage && <SectionLabel text="SERVICE" />}
 
         {/* ================= HEADING ================= */}
-        <h2 className="mt-4 font-manrope text-3xl font-semibold text-white sm:text-4xl lg:text-4xl">
-          Our Quick <span className="text-[#EAB308]">Solutions</span>
+        <h2 className="lg:mt-4 font-manrope text-2xl font-semibold text-white sm:text-4xl lg:text-4xl">
+          Our Quick <span className="text-yellow-200">Solutions</span>
         </h2>
 
         {/* ===================================================== */}
         {/* MOBILE + TABLET */}
         {/* ===================================================== */}
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:hidden">
+        <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:hidden">
           {solutions.map((solution, index) => (
             <SolutionCard
               key={solution.title}
@@ -276,18 +276,19 @@ const SolutionCard = ({
   activeCard,
   setActiveCard,
 }: SolutionCardProps) => {
-
   const isActive = activeCard === index;
 
   return (
     <div
       onMouseEnter={() => setActiveCard(index)}
       onMouseLeave={() => setActiveCard(null)}
-      className={`group relative flex w-full items-center overflow-hidden rounded-lg border bg-[#111111]/90 p-2.5 backdrop-blur-md transition-all duration-300 lg:h-[155px] ${index % 2 !== 0 ? "flex-row-reverse" : "flex-row"
-        } ${isActive
+      className={`group relative flex w-full items-center overflow-hidden rounded-lg border bg-[#111111]/90 p-2.5 backdrop-blur-md transition-all duration-300 lg:h-[155px] ${
+        index % 2 !== 0 ? "flex-row-reverse" : "flex-row"
+      } ${
+        isActive
           ? "-translate-y-1 border-yellow-400 shadow-[0_0_25px_rgba(234,179,8,0.25)]"
           : "border-yellow-600/40 hover:border-yellow-500/70"
-        }`}
+      }`}
     >
       {/* ================= IMAGE ================= */}
       <div className="relative h-full w-[40%] shrink-0 overflow-hidden rounded-lg">
@@ -296,13 +297,15 @@ const SolutionCard = ({
           alt={title}
           fill
           sizes="(max-width: 1024px) 100vw, 180px"
-          className={`object-cover transition-transform duration-700 ${isActive ? "scale-108" : "scale-100 group-hover:scale-105"
-            }`}
+          className={`object-cover transition-transform duration-700 ${
+            isActive ? "scale-108" : "scale-100 group-hover:scale-105"
+          }`}
         />
         {/* Image Overlay */}
         <div
-          className={`absolute inset-0 bg-yellow-400/10 transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute inset-0 bg-yellow-400/10 transition-opacity duration-300 ${
+            isActive ? "opacity-100" : "opacity-0"
+          }`}
         />
       </div>
 
@@ -312,10 +315,11 @@ const SolutionCard = ({
           {title}
         </h3>
         <div
-          className={`my-1.5 h-[1.5px] transition-all duration-300 ${isActive
+          className={`my-1.5 h-[1.5px] transition-all duration-300 ${
+            isActive
               ? "w-full bg-yellow-400 shadow-[0_0_8px_rgba(234,179,8,0.5)]"
               : "w-[80%] bg-yellow-500/40"
-            }`}
+          }`}
         />
         <p className="line-clamp-3 text-[11.5px] leading-[1.5] text-gray-300">
           {description}

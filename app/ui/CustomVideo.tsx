@@ -113,7 +113,7 @@ const CustomVideo = () => {
             Customer Success Story
           </h3>
 
-          <p className="mt-2 text-xs text-white/60">Kestaa Logistics Partner</p>
+          <p className="mt-2 text-xs text-white/60">ARAMEX Logistics Partner</p>
         </div>
       </div>
 

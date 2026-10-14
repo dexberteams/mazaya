@@ -8,7 +8,7 @@ const Hero = () => {
     <section className="relative min-h-screen overflow-hidden py-16 lg:py-24">
       {/* Hero Content */}
       <div className="relative z-10">
-        <div className="flex flex-col justify-between gap-8 px-4 sm:flex-row sm:px-8 lg:px-16">
+        <div className="flex flex-col justify-between gap-8 px-4 sm:flex-row sm:px-8 lg:px-4">
           {/* for mobile view rating */}
           <Image
             src="/home/Rating.png"
@@ -21,7 +21,8 @@ const Hero = () => {
           {/* left */}
           <div className="flex w-full flex-col items-start justify-center font-manrope text-white lg:w-1/2 lg:gap-2">
             <h1 className="w-11/12 text-4xl font-extrabold lg:w-2/3 lg:p-4 lg:text-5xl lg:leading-tight">
-              Your Trusted Logistics Partner Mazaya Masanda
+              Your Trusted Logistics Partner{" "}
+              <span className="text-yellow-200">Mazaya Masanda</span>
             </h1>
 
             <p className="p-2 text-sm lg:w-4/5 lg:p-4 lg:text-base">
@@ -112,7 +113,7 @@ const Hero = () => {
         </div>
 
         {/* Bottom Features */}
-        <div className=" ml-4 flex w-11/12 justify-between  px-4 py-2  font-(family-name:--font-anek-bangla) text-white lg:w-1/2 lg:gap-16 lg:px-14">
+        <div className=" ml-4 lg:ml-0  flex w-11/12 justify-between  px-4 py-2  font-(family-name:--font-anek-bangla) text-white lg:w-1/2 lg:gap-16 lg:px-6">
           <div className="flex flex-col items-center justify-center gap-3 lg:flex-row">
             <Image
               src="/home/icons/delivery.png"

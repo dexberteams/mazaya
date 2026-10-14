@@ -64,7 +64,7 @@ const ClientSection = () => {
       <SectionLabel text="Partnership" />
 
       <h1 className="my-4 lg:my-10 font-manrope text-2xl font-bold text-white lg:text-4xl">
-        Grow Together <span className="text-yellow-400">Successfully</span>
+        Grow Together <span className="text-yellow-200">Successfully</span>
       </h1>
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-4">
         {/* ================= VIDEO SECTION ================= */}

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 const Statistics = () => {
   return (
-    <section className="px-4 lg:px-8 py-8 lg:py-16">
+    <section className="px-4 lg:px-8 lg:py-16">
       <h1 className="font-manrope text-[20px] font-bold text-yellow-200 lg:text-4xl">
         Statistics
       </h1>
