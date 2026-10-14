@@ -254,9 +254,9 @@
   "about": {
     "hero": {
       "sectionLabel": "من نحن",
-      "heading": "من",
-      "headingHighlight": "نحن",
-      "subtitle": "تعرّف على مسيرتنا ورسالتنا والقيم التي تقودنا"
+      "heading": "نبني الروابط.",
+      "headingHighlight": "نوصّل التميز.",
+      "subtitle": "في مزايا اللوجستية، نلتزم بتقديم حلول لوجستية مبتكرة وموثوقة تُمكّن الشركات من النمو والنجاح."
     },
     "companyOverview": {
       "sectionLabel": "الشركة",
@@ -413,9 +413,12 @@
   "careers": {
     "hero": {
       "sectionLabel": "الوظائف",
-      "heading": "انضم إلى",
-      "headingHighlight": "فريقنا",
-      "subtitle": "ابنِ مسيرتك المهنية مع شركة الخدمات اللوجستية الرائدة في المملكة"
+      "heading": "ابنِ مستقبلك",
+      "subHeading": "مع",
+      "headingHighlight": "مزايا اللوجستية",
+      "subtitle": "انضم إلى فريق يدفع العالم إلى الأمام. استكشف الفرص، وطوّر مهاراتك، واصنع أثراً معنا.",
+      "teamMembers": "عضو فريق",
+      "departments": "أقسام متخصصة"
     },
     "openPositions": {
       "heading": "الوظائف",

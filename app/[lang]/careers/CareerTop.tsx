@@ -5,8 +5,11 @@ type CareerTopProps = {
   heroT?: {
     sectionLabel?: string;
     heading?: string;
+    subHeading?: string;
     headingHighlight?: string;
     subtitle?: string;
+    teamMembers?: string;
+    departments?: string;
   };
   openPositionsT?: {
     heading?: string;

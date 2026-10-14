@@ -254,9 +254,9 @@
   "about": {
     "hero": {
       "sectionLabel": "ABOUT US",
-      "heading": "Who We",
-      "headingHighlight": "Are",
-      "subtitle": "Learn about our journey, mission and the values that drive us"
+      "heading": "Building Connections.",
+      "headingHighlight": "Delivering Excellence.",
+      "subtitle": "At Mazaya Logistics, we are committed to delivering innovative and reliable logistics solutions that empower businesses to grow and succeed."
     },
     "companyOverview": {
       "sectionLabel": "COMPANY",
@@ -413,9 +413,12 @@
   "careers": {
     "hero": {
       "sectionLabel": "CAREERS",
-      "heading": "Join Our",
-      "headingHighlight": "Team",
-      "subtitle": "Build your career with Saudi Arabia's leading logistics company"
+      "heading": "Build Your Future",
+      "subHeading": "With",
+      "headingHighlight": "Mazaya Logistics",
+      "subtitle": "Join a team that's moving the world forward. Explore opportunities, grow your skills, and make an impact with us.",
+      "teamMembers": "Team Members",
+      "departments": "Departments"
     },
     "openPositions": {
       "heading": "Open",

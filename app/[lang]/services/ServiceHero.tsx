@@ -24,8 +24,8 @@ export default function ServiceHero({ t }: { t?: ServiceHeroT }) {
             className="object-cover object-[65%_center] lg:object-center"
           />
 
-          {/* Left Dark Vignette / Gradient Overlay to ensure text readability on mobile */}
-          <div className="lg:hidden absolute inset-0 bg-gradient-to-r from-black via-black/85 via-45% md:via-black/70 md:via-55% to-transparent z-10" />
+          {/* Left Dark Vignette / Gradient Overlay to ensure text readability on mobile (LTR: dark left, RTL: dark right) */}
+          <div className="lg:hidden absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-black via-black/85 via-45% md:via-black/70 md:via-55% to-transparent z-10" />
 
           {/* Top Vignette (mobile) */}
           <div className="lg:hidden absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0A0700]/90 via-[#0A0700]/40 to-transparent z-10" />
@@ -33,12 +33,22 @@ export default function ServiceHero({ t }: { t?: ServiceHeroT }) {
           {/* Bottom Fade (mobile) */}
           <div className="lg:hidden absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-[#0A0700] via-[#0A0700]/70 to-transparent z-10" />
 
-          {/* Benchmark Desktop Gradient Overlay */}
+          {/* Benchmark Desktop Gradient Overlay (LTR: dark on left, fade right) */}
           <div
             className="
              hidden
-             lg:absolute lg:inset-0 lg:block
+             lg:absolute lg:inset-0 lg:block rtl:lg:hidden
              lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
+             z-10
+             "
+          />
+
+          {/* Benchmark Desktop Gradient Overlay (RTL: dark on right, fade left) */}
+          <div
+            className="
+             hidden
+             lg:absolute lg:inset-0 rtl:lg:block
+             lg:bg-[linear-gradient(to_left,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
              z-10
              "
           />
@@ -52,7 +62,7 @@ export default function ServiceHero({ t }: { t?: ServiceHeroT }) {
         >
           <SectionLabel
             text={t?.sectionLabel || "services"}
-            className="bg-transparent lg:ml-4"
+            className="bg-transparent lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0"
           />
 
           <h1 className="w-11/12 text-3xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">

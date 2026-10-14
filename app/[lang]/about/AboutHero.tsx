@@ -230,7 +230,7 @@ export default function AboutHero({ t }: { t?: AboutHeroT }) {
 
   return (
     <section id="hero" className="relative w-full overflow-hidden">
-      <div className="relative h-auto min-h-[400px] sm:min-h-[640px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-between">
+      <div className="relative h-auto min-h-[400px] sm:min-h-[640px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-between py-24">
         {/* ── Background Image ── */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -242,8 +242,8 @@ export default function AboutHero({ t }: { t?: AboutHeroT }) {
             className="object-cover object-[70%_center] lg:object-center"
           />
 
-          {/* Left Dark Vignette / Gradient Overlay to ensure text readability on mobile */}
-          <div className="lg:hidden absolute inset-0 bg-linear-to-r from-black via-black/85 via-45% md:via-black/70 md:via-55% to-transparent z-10" />
+          {/* Left Dark Vignette / Gradient Overlay to ensure text readability on mobile (LTR: dark left, RTL: dark right) */}
+          <div className="lg:hidden absolute inset-0 bg-linear-to-r rtl:bg-linear-to-l from-black via-black/85 via-45% md:via-black/70 md:via-55% to-transparent z-10" />
 
           {/* Top Vignette (mobile) */}
           <div className="lg:hidden absolute top-0 inset-x-0 h-36 bg-linear-to-b from-[#0A0700]/90 via-[#0A0700]/40 to-transparent z-10" />
@@ -251,12 +251,22 @@ export default function AboutHero({ t }: { t?: AboutHeroT }) {
           {/* Bottom Fade (mobile) */}
           <div className="lg:hidden absolute bottom-0 inset-x-0 h-40 bg-linear-to-t from-[#0A0700] via-[#0A0700]/70 to-transparent z-10" />
 
-          {/* Standard Benchmark Desktop Gradient Overlay */}
+          {/* Standard Benchmark Desktop Gradient Overlay (LTR: dark on left, fade right) */}
           <div
             className="
              hidden
-             lg:absolute lg:inset-0 lg:block
+             lg:absolute lg:inset-0 lg:block rtl:lg:hidden
              lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
+             z-10
+             "
+          />
+
+          {/* Standard Benchmark Desktop Gradient Overlay (RTL: dark on right, fade left) */}
+          <div
+            className="
+             hidden
+             lg:absolute lg:inset-0 rtl:lg:block
+             lg:bg-[linear-gradient(to_left,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
              z-10
              "
           />
@@ -270,21 +280,21 @@ export default function AboutHero({ t }: { t?: AboutHeroT }) {
         >
           <SectionLabel
             text={t?.sectionLabel || "about us"}
-            className="bg-transparent lg:ml-4 lg:w-1/3"
+            className="bg-transparent lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0 lg:w-1/3"
           />
 
           <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
-            {t?.heading || "Building Connections."}{" "}
-            <span className="text-yellow-200">
+            <span className="block">{t?.heading || "Building Connections."}</span>
+            <span className="block text-yellow-200">
               {t?.headingHighlight || "Delivering Excellence."}
             </span>
           </h1>
 
-          <span className="mt-2 block lg:hidden h-0.5 w-24 bg-yellow-400"></span>
+          <span className="my-2 block h-0.5 w-24 bg-yellow-400 lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0"></span>
 
           <p className="max-w-xl mt-2 p-1 text-xs leading-4 lg:leading-6 sm:text-base lg:w-4/5 lg:p-4 font-manrope text-gray-300">
             {t?.subtitle ||
-              "At Mazaya Masanda Logistics, we are committed to delivering innovative and reliable logistics solutions that empower businesses to grow and succeed."}
+              "At Mazaya Logistics, we are committed to delivering innovative and reliable logistics solutions that empower businesses to grow and succeed."}
           </p>
         </div>
 
@@ -298,11 +308,10 @@ export default function AboutHero({ t }: { t?: AboutHeroT }) {
                   <button
                     key={item.id}
                     onClick={() => handleTabClick(item)}
-                    className={`flex items-center gap-2.5 whitespace-nowrap text-sm sm:text-base transition-all duration-200 cursor-pointer ${
-                      isActive
-                        ? "text-[#FFBB00] font-semibold underline underline-offset-8 decoration-[#FFBB00] decoration-2"
-                        : "text-[#FFEAB1]/85 hover:text-[#FFBB00] font-normal"
-                    }`}
+                    className={`flex items-center gap-2.5 whitespace-nowrap text-sm sm:text-base transition-all duration-200 cursor-pointer ${isActive
+                      ? "text-[#FFBB00] font-semibold underline underline-offset-8 decoration-[#FFBB00] decoration-2"
+                      : "text-[#FFEAB1]/85 hover:text-[#FFBB00] font-normal"
+                      }`}
                   >
                     <span
                       className={

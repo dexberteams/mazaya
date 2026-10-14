@@ -24,12 +24,21 @@ const Hero = ({ t }: { t?: AdvantagesHeroT }) => {
           className="hidden object-cover object-center lg:block"
         />
 
-        {/* Gradient Overlay */}
+        {/* Gradient Overlay (LTR: dark left, fade right) */}
         <div
           className="
             hidden
-            lg:absolute lg:inset-0 lg:block
+            lg:absolute lg:inset-0 lg:block rtl:lg:hidden
             lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
+          "
+        />
+
+        {/* Gradient Overlay (RTL: dark right, fade left) */}
+        <div
+          className="
+            hidden
+            lg:absolute lg:inset-0 rtl:lg:block
+            lg:bg-[linear-gradient(to_left,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
           "
         />
 
@@ -40,7 +49,7 @@ const Hero = ({ t }: { t?: AdvantagesHeroT }) => {
         >
           <SectionLabel
             text={t?.sectionLabel || "advantages"}
-            className="bg-transparent lg:ml-4 lg:mt-16"
+            className="bg-transparent lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0 lg:mt-16"
           />
 
           <h1

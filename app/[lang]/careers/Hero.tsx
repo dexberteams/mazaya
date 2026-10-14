@@ -7,8 +7,11 @@ type HeroProps = {
   t?: {
     sectionLabel?: string;
     heading?: string;
+    subHeading?: string;
     headingHighlight?: string;
     subtitle?: string;
+    teamMembers?: string;
+    departments?: string;
   };
 };
 
@@ -26,12 +29,21 @@ const Hero = ({ t }: HeroProps) => {
           className="hidden object-cover object-center lg:block"
         />
 
-        {/* Gradient Overlay */}
+        {/* Gradient Overlay (LTR: dark left, fade right) */}
         <div
           className="
             hidden
-            lg:absolute lg:inset-0 lg:block
+            lg:absolute lg:inset-0 lg:block rtl:lg:hidden
             lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
+          "
+        />
+
+        {/* Gradient Overlay (RTL: dark right, fade left) */}
+        <div
+          className="
+            hidden
+            lg:absolute lg:inset-0 rtl:lg:block
+            lg:bg-[linear-gradient(to_left,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
           "
         />
 
@@ -45,8 +57,8 @@ const Hero = ({ t }: HeroProps) => {
           "
         >
           <SectionLabel
-            text={t?.sectionLabel || "career"}
-            className="bg-transparent"
+            text={t?.sectionLabel || "careers"}
+            className="bg-transparent lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0"
           />
 
           <h1
@@ -56,26 +68,29 @@ const Hero = ({ t }: HeroProps) => {
               lg:mt-0 lg:p-4 lg:text-5xl
             "
           >
-            {t?.heading || "Build Your Future With"}{" "}
-            <span className="text-yellow-200">
-              {t?.headingHighlight || "Mazaya Masanda Logistics"}
+            <span className="block">{t?.heading || "Build Your Future"}</span>
+            <span className="block">
+              {t?.subHeading ? <span>{t.subHeading} </span> : <span>With </span>}
+              <span className="text-yellow-200">
+                {t?.headingHighlight || "Mazaya Logistics"}
+              </span>
             </span>
           </h1>
 
-          <span className="mt-3 block h-0.5 w-24 bg-yellow-400 lg:hidden" />
+          <span className="my-3 block h-0.5 w-24 bg-yellow-400 lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0" />
 
           <p
             className="
-              mt-3 max-w-xl p-1 text-xs leading-5
+              mt-2 max-w-xl p-1 text-xs leading-5
               sm:text-base sm:leading-6
-              lg:mt-2 lg:w-4/5 lg:p-4
+              lg:w-4/5 lg:p-4 font-manrope text-gray-300
             "
           >
             {t?.subtitle ||
               "Join a team that's moving the world forward. Explore opportunities, grow your skills, and make an impact with us."}
           </p>
 
-          <div className="mt-4 flex gap-5">
+          <div className="mt-4 flex gap-5 lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0">
             <div className="flex items-center justify-center gap-2 lg:gap-4">
               <Image
                 src="/career/icons/group.svg"
@@ -87,7 +102,9 @@ const Hero = ({ t }: HeroProps) => {
 
               <p className="flex flex-col">
                 <span className="text-[14px] lg:text-[16px]">500+</span>
-                <span className="text-xs text-gray-400">Team Members</span>
+                <span className="text-xs text-gray-400">
+                  {t?.teamMembers || "Team Members"}
+                </span>
               </p>
             </div>
 
@@ -102,7 +119,9 @@ const Hero = ({ t }: HeroProps) => {
 
               <p className="flex flex-col">
                 <span className="text-[14px] lg:text-[16px]">10+</span>
-                <span className="text-xs text-gray-400">Departments</span>
+                <span className="text-xs text-gray-400">
+                  {t?.departments || "Departments"}
+                </span>
               </p>
             </div>
           </div>

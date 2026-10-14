@@ -39,7 +39,7 @@ const BusinessGroup = ({ t }: BusinessGroupProps) => {
 
         <div className="relative h-14 w-14 sm:h-24 sm:w-24">
           <Image
-            src="/Loadtruck.png"
+            src="/loadtruck.png"
             alt="Company logo"
             fill
             sizes="(max-width: 640px) 96px, 112px"

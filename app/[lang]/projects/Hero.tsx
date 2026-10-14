@@ -23,12 +23,21 @@ const Hero = ({ t }: { t?: ProjectsHeroT }) => {
           className="object-cover object-center hidden lg:block"
         />
 
-        {/* Gradient Overlay */}
+        {/* Gradient Overlay (LTR: dark left, fade right) */}
         <div
           className="
            hidden
-           lg:absolute lg:inset-0 lg:block
+           lg:absolute lg:inset-0 lg:block rtl:lg:hidden
            lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
+           "
+        />
+
+        {/* Gradient Overlay (RTL: dark right, fade left) */}
+        <div
+          className="
+           hidden
+           lg:absolute lg:inset-0 rtl:lg:block
+           lg:bg-[linear-gradient(to_left,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
            "
         />
 
@@ -39,7 +48,7 @@ const Hero = ({ t }: { t?: ProjectsHeroT }) => {
         >
           <SectionLabel
             text={t?.sectionLabel || "our projects"}
-            className="bg-transparent lg:ml-4"
+            className="bg-transparent lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0"
           />
           <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
             {t?.heading || "Delivering Success Through"}{" "}
