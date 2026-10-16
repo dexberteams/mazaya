@@ -8,7 +8,7 @@ export interface AdvantagesQuoteT {
 
 const Quote = ({ t, lang = "en" }: { t?: AdvantagesQuoteT; lang?: string }) => {
   return (
-    <section className=" relative overflow-hidden my-10 lg:my-20 mx-4 lg:mx-8 flex flex-col lg:flex-row justify-between gap-6 text-white rounded-sm border border-white/10 bg-white/4 backdrop-blur-xl shadow-[0_8px_40px_rgba(0,0,0,0.35)] p-5 sm:p-6 lg:p-10 ">
+    <section className=" relative overflow-hidden mt-10 mb-20 sm:mb-28 lg:mt-20 lg:mb-52 mx-4 lg:mx-8 flex flex-col lg:flex-row justify-between gap-6 text-white rounded-sm border border-white/10 bg-white/4 backdrop-blur-xl shadow-[0_8px_40px_rgba(0,0,0,0.35)] p-5 sm:p-6 lg:p-10 ">
       {/* Glass Glow - Top Right */}
       <div className=" pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-amber-400/10 blur-3xl " />
       {/* Glass Glow - Bottom Left */}

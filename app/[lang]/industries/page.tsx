@@ -29,7 +29,7 @@ const IndustriesPage = async ({
       />
 
       {/* ── Section 3: Bottom CTA Banner ── */}
-      <section className="relative overflow-hidden my-10 lg:my-20 mx-4 lg:mx-8 flex flex-col lg:flex-row justify-between items-center gap-6 rounded-sm border border-white/10 bg-white/4 backdrop-blur-xl p-5 sm:p-6 lg:p-10 text-white shadow-[0_8px_40px_rgba(0,0,0,0.35)] font-manrope">
+      <section className="relative overflow-hidden mt-10 mb-20 sm:mb-28 lg:mt-20 lg:mb-52 mx-4 lg:mx-8 flex flex-col lg:flex-row justify-between items-center gap-6 rounded-sm border border-white/10 bg-white/4 backdrop-blur-xl p-5 sm:p-6 lg:p-10 text-white shadow-[0_8px_40px_rgba(0,0,0,0.35)] font-manrope">
         {/* Ambient Glow */}
         <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-yellow-400/10 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-amber-500/10 blur-3xl" />

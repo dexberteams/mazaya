@@ -121,7 +121,7 @@ const ApplyOnline = ({ t }: { t?: ApplyOnlineT }) => {
       )}
 
       {/* ================= APPLY SECTION ================= */}
-      <section id="apply-online" className="my-10 overflow-hidden px-4 lg:my-20 lg:px-8">
+      <section id="apply-online" className="mt-10 mb-20 sm:mb-28 lg:mt-20 lg:mb-52 overflow-hidden px-4 lg:px-8">
         <SectionHeader2
           title={t?.heading || "Apply"}
           highlight={t?.headingHighlight || "Online"}
