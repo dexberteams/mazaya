@@ -61,18 +61,18 @@ export default function ServiceHero({ t }: { t?: ServiceHeroT }) {
             px-4 lg:w-1/2 lg:gap-2 lg:px-16 lg:pt-6"
         >
           <SectionLabel
-            text={t?.sectionLabel || "services"}
+            text={t?.sectionLabel || "SERVICES"}
             className="bg-transparent lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0"
           />
 
-          <h1 className="w-11/12 text-3xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
+          <h1 className="w-11/12 max-w-lg text-3xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
             {t?.heading || "Complete Logistics Solutions"}{" "}
             <span className="text-yellow-200">
               {t?.headingHighlight || "Under One Roof"}
             </span>
           </h1>
 
-          <span className="mt-2 block lg:hidden h-0.5 w-24 bg-yellow-400"></span>
+          <span className="my-2 block h-0.5 w-24 bg-yellow-400 lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0" />
 
           <p className="max-w-xl mt-2 p-1 text-xs leading-4 lg:leading-6 sm:text-base lg:w-4/5 lg:p-4 font-manrope text-gray-300">
             {t?.subtitle ||
