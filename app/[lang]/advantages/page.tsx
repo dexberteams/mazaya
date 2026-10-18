@@ -21,10 +21,13 @@ const Advantages = async ({
 
   return (
     <section className="bg-[#0A0700] font-manrope">
-      <AdvantagesTop heroT={dict.advantages?.hero} />
-      <LatestNews />
-      <ProcessTimeline />
-      <Faq />
+      <AdvantagesTop
+        heroT={dict.advantages?.hero}
+        statisticsT={dict.advantages?.statistics}
+      />
+      <LatestNews t={dict.advantages?.latestNews} />
+      <ProcessTimeline t={dict.advantages?.processTimeline} />
+      <Faq t={dict.advantages?.faq} />
       <Quote t={dict.advantages?.cta} lang={lang} />
     </section>
   );

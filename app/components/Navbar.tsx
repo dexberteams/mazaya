@@ -60,7 +60,9 @@ const Navbar = ({ lang = "en" }: { lang?: string }) => {
   const switchLocale = (next: Lang) => {
     setIsLangOpen(false);
     document.cookie = `NEXT_LOCALE=${next}; path=/; max-age=31536000`;
-    router.push(`/${next}${pathWithoutLocale === "/" ? "/" : pathWithoutLocale}`);
+    router.push(
+      `/${next}${pathWithoutLocale === "/" ? "/" : pathWithoutLocale}`,
+    );
   };
   const localeHref = (href: string) =>
     href === "/" ? `/${lang}` : `/${lang}${href}`;
@@ -112,7 +114,10 @@ const Navbar = ({ lang = "en" }: { lang?: string }) => {
       dir={isAr ? "rtl" : "ltr"}
     >
       <div className="mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href={`/${lang}`} className="w-32 sm:w-32 lg:w-40 h-10 flex items-center">
+        <Link
+          href={`/${lang}`}
+          className="w-32 sm:w-32 lg:w-40 h-10 flex items-center"
+        >
           <Image
             src="/logo/Logo.png"
             alt="Mazaya Logistics"
@@ -169,7 +174,7 @@ const Navbar = ({ lang = "en" }: { lang?: string }) => {
             </button>
 
             <div
-              className={`absolute end-0 top-full mt-2 min-w-32.5 overflow-hidden rounded-xl border border-white/10 bg-[#1E1813] shadow-xl transition-all duration-200 ${
+              className={`absolute inset-e-0 top-full mt-2 min-w-32.5 overflow-hidden rounded-xl border border-white/10 bg-[#1E1813] shadow-xl transition-all duration-200 ${
                 isLangOpen
                   ? "visible translate-y-0 opacity-100"
                   : "invisible -translate-y-2 opacity-0"

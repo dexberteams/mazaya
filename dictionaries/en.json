@@ -312,11 +312,7 @@
       "ceoName": "Eng. Shafi Aldawsari",
       "ceoRole": "Founder & Chief Executive Officer",
       "ceoDesc": "Leading with purpose, strategic thinking, commitment to excellence. Through a unified vision, our leadership drives innovation.",
-      "expertise": [
-        "Strategic Leadership",
-        "Innovation",
-        "Sustainable Growth"
-      ],
+      "expertise": ["Strategic Leadership", "Innovation", "Sustainable Growth"],
       "subsidiaries": [
         {
           "name": "LOADTRUCK",
@@ -391,6 +387,115 @@
       "headingHighlight": "Every Project",
       "subtitle": "Explore our successfully completed and ongoing projects that reflect our commitment to excellence, reliability, and client satisfaction."
     },
+    "client": {
+      "title": "Current",
+      "titleHighlight": "Clients",
+      "description": "We're proud to partner with leading businesses across various industries, delivering reliable logistics solutions that drive their success.",
+      "statsBar": [
+        { "value": "50%+", "label": "Active Clients" },
+        { "value": "12+", "label": "Industries Served" },
+        { "value": "1 M+", "label": "Deliveries Done" },
+        { "value": "3", "label": "Regions Covered" }
+      ]
+    },
+    "previousProjects": {
+      "title": "Previous",
+      "titleHighlight": "Projects",
+      "description": "A collection of projects we have successfully completed, helping our clients achieve their business goals.",
+      "statusCompleted": "Completed",
+      "statusInProgress": "In Progress",
+      "cards": [
+        {
+          "title": "E-Commerce Logistics Solutions",
+          "description": "End-to-end logistics solution including warehousing and last-mile delivery, ensuring speed, and efficiency."
+        },
+        {
+          "title": "Retail Distribution Network",
+          "description": "Nationwide distribution network for a leading retail brand across multiple cities, ensuring seamless and timely deliveries."
+        },
+        {
+          "title": "Cold Chain Management Project",
+          "description": "Temperature-controlled logistics and warehousing for the food & beverage industry, quality, and safe handling."
+        },
+        {
+          "title": "Healthcare Logistics Project",
+          "description": "Secure and compliant logistics solution for pharmaceutical distribution, ensuring safety, reliability, and timely delivery."
+        }
+      ]
+    },
+    "featuredProjects": {
+      "title": "Featured",
+      "titleHighlight": "Projects",
+      "description": "Highlighting some of our most successful and innovative projects that showcase our expertise and capabilities.",
+      "featured": {
+        "title": "National E-Commerce Distribution Network",
+        "category": "Supply Chain Logistics",
+        "description": "Successfully managed nationwide distribution for one of Saudi Arabia's fastest-growing e-commerce brands using integrated warehousing, fleet operations, and last-mile delivery.",
+        "metricsTitle": "Project Metrics",
+        "metrics": [
+          "3 Million Deliveries",
+          "120 Cities Covered",
+          "150+ Fleet Vehicles",
+          "99% On-Time Delivery"
+        ],
+        "statsLabels": [
+          "Products Delivered",
+          "Projects Completed",
+          "Client Satisfaction",
+          "Operations Support"
+        ]
+      },
+      "cards": [
+        {
+          "title": "Cold Chain Logistics",
+          "description": "Temperature-controlled transportation for pharmaceutical and food industries.",
+          "status": "Completed"
+        },
+        {
+          "title": "Warehouse Automation",
+          "description": "Implemented smart inventory management with barcode scanning and live monitoring.",
+          "status": "In Progress"
+        },
+        {
+          "title": "Cross Border Distribution",
+          "description": "Managed international logistics operations across GCC countries.",
+          "status": "Completed"
+        }
+      ]
+    },
+    "testimonials": {
+      "sectionLabel": "Partnership",
+      "heading": "Grow Together",
+      "headingHighlight": "Successfully",
+      "videoTitle": "Customer Success Story",
+      "videoSubtitle": "ARAMEX Logistics Partner",
+      "reviews": [
+        {
+          "name": "Eng. Md Abdullah",
+          "role": "CEO",
+          "company": "DEXBAR",
+          "review": "Working with mazaya masanda Logistics has made our delivery operations faster, smoother, and more reliable."
+        },
+        {
+          "name": "Omar Hassan",
+          "role": "Operations & Supply Chain Manager",
+          "company": "Mazaya Masanda",
+          "review": "mazaya masanda Logistics delivers on time. Their team is professional, reliable and always responsive."
+        },
+        {
+          "name": "Mohammed Ali",
+          "role": "Operations Manager",
+          "company": "Aramex",
+          "review": "Working with mazaya masanda Logistics has made our supply chain operations faster and more efficient."
+        },
+        {
+          "name": "Al-Quareshi Hakim",
+          "role": "Operations Manager",
+          "company": "Ajex",
+          "review": "Thanks to mazaya masanda Logistics, our supply chain is now more efficient, organized, and consistently dependable."
+        }
+      ]
+    },
     "cta": {
       "heading": "Have a Project in Mind?",
       "subtitle": "Let's work together to create a logistics solution that drives your business forward.",
@@ -403,6 +508,130 @@
       "heading": "The Mazaya Masanda Advantage.",
       "headingHighlight": "Built Around Your Success.",
       "subtitle": "Discover what sets Mazaya Masanda Logistics apart and how our expertise, technology, and commitment drive value for your business."
+    },
+    "statistics": {
+      "title": "Statistics",
+      "items": [
+        { "label": "Years of Experience" },
+        { "label": "Happy Clients" },
+        { "label": "Shipments Delivered" },
+        { "label": "Regions Covered" },
+        { "label": "Fleet Assets" },
+        { "label": "Sq.Ft. Warehousing" }
+      ]
+    },
+    "latestNews": {
+      "title": "Latest",
+      "titleHighlight": "News",
+      "cards": [
+        {
+          "date": "May 20, 2024",
+          "title": "The Future of Warehousing: Trends Shaping Industry",
+          "description": "Explore the latest trends in warehousing and how technology is transforming logistics operations."
+        },
+        {
+          "date": "May 15, 2024",
+          "title": "How Last-Mile Delivery Drives Customer Satisfaction",
+          "description": "Last-mile delivery is the final step to happy customers. Learn how we optimize it for better results."
+        },
+        {
+          "date": "May 10, 2024",
+          "title": "Leveraging Technology for Smarter Supply Chains",
+          "description": "Digital tools and real-time visibility are key to building resilient and efficient supply chains."
+        }
+      ]
+    },
+    "processTimeline": {
+      "title": "Process",
+      "titleHighlight": "Timeline",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Pickup",
+          "description": "We collect your goods safely from your location with our professional team."
+        },
+        {
+          "number": "02",
+          "title": "Packaging",
+          "description": "Your items are carefully packaged using high-quality materials to ensure full protection."
+        },
+        {
+          "number": "03",
+          "title": "Transportation",
+          "description": "Goods are transported using our modern fleet with real-time tracking and safety."
+        },
+        {
+          "number": "04",
+          "title": "Customs",
+          "description": "We handle all customs clearances and documentation to ensure smooth cross-border movement."
+        },
+        {
+          "number": "05",
+          "title": "Delivery",
+          "description": "Your goods are delivered safely and on time to the final destination."
+        }
+      ],
+      "statsBar": [
+        {
+          "title": "Real-time Tracking",
+          "subtitle": "Live updates at every step of your shipment."
+        },
+        {
+          "title": "Secure & Reliable",
+          "subtitle": "Advanced security and care at every stage."
+        },
+        {
+          "title": "24/7 Support",
+          "subtitle": "Our talented team is always here for you."
+        },
+        {
+          "title": "Complete Transparency",
+          "subtitle": "Full visibility & clear updates at every step."
+        }
+      ]
+    },
+    "faq": {
+      "title": "FAQ",
+      "viewAll": "View All FAQs",
+      "showLess": "Show Less FAQs",
+      "items": [
+        {
+          "question": "What services does Mazaya Logistics offer?",
+          "answer": "Mazaya Logistics provides reliable logistics and transportation solutions, including freight forwarding, warehousing, shipment handling, delivery, and supply chain support."
+        },
+        {
+          "question": "Which areas do you cover?",
+          "answer": "We provide logistics services across multiple regions, helping businesses move goods efficiently and safely through our extensive logistics network."
+        },
+        {
+          "question": "How can I request a quote?",
+          "answer": "You can request a quote by contacting our team through the contact form or by reaching out to us directly with your shipment details."
+        },
+        {
+          "question": "How do you ensure the safety of goods?",
+          "answer": "We follow professional handling procedures, secure packaging standards, real-time monitoring, and reliable transportation processes to keep your goods safe."
+        },
+        {
+          "question": "Can I track my shipment in real-time?",
+          "answer": "Yes. Our real-time tracking system allows you to monitor your shipment status and stay updated throughout the delivery process."
+        },
+        {
+          "question": "How long does delivery usually take?",
+          "answer": "Delivery time depends on the destination, shipment type, distance, and customs requirements. Our team provides an estimated delivery timeline for every shipment."
+        },
+        {
+          "question": "Do you provide warehousing solutions?",
+          "answer": "Yes. We provide secure and efficient warehousing solutions designed to support inventory management, storage, and smooth distribution."
+        },
+        {
+          "question": "Do you handle international shipments?",
+          "answer": "Yes. We support international logistics and cross-border shipments with professional documentation, customs coordination, and transportation services."
+        },
+        {
+          "question": "Can businesses get customized logistics solutions?",
+          "answer": "Absolutely. We can create customized logistics solutions based on your business requirements, shipment volume, destinations, and operational needs."
+        }
+      ]
     },
     "cta": {
       "heading": "Ready to Experience the Mazaya Masanda Advantage?",
@@ -575,6 +804,142 @@
       "heading": "Let Our Fleet Drive Your Business Forward",
       "subtitle": "Reliable. Efficient. Always on time.",
       "button": "Get Quote"
+    },
+    "overview": {
+      "heading": "Our",
+      "headingHighlight": "Fleet Overview",
+      "description": "We operate a diverse fleet of vehicles to handle all types of cargo and meet the unique needs of our clients across various industries.",
+      "getQuote": "Get a Quote",
+      "cards": [
+        {
+          "title": "Heavy-Duty Trucks",
+          "description": "Ideal for long-haul and large-volume freight transportation.",
+          "count": "95+ Vehicles"
+        },
+        {
+          "title": "Medium Trucks",
+          "description": "Perfect regional deliveries and medium-sized cargo transport.",
+          "count": "70+ Vehicles"
+        },
+        {
+          "title": "Light Trucks",
+          "description": "Best for small shipments and intra-city distribution needs.",
+          "count": "60+ Vehicles"
+        },
+        {
+          "title": "Vans & Pickups",
+          "description": "Flexible and reliable for last-mile delivery and urgent shipments.",
+          "count": "25+ Vehicles"
+        }
+      ]
+    },
+    "features": {
+      "heading": "Our",
+      "headingHighlight": "Fleet Features",
+      "cards": [
+        {
+          "title": "GPS Tracking",
+          "description": "Real-time tracking for complete visibility and updates."
+        },
+        {
+          "title": "Safety First",
+          "description": "Regular maintenance and strict safety inspections."
+        },
+        {
+          "title": "Fuel Efficient",
+          "description": "Optimized fuel consumption for cost and environment."
+        },
+        {
+          "title": "Nationwide Reach",
+          "description": "Wide network coverage across Saudi Arabia and GCC."
+        },
+        {
+          "title": "24/7 Support",
+          "description": "Round-the-clock support for all fleet operations."
+        }
+      ]
+    },
+    "types": {
+      "heading": "Our",
+      "headingHighlight": "Fleet Types",
+      "cards": [
+        {
+          "title": "Trucks",
+          "description": "Heavy-duty trucks for large-scale freight transportation, industrial logistics, and long-distance deliveries.",
+          "features": [
+            "High Load Capacity",
+            "Long Distance Transport",
+            "GPS Tracking",
+            "Professional Drivers"
+          ]
+        },
+        {
+          "title": "Vans",
+          "description": "Fast and flexible delivery vans designed for city distribution, e-commerce, and last-mile operations.",
+          "features": [
+            "Urban Delivery",
+            "Fast Dispatch",
+            "Fuel Efficient",
+            "Same-Day Delivery"
+          ]
+        },
+        {
+          "title": "Containers",
+          "description": "Secure container transportation for commercial cargo, import/export shipments, and bulk logistics.",
+          "features": [
+            "Secure Cargo",
+            "Import & Export",
+            "Large Capacity",
+            "Nationwide Coverage"
+          ]
+        },
+        {
+          "title": "Refrigerated Vehicles",
+          "description": "Temperature-controlled vehicles for food, pharmaceuticals, and other sensitive products requiring cold-chain logistics.",
+          "features": [
+            "Temperature Control",
+            "Food Grade Transport",
+            "Pharmaceutical Delivery",
+            "24/7 Monitoring"
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "heading": "Our",
+      "headingHighlight": "Fleet Coverage",
+      "description": "We have a strong operational network across Saudi Arabia and the GCC, ensuring fast and reliable delivery to every major city and beyond.",
+      "items": [
+        {
+          "title": "Saudi Arabia",
+          "desc": "Wide coverage across all major cities and regions."
+        },
+        {
+          "title": "GCC Countries",
+          "desc": "Serving UAE, Qatar, Bahrain, Kuwait, and Oman."
+        },
+        {
+          "title": "Border to Border",
+          "desc": "Seamless cross-border transportation solutions."
+        },
+        {
+          "title": "Strategic Hubs",
+          "desc": "Multiple fleet hubs for faster dispatch and delivery."
+        }
+      ]
+    },
+    "whyChoose": {
+      "heading": "Why Choose",
+      "headingHighlight": "Our Fleet?",
+      "capabilities": [
+        "Modern and diverse fleet for every need",
+        "Well-maintained vehicles for reliable performance",
+        "Experienced and trained drivers",
+        "Real-time tracking for complete visibility",
+        "Flexible solutions for businesses of all sizes",
+        "Commitment to safety, security, and sustainability"
+      ],
+      "learnMore": "Learn More About Us"
     }
   },
   "warehouse": {
@@ -590,6 +955,149 @@
         "operations": "Efficient Operations",
         "operationsSub": "Optimized Performance"
       }
+    },
+    "modernSupplyChains": {
+      "heading": "Smart Warehousing Solutions for",
+      "headingHighlight": "Modern Supply Chains",
+      "cards": [
+        {
+          "title": "Warehouse Gallery",
+          "description": "Explore our modern warehouse facilities designed for secure storage and efficient logistics operations."
+        },
+        {
+          "title": "Storage Capacity",
+          "description": "Large-scale storage solutions with flexible capacity for commercial and industrial goods."
+        },
+        {
+          "title": "Warehouse Security",
+          "description": "Advanced security systems ensuring complete protection of inventory and warehouse operations."
+        },
+        {
+          "title": "Inventory System",
+          "description": "AI-powered inventory management system providing real-time stock visibility and operational efficiency."
+        }
+      ],
+      "stats": {
+        "storageSpace": {
+          "value": "10M+",
+          "label": "Storage Space"
+        },
+        "productsManaged": {
+          "value": "100K+",
+          "label": "Products Managed"
+        },
+        "inventoryAccuracy": {
+          "value": "99.9%",
+          "label": "Inventory Accuracy"
+        },
+        "security": {
+          "value": "24/7",
+          "label": "Security"
+        }
+      }
+    },
+    "services": {
+      "heading": "Our",
+      "headingHighlight": "Warehousing Services",
+      "description": "From short-term storage to complex distribution operations, we provide scalable warehousing solutions tailored to your business needs.",
+      "getQuote": "Get Quote",
+      "cards": [
+        {
+          "title": "Inventory Storage",
+          "description": "Secure storage for all types of goods with real-time inventory tracking."
+        },
+        {
+          "title": "Temperature Controlled",
+          "description": "Specialized storage for temperature-sensitive products and materials."
+        },
+        {
+          "title": "Value Added Services",
+          "description": "Packaging, labeling, kitting services to add value to your operations."
+        },
+        {
+          "title": "Short & Long Term",
+          "description": "Flexible storage solutions for both short & long term business requirements."
+        },
+        {
+          "title": "B2B & B2C Fulfillment",
+          "description": "Efficient order fulfillment for businesses,customers across all channels."
+        },
+        {
+          "title": "Returns Management",
+          "description": "Streamlined returns handling, inspection, and restocking processes."
+        }
+      ]
+    },
+    "whyChoose": {
+      "heading": "Why Choose",
+      "headingHighlight": "Our Warehousing Services?",
+      "cards": [
+        {
+          "title": "Growth Opportunities",
+          "description": "We invest in your growth and help you build a successful career."
+        },
+        {
+          "title": "Real-time Visibility",
+          "description": "End-to-end visibility of your inventory with accurate reporting & updates."
+        },
+        {
+          "title": "Advanced Security",
+          "description": "24/7 surveillance, access control, and safety measures to ensure complete security."
+        },
+        {
+          "title": "Scalability",
+          "description": "Flexible space and resources to scale with your business growth."
+        },
+        {
+          "title": "Strategic Locations",
+          "description": "Warehouses located at key hubs for faster distribution and reduced transit time."
+        }
+      ]
+    },
+    "capabilities": {
+      "heading": "Our",
+      "headingHighlight": "Capabilities",
+      "items": [
+        "Inbound receiving and inspection",
+        "Inventory management and control",
+        "Order processing and fulfillment",
+        "Pick, pack, and ship operations",
+        "Cross-docking and transloading",
+        "Real-time reporting and analytics",
+        "Multi-channel distribution support"
+      ],
+      "learnMore": "Learn More About Us",
+      "techTitle": "Technology-Driven",
+      "techSubtitle": "Warehouse Management",
+      "techDescription": "We use advanced WMS (Warehouse Management System) to ensure accuracy, efficiency, and complete visibility across your supply chain.",
+      "techFeatures": [
+        "Real-time inventory tracking",
+        "Automated processes",
+        "Accurate order fulfillment",
+        "Detailed reporting & analytics"
+      ]
+    },
+    "types": {
+      "heading": "Our",
+      "headingHighlight": " Warehouse Types",
+      "cards": [
+        {
+          "title": "General Warehousing",
+          "description": "Ideal for non-perishable goods, retail products, and general merchandise."
+        },
+        {
+          "title": "Temperature Controlled",
+          "description": "Maintains controlled temperature for sensitive and perishable products."
+        },
+        {
+          "title": "Bonded Warehousing",
+          "description": "Customs-bonded facilities for duty deferment and compliance."
+        },
+        {
+          "title": "E-commerce Warehousing",
+          "description": "Fast and accurate fulfillment for online stores and e-commerce businesses."
+        }
+      ]
     },
     "cta": {
       "heading": "Looking for Reliable Warehousing Solutions?",

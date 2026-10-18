@@ -21,10 +21,13 @@ const Projects = async ({
 
   return (
     <div className="bg-[#0A0700] font-manrope">
-      <ProjectsTop heroT={dict.projects?.hero} />
-      <PreviousProjects />
-      <FeaturedProjects />
-      <Testimonials />
+      <ProjectsTop
+        heroT={dict.projects?.hero}
+        clientT={dict.projects?.client}
+      />
+      <PreviousProjects t={dict.projects?.previousProjects} />
+      <FeaturedProjects t={dict.projects?.featuredProjects} />
+      <Testimonials t={dict.projects?.testimonials} />
       <Quote t={dict.projects?.cta} lang={lang} />
     </div>
   );

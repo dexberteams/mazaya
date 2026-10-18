@@ -1,43 +1,57 @@
 "use client";
 
 import Image from "next/image";
-import { CircleCheck } from "lucide-react";
+import Link from "next/link";
+import { CircleCheck, MoveRight } from "lucide-react";
 
-const capabilities = [
-  "Inbound receiving and inspection",
-  "Inventory management and control",
-  "Order processing and fulfillment",
-  "Pick, pack, and ship operations",
-  "Cross-docking and transloading",
-  "Real-time reporting and analytics",
-  "Multi-channel distribution support",
-];
+export interface CapabilitiesT {
+  heading: string;
+  headingHighlight: string;
+  items: string[];
+  learnMore: string;
+  techTitle: string;
+  techSubtitle: string;
+  techDescription: string;
+  techFeatures: string[];
+}
 
-const features = [
-  "Real-time inventory tracking",
-  "Automated processes",
-  "Accurate order fulfillment",
-  "Detailed reporting & analytics",
-];
+interface CapabilitiesProps {
+  t?: CapabilitiesT;
+  lang?: string;
+}
 
-const Capabilities = () => {
+const Capabilities = ({ t, lang = "en" }: CapabilitiesProps) => {
+  if (!t) return null;
+
+  const currentLang = lang.toLowerCase().split("-")[0];
+  const isArabic = currentLang === "ar";
+
   return (
-    <section className="w-full px-4 py-10 lg:px-8 lg:py-16">
-      <div className=" flex flex-col overflow-hidden rounded-lg bg-[#0A0700] lg:flex-row">
+    <section
+      lang={currentLang}
+      dir={isArabic ? "rtl" : "ltr"}
+      className="w-full px-4 py-10 lg:px-8 lg:py-16"
+    >
+      <div className="flex flex-col overflow-hidden rounded-lg bg-[#0A0700] lg:flex-row">
         {/* Left Side */}
         <div className="w-full px-0 py-2 sm:px-2 lg:w-[26%] lg:px-0 lg:py-0">
           <h2 className="text-2xl font-bold leading-tight text-white sm:text-3xl">
-            Our <span className="text-[#F5E5B5]">Capabilities</span>
+            {t.heading}{" "}
+            <span className="text-[#F5E5B5]">{t.headingHighlight}</span>
           </h2>
 
           {/* Yellow line */}
-          <div className="mt-4 h-px w-16 bg-[#FFBB00] sm:w-20" />
+          <div
+            className={`mt-4 h-px w-16 bg-[#FFBB00] sm:w-20 ${
+              isArabic ? "ml-auto" : ""
+            }`}
+          />
 
-          {/* List */}
+          {/* Capabilities List */}
           <div className="mt-4 space-y-3">
-            {capabilities.map((item, index) => (
+            {t.items.map((item, index) => (
               <div
-                key={index}
+                key={`${item}-${index}`}
                 className="flex items-start gap-2 text-[11px] leading-5 text-white/80 sm:text-base"
               >
                 <CircleCheck
@@ -52,10 +66,14 @@ const Capabilities = () => {
           </div>
 
           {/* Button */}
-          <button className=" w-full lg:w-2/3 mt-5 flex justify-center items-center gap-2 rounded-md bg-white px-4 py-2 text-[14px] font-medium text-black transition-all duration-300 hover:bg-[#FFBB00]">
-            Learn More About Us
-            <span className="text-sm">→</span>
-          </button>
+          <Link
+            href={`/${currentLang}/about`}
+            className="mt-5 flex w-full items-center justify-center gap-2 rounded-md bg-white px-4 py-2 text-[14px] font-medium text-black transition-all duration-300 hover:bg-[#FFBB00] lg:w-2/3"
+          >
+            <span>{t.learnMore}</span>
+
+            <MoveRight size={16} className={isArabic ? "rotate-180" : ""} />
+          </Link>
         </div>
 
         {/* Right Content */}
@@ -64,7 +82,7 @@ const Capabilities = () => {
           <div className="relative h-[230px] w-full sm:h-[300px] sm:w-[52%] lg:h-auto">
             <Image
               src="/warehouse/driver.png"
-              alt="Warehouse management"
+              alt={t.techTitle}
               fill
               className="object-cover"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 52vw, 40vw"
@@ -73,26 +91,24 @@ const Capabilities = () => {
 
           {/* Text Card */}
           <div className="flex w-full flex-col justify-center bg-[#352801] px-6 py-7 sm:w-[48%] sm:px-7 lg:px-8">
-            <h3 className="max-w-[240px] text-lg font-medium leading-7 text-white sm:text-xl">
-              Technology-Driven
+            <h3 className="text-lg font-medium leading-7 text-white sm:text-xl">
+              {t.techTitle}
               <br />
-              Warehouse Management
+              {t.techSubtitle}
             </h3>
 
-            <p className="mt-4 max-w-[290px] text-[10px] leading-5 text-white/70 sm:text-[11px]">
-              We use advanced WMS (Warehouse Management System) to ensure
-              accuracy, efficiency, and complete visibility across your supply
-              chain.
+            <p className="mt-4 text-[10px] leading-5 text-white/70 sm:text-[11px]">
+              {t.techDescription}
             </p>
 
-            {/* Features */}
+            {/* Technology Features */}
             <div className="mt-5 space-y-3">
-              {features.map((feature, index) => (
+              {t.techFeatures.map((feature, index) => (
                 <div
-                  key={index}
+                  key={`${feature}-${index}`}
                   className="flex items-center gap-2 text-[10px] text-white/80 sm:text-[11px]"
                 >
-                  <span className="text-[#00C307]">✓</span>
+                  <span className="shrink-0 text-[#00C307]">✓</span>
                   <span>{feature}</span>
                 </div>
               ))}

@@ -70,7 +70,7 @@ const partners = [
 
 const Partner = ({ t }: { t?: PartnerT }) => {
   const pathname = usePathname() || "/";
-  const stripped = pathname.replace(/^\/(en|ar)/, "") || "/";
+  const stripped = pathname.replace(/^\/(en|ar)(?=\/|$)/, "") || "/";
   const isLandingPage = stripped === "/" || stripped === "";
   const isAboutPage = stripped === "/about";
 
@@ -101,25 +101,31 @@ const Partner = ({ t }: { t?: PartnerT }) => {
       </div>
 
       {/* Partner Marquee */}
-      <div className="mt-10 lg:mt-14 px-4 lg:px-8">
+
+      {/* Partner Marquee */}
+      <div className="mt-10 px-4 lg:mt-14 lg:px-8" dir="ltr">
         <Marquee
+          key={pathname.startsWith("/ar") ? "ar-marquee" : "en-marquee"}
+          direction="left"
           speed={80}
-          gradient
-          gradientColor="#1E1E1E"
+          autoFill={true}
+          gradient={true}
+          gradientColor="#211A0A"
           gradientWidth={100}
-          pauseOnHover
+          pauseOnHover={true}
+          play={true}
         >
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="relative mr-4 h-24 w-28 cursor-pointer overflow-hidden border border-gray-600 transition-all duration-300 hover:border-[#FFBB00] hover:shadow-2xl hover:shadow-[#FFBB00]/50 active:border-[#FFBB00] active:shadow-2xl active:shadow-[#FFBB00]/50 lg:mr-8 lg:h-28 lg:w-40 rounded-lg"
+              className="relative mr-4 h-24 w-28 shrink-0 cursor-pointer overflow-hidden rounded-lg border border-gray-600 transition-all duration-300 hover:border-[#FFBB00] hover:shadow-2xl hover:shadow-[#FFBB00]/50 active:border-[#FFBB00] active:shadow-2xl active:shadow-[#FFBB00]/50 lg:mr-8 lg:h-28 lg:w-40"
             >
               <Image
                 src={partner.image}
                 alt={partner.name}
                 fill
                 sizes="(max-width: 1024px) 112px, 160px"
-                className="object-cover transition duration-300 hover:scale-105 rounded-lg"
+                className="rounded-lg object-cover transition-transform duration-300 hover:scale-105"
               />
             </div>
           ))}

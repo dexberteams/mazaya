@@ -61,29 +61,29 @@ const defaultReviews = [
 const ClientSection = ({ t }: { t?: ClientSectionT }) => {
   const reviews = defaultReviews.map((item, index) => {
     const translated = t?.reviews?.[index];
+
     return {
       ...item,
-      name: translated?.name || item.name,
-      role: translated?.role || item.role,
-      company: translated?.company || item.company,
-      review: translated?.review || item.review,
+      name: translated?.name ?? item.name,
+      role: translated?.role ?? item.role,
+      company: translated?.company ?? item.company,
+      review: translated?.review ?? item.review,
     };
   });
 
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const reviewSlides: (typeof reviews)[] = [];
-
-  for (let i = 0; i < reviews.length; i += 2) {
-    reviewSlides.push(reviews.slice(i, i + 2));
-  }
+  const reviewSlides = Array.from(
+    { length: Math.ceil(reviews.length / 2) },
+    (_, index) => reviews.slice(index * 2, index * 2 + 2),
+  );
 
   const nextSlide = () => {
-    setActiveSlide((prev) => (prev === reviewSlides.length - 1 ? 0 : prev + 1));
+    setActiveSlide((prev) => (prev >= reviewSlides.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setActiveSlide((prev) => (prev === 0 ? reviewSlides.length - 1 : prev - 1));
+    setActiveSlide((prev) => (prev <= 0 ? reviewSlides.length - 1 : prev - 1));
   };
 
   return (
@@ -97,22 +97,22 @@ const ClientSection = ({ t }: { t?: ClientSectionT }) => {
         </span>
       </h1>
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-4">
-        {/* ================= VIDEO SECTION ================= */}
-        <CustomVideo
-          title={t?.videoTitle}
-          subtitle={t?.videoSubtitle}
-        />
+        {/*  VIDEO SECTION  */}
+        <CustomVideo title={t?.videoTitle} subtitle={t?.videoSubtitle} />
 
-        {/* ================= CLIENT REVIEW CAROUSEL ================= */}
+        {/*  CLIENT REVIEW CAROUSEL  */}
         <div className="relative min-h-95 overflow-hidden lg:min-h-117.5">
           <div
             className="flex h-full transition-transform duration-500 ease-in-out"
             style={{
-              transform: `translateX(-${activeSlide * 100}%)`,
+              transform: `translateX(${activeSlide * (typeof document !== "undefined" && document.documentElement.dir === "rtl" ? 100 : -100)}%)`,
             }}
           >
             {reviewSlides.map((slide, slideIndex) => (
-              <div key={slideIndex} className="flex min-w-full flex-col gap-4">
+              <div
+                key={slideIndex}
+                className="flex w-full min-w-full shrink-0 flex-col gap-4"
+              >
                 {slide.map((item) => (
                   <div
                     key={item.name}
@@ -121,19 +121,19 @@ const ClientSection = ({ t }: { t?: ClientSectionT }) => {
                     {/* Quote */}
                     <BiSolidQuoteAltRight
                       size={18}
-                      className="absolute top-4 end-4 text-white"
+                      className="absolute top-4 inset-e-4 text-white"
                     />
 
                     {/* Client Image */}
                     <div className="relative h-24 w-24 shrink-0 overflow-visible sm:h-28 sm:w-28 lg:h-30 lg:w-30">
                       {/* Top Square Shadow */}
-                      <div className="absolute -top-2 start-4 h-4 w-1/2 bg-linear-to-r from-amber-500 to-transparent" />
+                      <div className="absolute -top-2 inset-s-4 h-4 w-1/2 bg-linear-to-r from-amber-500 to-transparent" />
 
                       {/* Bottom Square Shadow */}
-                      <div className="absolute -bottom-2 end-4 h-4 w-1/2 bg-linear-to-l from-amber-500" />
+                      <div className="absolute -bottom-2 inset-e-4 h-4 w-1/2 bg-linear-to-l from-amber-500" />
 
                       {/* Image */}
-                      <div className="relative h-full min-h-[80px] w-full overflow-hidden rounded-sm border border-amber-400">
+                      <div className="relative h-full min-h-20 w-full overflow-hidden rounded-sm border border-amber-400">
                         <Image
                           src={item.image}
                           alt={item.name}
@@ -181,7 +181,7 @@ const ClientSection = ({ t }: { t?: ClientSectionT }) => {
           <button
             onClick={prevSlide}
             aria-label="Previous reviews"
-            className="absolute bottom-1 start-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white transition-all hover:border-yellow-400 hover:bg-yellow-400 hover:text-black lg:bottom-4 cursor-pointer"
+            className="absolute bottom-1 inset-s-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white transition-all hover:border-yellow-400 hover:bg-yellow-400 hover:text-black lg:bottom-4 cursor-pointer"
           >
             <ArrowLeft size={16} />
           </button>
@@ -190,7 +190,7 @@ const ClientSection = ({ t }: { t?: ClientSectionT }) => {
           <button
             onClick={nextSlide}
             aria-label="Next reviews"
-            className="absolute end-4 bottom-1 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white transition-all hover:border-yellow-400 hover:bg-yellow-400 hover:text-black lg:bottom-4 cursor-pointer"
+            className="absolute inset-e-4 bottom-1 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white transition-all hover:border-yellow-400 hover:bg-yellow-400 hover:text-black lg:bottom-4 cursor-pointer"
           >
             <ArrowRight size={16} />
           </button>

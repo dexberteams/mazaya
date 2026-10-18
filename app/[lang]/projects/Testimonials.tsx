@@ -1,14 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import SectionHeader from "../../ui/SectionHeader";
-import { ArrowLeft, ArrowRight, Star } from "lucide-react";
-
 import Image from "next/image";
+import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 import { BiSolidQuoteAltRight } from "react-icons/bi";
-import CustomVideo from "../../ui/CustomVideo";
+import SectionLabel from "@/app/ui/SectionLabel";
+import CustomVideo from "@/app/ui/CustomVideo";
 
-const reviews = [
+export type ReviewItemT = {
+  name: string;
+  role: string;
+  company: string;
+  review: string;
+};
+
+export type ClientSectionT = {
+  sectionLabel: string;
+  heading: string;
+  headingHighlight: string;
+  videoTitle?: string;
+  videoSubtitle?: string;
+  reviews?: ReviewItemT[];
+};
+
+const defaultReviews = [
   {
     name: "Eng. Md Abdullah",
     role: "CEO",
@@ -31,7 +46,7 @@ const reviews = [
     company: "Aramex",
     image: "/home/client3.avif",
     review:
-      "Working with Mazaya Logistics has made our supply chain operations faster and more efficient.",
+      "Working with mazaya masanda Logistics has made our supply chain operations faster and more efficient.",
   },
   {
     name: "Al-Quareshi Hakim",
@@ -39,47 +54,65 @@ const reviews = [
     company: "Ajex",
     image: "/home/client4.avif",
     review:
-      "Thanks to Mazaya Logistics, our supply chain is now more efficient, organized, and consistently dependable.",
+      "Thanks to mazaya masanda Logistics, our supply chain is now more efficient, organized, and consistently dependable.",
   },
 ];
 
-const Testimonials = () => {
+const ClientSection = ({ t }: { t?: ClientSectionT }) => {
+  const reviews = defaultReviews.map((item, index) => {
+    const translated = t?.reviews?.[index];
+
+    return {
+      ...item,
+      name: translated?.name ?? item.name,
+      role: translated?.role ?? item.role,
+      company: translated?.company ?? item.company,
+      review: translated?.review ?? item.review,
+    };
+  });
+
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const reviewSlides = [];
-
-  for (let i = 0; i < reviews.length; i += 2) {
-    reviewSlides.push(reviews.slice(i, i + 2));
-  }
+  const reviewSlides = Array.from(
+    { length: Math.ceil(reviews.length / 2) },
+    (_, index) => reviews.slice(index * 2, index * 2 + 2),
+  );
 
   const nextSlide = () => {
-    setActiveSlide((prev) => (prev === reviewSlides.length - 1 ? 0 : prev + 1));
+    setActiveSlide((prev) => (prev >= reviewSlides.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setActiveSlide((prev) => (prev === 0 ? reviewSlides.length - 1 : prev - 1));
+    setActiveSlide((prev) => (prev <= 0 ? reviewSlides.length - 1 : prev - 1));
   };
-  return (
-    <section className="relative overflow-hidden my-10 lg:my-20 px-4 lg:px-8 text-white">
-      <SectionHeader
-        title="Testimonials"
-        description="What our clients say about working with Mazaya Masanda Logistics."
-      ></SectionHeader>
 
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-4 mt-5 lg:mt-10">
+  return (
+    <section className="relative my-10 overflow-hidden px-4 py-10 font-manrope lg:my-20 lg:px-8 lg:py-16">
+      <SectionLabel text={t?.sectionLabel || "Partnership"} />
+
+      <h1 className="my-4 lg:my-10 font-manrope text-2xl font-bold text-white lg:text-4xl">
+        {t?.heading || "Grow Together"}{" "}
+        <span className="text-yellow-200">
+          {t?.headingHighlight || "Successfully"}
+        </span>
+      </h1>
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-4">
         {/* ================= VIDEO SECTION ================= */}
-        <CustomVideo></CustomVideo>
+        <CustomVideo title={t?.videoTitle} subtitle={t?.videoSubtitle} />
 
         {/* ================= CLIENT REVIEW CAROUSEL ================= */}
         <div className="relative min-h-95 overflow-hidden lg:min-h-117.5">
           <div
             className="flex h-full transition-transform duration-500 ease-in-out"
             style={{
-              transform: `translateX(-${activeSlide * 100}%)`,
+              transform: `translateX(${activeSlide * (typeof document !== "undefined" && document.documentElement.dir === "rtl" ? 100 : -100)}%)`,
             }}
           >
             {reviewSlides.map((slide, slideIndex) => (
-              <div key={slideIndex} className="flex min-w-full flex-col gap-4">
+              <div
+                key={slideIndex}
+                className="flex w-full min-w-full shrink-0 flex-col gap-4"
+              >
                 {slide.map((item) => (
                   <div
                     key={item.name}
@@ -88,16 +121,16 @@ const Testimonials = () => {
                     {/* Quote */}
                     <BiSolidQuoteAltRight
                       size={18}
-                      className="absolute top-4 right-4 text-white"
+                      className="absolute top-4 end-4 text-white"
                     />
 
                     {/* Client Image */}
                     <div className="relative h-24 w-24 shrink-0 overflow-visible sm:h-28 sm:w-28 lg:h-30 lg:w-30">
                       {/* Top Square Shadow */}
-                      <div className="absolute -top-2 left-4 h-4 w-1/2 bg-linear-to-r from-amber-500 to-transparent" />
+                      <div className="absolute -top-2 start-4 h-4 w-1/2 bg-linear-to-r from-amber-500 to-transparent" />
 
                       {/* Bottom Square Shadow */}
-                      <div className="absolute -bottom-2 right-4 h-4 w-1/2 bg-linear-to-l from-amber-500" />
+                      <div className="absolute -bottom-2 end-4 h-4 w-1/2 bg-linear-to-l from-amber-500" />
 
                       {/* Image */}
                       <div className="relative h-full min-h-[80px] w-full overflow-hidden rounded-sm border border-amber-400">
@@ -148,7 +181,7 @@ const Testimonials = () => {
           <button
             onClick={prevSlide}
             aria-label="Previous reviews"
-            className="absolute bottom-1 left-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white transition-all hover:border-yellow-400 hover:bg-yellow-400 hover:text-black lg:bottom-4"
+            className="absolute bottom-1 start-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white transition-all hover:border-yellow-400 hover:bg-yellow-400 hover:text-black lg:bottom-4 cursor-pointer"
           >
             <ArrowLeft size={16} />
           </button>
@@ -157,7 +190,7 @@ const Testimonials = () => {
           <button
             onClick={nextSlide}
             aria-label="Next reviews"
-            className="absolute right-4 bottom-1 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white transition-all hover:border-yellow-400 hover:bg-yellow-400 hover:text-black lg:bottom-4"
+            className="absolute end-4 bottom-1 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white transition-all hover:border-yellow-400 hover:bg-yellow-400 hover:text-black lg:bottom-4 cursor-pointer"
           >
             <ArrowRight size={16} />
           </button>
@@ -169,7 +202,7 @@ const Testimonials = () => {
                 key={index}
                 onClick={() => setActiveSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
-                className={`h-1.5 rounded-full transition-all ${
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${
                   activeSlide === index
                     ? "w-6 bg-yellow-400"
                     : "w-2 bg-white/40"
@@ -183,4 +216,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default ClientSection;

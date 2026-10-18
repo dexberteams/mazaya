@@ -1,7 +1,14 @@
 import Hero, { ProjectsHeroT } from "./Hero";
 import Client from "./Client";
+import { ClientT } from "./Client";
 
-const ProjectsTop = ({ heroT }: { heroT?: ProjectsHeroT }) => {
+const ProjectsTop = ({
+  heroT,
+  clientT,
+}: {
+  heroT?: ProjectsHeroT;
+  clientT?: ClientT;
+}) => {
   return (
     <div className="relative overflow-hidden">
       {/* Mobile Background Image */}
@@ -23,7 +30,7 @@ const ProjectsTop = ({ heroT }: { heroT?: ProjectsHeroT }) => {
       {/* Content */}
       <div className="relative z-10">
         <Hero t={heroT} />
-        <Client />
+        <Client t={clientT} />
       </div>
     </div>
   );

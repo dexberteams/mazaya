@@ -1,7 +1,14 @@
 import Hero, { AdvantagesHeroT } from "./Hero";
 import Statistics from "./Statistics";
+import { StatisticsT } from "./Statistics";
 
-const AdvantagesTop = ({ heroT }: { heroT?: AdvantagesHeroT }) => {
+const AdvantagesTop = ({
+  heroT,
+  statisticsT,
+}: {
+  heroT?: AdvantagesHeroT;
+  statisticsT?: StatisticsT;
+}) => {
   return (
     <div className="relative overflow-hidden">
       {/* Mobile Background Image */}
@@ -23,7 +30,7 @@ const AdvantagesTop = ({ heroT }: { heroT?: AdvantagesHeroT }) => {
       {/* Content */}
       <div className="relative z-10">
         <Hero t={heroT} />
-        <Statistics />
+        <Statistics t={statisticsT} />
       </div>
     </div>
   );

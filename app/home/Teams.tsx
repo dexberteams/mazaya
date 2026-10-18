@@ -88,16 +88,14 @@ const Teams = ({ t }: { t?: TeamsT }) => {
   return (
     <div className="w-full my-10 lg:my-20 font-manrope">
       <div className="px-4 sm:px-6 lg:px-8">
-        {isLandingPage && (
-          <SectionLabel text={t?.sectionLabel || "about us"} />
-        )}
+        {isLandingPage && <SectionLabel text={t?.sectionLabel || "about us"} />}
         <h1 className="mt-4 text-2xl font-bold text-white lg:text-4xl">
           {t?.heading || "Meet the"}{" "}
           <span className="text-yellow-200">
             {t?.headingHighlight || "Leadership Team"}
           </span>
         </h1>
-        {/* ========================================================= MOBILE CAROUSEL ========================================================= */}
+        {/*  MOBILE CAROUSEL  */}
         <div className="mt-8 lg:hidden">
           {/* Slider */}
           <div className="overflow-hidden rounded-lg">
@@ -116,7 +114,7 @@ const Teams = ({ t }: { t?: TeamsT }) => {
                     onTouchCancel={() => setActiveId(null)}
                   >
                     <div
-                      className={`group relative h-[500px] w-full overflow-hidden rounded-lg border bg-[#111] transition-all duration-500 ${
+                      className={`group relative h-125 w-full overflow-hidden rounded-lg border bg-[#111] transition-all duration-500 ${
                         isActive
                           ? "scale-[0.98] border-yellow-400/80 shadow-[0_0_25px_rgba(250,204,21,0.25)]"
                           : "border-yellow-500/40"
@@ -134,12 +132,12 @@ const Teams = ({ t }: { t?: TeamsT }) => {
                       />
                       {/* Dark Gradient */}
                       <div
-                        className={`absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-black transition-all duration-500 ${
+                        className={`absolute inset-0 bg-linear-to-b from-transparent via-black/5 to-black transition-all duration-500 ${
                           isActive ? "via-black/20" : ""
                         }`}
                       />
                       {/* Content */}
-                      <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black via-black/80 to-transparent px-4 pb-5 pt-24 text-center">
+                      <div className="absolute inset-x-0 bottom-0 z-10 bg-linear-to-t from-black via-black/80 to-transparent px-4 pb-5 pt-24 text-center">
                         <h3 className="text-lg font-semibold text-white">
                           {member.name}
                         </h3>
@@ -204,7 +202,7 @@ const Teams = ({ t }: { t?: TeamsT }) => {
               })}
             </div>
           </div>
-          {/* ========================================================= MOBILE CONTROLS ========================================================= */}
+          {/* MOBILE CONTROLS  */}
           <div className="mt-5 flex items-center justify-center gap-5">
             <button
               type="button"
@@ -222,7 +220,9 @@ const Teams = ({ t }: { t?: TeamsT }) => {
                   onClick={() => setCurrentSlide(index)}
                   aria-label={`Go to ${member.name}`}
                   className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    currentSlide === index ? "w-6 bg-yellow-400" : "w-2 bg-white/30"
+                    currentSlide === index
+                      ? "w-6 bg-yellow-400"
+                      : "w-2 bg-white/30"
                   }`}
                 />
               ))}
@@ -237,7 +237,7 @@ const Teams = ({ t }: { t?: TeamsT }) => {
             </button>
           </div>
         </div>
-        {/* ========================================================= DESKTOP GRID ========================================================= */}
+        {/* DESKTOP GRID */}
         <div className="mt-8 hidden grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid lg:grid-cols-5 lg:gap-4">
           {teamMembers.map((member) => {
             const isActive = activeId === member.id;
@@ -246,7 +246,7 @@ const Teams = ({ t }: { t?: TeamsT }) => {
                 key={member.id}
                 onMouseEnter={() => setActiveId(member.id)}
                 onMouseLeave={() => setActiveId(null)}
-                className={`group relative h-[500px] overflow-hidden rounded-lg border bg-[#111] transition-all duration-500 ${
+                className={`group relative h-125 overflow-hidden rounded-lg border bg-[#111] transition-all duration-500 ${
                   isActive
                     ? "scale-[0.98] border-yellow-400/80 shadow-[0_0_25px_rgba(250,204,21,0.25)]"
                     : "border-yellow-500/40"
@@ -264,12 +264,12 @@ const Teams = ({ t }: { t?: TeamsT }) => {
                 />
                 {/* Dark Gradient */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-black transition-all duration-500 ${
+                  className={`absolute inset-0 bg-linear-to-b from-transparent via-black/5 to-black transition-all duration-500 ${
                     isActive ? "via-black/20" : ""
                   }`}
                 />
                 {/* Content */}
-                <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black via-black/70 to-transparent px-4 pb-4 pt-20 text-center">
+                <div className="absolute inset-x-0 bottom-0 z-10 bg-linear-to-t from-black via-black/70 to-transparent px-4 pb-4 pt-20 text-center">
                   <h3 className="text-lg font-semibold text-white transition-transform duration-500 lg:text-xl">
                     {member.name}
                   </h3>

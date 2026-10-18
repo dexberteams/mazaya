@@ -42,9 +42,7 @@ const WhyChoose = ({ t }: { t?: WhyChooseT }) => {
 
   return (
     <div className="p-4 lg:p-8 my-10 lg:my-20 font-manrope">
-      {isLandingPage && (
-        <SectionLabel text={t?.sectionLabel || "advantages"} />
-      )}
+      {isLandingPage && <SectionLabel text={t?.sectionLabel || "advantages"} />}
       <h3 className="font-bold text-2xl my-2 lg:my-4 lg:text-4xl text-white">
         {t?.heading || "Why"}{" "}
         <span className="text-yellow-200">
@@ -52,7 +50,7 @@ const WhyChoose = ({ t }: { t?: WhyChooseT }) => {
         </span>
       </h3>
       {/* grid box */}
-      <div className="flex lg:flex-row flex-col-reverse justify-between gap-4 lg:gap-6 text-white mt-4 lg:mt-8">
+      <div className="flex lg:flex-row flex-col-reverse justify-between gap-4 text-white mt-4 lg:mt-8">
         {/* div-1 */}
         <div className="rounded-lg bg-[#201700] p-4 lg:p-8">
           <p className="font-inter text-xs lg:text-lg mt-3 lg:mt-6">

@@ -1,7 +1,12 @@
 import Hero, { WarehouseHeroT } from "./Hero";
-import ModernSupplyChains from "./ModernSupplyChains";
+import ModernSupplyChains, { ModernSupplyChainsT } from "./ModernSupplyChains";
 
-const WarehouseTop = ({ heroT }: { heroT?: WarehouseHeroT }) => {
+interface WarehouseTopProps {
+  heroT?: WarehouseHeroT;
+  modernSupplyChainsT?: ModernSupplyChainsT;
+}
+
+const WarehouseTop = ({ heroT, modernSupplyChainsT }: WarehouseTopProps) => {
   return (
     <div className="relative overflow-hidden">
       {/* Mobile Hero Background */}
@@ -19,7 +24,8 @@ const WarehouseTop = ({ heroT }: { heroT?: WarehouseHeroT }) => {
       {/* Content */}
       <div className="relative z-10">
         <Hero t={heroT} />
-        <ModernSupplyChains />
+
+        <ModernSupplyChains t={modernSupplyChainsT} />
       </div>
     </div>
   );

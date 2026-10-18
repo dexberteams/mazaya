@@ -37,18 +37,18 @@ export default function Footer({
 
   return (
     <footer className="relative w-full px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-20 font-manrope">
-      {/* =========================================================
+      {/* 
           AMBIENT BACKGROUND
-      ========================================================= */}
+       */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(160,110,25,0.20)_0%,rgba(0,0,0,0)_68%)]" />
 
-        <div className="absolute left-1/2 top-1/2 h-[350px] w-[350px] sm:h-[500px] sm:w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#D49A24]/[0.06] blur-[90px] sm:blur-[120px]" />
+        <div className="absolute left-1/2 top-1/2 h-87.5 w-87.5 sm:h-125 sm:w-200 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#D49A24]/6 blur-[90px] sm:blur-[120px]" />
       </div>
 
-      {/* =========================================================
+      {/* 
           EARTH (Centered in the middle of footer on mobile)
-      ========================================================= */}
+       */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
         <div
           className="
@@ -96,25 +96,25 @@ export default function Footer({
         </div>
       </div>
 
-      {/* =========================================================
+      {/*
           FOOTER WRAPPER
-      ========================================================= */}
+       */}
       <div className="relative z-10 mx-auto w-full">
-        {/* =======================================================
+        {/* 
             MAZAYA WATERMARK
-        ======================================================= */}
+         */}
         <div
           className="
             pointer-events-none
             absolute
             left-1/2
-            top-[-32px]
+            -top-8
             z-0
             -translate-x-1/2
             opacity-30
             sm:opacity-40
-            sm:top-[-65px]
-            lg:top-[-165px]
+            sm:-top-16.25
+            lg:-top-41.25
             w-full
           "
         >
@@ -198,15 +198,15 @@ export default function Footer({
           </svg>
         </div>
 
-        {/* =======================================================
+        {/* 
             MAIN FOOTER CARD
-        ======================================================= */}
+        */}
         <div
           className="
             relative
             z-10
             overflow-hidden
-            rounded-[4px]
+            rounded-sm
             border
             border-[#A9791C]
             bg-[rgba(18,14,6,0.70)]
@@ -227,9 +227,9 @@ export default function Footer({
           {/* subtle inner glow */}
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(212,154,36,0.10),transparent_55%)]" />
 
-          {/* =====================================================
+          {/* 
               FOOTER CONTENT GRID
-          ===================================================== */}
+          */}
           <div
             className="
               relative
@@ -241,9 +241,9 @@ export default function Footer({
               lg:gap-8
             "
           >
-            {/* ===================================================
+            {/* 
                 LEFT — BRAND
-            =================================================== */}
+             */}
             <div
               className="
                 flex
@@ -256,7 +256,8 @@ export default function Footer({
             >
               {/* Logo */}
               <Link
-                href={`/${lang}`}                className="inline-flex transition-opacity duration-300 hover:opacity-90"
+                href={`/${lang}`}
+                className="inline-flex transition-opacity duration-300 hover:opacity-90"
               >
                 <Image
                   src="/logo/Logo.png"
@@ -265,11 +266,11 @@ export default function Footer({
                   height={40}
                   priority
                   className="
-                    h-[26px]
+                    h-6.5
                     w-auto
                     object-contain
-                    sm:h-[27px]
-                    lg:h-[25px]
+                    sm:h-6.75
+                    lg:h-6.25
                   "
                 />
               </Link>
@@ -280,7 +281,7 @@ export default function Footer({
                   hidden
                   lg:block
                   mt-4
-                  max-w-[250px]
+                  max-w-62.5
                   text-[10px]
                   font-normal
                   leading-[1.55]
@@ -293,7 +294,7 @@ export default function Footer({
               </p>
 
               {/* Desktop social icons (hidden on mobile, shown on lg+) */}
-              <div className="hidden lg:flex mt-4 items-center justify-start gap-[7px]">
+              <div className="hidden lg:flex mt-4 items-center justify-start gap-1.75">
                 <SocialIcon
                   href="https://facebook.com"
                   src="/home/icons/facebook.png"
@@ -324,9 +325,9 @@ export default function Footer({
                   aria-label="Twitter"
                   className="transition-transform duration-200 hover:scale-110"
                 >
-                  <div className="flex h-[17px] w-[17px] items-center justify-center rounded-[3px] bg-[#1DA1F2] text-white sm:h-[18px] sm:w-[18px]">
+                  <div className="flex h-4.25 w-4.25 items-center justify-center rounded-[3px] bg-[#1DA1F2] text-white sm:h-4.5 sm:w-4.5">
                     <svg
-                      className="h-[10px] w-[10px] fill-current"
+                      className="h-2.5 w-2.5 fill-current"
                       viewBox="0 0 24 24"
                     >
                       <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.936 9.936 0 0024 4.59z" />
@@ -358,12 +359,12 @@ export default function Footer({
                         alt="Dexbar"
                         width={250}
                         height={80}
-                        className="h-auto w-[80px] object-contain"
+                        className="h-auto w-20 object-contain"
                       />
                     </Link>
                   </p>
 
-                  <p className="mt-2 max-w-[270px] font-inter text-[9px] leading-[1.45] text-[#777777]">
+                  <p className="mt-2 max-w-67.5 font-inter text-[9px] leading-[1.45] text-[#777777]">
                     {t?.disclaimer ||
                       "Design concepts are created by Dexbar for presentation purposes. Third-party content and trademarks belong to their respective owners."}
                   </p>
@@ -371,9 +372,9 @@ export default function Footer({
               )}
             </div>
 
-            {/* ===================================================
+            {/* 
                 CENTER — CTA & MOBILE CONTENT
-            =================================================== */}
+             */}
             <div
               className="
                 mt-6
@@ -389,11 +390,11 @@ export default function Footer({
             >
               <h3
                 className="
-                  max-w-[470px]
+                  max-w-117.5
                   text-[19px]
                   font-bold
-                  leading-[1.25]
-                  tracking-[-0.025em]
+                  leading-tight
+                  tracking-tight
                   text-white
 
                   sm:text-[22px]
@@ -420,7 +421,8 @@ export default function Footer({
                   lg:text-[11px]
                 "
               >
-                {t?.ctaSubtitle || "Reliable Logistics Solutions Across Saudi Arabia & Beyond"}
+                {t?.ctaSubtitle ||
+                  "Reliable Logistics Solutions Across Saudi Arabia & Beyond"}
               </p>
 
               {/* Action Buttons */}
@@ -429,8 +431,8 @@ export default function Footer({
                   href={lh("/getQuote")}
                   className="
                     inline-flex
-                    h-[36px]
-                    min-w-[108px]
+                    h-9
+                    min-w-27
                     items-center
                     justify-center
                     gap-2
@@ -457,8 +459,8 @@ export default function Footer({
                   href={lh("/contactus")}
                   className="
                     inline-flex
-                    h-[36px]
-                    min-w-[114px]
+                    h-9
+                    min-w-28.5
                     items-center
                     justify-center
                     gap-2
@@ -484,15 +486,15 @@ export default function Footer({
                 </Link>
               </div>
 
-              {/* =================================================
+              {/* 
                   MOBILE DESCRIPTION (only on mobile)
-              ================================================= */}
+               */}
               <p
                 className="
                   mt-6
                   max-w-[320px]
                   text-[11px]
-                  leading-[1.5]
+                  leading-normal
                   text-[#B8B8B8]
                   font-inter
 
@@ -535,9 +537,9 @@ export default function Footer({
                   aria-label="Twitter"
                   className="transition-transform duration-200 hover:scale-110"
                 >
-                  <div className="flex h-[18px] w-[18px] items-center justify-center rounded-[3px] bg-[#1DA1F2] text-white">
+                  <div className="flex h-4.5 w-4.5 items-center justify-center rounded-[3px] bg-[#1DA1F2] text-white">
                     <svg
-                      className="h-[10px] w-[10px] fill-current"
+                      className="h-2.5 w-2.5 fill-current"
                       viewBox="0 0 24 24"
                     >
                       <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.936 9.936 0 0024 4.59z" />
@@ -569,12 +571,12 @@ export default function Footer({
                         alt="Dexbar"
                         width={250}
                         height={80}
-                        className="h-auto w-[60px] object-contain sm:w-[115px]"
+                        className="h-auto w-15 object-contain sm:w-28.75"
                       />
                     </Link>
                   </p>
 
-                  <p className="mx-auto mt-2 max-w-[280px] font-inter text-[9px] leading-[1.45] text-[#777777]">
+                  <p className="mx-auto mt-2 max-w-70 font-inter text-[9px] leading-tight text-[#777777]">
                     {t?.disclaimer ||
                       "Design concepts are created by Dexbar for presentation purposes. Third-party content and trademarks belong to their respective owners."}
                   </p>
@@ -582,9 +584,9 @@ export default function Footer({
               )}
             </div>
 
-            {/* ===================================================
+            {/* 
                 RIGHT — LEGAL (Desktop only)
-            =================================================== */}
+           */}
             <div
               className="
                 hidden
@@ -596,7 +598,8 @@ export default function Footer({
               "
             >
               <p className="text-[10px] font-medium text-white">
-                {t?.rights || "© 2026 Mazaya Masanda Logistics. All Rights Reserved."}
+                {t?.rights ||
+                  "© 2026 Mazaya Masanda Logistics. All Rights Reserved."}
               </p>
 
               <div className="mt-2 flex flex-wrap items-center justify-end gap-x-1.5 gap-y-1 text-[9px] text-[#A3A3A3]">
@@ -628,12 +631,13 @@ export default function Footer({
             </div>
           </div>
 
-          {/* =====================================================
+          {/* 
               MOBILE COPYRIGHT & LEGAL (only on mobile)
-          ===================================================== */}
+          */}
           <div className="relative mt-6 border-t border-[#A9791C]/25 pt-4 text-center lg:hidden">
             <p className="text-[10px] font-medium text-white">
-              {t?.rights || "© 2026 Mazaya Masanda Logistics. All Rights Reserved."}
+              {t?.rights ||
+                "© 2026 Mazaya Masanda Logistics. All Rights Reserved."}
             </p>
 
             <div className="mt-2 flex flex-wrap items-center justify-center gap-x-2 text-[10px] text-[#A3A3A3]">
@@ -669,9 +673,9 @@ export default function Footer({
   );
 }
 
-/* ===============================================================
+/* 
    SOCIAL ICON COMPONENT
-=============================================================== */
+ */
 
 function SocialIcon({
   href,
@@ -695,7 +699,7 @@ function SocialIcon({
         alt={alt}
         width={18}
         height={18}
-        className="h-[17px] w-[17px] object-contain sm:h-[18px] sm:w-[18px]"
+        className="h-4.25 w-4.25 object-contain sm:h-4.5 sm:w-4.5"
       />
     </Link>
   );

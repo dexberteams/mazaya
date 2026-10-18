@@ -91,7 +91,7 @@ const MazayaLogistics = ({ lang = "en", t }: Props) => {
       </h1>
 
       <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
-        {/* ================= IMAGE DIV ================= */}
+        {/*  IMAGE DIV  */}
         <div className="grid grid-cols-2 gap-3 sm:gap-4">
           {careerImages.map((image) => (
             <div
@@ -109,7 +109,7 @@ const MazayaLogistics = ({ lang = "en", t }: Props) => {
               {/* Dark Bottom Gradient */}
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
               {/* Stats Card */}
-              <div className="absolute bottom-3 start-3 end-3 rounded-lg w-1/2 p-1 lg:p-3">
+              <div className="absolute bottom-3 inset-s-3 inset-e-3 rounded-lg w-1/2 p-1 lg:p-3">
                 <p className="text-sm font-bold text-yellow-400 lg:text-xl">
                   {image.stat}
                 </p>
@@ -125,7 +125,7 @@ const MazayaLogistics = ({ lang = "en", t }: Props) => {
           ))}
         </div>
 
-        {/* ================= TEXT DIV ================= */}
+        {/*  TEXT DIV  */}
         <div className="">
           <p className="text-sm text-gray-300 lg:text-xl lg:leading-8">
             {t?.opportunitiesTitle || "CURRENT OPPORTUNITIES"}

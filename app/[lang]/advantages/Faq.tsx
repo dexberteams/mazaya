@@ -3,70 +3,76 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Plus, Minus, ArrowRight } from "lucide-react";
 import SectionHeader from "../../ui/SectionHeader";
-const faqs = [
+
+export interface FaqItemT {
+  question?: string;
+  answer?: string;
+}
+
+export interface FaqT {
+  title?: string;
+  viewAll?: string;
+  showLess?: string;
+  items?: FaqItemT[];
+}
+
+const defaultFaqs: FaqItemT[] = [
   {
     question: "What services does Mazaya Logistics offer?",
-    answer:
-      "Mazaya Logistics provides reliable logistics and transportation solutions, including freight forwarding, warehousing, shipment handling, delivery, and supply chain support.",
+    answer: "Mazaya Logistics provides reliable logistics and transportation solutions, including freight forwarding, warehousing, shipment handling, delivery, and supply chain support.",
   },
   {
     question: "Which areas do you cover?",
-    answer:
-      "We provide logistics services across multiple regions, helping businesses move goods efficiently and safely through our extensive logistics network.",
+    answer: "We provide logistics services across multiple regions, helping businesses move goods efficiently and safely through our extensive logistics network.",
   },
   {
     question: "How can I request a quote?",
-    answer:
-      "You can request a quote by contacting our team through the contact form or by reaching out to us directly with your shipment details.",
+    answer: "You can request a quote by contacting our team through the contact form or by reaching out to us directly with your shipment details.",
   },
   {
     question: "How do you ensure the safety of goods?",
-    answer:
-      "We follow professional handling procedures, secure packaging standards, real-time monitoring, and reliable transportation processes to keep your goods safe.",
+    answer: "We follow professional handling procedures, secure packaging standards, real-time monitoring, and reliable transportation processes to keep your goods safe.",
   },
   {
     question: "Can I track my shipment in real-time?",
-    answer:
-      "Yes. Our real-time tracking system allows you to monitor your shipment status and stay updated throughout the delivery process.",
+    answer: "Yes. Our real-time tracking system allows you to monitor your shipment status and stay updated throughout the delivery process.",
   },
   {
     question: "How long does delivery usually take?",
-    answer:
-      "Delivery time depends on the destination, shipment type, distance, and customs requirements. Our team provides an estimated delivery timeline for every shipment.",
+    answer: "Delivery time depends on the destination, shipment type, distance, and customs requirements. Our team provides an estimated delivery timeline for every shipment.",
   },
   {
     question: "Do you provide warehousing solutions?",
-    answer:
-      "Yes. We provide secure and efficient warehousing solutions designed to support inventory management, storage, and smooth distribution.",
+    answer: "Yes. We provide secure and efficient warehousing solutions designed to support inventory management, storage, and smooth distribution.",
   },
   {
     question: "Do you handle international shipments?",
-    answer:
-      "Yes. We support international logistics and cross-border shipments with professional documentation, customs coordination, and transportation services.",
+    answer: "Yes. We support international logistics and cross-border shipments with professional documentation, customs coordination, and transportation services.",
   },
   {
     question: "Can businesses get customized logistics solutions?",
-    answer:
-      "Absolutely. We can create customized logistics solutions based on your business requirements, shipment volume, destinations, and operational needs.",
+    answer: "Absolutely. We can create customized logistics solutions based on your business requirements, shipment volume, destinations, and operational needs.",
   },
 ];
-const FAQ = () => {
+
+const FAQ = ({ t }: { t?: FaqT }) => {
+  const faqs = t?.items?.length ? t.items : defaultFaqs;
   const [showAll, setShowAll] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const visibleFaqs = showAll ? faqs : faqs.slice(0, 5);
+
   const toggleFaq = (index: number) => {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
-  const handleShowAll = () => {
-    setShowAll(true);
-  };
+  const handleShowAll = () => setShowAll(true);
   const handleShowLess = () => {
     setShowAll(false);
     setOpenIndex(null);
   };
+
   return (
     <section className="relative overflow-hidden bg-[#080700] py-14 sm:py-16 lg:py-20">
-      <SectionHeader title="FAQ" className="px-4 lg:px-8"></SectionHeader>
+      <SectionHeader title={t?.title ?? "FAQ"} className="px-4 lg:px-8"></SectionHeader>
       {/* Background Glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f8b900]/[0.035] blur-[120px]" />
       <div className="relative mx-auto max-w-350 px-4 sm:px-6 lg:px-8">
@@ -83,7 +89,7 @@ const FAQ = () => {
                 const isOpen = openIndex === index;
                 return (
                   <motion.div
-                    key={faq.question}
+                    key={faq.question ?? index}
                     layout
                     initial={showAll ? { opacity: 0, y: 15 } : false}
                     animate={{ opacity: 1, y: 0 }}
@@ -116,15 +122,8 @@ const FAQ = () => {
                       <span
                         className={` flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${isOpen ? "border-[#f8b900]/40 bg-[#f8b900]/10 text-[#f8b900]" : "border-white/10 bg-white/2.5 text-gray-400 group-hover:border-[#f8b900]/30 group-hover:text-[#f8b900]"} `}
                       >
-                        <motion.div
-                          animate={{ rotate: isOpen ? 180 : 0 }}
-                          transition={{ duration: 0.25 }}
-                        >
-                          {isOpen ? (
-                            <Minus size={12} strokeWidth={1.8} />
-                          ) : (
-                            <Plus size={12} strokeWidth={1.8} />
-                          )}
+                        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.25 }}>
+                          {isOpen ? <Minus size={12} strokeWidth={1.8} /> : <Plus size={12} strokeWidth={1.8} />}
                         </motion.div>
                       </span>
                     </button>
@@ -160,11 +159,8 @@ const FAQ = () => {
                 whileTap={{ scale: 0.97 }}
                 className=" group flex items-center gap-1.5 text-[9px] font-medium text-[#f8b900] transition-colors hover:text-[#ffd34d] sm:text-[10px] "
               >
-                <span>View All FAQs</span>
-                <ArrowRight
-                  size={11}
-                  className="transition-transform duration-300 group-hover:translate-x-0.5"
-                />
+                <span>{t?.viewAll ?? "View All FAQs"}</span>
+                <ArrowRight size={11} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </motion.button>
             ) : (
               <motion.button
@@ -174,11 +170,8 @@ const FAQ = () => {
                 whileTap={{ scale: 0.97 }}
                 className=" group flex items-center gap-1.5 text-[9px] font-medium text-[#f8b900] transition-colors hover:text-[#ffd34d] sm:text-[10px] "
               >
-                <span>Show Less FAQs</span>
-                <ChevronDown
-                  size={12}
-                  className="rotate-180 transition-transform duration-300"
-                />
+                <span>{t?.showLess ?? "Show Less FAQs"}</span>
+                <ChevronDown size={12} className="rotate-180 transition-transform duration-300" />
               </motion.button>
             )}
           </div>
@@ -187,4 +180,5 @@ const FAQ = () => {
     </section>
   );
 };
+
 export default FAQ;

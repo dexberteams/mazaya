@@ -72,9 +72,9 @@ const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
 
   const items = t?.solutions?.length
     ? t.solutions.map((item, idx) => ({
-      ...item,
-      image: solutionImages[idx] || defaultSolutions[idx]?.image,
-    }))
+        ...item,
+        image: solutionImages[idx] || defaultSolutions[idx]?.image,
+      }))
     : defaultSolutions;
 
   const [activeCard, setActiveCard] = useState<number | null>(null);
@@ -97,14 +97,12 @@ const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
   };
 
   return (
-    <section className="relative overflow-hidden px-4 font-manrope lg:my-20 lg:px-8 lg:py-16">
+    <section className="relative overflow-hidden px-4 font-manrope lg:my-10 lg:px-8">
       <div className="relative z-10">
-        {/* ================= SECTION LABEL ================= */}
-        {isLandingPage && (
-          <SectionLabel text={t?.sectionLabel || "SERVICE"} />
-        )}
+        {/*  SECTION LABEL  */}
+        {isLandingPage && <SectionLabel text={t?.sectionLabel || "SERVICE"} />}
 
-        {/* ================= HEADING ================= */}
+        {/*  HEADING  */}
         <h2 className="font-manrope text-2xl font-semibold text-white sm:text-4xl lg:text-4xl">
           {t?.heading || "Our Quick"}{" "}
           <span className="text-yellow-200">
@@ -112,9 +110,7 @@ const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
           </span>
         </h2>
 
-        {/* ===================================================== */}
         {/* MOBILE + TABLET */}
-        {/* ===================================================== */}
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:hidden">
           {items.map((solution, index) => (
@@ -128,14 +124,11 @@ const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
           ))}
         </div>
 
-        {/* ===================================================== */}
         {/* DESKTOP DIAGRAM */}
-        {/* ===================================================== */}
 
-        <div className="relative mx-auto mt-16 hidden h-[760px] w-full max-w-[1200px] lg:block">
-          {/* ================================================= */}
+        <div className="relative mx-auto hidden h-190 w-full max-w-300 lg:block">
           {/* CONNECTOR LINES (Using exact extracted SVG paths) */}
-          {/* ================================================= */}
+
           <svg
             viewBox="0 0 1200 760"
             fill="none"
@@ -207,12 +200,10 @@ const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
             </g>
           </svg>
 
-          {/* ================================================= */}
-          {/* CARDS (Symmetrically Positioned)                  */}
-          {/* ================================================= */}
+          {/* CARDS (Symmetrically Positioned)  */}
 
           {/* 0: Fleet Operations (Left Top) */}
-          <div className="absolute left-[13px] top-[180px] z-10 w-[345px]">
+          <div className="absolute left-3.25 top-45 z-10 w-86.25">
             <SolutionCard
               {...items[0]}
               index={0}
@@ -222,7 +213,7 @@ const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
           </div>
 
           {/* 1: Parcel Delivery (Top Center) */}
-          <div className="absolute left-1/2 top-[102px] z-10 w-[350px] -translate-x-1/2">
+          <div className="absolute left-1/2 top-25.5 z-10 w-87.5 -translate-x-1/2">
             <SolutionCard
               {...items[1]}
               index={1}
@@ -232,7 +223,7 @@ const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
           </div>
 
           {/* 2: Last Mile Delivery (Right Top) */}
-          <div className="absolute right-[13px] top-[180px] z-10 w-[345px]">
+          <div className="absolute right-3.25 top-45 z-10 w-86.25">
             <SolutionCard
               {...items[2]}
               index={2}
@@ -242,7 +233,7 @@ const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
           </div>
 
           {/* 3: Inventory Management (Left Bottom) */}
-          <div className="absolute left-[13px] top-[425px] z-10 w-[345px]">
+          <div className="absolute left-3.25 top-106.25 z-10 w-86.25">
             <SolutionCard
               {...items[3]}
               index={3}
@@ -252,7 +243,7 @@ const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
           </div>
 
           {/* 4: Warehousing Services (Bottom Center) */}
-          <div className="absolute left-1/2 top-[503px] z-10 w-[350px] -translate-x-1/2">
+          <div className="absolute left-1/2 top-125.75 z-10 w-87.5 -translate-x-1/2">
             <SolutionCard
               {...items[4]}
               index={4}
@@ -262,7 +253,7 @@ const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
           </div>
 
           {/* 5: Order Fulfillment (Right Bottom) */}
-          <div className="absolute right-[13px] top-[425px] z-10 w-[345px]">
+          <div className="absolute right-3.25 top-106.25 z-10 w-86.25">
             <SolutionCard
               {...items[5]}
               index={5}
@@ -271,16 +262,15 @@ const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
             />
           </div>
 
-          {/* ================================================= */}
           {/* CENTER CIRCLE */}
-          {/* ================================================= */}
-          <div className="absolute left-1/2 top-1/2 z-20 flex h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#111111] shadow-[0_0_30px_rgba(234,179,8,0.9)] transition-transform duration-500 hover:scale-105">
+
+          <div className="absolute left-1/2 top-1/2 z-20 flex h-25 w-25 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#111111] shadow-[0_0_30px_rgba(234,179,8,0.9)] transition-transform duration-500 hover:scale-105">
             <Image
               src="/logo/logo.svg"
               alt="logo"
               width={80}
               height={80}
-              className="relative z-10 h-[42px] w-[42px] object-contain drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]"
+              className="relative z-10 h-10.5 w-10.5 object-contain drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]"
             />
           </div>
         </div>
@@ -289,9 +279,7 @@ const QuickSolution = ({ t }: { t?: QuickSolutionT }) => {
   );
 };
 
-/* ========================================================= */
 /* SOLUTION CARD */
-/* ========================================================= */
 
 type SolutionCardProps = {
   title: string;
@@ -316,41 +304,46 @@ const SolutionCard = ({
     <div
       onMouseEnter={() => setActiveCard(index)}
       onMouseLeave={() => setActiveCard(null)}
-      className={`group relative flex w-full items-center overflow-hidden rounded-lg border bg-[#111111]/90 p-2.5 backdrop-blur-md transition-all duration-300 lg:h-[155px] ${index % 2 !== 0 ? "flex-row-reverse" : "flex-row"
-        } ${isActive
+      className={`group relative flex w-full items-center overflow-hidden rounded-lg border bg-[#111111]/90 p-2.5 backdrop-blur-md transition-all duration-300 lg:h-38.75 ${
+        index % 2 !== 0 ? "flex-row-reverse" : "flex-row"
+      } ${
+        isActive
           ? "-translate-y-1 border-yellow-400 shadow-[0_0_25px_rgba(234,179,8,0.25)]"
           : "border-yellow-600/40 hover:border-yellow-500/70"
-        }`}
+      }`}
     >
-      {/* ================= IMAGE ================= */}
+      {/*  IMAGE */}
       <div className="relative h-full w-[40%] shrink-0 overflow-hidden rounded-lg">
         <Image
           src={image}
           alt={title}
           fill
           sizes="(max-width: 1024px) 100vw, 180px"
-          className={`object-cover transition-transform duration-700 ${isActive ? "scale-108" : "scale-100 group-hover:scale-105"
-            }`}
+          className={`object-cover transition-transform duration-700 ${
+            isActive ? "scale-108" : "scale-100 group-hover:scale-105"
+          }`}
         />
         {/* Image Overlay */}
         <div
-          className={`absolute inset-0 bg-yellow-400/10 transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute inset-0 bg-yellow-400/10 transition-opacity duration-300 ${
+            isActive ? "opacity-100" : "opacity-0"
+          }`}
         />
       </div>
 
-      {/* ================= CONTENT ================= */}
+      {/*  CONTENT  */}
       <div className="flex flex-1 flex-col justify-center px-3">
         <h3 className="font-manrope text-[15px] font-semibold text-white tracking-tight">
           {title}
         </h3>
         <div
-          className={`my-1.5 h-[1.5px] transition-all duration-300 ${isActive
-            ? "w-full bg-yellow-400 shadow-[0_0_8px_rgba(234,179,8,0.5)]"
-            : "w-[80%] bg-yellow-500/40"
-            }`}
+          className={`my-1.5 h-[1.5px] transition-all duration-300 ${
+            isActive
+              ? "w-full bg-yellow-400 shadow-[0_0_8px_rgba(234,179,8,0.5)]"
+              : "w-[80%] bg-yellow-500/40"
+          }`}
         />
-        <p className="line-clamp-3 text-[11.5px] leading-[1.5] text-gray-300">
+        <p className="line-clamp-3 text-[11.5px] leading-normal text-gray-300">
           {description}
         </p>
       </div>

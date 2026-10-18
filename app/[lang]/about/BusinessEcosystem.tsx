@@ -153,15 +153,15 @@ const BusinessEcosystem = ({ t }: BusinessEcosystemProps) => {
         </div>
 
         {/* Connecting line */}
-        <div className="relative mx-auto flex h-12 w-full max-w-2xl items-center justify-center lg:justify-start">
-          <div className="absolute left-1/2 lg:left-4 top-0 h-full w-px -translate-x-1/2 bg-linear-to-b from-[#F5B800]/40 to-[#F5B800]/10" />
+        <div className="relative mx-auto flex h-12 w-full max-w-2xl items-center justify-center">
+          <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-linear-to-b from-[#F5B800]/40 to-[#F5B800]/10" />
           <div className="relative flex h-9 w-9 items-center justify-center rounded-full border border-[#F5B800]/25 bg-[#100D06]">
             <Building2 size={16} className="text-[#F5B800]" />
           </div>
         </div>
 
         {/* Company cards */}
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-7">
+        <div className="flex justify-center items-center gap-5">
           {subsidiaries.map((company, idx) => {
             const Icon = company.icon;
             const subData = t?.subsidiaries?.[idx];
