@@ -1,7 +1,23 @@
 import FleetOverview from "./FleetOverview";
 import Hero, { FleetHeroT } from "./Hero";
 
-const FleetTop = ({ heroT }: { heroT?: FleetHeroT }) => {
+interface FleetTopProps {
+  heroT?: FleetHeroT;
+  overviewT: {
+    heading: string;
+    headingHighlight: string;
+    description: string;
+    getQuote: string;
+    cards: {
+      title: string;
+      description: string;
+      count: string;
+    }[];
+  };
+  isAr: boolean;
+}
+
+const FleetTop = ({ heroT, overviewT, isAr }: FleetTopProps) => {
   return (
     <div className="relative overflow-hidden">
       {/* Mobile Hero Background */}
@@ -19,7 +35,8 @@ const FleetTop = ({ heroT }: { heroT?: FleetHeroT }) => {
       {/* Content */}
       <div className="relative z-10">
         <Hero t={heroT} />
-        <FleetOverview />
+
+        <FleetOverview translations={overviewT} isAr={isAr} />
       </div>
     </div>
   );

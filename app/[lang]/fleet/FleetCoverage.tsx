@@ -2,6 +2,20 @@
 
 import Image from "next/image";
 
+interface FleetCoverageProps {
+  translations: {
+    title: string;
+    titleHighlight: string;
+    description: string;
+    features: {
+      badge?: string;
+      title: string;
+      description: string;
+    }[];
+  };
+  isAr: boolean;
+}
+
 const features = [
   {
     icon: (
@@ -137,33 +151,21 @@ const features = [
   },
 ];
 
-export default function FleetCoverage() {
+const FleetCoverage = ({ translations, isAr }: FleetCoverageProps) => {
   return (
-    <section className="w-full py-14 px-4 md:px-8">
+    <section dir={isAr ? "rtl" : "ltr"} className="w-full py-14 px-4 md:px-8">
       <div className="flex flex-col lg:flex-row gap-4">
         {/* Left */}
         <div className="space-y-3 lg:space-y-5 w-full lg:w-1/3">
           <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-            Our <span className="text-yellow-200">Fleet Coverage</span>
+            {translations.title}{" "}
+            <span className="text-yellow-200">
+              {translations.titleHighlight}
+            </span>
           </h2>
           <p className="text-gray-400 text-sm leading-relaxed lg:w-2/3">
-            We have a strong operational network across Saudi Arabia and the
-            GCC, ensuring fast and reliable delivery to every major city and
-            beyond.
+            {translations.description}
           </p>
-          {/* <button className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#e09520] text-black font-semibold px-5 py-2.5 rounded-sm text-sm transition lg:mt-8">
-            View Coverage Map
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </button> */}
         </div>
 
         {/* Map */}
@@ -182,13 +184,15 @@ export default function FleetCoverage() {
 
         {/* Right */}
         <div className=" space-y-4 border w-full lg:w-1/2 rounded-md border-[#352801] bg-[#0E0900]/74">
-          {features.map((f, i) => (
+          {translations.features.map((f, i) => (
             <div
               key={i}
               className="flex gap-3 p-3 rounded-sm hover:border hover:border-[#F5A623]/40"
             >
               <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0">
-                {f.icon}
+                <span className="text-xs font-bold text-yellow-200">
+                  {features[i]?.icon}
+                </span>
               </div>
               <div>
                 <div className="flex items-center gap-2">
@@ -197,7 +201,7 @@ export default function FleetCoverage() {
                   </h3>
                 </div>
                 <p className="text-gray-400 text-xs mt-0.5 leading-relaxed">
-                  {f.desc}
+                  {f.description}
                 </p>
               </div>
             </div>
@@ -206,4 +210,6 @@ export default function FleetCoverage() {
       </div>
     </section>
   );
-}
+};
+
+export default FleetCoverage;

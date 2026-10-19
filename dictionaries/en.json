@@ -859,9 +859,10 @@
         }
       ]
     },
+
     "types": {
       "heading": "Our",
-      "headingHighlight": "Fleet Types",
+      "headingHighlight": " Fleet Types",
       "cards": [
         {
           "title": "Trucks",
@@ -905,29 +906,32 @@
         }
       ]
     },
-    "coverage": {
-      "heading": "Our",
-      "headingHighlight": "Fleet Coverage",
+
+    "fleetCoverage": {
+      "title": "Our",
+      "titleHighlight": "Fleet Coverage",
       "description": "We have a strong operational network across Saudi Arabia and the GCC, ensuring fast and reliable delivery to every major city and beyond.",
-      "items": [
+      "features": [
         {
+          "badge": "Saudi",
           "title": "Saudi Arabia",
-          "desc": "Wide coverage across all major cities and regions."
+          "description": "Wide coverage across all major cities and regions."
         },
         {
           "title": "GCC Countries",
-          "desc": "Serving UAE, Qatar, Bahrain, Kuwait, and Oman."
+          "description": "Serving UAE, Qatar, Bahrain, Kuwait, and Oman."
         },
         {
           "title": "Border to Border",
-          "desc": "Seamless cross-border transportation solutions."
+          "description": "Seamless cross-border transportation solutions."
         },
         {
           "title": "Strategic Hubs",
-          "desc": "Multiple fleet hubs for faster dispatch and delivery."
+          "description": "Multiple fleet hubs for faster dispatch and delivery."
         }
       ]
     },
+
     "whyChoose": {
       "heading": "Why Choose",
       "headingHighlight": "Our Fleet?",
@@ -1131,6 +1135,50 @@
       "successTitle": "Quote Request Received!",
       "successMessage": "Thank you, {name}. Our logistics specialists are reviewing your requirements and will contact you within 24 hours.",
       "submitAnother": "Submit Another Request"
+    },
+    "coverage": {
+      "heading": "Logistics Coverage",
+      "saudiArabia": "Saudi Arabia",
+      "nationwideDelivery": "Nationwide Delivery",
+      "citiesCovered": "150+ Cities Covered",
+      "gccCountries": "GCC Countries",
+      "crossBorderLogistics": "Cross-border Logistics",
+      "regionalDistribution": "Fast Regional Distribution",
+      "worldwide": "Worldwide",
+      "globalFreight": "Global Freight Network",
+      "internationalShipping": "International Shipping Solutions",
+      "mapAlt": "Mazaya Logistics Global and Regional Coverage Map"
+    },
+    "processTimeline": {
+      "heading": "Process",
+      "headingHighlight": "Timeline",
+      "steps": [
+        {
+          "title": "Pickup",
+          "description": "We collect your goods safely from your location with our professional team.",
+          "imageAlt": "Pickup Cargo Dock"
+        },
+        {
+          "title": "Packaging",
+          "description": "Your items are carefully packaged using high-quality materials to ensure full protection.",
+          "imageAlt": "Packaging and Crating"
+        },
+        {
+          "title": "Transportation",
+          "description": "Goods are transported using our modern fleet with real-time tracking and safety.",
+          "imageAlt": "Fleet On Route"
+        },
+        {
+          "title": "Customs",
+          "description": "We handle all customs clearances and documentation to ensure smooth cross-border movement.",
+          "imageAlt": "Customs Clearance"
+        },
+        {
+          "title": "Delivery",
+          "description": "Your goods are delivered safely and on time to the final destination.",
+          "imageAlt": "Final Mile Delivery"
+        }
+      ]
     }
   },
   "footer": {

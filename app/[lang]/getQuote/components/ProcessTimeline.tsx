@@ -2,12 +2,27 @@ import Image from "next/image";
 import { isValidElement, type ComponentType, type ReactNode } from "react";
 
 interface TimelineStep {
+  title?: string;
   step: string;
-  title: string;
-  description: string;
   icon: ReactNode | ComponentType<{ className?: string }>;
-  imagePlaceholderText: string;
   imageSrc?: string;
+  description?: string;
+  imagePlaceholderText?: string;
+}
+
+interface ProcessTimelineTranslations {
+  heading: string;
+  headingHighlight: string;
+  steps: {
+    title: string;
+    description: string;
+    imageAlt: string;
+  }[];
+}
+
+interface ProcessTimelineProps {
+  translations: ProcessTimelineTranslations;
+  isAr: boolean;
 }
 
 function renderTimelineStepIcon(icon: TimelineStep["icon"]) {
@@ -174,41 +189,49 @@ const TIMELINE_STEPS: TimelineStep[] = [
   },
 ];
 
-export default function ProcessTimeline() {
+export default function ProcessTimeline({
+  translations: t,
+  isAr,
+}: ProcessTimelineProps) {
   return (
-    <section className="w-full">
+    <section className="w-full" dir={isAr ? "rtl" : "ltr"}>
       {/* Title */}
       <div className="mb-14">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-          Process <span className="text-yellow-200">Timeline</span>
+        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          {t.heading}{" "}
+          <span className="text-yellow-200">{t.headingHighlight}</span>
         </h2>
       </div>
 
-      {/* Steps Grid with top timeline connector */}
+      {/* Timeline */}
       <div className="relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
+        <div className="relative z-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
           {TIMELINE_STEPS.map((item, index) => {
+            const translatedStep = t.steps[index];
+
             return (
               <div
                 key={item.step}
-                className="flex flex-col items-center relative"
+                className="relative flex flex-col items-center"
               >
-                {/* Connecting Horizontal Line to next step (Desktop only) */}
+                {/* Horizontal Timeline Connector */}
                 {index < TIMELINE_STEPS.length - 1 && (
                   <div
-                    className="hidden lg:block absolute top-[18px] left-1/2 w-[calc(100%+1.5rem)] h-[1.5px] bg-[#544328] z-0 pointer-events-none"
+                    className={`pointer-events-none absolute top-[18px] z-0 hidden h-[1.5px] w-[calc(100%+1.5rem)] bg-[#544328] lg:block ${
+                      isAr ? "right-1/2" : "left-1/2"
+                    }`}
                     aria-hidden="true"
                   />
                 )}
 
-                {/* Step Number Circle */}
-                <div className="relative z-10 w-9 h-9 rounded-full bg-white text-black font-bold text-xs flex items-center justify-center shadow-md shadow-black/50">
+                {/* Step Number */}
+                <div className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white text-xs font-bold text-black shadow-md shadow-black/50">
                   {item.step}
                 </div>
 
-                {/* Vertical Dashed Line connecting Circle to Card */}
+                {/* Vertical Dashed Line */}
                 <div
-                  className="w-full flex justify-center items-center h-5"
+                  className="flex h-5 w-full items-center justify-center"
                   aria-hidden="true"
                 >
                   <svg
@@ -231,40 +254,32 @@ export default function ProcessTimeline() {
                 </div>
 
                 {/* Card */}
-                <div className="w-full flex-1 flex flex-col justify-between rounded-xl bg-[#0c0903] border border-[#2b200e] overflow-hidden hover:border-[#f5b800]/50 transition-all duration-300 group">
-                  {/* Card Content Top */}
-                  <div className="p-5 flex flex-col items-center text-center flex-1">
-                    {/* Golden Circle Icon */}
-                    <div className="w-12 h-12 rounded-full bg-[#f5b800] text-black flex items-center justify-center mb-4 shadow-md shadow-[#f5b800]/20 group-hover:scale-105 transition-transform duration-300">
+                <div className="group flex w-full flex-1 flex-col justify-between overflow-hidden rounded-xl border border-[#2b200e] bg-[#0c0903] transition-all duration-300 hover:border-[#f5b800]/50">
+                  <div className="flex flex-1 flex-col items-center p-5 text-center">
+                    {/* Icon */}
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#f5b800] text-black shadow-md shadow-[#f5b800]/20 transition-transform duration-300 group-hover:scale-105">
                       {renderTimelineStepIcon(item.icon)}
                     </div>
 
-                    <h3 className="text-base font-bold text-white mb-2">
-                      {item.title}
+                    <h3 className="mb-2 text-base font-bold text-white">
+                      {translatedStep.title}
                     </h3>
-                    <p className="text-xs text-[#a39b8e] leading-relaxed">
-                      {item.description}
+
+                    <p className="text-xs leading-relaxed text-[#a39b8e]">
+                      {translatedStep.description}
                     </p>
                   </div>
 
-                  {/* Card Image Bottom */}
-                  <div className="relative w-full h-36 overflow-hidden">
-                    {item.imageSrc ? (
-                      <>
-                        <Image
-                          src={item.imageSrc}
-                          alt={item.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                          className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </>
-                    ) : (
-                      <div className="relative z-10 flex flex-col items-center justify-center h-full p-3 text-center text-[#857969]">
-                        <span className="text-[11px] font-medium tracking-wide">
-                          {item.imagePlaceholderText}
-                        </span>
-                      </div>
+                  {/* Card Image */}
+                  <div className="relative h-36 w-full overflow-hidden">
+                    {item.imageSrc && (
+                      <Image
+                        src={item.imageSrc}
+                        alt={translatedStep.imageAlt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
                     )}
                   </div>
                 </div>

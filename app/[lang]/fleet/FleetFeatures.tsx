@@ -1,13 +1,31 @@
 "use client";
+
 import { motion } from "framer-motion";
-const FleetFeatures = () => {
+
+interface FleetFeaturesProps {
+  translations: {
+    heading?: string;
+    headingHighlight: string;
+    cards: {
+      title: string;
+      description: string;
+    }[];
+  };
+  isAr: boolean;
+}
+
+const FleetFeatures = ({ translations: t, isAr }: FleetFeaturesProps) => {
   return (
-    <section className="my-10 overflow-hidden px-4 lg:my-20 lg:px-8">
-      <h1 className="font-manrope text-[20px] font-bold text-white lg:text-4xl">
-        Our
-        <span className="text-yellow-200"> Fleet Features</span>
-      </h1>
-      <div className="mt-4 lg:mt-8 h-0.5 w-24 bg-yellow-400 lg:w-32"></div>
+    <section
+      dir={isAr ? "rtl" : "ltr"}
+      className="my-10 overflow-hidden px-4 lg:my-20 lg:px-8"
+    >
+      <h2 className="font-manrope text-[20px] font-bold text-white lg:text-4xl">
+        {t.heading}{" "}
+        <span className="text-yellow-200">{t.headingHighlight}</span>
+      </h2>
+
+      <div className="mt-4 h-0.5 w-24 bg-yellow-400 lg:mt-8 lg:w-32" />
       {/* card-box */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-3 lg:gap-4 mt-4 lg:mt-6">
         {/* card-1 */}
@@ -43,12 +61,12 @@ const FleetFeatures = () => {
             </svg>
           </div>
 
-          <h3 className="relative z-10 my-2 text-base text-yellow-400 font-semibold lg:my-3 lg:text-xl">
-            GPS Tracking
+          <h3 className="relative z-10 my-2 text-base font-semibold text-yellow-400 lg:my-3 lg:text-xl">
+            {t.cards[0]?.title}
           </h3>
 
-          <p className="relative z-10  text-[14px] text-gray-400 lg:text-base">
-            Real-time tracking for complete visibility and updates.
+          <p className="relative z-10 text-[14px] text-gray-400 lg:text-base">
+            {t.cards[0]?.description}
           </p>
         </motion.div>
         {/* card-2 */}
@@ -82,12 +100,12 @@ const FleetFeatures = () => {
             </svg>
           </div>
 
-          <h3 className="relative z-10 my-2 text-base text-yellow-400 font-semibold lg:my-3 lg:text-xl">
-            Safety First
+          <h3 className="relative z-10 my-2 text-base font-semibold text-yellow-400 lg:my-3 lg:text-xl">
+            {t.cards[1]?.title}
           </h3>
 
-          <p className="relative z-10  text-[14px] text-gray-400 lg:text-base">
-            Regular maintenance and strict safety inspections.
+          <p className="relative z-10 text-[14px] text-gray-400 lg:text-base">
+            {t.cards[1]?.description}
           </p>
         </motion.div>
         {/* card-3 */}
@@ -121,12 +139,12 @@ const FleetFeatures = () => {
             </svg>
           </div>
 
-          <h3 className="relative z-10 my-2 text-base text-yellow-400 font-semibold lg:my-3 lg:text-xl">
-            Fuel Efficient
+          <h3 className="relative z-10 my-2 text-base font-semibold text-yellow-400 lg:my-3 lg:text-xl">
+            {t.cards[2]?.title}
           </h3>
 
-          <p className="relative z-10  text-[14px] text-gray-400 lg:text-base">
-            Optimized fuel consumption for cost and environment.
+          <p className="relative z-10 text-[14px] text-gray-400 lg:text-base">
+            {t.cards[2]?.description}
           </p>
         </motion.div>
         {/* card-4 */}
@@ -160,12 +178,12 @@ const FleetFeatures = () => {
             </svg>
           </div>
 
-          <h3 className="relative z-10 my-2 text-base text-yellow-400 font-semibold lg:my-3 lg:text-xl">
-            Nationwide Reach
+          <h3 className="relative z-10 my-2 text-base font-semibold text-yellow-400 lg:my-3 lg:text-xl">
+            {t.cards[3]?.title}
           </h3>
 
-          <p className="relative z-10  text-[14px] text-gray-400 lg:text-base">
-            Wide network coverage across Saudi Arabia and GCC.
+          <p className="relative z-10 text-[14px] text-gray-400 lg:text-base">
+            {t.cards[3]?.description}
           </p>
         </motion.div>
         {/* card-5 */}
@@ -201,12 +219,12 @@ const FleetFeatures = () => {
             </svg>
           </div>
 
-          <h3 className="relative z-10 my-2 text-base text-yellow-400 font-semibold lg:my-3 lg:text-xl">
-            24/7 Support
+          <h3 className="relative z-10 my-2 text-base font-semibold text-yellow-400 lg:my-3 lg:text-xl">
+            {t.cards[4]?.title}
           </h3>
 
-          <p className="relative z-10  text-[14px] text-gray-400 lg:text-base">
-            Round-the-clock support for all fleet operations.
+          <p className="relative z-10 text-[14px] text-gray-400 lg:text-base">
+            {t.cards[4]?.description}
           </p>
         </motion.div>
       </div>

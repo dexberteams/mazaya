@@ -313,42 +313,74 @@ export default async function GetQuotePage({
   const whyChooseTranslations = [
     {
       title: isAr ? "فريق عمليات محترف" : "Professional Operations Team",
-      description: isAr ? "محترفون مهرة يضمنون التميز في كل عملية." : "Skilled professionals ensuring excellence in every operation.",
+      description: isAr
+        ? "محترفون مهرة يضمنون التميز في كل عملية."
+        : "Skilled professionals ensuring excellence in every operation.",
     },
     {
       title: isAr ? "تغطية واسعة" : "Extensive Coverage",
-      description: isAr ? "شبكة قوية في جميع أنحاء المملكة ودول الخليج والعالم." : "Strong network across Saudi Arabia, GCC and worldwide.",
+      description: isAr
+        ? "شبكة قوية في جميع أنحاء المملكة ودول الخليج والعالم."
+        : "Strong network across Saudi Arabia, GCC and worldwide.",
     },
     {
       title: isAr ? "حلول مرنة" : "Flexible Solutions",
-      description: isAr ? "حلول لوجستية مخصصة ومصممة حسب احتياجات عملك." : "Customized logistics solutions tailored to your business needs.",
+      description: isAr
+        ? "حلول لوجستية مخصصة ومصممة حسب احتياجات عملك."
+        : "Customized logistics solutions tailored to your business needs.",
     },
     {
       title: isAr ? "تنفيذ سريع" : "Fast Execution",
-      description: isAr ? "استجابة سريعة وتنفيذ فعال لتسليم في الموعد المحدد." : "Quick response and efficient execution for timely delivery.",
+      description: isAr
+        ? "استجابة سريعة وتنفيذ فعال لتسليم في الموعد المحدد."
+        : "Quick response and efficient execution for timely delivery.",
     },
     {
       title: isAr ? "عمليات عالية الجودة" : "High-Quality Operation",
-      description: isAr ? "التزام بالجودة والسلامة والتميز التشغيلي." : "Commitment to quality, safety and operational excellence.",
+      description: isAr
+        ? "التزام بالجودة والسلامة والتميز التشغيلي."
+        : "Commitment to quality, safety and operational excellence.",
     },
     {
-      title: isAr ? "خبرة في المشاريع الموسمية" : "Experience in Seasonal Projects",
-      description: isAr ? "خبرة مثبتة في التعامل مع الطلب العالي والمشاريع الموسمية." : "Proven expertise in handling high-volume and seasonal demands.",
+      title: isAr
+        ? "خبرة في المشاريع الموسمية"
+        : "Experience in Seasonal Projects",
+      description: isAr
+        ? "خبرة مثبتة في التعامل مع الطلب العالي والمشاريع الموسمية."
+        : "Proven expertise in handling high-volume and seasonal demands.",
+    },
+    {
+      title: isAr ? "تقارير الأداء الدورية" : "Regular Performance Reports",
+      description: isAr
+        ? "تقارير شفافة ورؤية فورية لعملياتك."
+        : "Transparent reporting and real-time visibility of your operations.",
     },
   ];
 
   const benefitsTranslations = [
     {
       title: isAr ? "آمن وموثوق" : "Secure & Reliable",
-      description: isAr ? "أمان متطور وعناية فائقة في كل مرحلة." : "Advanced security and care at every stage.",
+      description: isAr
+        ? "أمان متطور وعناية فائقة في كل مرحلة."
+        : "Advanced security and care at every stage.",
     },
     {
       title: isAr ? "دعم على مدار الساعة" : "24/7 Support",
-      description: isAr ? "فريقنا متواجد دائماً لمساعدتك." : "Our team is always here to assist you.",
+      description: isAr
+        ? "فريقنا متواجد دائماً لمساعدتك."
+        : "Our team is always here to assist you.",
     },
     {
       title: isAr ? "شفافية تامة" : "Complete Transparency",
-      description: isAr ? "رؤية كاملة وتحديثات مستمرة طوال العملية." : "Full visibility and clear updates throughout the process.",
+      description: isAr
+        ? "رؤية كاملة وتحديثات مستمرة طوال العملية."
+        : "Full visibility and clear updates throughout the process.",
+    },
+    {
+      title: isAr ? "شفافية تامة" : "Complete Transparency",
+      description: isAr
+        ? "رؤية كاملة وتحديثات مستمرة طوال العملية."
+        : "Full visibility and clear updates throughout the process.",
     },
   ];
 
@@ -389,7 +421,10 @@ export default async function GetQuotePage({
               px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 pt-16 lg:pt-6"
           >
             {/* Standard Badge */}
-            <SectionLabel text={isAr ? "طلب عرض سعر" : "get quote"} className="bg-transparent lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0" />
+            <SectionLabel
+              text={isAr ? "طلب عرض سعر" : "get quote"}
+              className="bg-transparent lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0"
+            />
 
             {/* Headline */}
             <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
@@ -421,15 +456,21 @@ export default async function GetQuotePage({
                     height={24}
                   />
                 </span>
-                <span className="text-[#f5b800]">{isAr ? "المملكة العربية السعودية" : "Saudi Arabia"}</span>
+                <span className="text-[#f5b800]">
+                  {isAr ? "المملكة العربية السعودية" : "Saudi Arabia"}
+                </span>
               </div>
               <div className="inline-flex items-center gap-2">
                 <span className="text-base">🌍</span>
-                <span className="text-[#f5b800]">{isAr ? "دول مجلس التعاون" : "GCC Countries"}</span>
+                <span className="text-[#f5b800]">
+                  {isAr ? "دول مجلس التعاون" : "GCC Countries"}
+                </span>
               </div>
               <div className="inline-flex items-center gap-2">
                 <span className="text-base">✈️</span>
-                <span className="text-[#f5b800]">{isAr ? "حول العالم" : "Worldwide"}</span>
+                <span className="text-[#f5b800]">
+                  {isAr ? "حول العالم" : "Worldwide"}
+                </span>
               </div>
             </div>
           </div>
@@ -453,7 +494,9 @@ export default async function GetQuotePage({
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
               {isAr ? "لماذا تختار " : "Why Choose "}
               <span className="text-yellow-200">
-                {isAr ? "مزايا مسندة للخدمات اللوجستية؟" : "Mazaya Masanda Logistics?"}
+                {isAr
+                  ? "مزايا مسندة للخدمات اللوجستية؟"
+                  : "Mazaya Masanda Logistics?"}
               </span>
             </h2>
             <div className="w-14 h-[2px] bg-[#f5b800] mt-3 mb-8" />
@@ -481,12 +524,14 @@ export default async function GetQuotePage({
           </div>
         </section>
 
-        {/* ── SECTION 3: LOGISTICS COVERAGE ── */}
-        <LogisticsCoverage />
+        <LogisticsCoverage translations={dict.getQuote.coverage} isAr={isAr} />
 
         {/* ── SECTION 4: PROCESS TIMELINE ── */}
         <div className="space-y-12">
-          <ProcessTimeline />
+          <ProcessTimeline
+            translations={dict.getQuote.processTimeline}
+            isAr={isAr}
+          />
 
           {/* Benefits Bar */}
           <div className="rounded-xl bg-[#161000]/60 border border-[#352801] p-6 lg:p-8 backdrop-blur-xl shadow-xl">
@@ -497,7 +542,9 @@ export default async function GetQuotePage({
                   <div
                     key={index}
                     className={`flex items-start gap-3.5 ${
-                      index > 0 ? "pt-5 sm:pt-0 sm:pl-6 lg:pl-8 rtl:sm:pl-0 rtl:sm:pr-6 rtl:lg:pr-8" : ""
+                      index > 0
+                        ? "pt-5 sm:pt-0 sm:pl-6 lg:pl-8 rtl:sm:pl-0 rtl:sm:pr-6 rtl:lg:pr-8"
+                        : ""
                     }`}
                   >
                     <div className="w-10 h-10 rounded-full border border-[#f5b800]/40 bg-[#161005] flex items-center justify-center text-[#f5b800] shrink-0">
