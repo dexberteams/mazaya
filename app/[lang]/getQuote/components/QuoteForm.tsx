@@ -1,13 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  ChevronDown,
-  ArrowRight,
-  CheckCircle2,
-  Loader2,
-  Sparkles,
-} from "lucide-react";
+import { ChevronDown, CheckCircle2, Loader2 } from "lucide-react";
 
 const SERVICES = [
   "Transportation & Fleet Management",
@@ -133,7 +127,10 @@ export default function QuoteForm({
           </h3>
           <p className="text-sm text-[#a39b8e] max-w-md mx-auto mb-6">
             {t?.successMessage
-              ? t.successMessage.replace("{name}", formData.fullName || (isAr ? "الشريك" : "Partner"))
+              ? t.successMessage.replace(
+                  "{name}",
+                  formData.fullName || (isAr ? "الشريك" : "Partner"),
+                )
               : `Thank you, ${formData.fullName || "Partner"}. Our logistics specialists are reviewing your requirements and will contact you within 24 hours.`}
           </p>
           <button
@@ -153,7 +150,10 @@ export default function QuoteForm({
                 htmlFor="fullName"
                 className="block text-xs font-medium text-[#dcd6cc] mb-1.5"
               >
-                {t?.fullName || "Full Name"}<span className="text-[#f5b800] ml-0.5 rtl:mr-0.5 rtl:ml-0">*</span>
+                {t?.fullName || "Full Name"}
+                <span className="text-[#f5b800] ml-0.5 rtl:mr-0.5 rtl:ml-0">
+                  *
+                </span>
               </label>
               <input
                 type="text"
@@ -172,7 +172,10 @@ export default function QuoteForm({
                 htmlFor="companyName"
                 className="block text-xs font-medium text-[#dcd6cc] mb-1.5"
               >
-                {t?.companyName || "Company Name"}<span className="text-[#f5b800] ml-0.5 rtl:mr-0.5 rtl:ml-0">*</span>
+                {t?.companyName || "Company Name"}
+                <span className="text-[#f5b800] ml-0.5 rtl:mr-0.5 rtl:ml-0">
+                  *
+                </span>
               </label>
               <input
                 type="text"
@@ -194,7 +197,10 @@ export default function QuoteForm({
                 htmlFor="email"
                 className="block text-xs font-medium text-[#dcd6cc] mb-1.5"
               >
-                {t?.email || "Email Address"}<span className="text-[#f5b800] ml-0.5 rtl:mr-0.5 rtl:ml-0">*</span>
+                {t?.email || "Email Address"}
+                <span className="text-[#f5b800] ml-0.5 rtl:mr-0.5 rtl:ml-0">
+                  *
+                </span>
               </label>
               <input
                 type="email"
@@ -213,7 +219,10 @@ export default function QuoteForm({
                 htmlFor="phone"
                 className="block text-xs font-medium text-[#dcd6cc] mb-1.5"
               >
-                {t?.phone || "Phone Number"}<span className="text-[#f5b800] ml-0.5 rtl:mr-0.5 rtl:ml-0">*</span>
+                {t?.phone || "Phone Number"}
+                <span className="text-[#f5b800] ml-0.5 rtl:mr-0.5 rtl:ml-0">
+                  *
+                </span>
               </label>
               <input
                 type="tel"
@@ -234,7 +243,10 @@ export default function QuoteForm({
               htmlFor="service"
               className="block text-xs font-medium text-[#dcd6cc] mb-1.5"
             >
-              {t?.service || "Service Required"}<span className="text-[#f5b800] ml-0.5 rtl:mr-0.5 rtl:ml-0">*</span>
+              {t?.service || "Service Required"}
+              <span className="text-[#f5b800] ml-0.5 rtl:mr-0.5 rtl:ml-0">
+                *
+              </span>
             </label>
             <div className="relative">
               <select
@@ -273,7 +285,9 @@ export default function QuoteForm({
               className="block text-xs font-medium text-[#dcd6cc] mb-1.5"
             >
               {isAr ? "متطلباتك اللوجستية" : "Your Logistics Requirement"}
-              <span className="text-[#f5b800] ml-0.5 rtl:mr-0.5 rtl:ml-0">*</span>
+              <span className="text-[#f5b800] ml-0.5 rtl:mr-0.5 rtl:ml-0">
+                *
+              </span>
             </label>
             <textarea
               id="requirement"
@@ -282,7 +296,11 @@ export default function QuoteForm({
               rows={4}
               value={formData.requirement}
               onChange={handleChange}
-              placeholder={isAr ? "أخبرنا عن متطلباتك اللوجستية..." : "Tell us about your logistics requirements..."}
+              placeholder={
+                isAr
+                  ? "أخبرنا عن متطلباتك اللوجستية..."
+                  : "Tell us about your logistics requirements..."
+              }
               className="w-full px-4 py-3 rounded-lg bg-[#070502]/80 border border-[#2b200e] text-white text-sm placeholder-[#6b6255] focus:outline-none focus:border-[#f5b800] focus:ring-1 focus:ring-[#f5b800] transition-colors resize-none"
             />
           </div>
@@ -294,7 +312,9 @@ export default function QuoteForm({
               className="block text-xs font-medium text-[#a39b8e] mb-1.5"
             >
               {t?.additionalRequirements || "Additional Requirements"}{" "}
-              <span className="text-[#786f63]">{isAr ? "(اختياري)" : "(Optional)"}</span>
+              <span className="text-[#786f63]">
+                {isAr ? "(اختياري)" : "(Optional)"}
+              </span>
             </label>
             <textarea
               id="additionalRequirements"
@@ -302,7 +322,10 @@ export default function QuoteForm({
               rows={3}
               value={formData.additionalRequirements}
               onChange={handleChange}
-              placeholder={t?.additionalPlaceholder || "Share any additional information that may help us understand your requirements."}
+              placeholder={
+                t?.additionalPlaceholder ||
+                "Share any additional information that may help us understand your requirements."
+              }
               className="w-full px-4 py-3 rounded-lg bg-[#070502]/80 border border-[#2b200e] text-white text-sm placeholder-[#6b6255] focus:outline-none focus:border-[#f5b800] focus:ring-1 focus:ring-[#f5b800] transition-colors resize-none"
             />
           </div>

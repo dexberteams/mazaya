@@ -217,7 +217,7 @@ export default function ProcessTimeline({
                 {/* Horizontal Timeline Connector */}
                 {index < TIMELINE_STEPS.length - 1 && (
                   <div
-                    className={`pointer-events-none absolute top-[18px] z-0 hidden h-[1.5px] w-[calc(100%+1.5rem)] bg-[#544328] lg:block ${
+                    className={`pointer-events-none absolute top-4.5 z-0 hidden h-[1.5px] w-[calc(100%+1.5rem)] bg-[#544328] lg:block ${
                       isAr ? "right-1/2" : "left-1/2"
                     }`}
                     aria-hidden="true"

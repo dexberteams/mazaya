@@ -61,8 +61,8 @@ const WhyChooseFleet = ({ translations, isAr }: WhyChooseFleetProps) => {
         </div>
 
         {/* Right Content */}
-        <div className="mt-6 flex w-full flex-col overflow-hidden rounded-lg sm:flex-row lg:mt-0 lg:w-[789px]">
-          <div className="relative h-[230px] w-full sm:h-[400px]">
+        <div className="mt-6 flex w-full flex-col overflow-hidden rounded-lg sm:flex-row lg:mt-0 lg:w-197.25">
+          <div className="relative h-57.5 w-full sm:h-100">
             <Image
               src="/fleet/fleet-driver.png"
               alt="Fleet driver"

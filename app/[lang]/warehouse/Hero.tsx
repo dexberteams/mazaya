@@ -48,7 +48,10 @@ const Hero = ({ t }: { t?: WarehouseHeroT }) => {
             lg:w-[55%] lg:gap-2 lg:px-16 lg:pt-10
           "
         >
-          <SectionLabel text={t?.sectionLabel || "warehouse"} className="bg-transparent" />
+          <SectionLabel
+            text={t?.sectionLabel || "warehouse"}
+            className="bg-transparent"
+          />
 
           <h1
             className="
@@ -58,7 +61,10 @@ const Hero = ({ t }: { t?: WarehouseHeroT }) => {
             "
           >
             {t?.heading || "Smart Warehousing."}
-            <span className="text-yellow-200"> {t?.headingHighlight || "Stronger Supply Chains."}</span>
+            <span className="text-yellow-200">
+              {" "}
+              {t?.headingHighlight || "Stronger Supply Chains."}
+            </span>
           </h1>
 
           <span className="mt-1 block h-0.5 w-24 bg-yellow-400" />
@@ -82,7 +88,7 @@ const Hero = ({ t }: { t?: WarehouseHeroT }) => {
                 alt="user"
                 width={100}
                 height={100}
-                className="h-8 w-8 lg:h-[50px] lg:w-[50px] rounded-lg border border-white/25 bg-[rgba(102,89,53,0.27)] p-2 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.04)]"
+                className="h-8 w-8 lg:h-12.5 lg:w-12.5 rounded-lg border border-white/25 bg-[rgba(102,89,53,0.27)] p-2 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.04)]"
               />
 
               <p className="flex flex-col">
@@ -99,7 +105,7 @@ const Hero = ({ t }: { t?: WarehouseHeroT }) => {
                 alt="user"
                 width={100}
                 height={100}
-                className="h-8 w-8 lg:h-[50px] lg:w-[50px] rounded-lg border border-white/25 bg-[rgba(102,89,53,0.27)] p-2 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.04)]"
+                className="h-8 w-8 lg:h-12.5 lg:w-12.5 rounded-lg border border-white/25 bg-[rgba(102,89,53,0.27)] p-2 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.04)]"
               />
 
               <p className="flex flex-col">
@@ -118,7 +124,7 @@ const Hero = ({ t }: { t?: WarehouseHeroT }) => {
                 alt="user"
                 width={100}
                 height={100}
-                className="h-8 w-8 lg:h-[50px] lg:w-[50px] rounded-lg border border-white/25 bg-[rgba(102,89,53,0.27)] p-2 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.04)]"
+                className="h-8 w-8 lg:h-12.5 lg:w-12.5 rounded-lg border border-white/25 bg-[rgba(102,89,53,0.27)] p-2 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.04)]"
               />
 
               <p className="flex flex-col">

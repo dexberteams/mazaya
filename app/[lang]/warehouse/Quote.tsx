@@ -1,4 +1,3 @@
-import { Box } from "lucide-react";
 import Link from "next/link";
 export interface WarehouseQuoteT {
   heading?: string;

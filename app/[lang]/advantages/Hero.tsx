@@ -25,41 +25,22 @@ const Hero = ({ t }: { t?: AdvantagesHeroT }) => {
         />
 
         {/* Gradient Overlay (LTR: dark left, fade right) */}
-        <div
-          className="
-            hidden
-            lg:absolute lg:inset-0 lg:block rtl:lg:hidden
-            lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
-          "
-        />
+        <div className=" hidden lg:absolute lg:inset-0 lg:block rtl:lg:hidden lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]" />
 
         {/* Gradient Overlay (RTL: dark right, fade left) */}
         <div
-          className="
-            hidden
-            lg:absolute lg:inset-0 rtl:lg:block
-            lg:bg-[linear-gradient(to_left,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
+          className="hidden lg:absolute lg:inset-0 rtl:lg:block lg:bg-[linear-gradient(to_left,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
           "
         />
 
         {/* Content */}
-        <div
-          className=" relative z-10 flex min-h-100 w-full flex-col items-start justify-center px-4 py-16 font-manrope text-white sm:min-h-110 sm:px-8 sm:py-16 lg:min-h-0 lg:w-1/2 lg:gap-2 lg:px-16 lg:py-10
-  "
-        >
+        <div className=" relative z-10 flex min-h-100 w-full flex-col items-start justify-center px-4 py-16 font-manrope text-white sm:min-h-110 sm:px-8 sm:py-16 lg:min-h-0 lg:w-1/2 lg:gap-2 lg:px-16 lg:py-10">
           <SectionLabel
             text={t?.sectionLabel || "advantages"}
             className="bg-transparent lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0 lg:mt-16"
           />
 
-          <h1
-            className="
-              mt-3 w-full
-              text-3xl font-bold leading-tight
-              sm:w-11/12 sm:text-4xl
-              lg:mt-0 lg:p-4 lg:text-5xl
-            "
-          >
+          <h1 className="mt-3 w-full text-3xl font-bold leading-tight sm:w-11/12 sm:text-4xl lg:mt-0 lg:p-4 lg:text-5xl">
             {t?.heading || "The Mazaya Masanda Advantage."}{" "}
             <span className="text-yellow-200">
               {t?.headingHighlight || "Built Around Your Success."}
@@ -70,13 +51,8 @@ const Hero = ({ t }: { t?: AdvantagesHeroT }) => {
           <span className="mt-3 h-0.5 w-24 lg:ml-4 bg-yellow-400 " />
 
           <p
-            className="
-              mt-3 max-w-xl p-1
-              text-xs leading-5
-              sm:text-base
-              lg:mt-2 lg:w-4/5 lg:p-4 lg:leading-6
-              font-manrope text-gray-300
-            "
+            className=" mt-3 max-w-xl p-1 text-xs leading-5 sm:text-base lg:mt-2 lg:w-4/5 lg:p-4 lg:leading-6
+              font-manrope text-gray-300"
           >
             {t?.subtitle ||
               "Discover what sets Mazaya Masanda Logistics apart and how our expertise, technology, and commitment drive value for your business."}

@@ -106,7 +106,7 @@ export default function LogisticsCoverage({
 
           {/* Right Column: Coverage Map */}
           <div className="relative flex items-center justify-center lg:col-span-6">
-            <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-xl sm:aspect-[16/9]">
+            <div className="relative mx-auto aspect-16/10 w-full max-w-xl overflow-hidden rounded-xl sm:aspect-video">
               <Image
                 src="/getQuote/logisticsCoverage.png"
                 alt={t.mapAlt}

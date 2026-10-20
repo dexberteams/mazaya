@@ -79,7 +79,7 @@ const Capabilities = ({ t, lang = "en" }: CapabilitiesProps) => {
         {/* Right Content */}
         <div className="mt-6 flex w-full flex-col overflow-hidden rounded-lg sm:flex-row lg:mt-0 lg:w-[74%]">
           {/* Image */}
-          <div className="relative h-[230px] w-full sm:h-[300px] sm:w-[52%] lg:h-auto">
+          <div className="relative h-57.5 w-full sm:h-75 sm:w-[52%] lg:h-auto">
             <Image
               src="/warehouse/driver.png"
               alt={t.techTitle}

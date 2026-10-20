@@ -8,9 +8,7 @@ import {
   Mail,
   Clock,
   MapPin,
-  ChevronRight,
   ChevronDown,
-  ArrowRight,
   Home,
   LayoutGrid,
   Check,
@@ -130,7 +128,7 @@ export default function ContactUsClient({
     <div className="relative min-h-screen bg-[#0A0700] text-white selection:bg-amber-400 selection:text-black font-manrope pb-16">
       {/* ── SECTION 1: HERO & QUICK CONTACT INFO ── */}
       <section className="relative w-full overflow-hidden font-manrope">
-        <div className="relative h-auto min-h-[560px] sm:min-h-[620px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-between">
+        <div className="relative h-auto min-h-140 sm:min-h-155 lg:h-150 lg:min-h-0 w-full flex flex-col justify-between">
           {/* Background Image with Dark Vignette Gradient */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -142,27 +140,19 @@ export default function ContactUsClient({
               className="object-right lg:object-cover object-contain opacity-75 select-none"
             />
             {/* Gradients: dark on left for text legibility on mobile */}
-            <div className="lg:hidden absolute inset-0 bg-gradient-to-r from-[#0A0700] via-[#0A0700]/75 to-transparent" />
-            <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-[#0A0700] via-transparent to-[#0A0700]/70" />
+            <div className="lg:hidden absolute inset-0 bg-linear-to-r from-[#0A0700] via-[#0A0700]/75 to-transparent" />
+            <div className="lg:hidden absolute inset-0 bg-linear-to-t from-[#0A0700] via-transparent to-[#0A0700]/70" />
             <div className="lg:hidden absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(212,175,55,0.18)_0%,transparent_65%)]" />
 
             {/* Benchmark Desktop Gradient Overlay */}
             <div
-              className="
-               hidden
-               lg:absolute lg:inset-0 lg:block
-               lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
-               z-10
-               "
+              className=" hidden lg:absolute lg:inset-0 lg:block lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_28%,rgba(0,0,0,0.42)_60%,rgba(0,0,0,0.05)_85%,transparent_100%),linear-gradient(to_bottom,rgba(0,0,0,0.3)_0%,transparent_25%,transparent_72%,rgba(0,0,0,0.45)_100%)]
+               z-10"
             />
           </div>
 
           {/* Header Texts */}
-          <div
-            className="
-              relative z-20 flex flex-col justify-center font-manrope text-white
-              px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 pt-16 sm:pt-20 lg:pt-8"
-          >
+          <div className="relative z-20 flex flex-col justify-center font-manrope text-white px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 pt-16 sm:pt-20 lg:pt-8">
             {/* Standard Badge */}
             <SectionLabel
               text={t?.hero?.sectionLabel || "contact us"}
@@ -250,7 +240,10 @@ export default function ContactUsClient({
                     <p className="text-zinc-400 text-xs font-medium uppercase tracking-wider">
                       {t?.cards?.whatsapp || "WhatsApp"}
                     </p>
-                    <p className="text-white font-semibold text-sm sm:text-base" dir="ltr">
+                    <p
+                      className="text-white font-semibold text-sm sm:text-base"
+                      dir="ltr"
+                    >
                       +996055 1010 596
                     </p>
                     <p className="text-zinc-400 text-xs pt-1">
@@ -263,7 +256,9 @@ export default function ContactUsClient({
                       className="inline-flex items-center gap-1 text-[#22c55e] hover:text-[#16a34a] text-xs font-medium transition-colors pt-0.5 group"
                     >
                       {t?.cards?.startChat || "Start Conversation"}{" "}
-                      <span className="text-sm font-bold">{isAr ? "←" : "→"}</span>
+                      <span className="text-sm font-bold">
+                        {isAr ? "←" : "→"}
+                      </span>
                     </a>
                   </div>
                 </div>
@@ -313,7 +308,8 @@ export default function ContactUsClient({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
                     <label className="text-xs font-medium text-zinc-300">
-                      {t?.form?.fullName || "Full Name"}<span className="text-amber-400">*</span>
+                      {t?.form?.fullName || "Full Name"}
+                      <span className="text-amber-400">*</span>
                     </label>
                     <input
                       type="text"
@@ -321,14 +317,17 @@ export default function ContactUsClient({
                       required
                       value={formData.fullName}
                       onChange={handleChange}
-                      placeholder={t?.form?.fullNamePlaceholder || "Enter your full name"}
+                      placeholder={
+                        t?.form?.fullNamePlaceholder || "Enter your full name"
+                      }
                       className="w-full rounded-lg border border-amber-900/40 bg-[#16120b] px-4 py-3 text-sm text-white placeholder:text-zinc-500 focus:border-amber-400 focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-xs font-medium text-zinc-300">
-                      {t?.form?.companyName || "Company Name"}<span className="text-amber-400">*</span>
+                      {t?.form?.companyName || "Company Name"}
+                      <span className="text-amber-400">*</span>
                     </label>
                     <input
                       type="text"
@@ -336,7 +335,9 @@ export default function ContactUsClient({
                       required
                       value={formData.companyName}
                       onChange={handleChange}
-                      placeholder={t?.form?.companyPlaceholder || "Enter your company name"}
+                      placeholder={
+                        t?.form?.companyPlaceholder || "Enter your company name"
+                      }
                       className="w-full rounded-lg border border-amber-900/40 bg-[#16120b] px-4 py-3 text-sm text-white placeholder:text-zinc-500 focus:border-amber-400 focus:outline-none transition-colors"
                     />
                   </div>
@@ -346,7 +347,8 @@ export default function ContactUsClient({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
                     <label className="text-xs font-medium text-zinc-300">
-                      {t?.form?.email || "Email Address"}<span className="text-amber-400">*</span>
+                      {t?.form?.email || "Email Address"}
+                      <span className="text-amber-400">*</span>
                     </label>
                     <input
                       type="email"
@@ -354,14 +356,17 @@ export default function ContactUsClient({
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder={t?.form?.emailPlaceholder || "Enter your email address"}
+                      placeholder={
+                        t?.form?.emailPlaceholder || "Enter your email address"
+                      }
                       className="w-full rounded-lg border border-amber-900/40 bg-[#16120b] px-4 py-3 text-sm text-white placeholder:text-zinc-500 focus:border-amber-400 focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-xs font-medium text-zinc-300">
-                      {t?.form?.phone || "Phone Number"}<span className="text-amber-400">*</span>
+                      {t?.form?.phone || "Phone Number"}
+                      <span className="text-amber-400">*</span>
                     </label>
                     <input
                       type="tel"
@@ -369,7 +374,9 @@ export default function ContactUsClient({
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder={t?.form?.phonePlaceholder || "Enter your phone number"}
+                      placeholder={
+                        t?.form?.phonePlaceholder || "Enter your phone number"
+                      }
                       className="w-full rounded-lg border border-amber-900/40 bg-[#16120b] px-4 py-3 text-sm text-white placeholder:text-zinc-500 focus:border-amber-400 focus:outline-none transition-colors"
                     />
                   </div>
@@ -378,7 +385,8 @@ export default function ContactUsClient({
                 {/* Service Required */}
                 <div className="space-y-2">
                   <label className="text-xs font-medium text-zinc-300">
-                    {t?.form?.service || "Service Required"}<span className="text-amber-400">*</span>
+                    {t?.form?.service || "Service Required"}
+                    <span className="text-amber-400">*</span>
                   </label>
                   <div className="relative">
                     <select
@@ -396,37 +404,49 @@ export default function ContactUsClient({
                         {t?.form?.servicePlaceholder || "Select a service"}
                       </option>
                       <option value="land" className="bg-[#16120b] text-white">
-                        {isAr ? "النقل البري وإدارة الأسطول" : "Land Transportation & Fleet Management"}
+                        {isAr
+                          ? "النقل البري وإدارة الأسطول"
+                          : "Land Transportation & Fleet Management"}
                       </option>
                       <option
                         value="warehousing"
                         className="bg-[#16120b] text-white"
                       >
-                        {isAr ? "التخزين والتنفيذ الذكي" : "Warehousing & Smart Fulfillment"}
+                        {isAr
+                          ? "التخزين والتنفيذ الذكي"
+                          : "Warehousing & Smart Fulfillment"}
                       </option>
                       <option
                         value="freight"
                         className="bg-[#16120b] text-white"
                       >
-                        {isAr ? "الشحن الجوي والبحري" : "Air & Ocean Cargo Freight"}
+                        {isAr
+                          ? "الشحن الجوي والبحري"
+                          : "Air & Ocean Cargo Freight"}
                       </option>
                       <option
                         value="customs"
                         className="bg-[#16120b] text-white"
                       >
-                        {isAr ? "التخليص الجمركي والتوثيق" : "Customs Clearance & Documentation"}
+                        {isAr
+                          ? "التخليص الجمركي والتوثيق"
+                          : "Customs Clearance & Documentation"}
                       </option>
                       <option
                         value="coldchain"
                         className="bg-[#16120b] text-white"
                       >
-                        {isAr ? "سلسلة التبريد المضبوطة" : "Temperature-Controlled Cold Chain"}
+                        {isAr
+                          ? "سلسلة التبريد المضبوطة"
+                          : "Temperature-Controlled Cold Chain"}
                       </option>
                       <option
                         value="supplychain"
                         className="bg-[#16120b] text-white"
                       >
-                        {isAr ? "حلول سلاسل الإمداد المتكاملة" : "Integrated Supply Chain Solutions"}
+                        {isAr
+                          ? "حلول سلاسل الإمداد المتكاملة"
+                          : "Integrated Supply Chain Solutions"}
                       </option>
                     </select>
                     <ChevronDown className="pointer-events-none absolute right-3.5 rtl:right-auto rtl:left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
@@ -436,7 +456,8 @@ export default function ContactUsClient({
                 {/* Requirement Message */}
                 <div className="space-y-2">
                   <label className="text-xs font-medium text-zinc-300">
-                    {t?.form?.requirement || "Message / Requirement"}<span className="text-amber-400">*</span>
+                    {t?.form?.requirement || "Message / Requirement"}
+                    <span className="text-amber-400">*</span>
                   </label>
                   <textarea
                     name="requirement"
@@ -444,7 +465,10 @@ export default function ContactUsClient({
                     rows={4}
                     value={formData.requirement}
                     onChange={handleChange}
-                    placeholder={t?.form?.requirementPlaceholder || "Tell us about your logistics requirements.."}
+                    placeholder={
+                      t?.form?.requirementPlaceholder ||
+                      "Tell us about your logistics requirements.."
+                    }
                     className="w-full rounded-lg border border-amber-900/40 bg-[#16120b] px-4 py-3 text-sm text-white placeholder:text-zinc-500 focus:border-amber-400 focus:outline-none transition-colors resize-none"
                   />
                 </div>
@@ -463,7 +487,9 @@ export default function ContactUsClient({
                   ) : (
                     <>
                       {t?.form?.submit || "Submit Request"}
-                      <span className="text-base font-bold">{isAr ? "←" : "→"}</span>
+                      <span className="text-base font-bold">
+                        {isAr ? "←" : "→"}
+                      </span>
                     </>
                   )}
                 </button>
@@ -516,13 +542,16 @@ export default function ContactUsClient({
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-base mb-1.5">
-                      {t?.info?.hours || (isAr ? "ساعات العمل" : "Office Hours")}
+                      {t?.info?.hours ||
+                        (isAr ? "ساعات العمل" : "Office Hours")}
                     </h3>
                     <p className="text-zinc-300 text-xs sm:text-sm">
-                      {t?.cards?.workDays || (isAr ? "الأحد – الخميس" : "Sunday – Thursday")}
+                      {t?.cards?.workDays ||
+                        (isAr ? "الأحد – الخميس" : "Sunday – Thursday")}
                     </p>
                     <p className="text-zinc-400 text-xs mt-1">
-                      {t?.cards?.weekendDays || (isAr ? "الجمعة – السبت" : "Friday – Saturday")}
+                      {t?.cards?.weekendDays ||
+                        (isAr ? "الجمعة – السبت" : "Friday – Saturday")}
                     </p>
                     <p className="text-[#ef4444] text-xs font-semibold mt-0.5">
                       {t?.cards?.closed || (isAr ? "مغلق" : "Closed")}
@@ -536,7 +565,7 @@ export default function ContactUsClient({
                 <iframe
                   title="Mazaya Logistics Riyadh Office Map"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463879.26521990495!2d46.5414846497138!3d24.72539809930777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d48939b%3A0x7ff97233564f4b15!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
-                  className="w-full h-full border-0 filter grayscale-[20%] contrast-[1.05]"
+                  className="w-full h-full border-0 filter grayscale-20 contrast-[1.05]"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
@@ -545,12 +574,16 @@ export default function ContactUsClient({
                 <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1.5 bg-white/95 text-black px-3 py-1.5 rounded-md shadow-xl border border-amber-400 text-xs font-bold animate-bounce duration-1000">
                   <span className="w-2 h-2 rounded-full bg-red-600 animate-ping" />
                   <MapPin className="w-3.5 h-3.5 text-red-600 fill-red-600" />
-                  <span>{isAr ? "مزايا للخدمات اللوجستية" : "Mazaya Logistics"}</span>
+                  <span>
+                    {isAr ? "مزايا للخدمات اللوجستية" : "Mazaya Logistics"}
+                  </span>
                 </div>
 
                 {/* Google Map Bottom Overlay */}
                 <div className="pointer-events-none absolute bottom-2 left-2 rtl:left-auto rtl:right-2 bg-white/80 backdrop-blur-xs px-2 py-0.5 rounded text-[10px] text-zinc-700 font-medium">
-                  {isAr ? "الرياض، المملكة العربية السعودية" : "Riyadh, Saudi Arabia"}
+                  {isAr
+                    ? "الرياض، المملكة العربية السعودية"
+                    : "Riyadh, Saudi Arabia"}
                 </div>
               </div>
             </div>
@@ -581,7 +614,7 @@ export default function ContactUsClient({
                 href="https://wa.me/+9960551010596"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 sm:flex-initial flex items-center justify-between gap-6 bg-[#1c1402] hover:bg-[#251b03] border border-[#352801] hover:border-green-500/50 rounded-xl px-4 py-3.5 transition-all group min-w-[200px]"
+                className="flex-1 sm:flex-initial flex items-center justify-between gap-6 bg-[#1c1402] hover:bg-[#251b03] border border-[#352801] hover:border-green-500/50 rounded-xl px-4 py-3.5 transition-all group min-w-50"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-lg bg-[#22c55e] flex items-center justify-center text-white shadow-md">
@@ -604,7 +637,7 @@ export default function ContactUsClient({
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 sm:flex-initial flex items-center justify-between gap-6 bg-[#1c1402] hover:bg-[#251b03] border border-[#352801] hover:border-blue-500/50 rounded-xl px-4 py-3.5 transition-all group min-w-[200px]"
+                className="flex-1 sm:flex-initial flex items-center justify-between gap-6 bg-[#1c1402] hover:bg-[#251b03] border border-[#352801] hover:border-blue-500/50 rounded-xl px-4 py-3.5 transition-all group min-w-50"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-lg bg-[#0077b5] flex items-center justify-center text-white shadow-md">
@@ -645,7 +678,9 @@ export default function ContactUsClient({
               </div>
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                  {isAr ? "هل أنت مستعد للمضي قدماً؟" : "Ready to Move Forward?"}
+                  {isAr
+                    ? "هل أنت مستعد للمضي قدماً؟"
+                    : "Ready to Move Forward?"}
                 </h3>
                 <p className="text-zinc-400 text-xs sm:text-sm mt-1">
                   {isAr
@@ -687,17 +722,17 @@ export default function ContactUsClient({
 
             {/* Success Title */}
             <h3 className="text-2xl sm:text-3xl font-bold text-[#22c55e] mb-4 tracking-tight">
-              {t?.form?.successTitle || (isAr ? "تم إرسال الرسالة بنجاح!" : "Quote Request Submitted!")}
+              {t?.form?.successTitle ||
+                (isAr ? "تم إرسال الرسالة بنجاح!" : "Quote Request Submitted!")}
             </h3>
 
             {/* Description Lines */}
             <div className="space-y-4 text-zinc-300 text-xs sm:text-sm leading-relaxed max-w-md mb-8">
               <p>
-                {t?.form?.successMessage || (isAr ? (
-                  "شكراً لمشاركتنا متطلباتك اللوجستية. لقد استلم فريقنا طلبك وسيقوم بمراجعة التفاصيل."
-                ) : (
-                  "Thank you for sharing your logistics requirements with us. Our team has received your request and will review the details provided."
-                ))}
+                {t?.form?.successMessage ||
+                  (isAr
+                    ? "شكراً لمشاركتنا متطلباتك اللوجستية. لقد استلم فريقنا طلبك وسيقوم بمراجعة التفاصيل."
+                    : "Thank you for sharing your logistics requirements with us. Our team has received your request and will review the details provided.")}
               </p>
               <p>
                 {isAr
@@ -732,7 +767,8 @@ export default function ContactUsClient({
                   onClick={handleReset}
                   className="text-xs sm:text-sm text-zinc-400 hover:text-white underline underline-offset-4 decoration-zinc-600 hover:decoration-white transition-colors cursor-pointer"
                 >
-                  {t?.form?.submitAnother || (isAr ? "إرسال رسالة أخرى" : "Contact Us")}
+                  {t?.form?.submitAnother ||
+                    (isAr ? "إرسال رسالة أخرى" : "Contact Us")}
                 </button>
               </div>
             </div>

@@ -2,16 +2,6 @@ import { ArrowUpRight, Building2, Sparkles } from "lucide-react";
 import Image from "next/image";
 
 const subsidiaries = [
-  // {
-  //   number: "01",
-  //   name: "Boxify Logistics",
-  //   category: "LOGISTICS & OPERATIONS",
-  //   description:
-  //     "Driving smarter operations through reliable logistics, efficient delivery networks, and customer-focused solutions.",
-  //   services: ["Smart Operations", "Reliable Delivery", "Business Growth"],
-  //   icon: "/about/boxfiy-07.png",
-  //   website: "https://boxfuy.barmjin.com/",
-  // },
   {
     number: "02",
     name: "LOADTRUCK",
@@ -61,7 +51,7 @@ const BusinessEcosystem = ({ t }: BusinessEcosystemProps) => {
         <div className="mb-8">
           <div className="mb-3 inline-flex items-center gap-2 rounded-lg border border-[#F5B800]/20 bg-[#F5B800]/[0.07] p-2">
             <Sparkles size={15} className="text-yellow-300" />
-            <span className="text-[10px] font-semibold tracking-[0.1em] text-yellow-300 sm:text-xs uppercase">
+            <span className="text-[10px] font-semibold tracking-widest text-yellow-300 sm:text-xs uppercase">
               {t?.sectionLabel || "OUR BUSINESS ECOSYSTEM"}
             </span>
           </div>
@@ -147,7 +137,7 @@ const BusinessEcosystem = ({ t }: BusinessEcosystemProps) => {
               </div>
 
               {/* Bottom Signature Line */}
-              <div className="mt-8 h-px w-full max-w-md bg-gradient-to-r from-[#F5B800]/50 via-white/10 to-transparent hidden lg:block" />
+              <div className="mt-8 h-px w-full max-w-md bg-linear-to-r from-[#F5B800]/50 via-white/10 to-transparent hidden lg:block" />
             </div>
           </div>
         </div>

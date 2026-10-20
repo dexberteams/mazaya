@@ -230,7 +230,9 @@ export default function IndustryCategories({
         <div className="flex items-center justify-between gap-4 mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
             {t?.heading || "Industry"}{" "}
-            <span className="text-yellow-200">{t?.headingHighlight || "Categories"}</span>
+            <span className="text-yellow-200">
+              {t?.headingHighlight || "Categories"}
+            </span>
           </h2>
 
           {/* Slider Arrow Controls */}
@@ -292,14 +294,15 @@ export default function IndustryCategories({
           >
             {categories.map((item, index) => {
               const itemTitle = t?.items?.[index]?.title || item.title;
-              const itemDescription = t?.items?.[index]?.description || item.description;
+              const itemDescription =
+                t?.items?.[index]?.description || item.description;
 
               return (
                 <div
                   key={item.id}
                   className="w-full sm:w-1/2 lg:w-1/3 shrink-0 px-2.5 sm:px-3"
                 >
-                  <div className="group relative h-full flex flex-col justify-between bg-gradient-to-b from-[#141009] to-[#0D0A06] border border-[#2B2113] hover:border-[#FFBB00]/50 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_12px_35px_rgba(0,0,0,0.7)]">
+                  <div className="group relative h-full flex flex-col justify-between bg-linear-to-b from-[#141009] to-[#0D0A06] border border-[#2B2113] hover:border-[#FFBB00]/50 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_12px_35px_rgba(0,0,0,0.7)]">
                     {/* Top Image */}
                     <div className="relative w-full h-48 sm:h-52 rounded-xl overflow-hidden bg-black/40">
                       <Image
@@ -337,7 +340,9 @@ export default function IndustryCategories({
                         className="text-[#FFBB00] hover:text-[#FFEAB1] text-sm font-medium flex items-center gap-1.5 transition-colors group-hover:translate-x-0.5 duration-200"
                       >
                         {t?.learnMore || "Learn More"}
-                        <span className="text-base leading-none">{lang === "ar" ? "←" : "→"}</span>
+                        <span className="text-base leading-none">
+                          {lang === "ar" ? "←" : "→"}
+                        </span>
                       </Link>
                     </div>
                   </div>

@@ -19,16 +19,13 @@ const IndustriesPage = async ({
 
   return (
     <div className="w-full bg-[#0A0700] font-manrope">
-      {/* ── Section 1: Hero Section ── */}
+      {/*  Hero Section */}
       <IndustriesHero t={dict.industries?.hero} />
 
-      {/* ── Section 2: Industry Categories Slider ── */}
-      <IndustryCategories
-        t={dict.industries?.categories}
-        lang={lang}
-      />
+      {/*Industry Categories Slider*/}
+      <IndustryCategories t={dict.industries?.categories} lang={lang} />
 
-      {/* ── Section 3: Bottom CTA Banner ── */}
+      {/*Section 3: Bottom CTA Banner  */}
       <section className="relative overflow-hidden mt-10 mb-20 sm:mb-28 lg:mt-20 lg:mb-52 mx-4 lg:mx-8 flex flex-col lg:flex-row justify-between items-center gap-6 rounded-sm border border-white/10 bg-white/4 backdrop-blur-xl p-5 sm:p-6 lg:p-10 text-white shadow-[0_8px_40px_rgba(0,0,0,0.35)] font-manrope">
         {/* Ambient Glow */}
         <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-yellow-400/10 blur-3xl" />

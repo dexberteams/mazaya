@@ -36,18 +36,55 @@ export interface ProcessTimelineT {
 const stepIcons = [Truck, PaperBag, Truck, Globe, Package];
 
 const defaultSteps: ProcessStepT[] = [
-  { number: "01", title: "Pickup", description: "We collect your goods safely from your location with our professional team." },
-  { number: "02", title: "Packaging", description: "Your items are carefully packaged using high-quality materials to ensure full protection." },
-  { number: "03", title: "Transportation", description: "Goods are transported using our modern fleet with real-time tracking and safety." },
-  { number: "04", title: "Customs", description: "We handle all customs clearances and documentation to ensure smooth cross-border movement." },
-  { number: "05", title: "Delivery", description: "Your goods are delivered safely and on time to the final destination." },
+  {
+    number: "01",
+    title: "Pickup",
+    description:
+      "We collect your goods safely from your location with our professional team.",
+  },
+  {
+    number: "02",
+    title: "Packaging",
+    description:
+      "Your items are carefully packaged using high-quality materials to ensure full protection.",
+  },
+  {
+    number: "03",
+    title: "Transportation",
+    description:
+      "Goods are transported using our modern fleet with real-time tracking and safety.",
+  },
+  {
+    number: "04",
+    title: "Customs",
+    description:
+      "We handle all customs clearances and documentation to ensure smooth cross-border movement.",
+  },
+  {
+    number: "05",
+    title: "Delivery",
+    description:
+      "Your goods are delivered safely and on time to the final destination.",
+  },
 ];
 
 const defaultStatsBar: ProcessStatsBarItemT[] = [
-  { title: "Real-time Tracking", subtitle: "Live updates at every step of your shipment." },
-  { title: "Secure & Reliable", subtitle: "Advanced security and care at every stage." },
-  { title: "24/7 Support", subtitle: "Our talented team is always here for you." },
-  { title: "Complete Transparency", subtitle: "Full visibility & clear updates at every step." },
+  {
+    title: "Real-time Tracking",
+    subtitle: "Live updates at every step of your shipment.",
+  },
+  {
+    title: "Secure & Reliable",
+    subtitle: "Advanced security and care at every stage.",
+  },
+  {
+    title: "24/7 Support",
+    subtitle: "Our talented team is always here for you.",
+  },
+  {
+    title: "Complete Transparency",
+    subtitle: "Full visibility & clear updates at every step.",
+  },
 ];
 
 const statsBarIcons = [MapPinCheckInside, ShieldCheck, Headset, FileText];
@@ -61,7 +98,11 @@ const containerVariants: Variants = {
 /* CARD ANIMATION*/
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 35 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" as const },
+  },
 };
 
 /* PROCESS TIMELINE */
@@ -73,7 +114,9 @@ const ProcessTimeline = ({ t }: { t?: ProcessTimelineT }) => {
     <section className="overflow-hidden bg-[#080700] my-10 lg:my-20 px-4 lg:px-8">
       <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:text-4xl text-white!">
         {t?.title || "Process"}{" "}
-        <span className="text-yellow-200">{t?.titleHighlight || "Timeline"}</span>
+        <span className="text-yellow-200">
+          {t?.titleHighlight || "Timeline"}
+        </span>
       </h1>
       <div className="relative mt-10 lg:mt-20">
         <div className="mx-auto max-w-350 px-4 sm:px-6 lg:px-8">
@@ -100,14 +143,22 @@ const ProcessTimeline = ({ t }: { t?: ProcessTimelineT }) => {
               const Icon = stepIcons[idx] ?? Truck;
 
               return (
-                <motion.div key={step.number ?? idx} variants={itemVariants} className="relative">
+                <motion.div
+                  key={step.number ?? idx}
+                  variants={itemVariants}
+                  className="relative"
+                >
                   {/* NUMBER */}
                   <div className="relative z-20 flex flex-col items-center">
                     <motion.div
                       initial={{ scale: 0, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true, amount: 0.5 }}
-                      transition={{ type: "spring", stiffness: 180, damping: 12 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 180,
+                        damping: 12,
+                      }}
                       className="relative z-20 flex w-8 h-8 lg:h-10 lg:w-10 items-center justify-center rounded-full bg-[#f5f5f5] text-[11px] font-medium text-black shadow-[0_0_15px_rgba(255,255,255,0.08)]"
                     >
                       {step.number}
@@ -117,7 +168,11 @@ const ProcessTimeline = ({ t }: { t?: ProcessTimelineT }) => {
                       initial={{ height: 0, opacity: 0 }}
                       whileInView={{ height: 32, opacity: 1 }}
                       viewport={{ once: true, amount: 0.5 }}
-                      transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
+                      transition={{
+                        duration: 0.5,
+                        delay: 0.25,
+                        ease: "easeOut",
+                      }}
                       className=" border-l border-dashed border-[#a48120] lg:block z-30"
                     />
                   </div>
@@ -139,13 +194,24 @@ const ProcessTimeline = ({ t }: { t?: ProcessTimelineT }) => {
                         initial={{ scale: 0, rotate: -20 }}
                         whileInView={{ scale: 1, rotate: 0 }}
                         viewport={{ once: true, amount: 0.5 }}
-                        transition={{ type: "spring", stiffness: 180, damping: 12, delay: 0.3 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 180,
+                          damping: 12,
+                          delay: 0.3,
+                        }}
                         className=" relative z-40 mb-3 flex h-9 w-9 items-center justify-center rounded-full border border-[#f8b900]/30 bg-[#f8b900] text-black shadow-[0_0_25px_rgba(248,185,0,0.18)] sm:h-10 sm:w-10 "
                       >
-                        <Icon size={19} strokeWidth={2} className="sm:h-5 sm:w-5" />
+                        <Icon
+                          size={19}
+                          strokeWidth={2}
+                          className="sm:h-5 sm:w-5"
+                        />
                       </motion.div>
                       {/* TITLE */}
-                      <h3 className="text-sm font-medium text-white sm:text-base">{step.title}</h3>
+                      <h3 className="text-sm font-medium text-white sm:text-base">
+                        {step.title}
+                      </h3>
                       {/* DESCRIPTION */}
                       <p className=" mt-2 max-w-52.5 text-[10px] leading-[1.6] text-gray-400 sm:text-[12px] lg:text-[14px] ">
                         {step.description}
@@ -173,16 +239,8 @@ const ProcessTimeline = ({ t }: { t?: ProcessTimelineT }) => {
 
       {/* Stats Card Box */}
       <div
-        className="
-         my-5 lg:mt-14
-         grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4
-         gap-4
-         rounded-lg
-         border border-white/30
-         bg-white/4
-         p-2 lg:p-8
-         backdrop-blur-xl
-         shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_40px_rgba(0,0,0,0.25)]
+        className=" my-5 lg:mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 rounded-lg border border-white/30
+         bg-white/4 p-2 lg:p-8 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_40px_rgba(0,0,0,0.25)]
         "
       >
         {statsBar.map((item, idx) => {
@@ -193,13 +251,19 @@ const ProcessTimeline = ({ t }: { t?: ProcessTimelineT }) => {
             <div
               key={idx}
               className={`flex items-center justify-center gap-4 p-2 lg:p-4 ${
-                !isLast ? "border-b lg:border-b-0 lg:border-r border-white/20" : ""
+                !isLast
+                  ? "border-b lg:border-b-0 lg:border-r border-white/20"
+                  : ""
               }`}
             >
               <GlowIconCircle icon={Icon} />
               <p className="flex flex-col items-start">
-                <span className="text-yellow-400 text-[13px] lg:text-base">{item.title}</span>
-                <span className="text-[11px] text-gray-400 lg:text-xs">{item.subtitle}</span>
+                <span className="text-yellow-400 text-[13px] lg:text-base">
+                  {item.title}
+                </span>
+                <span className="text-[11px] text-gray-400 lg:text-xs">
+                  {item.subtitle}
+                </span>
               </p>
             </div>
           );

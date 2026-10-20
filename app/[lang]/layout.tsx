@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "leaflet/dist/leaflet.css";
 import {

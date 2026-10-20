@@ -12,7 +12,7 @@ export default function IndustriesHero({ t }: { t?: IndustriesHeroT }) {
   return (
     <section className="relative w-full overflow-hidden font-manrope">
       {/* ── Hero Container ── */}
-      <div className="relative h-auto min-h-[350px] sm:min-h-[620px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-center">
+      <div className="relative h-auto min-h-87.5 sm:min-h-155 lg:h-150 lg:min-h-0 w-full flex flex-col justify-center">
         {/* ── Background Image ── */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -25,13 +25,13 @@ export default function IndustriesHero({ t }: { t?: IndustriesHeroT }) {
           />
 
           {/* Left Dark Vignette / Gradient Overlay to ensure high text contrast on mobile (LTR: dark left, RTL: dark right) */}
-          <div className="lg:hidden absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-black via-black/85 via-45% md:via-black/70 md:via-55% to-transparent z-10" />
+          <div className="lg:hidden absolute inset-0 bg-linear-to-r rtl:bg-linear-to-l from-black via-black/85 via-45% md:via-black/70 md:via-55% to-transparent z-10" />
 
           {/* Top Vignette (mobile) */}
-          <div className="lg:hidden absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0A0700]/90 via-[#0A0700]/40 to-transparent z-10" />
+          <div className="lg:hidden absolute top-0 inset-x-0 h-32 bg-linear-to-b from-[#0A0700]/90 via-[#0A0700]/40 to-transparent z-10" />
 
           {/* Bottom Fade (mobile) */}
-          <div className="lg:hidden absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-[#0A0700] via-[#0A0700]/70 to-transparent z-10" />
+          <div className="lg:hidden absolute bottom-0 inset-x-0 h-36 bg-linear-to-t from-[#0A0700] via-[#0A0700]/70 to-transparent z-10" />
 
           {/* Benchmark Desktop Gradient Overlay (LTR: dark on left, fade right) */}
           <div
@@ -60,11 +60,16 @@ export default function IndustriesHero({ t }: { t?: IndustriesHeroT }) {
             relative z-20 flex h-full w-full flex-col items-start justify-center font-manrope text-white
             px-4 sm:px-8 lg:w-1/2 lg:gap-2 lg:px-16 sm:pt-20 lg:pt-6"
         >
-          <SectionLabel text={t?.sectionLabel || "industries"} className="bg-transparent lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0" />
+          <SectionLabel
+            text={t?.sectionLabel || "industries"}
+            className="bg-transparent lg:ml-4 rtl:lg:mr-4 rtl:lg:ml-0"
+          />
 
           <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
             {t?.heading || "Logistics Solutions For"}{" "}
-            <span className="text-yellow-200">{t?.headingHighlight || "Every Industry"}</span>
+            <span className="text-yellow-200">
+              {t?.headingHighlight || "Every Industry"}
+            </span>
           </h1>
 
           <span className="mt-2 block lg:hidden h-0.5 w-24 bg-yellow-400"></span>

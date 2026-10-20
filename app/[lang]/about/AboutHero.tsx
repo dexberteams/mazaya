@@ -230,7 +230,7 @@ export default function AboutHero({ t }: { t?: AboutHeroT }) {
 
   return (
     <section id="hero" className="relative w-full overflow-hidden">
-      <div className="relative h-auto min-h-[400px] sm:min-h-[640px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-between py-24">
+      <div className="relative h-auto min-h-100 sm:min-h-160 lg:h-150 lg:min-h-0 w-full flex flex-col justify-between py-24">
         {/* ── Background Image ── */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -284,7 +284,9 @@ export default function AboutHero({ t }: { t?: AboutHeroT }) {
           />
 
           <h1 className="w-11/12 text-2xl font-bold leading-tight sm:text-4xl lg:p-4 lg:text-5xl">
-            <span className="block">{t?.heading || "Building Connections."}</span>
+            <span className="block">
+              {t?.heading || "Building Connections."}
+            </span>
             <span className="block text-yellow-200">
               {t?.headingHighlight || "Delivering Excellence."}
             </span>
@@ -301,17 +303,18 @@ export default function AboutHero({ t }: { t?: AboutHeroT }) {
         {/* ── Bottom Sub-Navigation Floating Bar ── */}
         <div className="relative z-20 w-full px-4 sm:px-8 lg:px-16 pb-6 sm:pb-8 lg:pb-8 pt-4">
           <div className="w-full rounded-xl sm:rounded-2xl border border-[#FFBB00]/40 bg-[#120d06]/85 backdrop-blur-md shadow-[0_0_25px_rgba(255,187,0,0.12)] px-4 sm:px-8 py-3.5 sm:py-4">
-            <div className="flex items-center justify-between gap-6 sm:gap-8 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            <div className="flex items-center justify-between gap-6 sm:gap-8 overflow-x-auto scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
               {items.map((item) => {
                 const isActive = activeTab === item.id;
                 return (
                   <button
                     key={item.id}
                     onClick={() => handleTabClick(item)}
-                    className={`flex items-center gap-2.5 whitespace-nowrap text-sm sm:text-base transition-all duration-200 cursor-pointer ${isActive
-                      ? "text-[#FFBB00] font-semibold underline underline-offset-8 decoration-[#FFBB00] decoration-2"
-                      : "text-[#FFEAB1]/85 hover:text-[#FFBB00] font-normal"
-                      }`}
+                    className={`flex items-center gap-2.5 whitespace-nowrap text-sm sm:text-base transition-all duration-200 cursor-pointer ${
+                      isActive
+                        ? "text-[#FFBB00] font-semibold underline underline-offset-8 decoration-[#FFBB00] decoration-2"
+                        : "text-[#FFEAB1]/85 hover:text-[#FFBB00] font-normal"
+                    }`}
                   >
                     <span
                       className={

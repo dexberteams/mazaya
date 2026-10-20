@@ -388,7 +388,7 @@ export default async function GetQuotePage({
     <div className="relative min-h-screen bg-[#0A0700] text-white selection:bg-[#f5b800] selection:text-black font-manrope pb-20 overflow-x-hidden">
       {/* ── SECTION 1: HERO SECTION ── */}
       <section className="relative w-full overflow-hidden font-manrope">
-        <div className="relative h-auto min-h-[560px] sm:min-h-[620px] lg:h-150 lg:min-h-0 w-full flex flex-col justify-center">
+        <div className="relative h-auto min-h-140 sm:min-h-155 lg:h-150 lg:min-h-0 w-full flex flex-col justify-center">
           {/* Background Image with Cinematic Gradients */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -400,8 +400,8 @@ export default async function GetQuotePage({
               className="object-cover object-right lg:object-center select-none"
             />
             {/* Mobile overlays */}
-            <div className="lg:hidden absolute inset-0 bg-gradient-to-r from-[#0A0700] via-[#0A0700]/85 to-[#0A0700]/30" />
-            <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-[#0A0700] via-transparent to-[#0A0700]/60" />
+            <div className="lg:hidden absolute inset-0 bg-linear-to-r from-[#0A0700] via-[#0A0700]/85 to-[#0A0700]/30" />
+            <div className="lg:hidden absolute inset-0 bg-linear-to-t from-[#0A0700] via-transparent to-[#0A0700]/60" />
             <div className="lg:hidden absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(245,184,0,0.12)_0%,transparent_60%)]" />
 
             {/* Benchmark Desktop Gradient Overlay */}
@@ -499,7 +499,7 @@ export default async function GetQuotePage({
                   : "Mazaya Masanda Logistics?"}
               </span>
             </h2>
-            <div className="w-14 h-[2px] bg-[#f5b800] mt-3 mb-8" />
+            <div className="w-14 h-0.5 bg-[#f5b800] mt-3 mb-8" />
 
             <div className="space-y-6">
               {WHY_CHOOSE_ITEMS.map((item, idx) => {

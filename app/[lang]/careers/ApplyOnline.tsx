@@ -56,10 +56,8 @@ const ApplyOnline = ({ t }: { t?: ApplyOnlineT }) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Show success popup
     setShowSuccess(true);
 
-    // Clear all text/select fields
     setFormData({
       fullName: "",
       email: "",
@@ -70,10 +68,8 @@ const ApplyOnline = ({ t }: { t?: ApplyOnlineT }) => {
       message: "",
     });
 
-    // Clear file input
     e.currentTarget.reset();
 
-    // Automatically close popup
     setTimeout(() => {
       setShowSuccess(false);
     }, 4000);
@@ -81,7 +77,7 @@ const ApplyOnline = ({ t }: { t?: ApplyOnlineT }) => {
 
   return (
     <>
-      {/* ================= SUCCESS POPUP ================= */}
+      {/*  SUCCESS POPUP */}
       {showSuccess && (
         <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm">
           <div className="relative w-full max-w-md rounded-xl border border-[#6f5a22]/70 bg-[#161000] p-7 text-center shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
@@ -89,7 +85,7 @@ const ApplyOnline = ({ t }: { t?: ApplyOnlineT }) => {
             <button
               type="button"
               onClick={() => setShowSuccess(false)}
-              className="absolute end-4 top-4 text-white/40 transition hover:text-white cursor-pointer"
+              className="absolute inset-e-4 top-4 text-white/40 transition hover:text-white cursor-pointer"
             >
               <X size={20} />
             </button>
@@ -120,8 +116,11 @@ const ApplyOnline = ({ t }: { t?: ApplyOnlineT }) => {
         </div>
       )}
 
-      {/* ================= APPLY SECTION ================= */}
-      <section id="apply-online" className="mt-10 mb-20 sm:mb-28 lg:mt-20 lg:mb-52 overflow-hidden px-4 lg:px-8">
+      {/*  APPLY SECTION  */}
+      <section
+        id="apply-online"
+        className="mt-10 mb-20 sm:mb-28 lg:mt-20 lg:mb-52 overflow-hidden px-4 lg:px-8"
+      >
         <SectionHeader2
           title={t?.heading || "Apply"}
           highlight={t?.headingHighlight || "Online"}
@@ -154,7 +153,7 @@ const ApplyOnline = ({ t }: { t?: ApplyOnlineT }) => {
             </div>
           </div>
 
-          {/* ================= FORM ================= */}
+          {/*  FORM  */}
           <form
             onSubmit={handleSubmit}
             className="w-full rounded-[7px] lg:w-[68%] p-3 lg:p-6"
@@ -222,7 +221,9 @@ const ApplyOnline = ({ t }: { t?: ApplyOnlineT }) => {
                   name="location"
                   value={formData.location}
                   onChange={handleChange}
-                  placeholder={isAr ? "أدخل موقعك الحالي" : "Enter your current location"}
+                  placeholder={
+                    isAr ? "أدخل موقعك الحالي" : "Enter your current location"
+                  }
                   required
                   className=" h-9 w-full rounded-sm border border-white/10 bg-linear-to-b from-black/50 via-[#201700]/50 to-white/6 px-3 text-xs text-white outline-none placeholder:text-white/30 shadow-[inset_0_2px_6px_rgba(0,0,0,0.7),inset_0_-1px_4px_rgba(255,255,255,0.12),0_4px_12px_rgba(0,0,0,0.25)] backdrop-blur-md focus:border-[#FFBB00]/70 focus:bg-linear-to-b focus:from-black/60 focus:via-[#201700]/60 focus:to-white/8 focus:shadow-[inset_0_2px_6px_rgba(0,0,0,0.8),inset_0_-1px_5px_rgba(255,255,255,0.16),0_0_12px_rgba(255,187,0,0.12)] "
                 />
@@ -275,10 +276,18 @@ const ApplyOnline = ({ t }: { t?: ApplyOnlineT }) => {
                   <option value="" disabled>
                     {isAr ? "اختر الخبرة" : "Select experience"}
                   </option>
-                  <option value="0-1">{isAr ? "0 - 1 سنة" : "0 - 1 Years"}</option>
-                  <option value="2-3">{isAr ? "2 - 3 سنوات" : "2 - 3 Years"}</option>
-                  <option value="4-5">{isAr ? "4 - 5 سنوات" : "4 - 5 Years"}</option>
-                  <option value="5+">{isAr ? "أكثر من 5 سنوات" : "5+ Years"}</option>
+                  <option value="0-1">
+                    {isAr ? "0 - 1 سنة" : "0 - 1 Years"}
+                  </option>
+                  <option value="2-3">
+                    {isAr ? "2 - 3 سنوات" : "2 - 3 Years"}
+                  </option>
+                  <option value="4-5">
+                    {isAr ? "4 - 5 سنوات" : "4 - 5 Years"}
+                  </option>
+                  <option value="5+">
+                    {isAr ? "أكثر من 5 سنوات" : "5+ Years"}
+                  </option>
                 </select>
               </div>
 
@@ -307,7 +316,9 @@ const ApplyOnline = ({ t }: { t?: ApplyOnlineT }) => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder={isAr ? "أخبرنا عن نفسك" : "Tell us about yourself"}
+                  placeholder={
+                    isAr ? "أخبرنا عن نفسك" : "Tell us about yourself"
+                  }
                   rows={1}
                   className="h-9 w-full rounded-sm border border-white/10 bg-linear-to-b from-black/50 via-[#201700]/50 to-white/6 px-3 text-xs text-white outline-none placeholder:text-white/30 shadow-[inset_0_2px_6px_rgba(0,0,0,0.7),inset_0_-1px_4px_rgba(255,255,255,0.12),0_4px_12px_rgba(0,0,0,0.25)] backdrop-blur-md focus:border-[#FFBB00]/70 focus:bg-linear-to-b focus:from-black/60 focus:via-[#201700]/60 focus:to-white/8 focus:shadow-[inset_0_2px_6px_rgba(0,0,0,0.8),inset_0_-1px_5px_rgba(255,255,255,0.16),0_0_12px_rgba(255,187,0,0.12)] "
                 />

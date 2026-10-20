@@ -160,7 +160,7 @@ const OpenPosition = ({ t }: OpenPositionProps) => {
               type="button"
               onClick={() => setIsPopupOpen(false)}
               aria-label="Close popup"
-              className="absolute end-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:bg-white/10 hover:text-white"
+              className="absolute inset-e-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:bg-white/10 hover:text-white"
             >
               <X size={17} />
             </button>

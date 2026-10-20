@@ -85,7 +85,7 @@ const CustomVideo = ({ title, subtitle }: CustomVideoProps) => {
 
       {/* Playing indicator */}
       <div
-        className={`absolute top-5 start-5 z-20 flex items-center gap-2 rounded-full bg-black/60 px-3 py-1.5 backdrop-blur-sm transition-all duration-500 ${
+        className={`absolute top-5 inset-s-5 z-20 flex items-center gap-2 rounded-full bg-black/60 px-3 py-1.5 backdrop-blur-sm transition-all duration-500 ${
           isPlaying ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
         }`}
       >
@@ -97,7 +97,7 @@ const CustomVideo = ({ title, subtitle }: CustomVideoProps) => {
       </div>
 
       {/* Duration */}
-      <span className="absolute bottom-24 start-5 z-20 bg-white/80 px-3 py-1 text-xs text-black backdrop-blur-sm">
+      <span className="absolute bottom-24 inset-s-5 z-20 bg-white/80 px-3 py-1 text-xs text-black backdrop-blur-sm">
         {formatTime(seconds)} / 01:32
       </span>
 

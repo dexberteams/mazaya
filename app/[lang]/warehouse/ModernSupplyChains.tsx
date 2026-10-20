@@ -70,7 +70,7 @@ const ModernSupplyChains = ({ t }: ModernSupplyChainsProps) => {
         {/* LEFT SIDE */}
         <div className="flex min-w-0 flex-col">
           {/* Main Image */}
-          <div className="relative h-[300px] overflow-hidden rounded-[6px] border border-white/10 sm:h-[400px] lg:h-[317px]">
+          <div className="relative h-75 overflow-hidden rounded-md border border-white/10 sm:h-100 lg:h-79.25">
             <Image
               src="/warehouse/chain1.png"
               alt={t.heading}
@@ -79,7 +79,7 @@ const ModernSupplyChains = ({ t }: ModernSupplyChainsProps) => {
               className="object-cover"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent" />
           </div>
 
           {/* Stats */}
@@ -109,7 +109,7 @@ const ModernSupplyChains = ({ t }: ModernSupplyChainsProps) => {
             return (
               <div
                 key={card.image}
-                className="group relative min-h-[155px] overflow-hidden rounded-[6px] border border-[#6f5a22] bg-[#161000]"
+                className="group relative min-h-38.75 overflow-hidden rounded-md border border-[#6f5a22] bg-[#161000]"
               >
                 {/* Background Image */}
                 <Image
@@ -121,10 +121,10 @@ const ModernSupplyChains = ({ t }: ModernSupplyChainsProps) => {
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-black/10" />
 
                 {/* Content */}
-                <div className="relative z-10 flex h-full min-h-[155px] flex-col justify-between p-2.5 lg:p-3">
+                <div className="relative z-10 flex h-full min-h-38.75 flex-col justify-between p-2.5 lg:p-3">
                   {/* Icon */}
                   <div className="flex h-7 w-7 items-center justify-center rounded-[5px] border border-white/20 bg-[rgba(102,89,53,0.27)] backdrop-blur-md">
                     <Icon size={14} className="text-white" />
