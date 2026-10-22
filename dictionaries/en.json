@@ -548,27 +548,32 @@
         {
           "number": "01",
           "title": "Pickup",
-          "description": "We collect your goods safely from your location with our professional team."
+          "description": "We collect your goods safely from your location with our professional team.",
+          "image": "/advantages/bus.png"
         },
         {
           "number": "02",
           "title": "Packaging",
-          "description": "Your items are carefully packaged using high-quality materials to ensure full protection."
+          "description": "Your items are carefully packaged using high-quality materials to ensure full protection.",
+          "image": "/getQuote/box-2.jpg"
         },
         {
           "number": "03",
           "title": "Transportation",
-          "description": "Goods are transported using our modern fleet with real-time tracking and safety."
+          "description": "Goods are transported using our modern fleet with real-time tracking and safety.",
+          "image": "/getQuote/track-3.jpg"
         },
         {
           "number": "04",
           "title": "Customs",
-          "description": "We handle all customs clearances and documentation to ensure smooth cross-border movement."
+          "description": "We handle all customs clearances and documentation to ensure smooth cross-border movement.",
+          "image": "/getQuote/track-4.jpg"
         },
         {
           "number": "05",
           "title": "Delivery",
-          "description": "Your goods are delivered safely and on time to the final destination."
+          "description": "Your goods are delivered safely and on time to the final destination.",
+          "image": "/getQuote/track-5.jpg"
         }
       ],
       "statsBar": [

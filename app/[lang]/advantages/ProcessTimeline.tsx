@@ -19,6 +19,7 @@ export interface ProcessStepT {
   number?: string;
   title?: string;
   description?: string;
+  image?: string;
 }
 
 export interface ProcessStatsBarItemT {
@@ -41,30 +42,35 @@ const defaultSteps: ProcessStepT[] = [
     title: "Pickup",
     description:
       "We collect your goods safely from your location with our professional team.",
+    image: "/advantages/bus.png",
   },
   {
     number: "02",
     title: "Packaging",
     description:
       "Your items are carefully packaged using high-quality materials to ensure full protection.",
+    image: "/getQuote/box-2.jpg",
   },
   {
     number: "03",
     title: "Transportation",
     description:
       "Goods are transported using our modern fleet with real-time tracking and safety.",
+    image: "/getQuote/track-3.jpg",
   },
   {
     number: "04",
     title: "Customs",
     description:
       "We handle all customs clearances and documentation to ensure smooth cross-border movement.",
+    image: "/getQuote/track-4.jpg",
   },
   {
     number: "05",
     title: "Delivery",
     description:
       "Your goods are delivered safely and on time to the final destination.",
+    image: "/getQuote/track-5.jpg",
   },
 ];
 
@@ -220,7 +226,7 @@ const ProcessTimeline = ({ t }: { t?: ProcessTimelineT }) => {
                     {/* IMAGE */}
                     <div className=" relative z-10 h-32 lg:h-40 w-full overflow-hidden">
                       <Image
-                        src="/advantages/bus.png"
+                        src={step.image || "/advantages/bus.png"}
                         alt={step.title ?? "step"}
                         fill
                         sizes=" (max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw "
