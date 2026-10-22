@@ -21,7 +21,7 @@ const FLEET_IMAGES = [
   "/fleet/fleet-bus.png",
   "/fleet/medium-truck.jpg",
   "/fleet/lighter-truck.jpg",
-  "/fleet/pickup.avif",
+  "/fleet/ranger.jpg",
 ];
 
 const FleetOverview = ({ translations: t, isAr }: FleetOverviewProps) => {
